@@ -1,0 +1,46 @@
+package com.test2.game;
+
+import com.badlogic.gdx.Gdx;
+
+import java.util.ArrayList;
+
+public class Var {
+    static float r_x = 10;
+    static float r_y = 200;
+    static float r_speed = 500.0f;
+    static float r_l = 200;
+    static float s=0.05f;
+    static int points = 0;
+    static int leben=3;
+    static int p=0;
+    static int steuerung = 0;
+
+    static int Button_start_Height = 100;
+    static int Button_start_Width = 200;
+    static int Button_start_x = Gdx.graphics.getWidth()/2-Button_start_Width/2;
+    static int Button_start_y = 300;
+
+    static int Button_steuerung_Height = 100;
+    static int Button_steuerung_Width = 200;
+    static int Button_steuerung_x = Gdx.graphics.getWidth()/2-Button_steuerung_Width/2;
+    static int Button_steuerung_y = 500;
+    static int i;
+    static int ballmode=0;
+    static int kleben=0;
+    static boolean klebt=false;
+    static boolean ballupdate = true;
+    static int ballklebposition = 0;
+
+    static int KY=0;
+    static int starten=0;
+    static int gamestatus=0;
+    static int visibl=0;
+
+     int device = 0;
+
+
+
+
+
+
+}
