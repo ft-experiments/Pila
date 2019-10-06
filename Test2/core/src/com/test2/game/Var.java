@@ -24,6 +24,12 @@ public class Var {
     static int Button_steuerung_Width = 200;
     static int Button_steuerung_x = Gdx.graphics.getWidth()/2-Button_steuerung_Width/2;
     static int Button_steuerung_y = 500;
+
+    static int Button_Pause_Height = 100;
+    static int Button_Pause_Width = 200;
+    static int Button_Pause_x = Gdx.graphics.getWidth()/2-Button_steuerung_Width/2;
+    static int Button_Pause_y = 500;
+
     static int i;
     static int ballmode=0;
     static int kleben=0;

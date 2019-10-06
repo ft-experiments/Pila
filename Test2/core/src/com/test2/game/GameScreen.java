@@ -39,6 +39,7 @@ public class GameScreen extends ScreenAdapter {
     Texture block_unzerstoerbar;
     Texture status_bar;
     Texture hintergrund2;
+    Texture pause;
 
     int frame = 0;
     Texture imgfeuerball;
@@ -69,6 +70,7 @@ public class GameScreen extends ScreenAdapter {
         block_unzerstoerbar = new Texture("block_unzerstoerbar.png");
         status_bar = new Texture("statusbar.png");
         hintergrund2 = new Texture("hintergrund2.jpg");
+        pause = new Texture("Pause.png");
 
 
 
@@ -314,6 +316,14 @@ public class GameScreen extends ScreenAdapter {
         font.getData().setScale(3);
         font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()-5);
         font.getData().setScale(3);
+
+        batch.draw(pause,Var.Button_Pause_x,Var.Button_Pause_y,Var.Button_Pause_Width,Var.Button_Pause_Height);
+        if(Gdx.input.getX() < Var.Button_Pause_Width+Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight()-Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight()-Var.Button_Pause_y-Var.Button_Pause_Height){
+            if(Gdx.input.isTouched()){
+                Test2.INSTANCE.setScreen(new PauseScreen());
+            }
+        }
+
         //font.draw(batch, "" + SpeichernLesen.input, 0, Gdx.graphics.getHeight()-30);
 
 

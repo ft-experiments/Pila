@@ -37,7 +37,7 @@ public class PauseScreen extends ScreenAdapter {
 
 
 
-        Gdx.gl.glClearColor(0, 0, 0, 1);
+        Gdx.gl.glClearColor(1, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.setColor(1,1,1,0.5f);
@@ -45,6 +45,11 @@ public class PauseScreen extends ScreenAdapter {
         batch.setColor(1,1,1,1f);
         font.getData().setScale(3);
         font.draw(batch, "Pause", Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()-5);
+
+
+
+
+
 
 
 
