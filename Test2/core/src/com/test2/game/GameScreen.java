@@ -104,6 +104,11 @@ public class GameScreen extends ScreenAdapter {
 
     }
 
+    void statusBar(){
+
+
+    }
+
     void klebt(){
 
 

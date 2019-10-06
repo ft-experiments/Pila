@@ -61,7 +61,7 @@ public class OptionScreen extends ScreenAdapter {
 
             }
             if(Gdx.input.isTouched()){
-                Test2.INSTANCE.setScreen(new PauseScreen());
+                Test2.INSTANCE.setScreen(new GameScreen());
             }
 
 

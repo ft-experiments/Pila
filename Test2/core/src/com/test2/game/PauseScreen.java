@@ -17,9 +17,7 @@ import java.awt.*;
 public class PauseScreen extends ScreenAdapter {
     SpriteBatch batch;
     Texture neustart;
-    Texture startge;
-    Texture Touch;
-    Texture Gyro;
+    Texture status_bar;
     ShapeRenderer shapeRenderer;
     BitmapFont font;
 
@@ -28,6 +26,7 @@ public class PauseScreen extends ScreenAdapter {
         batch = new SpriteBatch();
         font = new BitmapFont();
         shapeRenderer = new ShapeRenderer();
+        status_bar = new Texture("statusbar.png");
     }
 
     @Override
@@ -41,9 +40,11 @@ public class PauseScreen extends ScreenAdapter {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        font.setColor(1,1,1,0);
+        batch.setColor(1,1,1,0.5f);
+        batch.draw(status_bar,0,Gdx.graphics.getHeight()-50,Gdx.graphics.getWidth(),50);
+        batch.setColor(1,1,1,1f);
         font.getData().setScale(3);
-        font.draw(batch, "Leben:", Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Pause", Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()-5);
 
 
 
