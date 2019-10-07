@@ -1,5 +1,4 @@
 package com.test2.game;
-/////hintergrund geändert das ist nicht sichtbar, weil ich keinen dateiname werändert habe oder hinzugefügt habe das krigt github nähmlich nicht mit
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
@@ -40,6 +39,7 @@ public class GameScreen extends ScreenAdapter {
     Texture status_bar;
     Texture hintergrund2;
     Texture pause;
+    Texture weiter;
 
     int frame = 0;
     Texture imgfeuerball;
@@ -71,6 +71,7 @@ public class GameScreen extends ScreenAdapter {
         status_bar = new Texture("statusbar.png");
         hintergrund2 = new Texture("hintergrund2.jpg");
         pause = new Texture("Pause.png");
+        weiter = new Texture("Weiter.png");
 
 
 
@@ -337,15 +338,24 @@ public class GameScreen extends ScreenAdapter {
         font.getData().setScale(3);
         font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()-5);
         font.getData().setScale(3);
-
-        batch.draw(pause,Var.Button_Pause_x,Var.Button_Pause_y,Var.Button_Pause_Width,Var.Button_Pause_Height);
-        if(Gdx.input.getX() < Var.Button_Pause_Width+Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight()-Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight()-Var.Button_Pause_y-Var.Button_Pause_Height){
-            if(Gdx.input.isTouched()){
-                //Test2.INSTANCE.setScreen(new PauseScreen());
-                Var.gamestatus=3;
+        if(Var.gamestatus == 1) {
+            batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
+            if (Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height) {
+                if (Gdx.input.isTouched()) {
+                    //Test2.INSTANCE.setScreen(new PauseScreen());
+                    Var.gamestatus = 3;
+                }
             }
         }
-
+        if(Var.gamestatus == 3) {
+            batch.draw(weiter, Var.Button_Pause_x-100, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
+            if (Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x-100 && Gdx.input.getX() > Var.Button_Pause_x-100 && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height) {
+                if (Gdx.input.isTouched()) {
+                    //Test2.INSTANCE.setScreen(new PauseScreen());
+                    Var.gamestatus = 3;
+                }
+            }
+        }
         //font.draw(batch, "" + SpeichernLesen.input, 0, Gdx.graphics.getHeight()-30);
 
 
