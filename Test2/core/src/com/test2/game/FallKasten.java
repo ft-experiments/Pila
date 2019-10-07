@@ -64,14 +64,16 @@ int art=0;
         Var.kleben=0;
     }
 
-    static void autocreate(int oft){
+
+
+   /* static void autocreate(int oft){
         e= new Timer();
 
             e.scheduleAtFixedRate(new TimerTask(){
 
                 @Override
                 public void run() {
-                    System.out.println("asdfasdfasdf");
+
 
                     FallKasten FK;
 
@@ -89,6 +91,25 @@ int art=0;
 
 
 
+
+
+}
+
+
+
+
+    */
+
+
+static void trigger(int Kastenx, int Kasteny) {
+        FallKasten FK;
+System.out.println("möglich");
+    if(Math.floor(Math.random() * Math.floor(3))==1) {
+        System.out.println("played");
+        FK = new FallKasten(Kastenx, Kasteny, (int) Math.floor((Math.random() * 8)));
+        Fallkasten.add(FK);
+
+    }
 
 }
 

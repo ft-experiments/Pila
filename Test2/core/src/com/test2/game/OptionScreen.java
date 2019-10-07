@@ -88,7 +88,7 @@ public class OptionScreen extends ScreenAdapter {
                 batch.draw(Touch, Var.Button_start_x, Var.Button_steuerung_y, Var.Button_steuerung_Width, Var.Button_steuerung_Height);
             }
 
-            System.out.println(Gdx.input.getY());
+            System.out.println(Var.steuerung);
 
             if(Gdx.input.justTouched()){
                 if(Var.steuerung==0){

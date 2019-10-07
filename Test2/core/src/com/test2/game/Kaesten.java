@@ -38,25 +38,26 @@ int o=0;
                     Ball.by = Ball.by * -1;
                 }
                 Ball.y -=2;
+
                 switch(K_art){
                     case 0:
-                        v = 0;
-                        break;
                     case 1:
-                        v = 0;
-                        break;
                     case 2:
                         v = 0;
+                        FallKasten.trigger(K_x, K_y);
                         break;
+
                     case 3:
                         o=o+1;
                         if(o>=2){
                             v = 0;
+                            FallKasten.trigger(K_x, K_y);
                         }
                         break;
                     case 4:
                         if(Var.ballmode==1){
                             v = 0;
+                            FallKasten.trigger(K_x, K_y);
                         }
                         break;
 
