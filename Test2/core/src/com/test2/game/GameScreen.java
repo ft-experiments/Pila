@@ -352,7 +352,7 @@ public class GameScreen extends ScreenAdapter {
             if (Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x-100 && Gdx.input.getX() > Var.Button_Pause_x-100 && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height) {
                 if (Gdx.input.isTouched()) {
                     //Test2.INSTANCE.setScreen(new PauseScreen());
-                    Var.gamestatus = 3;
+                    Var.gamestatus = 1;
                 }
             }
         }
