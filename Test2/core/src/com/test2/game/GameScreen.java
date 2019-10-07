@@ -131,42 +131,41 @@ public class GameScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
         SpeichernLesen.speichern();
-       // SpeichernLesen.lesen();
-        if(Var.klebt==true){
+        // SpeichernLesen.lesen();
+        if (Var.klebt == true) {
             klebt();
         }
 
         FallKasten.de = delta;
 
-        if(Var.gamestatus==0){
-            if(DoppelKlick.DoppelKlick()==1){
-                new Ball((int)(Var.r_x+Var.r_l/2)-Ball.r, (int)(Var.r_y+100), 15, 0f, -15f, 0.0f, 1f);
+        if (Var.gamestatus == 0) {
+            if (DoppelKlick.DoppelKlick() == 1) {
+                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
 
-                Var.gamestatus=1;
+                Var.gamestatus = 1;
 
 
             }
 
-
-
-
         }
+
+        if (Var.gamestatus != 3){
+            if (Var.steuerung == 0) {
+                if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+                    if (Var.r_x > 0) {
+                        Var.r_x -= Var.r_speed * delta;
+
+                    }
+                }
+                if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+                    if (Var.r_x < Gdx.graphics.getWidth() - Var.r_l) {
+                        Var.r_x += Var.r_speed * delta;
+                    }
+                }
+            }
+
+
         if (Var.steuerung == 0) {
-            if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-                if (Var.r_x > 0) {
-                    Var.r_x -= Var.r_speed * delta;
-
-                }
-            }
-            if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-                if (Var.r_x < Gdx.graphics.getWidth() - Var.r_l) {
-                    Var.r_x += Var.r_speed * delta;
-                }
-            }
-        }
-
-
-        if (Var.steuerung == 0){
             if (Gdx.input.isTouched() == true) {
               /*  //System.out.println(Gdx.input.getX());
 
@@ -180,16 +179,17 @@ public class GameScreen extends ScreenAdapter {
                         Var.r_x += Var.r_speed * delta;
                     }
                 }*/
-                if (Gdx.input.getX() - Var.r_l/2 > 0 &&Gdx.input.getX() - Var.r_l/2 < Gdx.graphics.getWidth() - Var.r_l) {
-                    Var.r_x = Gdx.input.getX() - Var.r_l/2;
+                if (Gdx.input.getX() - Var.r_l / 2 > 0 && Gdx.input.getX() - Var.r_l / 2 < Gdx.graphics.getWidth() - Var.r_l) {
+                    Var.r_x = Gdx.input.getX() - Var.r_l / 2;
                 }
             }
-    }
-        if(Var.steuerung==1) {
+        }
+        if (Var.steuerung == 1) {
             if (Var.r_x > 0 || Var.r_x < Gdx.graphics.getWidth() - Var.r_l) {
                 Var.r_x += Gdx.input.getAccelerometerX() * delta * 300 * -1;
             }
         }
+    }
 
 
         if(Ball.x > Var.r_x && Ball.y < Var.r_y+40 && Var.r_x+Var.r_l > Ball.x){
@@ -234,6 +234,24 @@ public class GameScreen extends ScreenAdapter {
             Gdx.input.vibrate(100);
         }*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
@@ -247,7 +265,9 @@ public class GameScreen extends ScreenAdapter {
             Var.i=i;
             FallKasten FK;
             FK =FallKasten.Fallkasten.get(i);
-            FK.update();
+            if(Var.gamestatus==1) {
+                FK.update();
+            }
             FK.check();
             if(FK.check()==1 && FK.art !=0){
                 switch (FK.art) {
@@ -310,6 +330,7 @@ public class GameScreen extends ScreenAdapter {
         if(Var.kleben==1)   {
             batch.draw(paddelklebimg, Var.r_x, Var.r_y, Var.r_l, 30);
         }
+
         batch.setColor(1,1,1,0.5f);
         batch.draw(status_bar,0,Gdx.graphics.getHeight()-50,Gdx.graphics.getWidth(),50);
         batch.setColor(1,1,1,1f);
@@ -320,7 +341,8 @@ public class GameScreen extends ScreenAdapter {
         batch.draw(pause,Var.Button_Pause_x,Var.Button_Pause_y,Var.Button_Pause_Width,Var.Button_Pause_Height);
         if(Gdx.input.getX() < Var.Button_Pause_Width+Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight()-Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight()-Var.Button_Pause_y-Var.Button_Pause_Height){
             if(Gdx.input.isTouched()){
-                Test2.INSTANCE.setScreen(new PauseScreen());
+                //Test2.INSTANCE.setScreen(new PauseScreen());
+                Var.gamestatus=3;
             }
         }
 
@@ -382,6 +404,13 @@ public class GameScreen extends ScreenAdapter {
         batch.end();
 
 
+
+
+
+
+
+
+
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
 
         shapeRenderer.setColor(1,1,0,0f);
@@ -389,10 +418,12 @@ public class GameScreen extends ScreenAdapter {
 
         //shapeRenderer.rect(Var.r_x,20,Var.r_l,20);
         if(Var.ballupdate==true) {
-            Ball.update();
+            if(Var.gamestatus==1) {
+                Ball.update();
+            }
         }
 
-        if(Var.gamestatus==1) {
+        if(true) {
             switch (Var.ballmode) {
                 case 0:
                 shapeRenderer.setColor(1,1,0,0);

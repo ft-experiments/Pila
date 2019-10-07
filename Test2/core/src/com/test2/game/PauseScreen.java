@@ -20,6 +20,7 @@ public class PauseScreen extends ScreenAdapter {
     Texture status_bar;
     ShapeRenderer shapeRenderer;
     BitmapFont font;
+    Texture weiter;
 
     public PauseScreen() {
 
@@ -27,6 +28,7 @@ public class PauseScreen extends ScreenAdapter {
         font = new BitmapFont();
         shapeRenderer = new ShapeRenderer();
         status_bar = new Texture("statusbar.png");
+        weiter = new Texture("Weiter.png");
     }
 
     @Override
@@ -46,6 +48,12 @@ public class PauseScreen extends ScreenAdapter {
         font.getData().setScale(3);
         font.draw(batch, "Pause", Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()-5);
 
+        batch.draw(weiter,Var.Button_Pause_x,Var.Button_Pause_y,Var.Button_Pause_Width,Var.Button_Pause_Height);
+        if(Gdx.input.getX() < Var.Button_Pause_Width+Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight()-Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight()-Var.Button_Pause_y-Var.Button_Pause_Height){
+            if(Gdx.input.isTouched()){
+                Test2.INSTANCE.setScreen(new OptionScreen());
+            }
+        }
 
 
 
