@@ -1,5 +1,5 @@
 package com.test2.game;
-
+/////hintergrund geändert das ist nicht sichtbar, weil ich keinen dateiname werändert habe oder hinzugefügt habe das krigt github nähmlich nicht mit
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
