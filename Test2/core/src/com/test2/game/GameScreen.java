@@ -114,10 +114,6 @@ public class GameScreen extends ScreenAdapter {
 
     }
 
-    void statusBar(){
-
-
-    }
 
     void klebt(){
 
@@ -240,9 +236,7 @@ public class GameScreen extends ScreenAdapter {
 
         */
 
-        if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)){
-            Gdx.app.exit();
-        }
+
         /*if(Gdx.input.isTouched()) {
             Gdx.input.vibrate(100);
         }*/
