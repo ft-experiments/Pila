@@ -34,3 +34,4 @@
 
 //TODO Unschärfe effekt beim Pausieren
 //TODO Ablaufzeit der Objekte mit cool down oben links
+//TODO countdown nach beenden der Pause
