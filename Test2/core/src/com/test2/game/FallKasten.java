@@ -64,7 +64,7 @@ public class FallKasten {
     static void trigger(int Kastenx, int Kasteny) {
         FallKasten FK;
         System.out.println("möglich");
-        if (Math.floor(Math.random() * Math.floor(3)) == 3) {
+        if (Math.floor(Math.random() * Math.floor(3)) == 1) {
             System.out.println("placed");
             FK = new FallKasten(Kastenx, Kasteny, (int) Math.floor((Math.random() * 8)));
             Fallkasten.add(FK);
