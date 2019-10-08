@@ -18,15 +18,15 @@ public class Var {
     static int p=0;
     static int steuerung = 0;
 
-    static int Button_start_Height = 100;
-    static int Button_start_Width = 200;
+    static int Button_start_Height = 300;
+    static int Button_start_Width = 600;
     static int Button_start_x = Gdx.graphics.getWidth()/2-Button_start_Width/2;
     static int Button_start_y = 300;
 
     static int Button_steuerung_Height = 100;
     static int Button_steuerung_Width = 200;
     static int Button_steuerung_x = Gdx.graphics.getWidth()/2-Button_steuerung_Width/2;
-    static int Button_steuerung_y = 500;
+    static int Button_steuerung_y = 800;
 
     static int Button_Pause_Height = 50;
     static int Button_Pause_Width = 50;

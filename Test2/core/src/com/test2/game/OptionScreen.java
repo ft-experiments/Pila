@@ -20,6 +20,7 @@ public class OptionScreen extends ScreenAdapter {
     Texture Touch;
     Texture Gyro;
     ShapeRenderer shapeRenderer;
+    Texture hintergrund2;
     BitmapFont font;
 
     public OptionScreen() {
@@ -32,6 +33,7 @@ public class OptionScreen extends ScreenAdapter {
         startge = new Texture("startge.png");
         Touch = new Texture("Touch.png");
         Gyro = new Texture("Gyro.png");
+        hintergrund2 = new Texture("hintergrund2.jpg");
         shapeRenderer = new ShapeRenderer();
     }
 
@@ -51,6 +53,7 @@ public class OptionScreen extends ScreenAdapter {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
+        batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         font.getData().setScale(5);
 
         font.draw(batch, "Optionen" , Gdx.graphics.getWidth()/2-200, Gdx.graphics.getHeight()-30);

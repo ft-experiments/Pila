@@ -19,6 +19,7 @@ public class GameOverScreen extends ScreenAdapter {
     Texture Gyro;
     ShapeRenderer shapeRenderer;
     BitmapFont font;
+    Texture hintergrund2;
 
     public GameOverScreen() {
 
@@ -29,6 +30,7 @@ public class GameOverScreen extends ScreenAdapter {
         startge = new Texture("startge.png");
         Touch = new Texture("Touch.png");
         Gyro = new Texture("Gyro.png");
+        hintergrund2 = new Texture("hintergrund2.jpg");
         shapeRenderer = new ShapeRenderer();
     }
 
@@ -43,6 +45,7 @@ public class GameOverScreen extends ScreenAdapter {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
+        batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         font.getData().setScale(8);
         font.draw(batch, "Game Over" , Gdx.graphics.getWidth()/2-300, Gdx.graphics.getHeight()/2+200);
 
