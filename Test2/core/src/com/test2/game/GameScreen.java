@@ -101,7 +101,7 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-    FallKasten.autocreate(10000);
+   // FallKasten.autocreate(10000);
 
 
 
@@ -365,6 +365,7 @@ public class GameScreen extends ScreenAdapter {
         for(int i=0;i<Level.kisten.size();i=i+1) {
             Kaesten k;
             k = Level.kisten.get(i);
+
 
 
 
