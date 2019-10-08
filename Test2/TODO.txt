@@ -8,8 +8,7 @@
 /////////////////////////////////////////////////
 
 
-//TODO Wenn man ein klebe Paddel hat wird die Geschwidigkeits änderung ignoriert
-//TODO Wenn man das level neustartet stimmt hat man im ersten level pllötzlich in leben mehr
+//TODO Wenn man das level neustartet stimmt hat man im ersten level pllötzlich ein leben mehr
 //TODO Ball wird einfach so immer schneller
 
 

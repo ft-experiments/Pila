@@ -97,7 +97,7 @@ public class GameScreen extends ScreenAdapter {
 
                 feuerball.setRegion(regions[0][frame]);
             }
-        },0, 10);
+        },0, 100);
 
 
 
@@ -114,6 +114,7 @@ public class GameScreen extends ScreenAdapter {
     }
 
     void klebt(){
+        float bys=Ball.by;
 
 
 
@@ -123,7 +124,7 @@ public class GameScreen extends ScreenAdapter {
 
         if(DoppelKlick.DoppelKlick()==1) {
             Ball.bx=0;
-            Ball.by=-15;
+            Ball.by=-bys;
             Var.klebt=false;
             Var.ballupdate=true;
         }
