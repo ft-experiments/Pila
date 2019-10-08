@@ -338,7 +338,8 @@ public class GameScreen extends ScreenAdapter {
         batch.draw(status_bar,0,Gdx.graphics.getHeight()-50,Gdx.graphics.getWidth(),50);
         batch.setColor(1,1,1,1f);
         font.getData().setScale(3);
-        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()/2, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Level:" + Level.Le, Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
         font.getData().setScale(3);
         if(Var.gamestatus == 1) {
             batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
