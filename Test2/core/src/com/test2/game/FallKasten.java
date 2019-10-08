@@ -40,7 +40,7 @@ public class FallKasten {
     int check() {
         int k = 0;
 
-        if (y < Var.r_y && x > Var.r_x && x < Var.r_x + Var.r_l) {
+        if (y>Var.r_y-50&&y < Var.r_y && x > Var.r_x && x < Var.r_x + Var.r_l) {
             k = 1;
 
         }
@@ -64,7 +64,7 @@ public class FallKasten {
     static void trigger(int Kastenx, int Kasteny) {
         FallKasten FK;
         System.out.println("möglich");
-        if (Math.floor(Math.random() * Math.floor(3)) == 1) {
+        if (Math.floor(Math.random() * Math.floor(3)) != -10) {
             System.out.println("placed");
             FK = new FallKasten(Kastenx, Kasteny, (int) Math.floor((Math.random() * 8)));
             Fallkasten.add(FK);
