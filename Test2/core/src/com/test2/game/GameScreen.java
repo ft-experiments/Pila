@@ -77,7 +77,7 @@ public class GameScreen extends ScreenAdapter {
 
         shapeRenderer = new ShapeRenderer();
 
-        Level.LevelCreate(Level.Le);
+        Level.LevelCreate(1);
 
         imgfeuerball =new Texture("ballfeueranimation.png");
         final TextureRegion[][] regions = TextureRegion.split(imgfeuerball, 100,100);

@@ -94,17 +94,17 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
                 i=0;
                 a=0;
                 j=0;
-                while(j<15) {
+                while(j<10) {
                     i=0;
                     while (i < 12) {
                         if(j==0){
-                            Level.kisten.add(new Kaesten(i * Gdx.graphics.getWidth() / 12, Gdx.graphics.getHeight() - 300 + j * 50, Gdx.graphics.getWidth() / 12, 50, 3));
+                            Level.kisten.add(new Kaesten(i * Gdx.graphics.getWidth() / 12, Gdx.graphics.getHeight() - 500 + j * 50, Gdx.graphics.getWidth() / 12, 50, 3));
                         }else {
-                            Level.kisten.add(new Kaesten(i * Gdx.graphics.getWidth() / 12, Gdx.graphics.getHeight() - 300 + j * 50, Gdx.graphics.getWidth() / 12, 50, (int) Math.floor((Math.random() * 3))));
+                            Level.kisten.add(new Kaesten(i * Gdx.graphics.getWidth() / 12, Gdx.graphics.getHeight() - 500 + j * 50, Gdx.graphics.getWidth() / 12, 50, (int) Math.floor((Math.random() * 3))));
                         }
                         i = i + 1;
                     }
-                    j=j+3;
+                    j=j+2;
                 }
                 break;
             case 5:
