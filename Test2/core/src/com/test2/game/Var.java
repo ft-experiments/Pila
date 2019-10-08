@@ -2,6 +2,9 @@ package com.test2.game;
 
 import com.badlogic.gdx.Gdx;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class Var {
@@ -43,6 +46,10 @@ public class Var {
     static int visibl=0;
 
      int device = 0;
+
+
+
+
 
 
 

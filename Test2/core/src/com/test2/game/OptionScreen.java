@@ -3,10 +3,12 @@ package com.test2.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.assets.loaders.BitmapFontLoader;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 import java.awt.*;
@@ -21,9 +23,10 @@ public class OptionScreen extends ScreenAdapter {
     BitmapFont font;
 
     public OptionScreen() {
-
         batch = new SpriteBatch();
         font = new BitmapFont();
+
+
 
         img = new Texture("start.png");
         startge = new Texture("startge.png");
@@ -49,6 +52,7 @@ public class OptionScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         font.getData().setScale(5);
+
         font.draw(batch, "Optionen" , Gdx.graphics.getWidth()/2-200, Gdx.graphics.getHeight()-30);
 
 

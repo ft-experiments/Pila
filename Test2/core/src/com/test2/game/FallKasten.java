@@ -74,10 +74,10 @@ int art=0;
                     System.out.println("asdfasdfasdf");
 
                     FallKasten FK;
-
-                    FK = new FallKasten(((int) Math.floor((Math.random() * (Gdx.graphics.getWidth()-100)))),Gdx.graphics.getHeight(),   (int)Math.floor((Math.random() * 8)) );//(int)Math.floor((Math.random() * 6))
-                    Fallkasten.add(FK);
-
+                    if(Var.gamestatus==1) {
+                        FK = new FallKasten(((int) Math.floor((Math.random() * (Gdx.graphics.getWidth() - 100)))), Gdx.graphics.getHeight(), (int) Math.floor((Math.random() * 8)));//(int)Math.floor((Math.random() * 6))
+                        Fallkasten.add(FK);
+                    }
 
 
 

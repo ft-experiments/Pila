@@ -76,7 +76,7 @@ public class GameScreen extends ScreenAdapter {
 
 
         shapeRenderer = new ShapeRenderer();
-        
+
         Level.LevelCreate(Level.Le);
 
         imgfeuerball =new Texture("ballfeueranimation.png");
@@ -101,7 +101,7 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-        FallKasten.autocreate(10000);
+    FallKasten.autocreate(10000);
 
 
 
