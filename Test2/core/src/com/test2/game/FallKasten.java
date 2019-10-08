@@ -53,7 +53,6 @@ int art=0;
         }
 
 
-        
 
 
         return k;
