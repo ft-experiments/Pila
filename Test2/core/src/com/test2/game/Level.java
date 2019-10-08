@@ -77,7 +77,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
                 while(i<5) {
                     j = 0;
                     while (j < 0-a) {
-                        Level.kisten.add(new Kaesten(j * Gdx.graphics.getWidth() / 15,Gdx.graphics.getHeight()-i*50-900, Gdx.graphics.getWidth() / 15, 50, (int) Math.floor((Math.random() * 3))));
+                        Level.kisten.add(new Kaesten(j * Gdx.graphics.getWidth() / 15,Gdx.graphics.getHeight()-i*50-500, Gdx.graphics.getWidth() / 15, 50, (int) Math.floor((Math.random() * 3))));
                         j = j + 1;
                     }
                     i=i+1;
