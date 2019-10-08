@@ -44,7 +44,7 @@ public class FallKasten {
             k = 1;
 
         }
-        if (y < Var.r_y - 200) {
+        if (y < Var.r_y - 400) {
             art = 0;
 
 
