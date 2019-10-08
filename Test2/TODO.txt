@@ -10,6 +10,7 @@
 
 //TODO Wenn man langsame Geschwindigkeit hat und einer Feuerball bekommt wird das Resetet
 //TODO Wenn man ein klebe Paddel hat wird die Geschwidigkeits änderung ignoriert
+//TODO Wenn man das level neustartet stimmt hat man im ersten level pllötzlich in leben mehr
 
 
 
