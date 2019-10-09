@@ -22,6 +22,8 @@ public class OptionScreen extends ScreenAdapter {
     ShapeRenderer shapeRenderer;
     Texture hintergrund2;
     BitmapFont font;
+    Texture switchon;
+    Texture switchoff;
     int u=0;
 
     public OptionScreen() {
@@ -35,7 +37,17 @@ public class OptionScreen extends ScreenAdapter {
         Touch = new Texture("Touch.png");
         Gyro = new Texture("Gyro.png");
         hintergrund2 = new Texture("hintergrund2.jpg");
+        switchon = new Texture("switchon.png");
+        switchoff = new Texture("switchoff.png");
         shapeRenderer = new ShapeRenderer();
+
+
+
+        Switch SW;
+        SW = new Switch(Gdx.graphics.getWidth()/2-100,1200,200,100,1);
+        Switch.switchs.add(SW);
+        SW = new Switch(Gdx.graphics.getWidth()/2-100,1400,200,100,0);
+        Switch.switchs.add(SW);
 
     }
 
@@ -56,6 +68,29 @@ public class OptionScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+
+
+
+        for(int i=0;i<Switch.switchs.size();i=i+1) {
+            Switch SW;
+            SW = Switch.switchs.get(i);
+            SW.update();
+            System.out.println(SW.status);
+            if (SW.status == 0) {
+                batch.draw(switchoff, SW.x, SW.y, SW.w, SW.h);
+            }
+            if (SW.status == 1) {
+                batch.draw(switchon, SW.x, SW.y, SW.w, SW.h);
+            }
+        }
+
+
+
+
+
+
+
         font.getData().setScale(5);
 
         font.draw(batch, "Optionen" , Gdx.graphics.getWidth()/2-200, Gdx.graphics.getHeight()-30);
