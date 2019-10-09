@@ -448,6 +448,12 @@ public class GameScreen extends ScreenAdapter {
             Level.Levelup();
         }
 
+        if(Var.gamestatus == 3){
+            batch.setColor(1,1,0,0.8f);
+            batch.draw(status_bar,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.setColor(1,1,1,1f);
+        }
+
 
         batch.end();
 
