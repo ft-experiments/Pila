@@ -139,8 +139,6 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
     static void Levelup() {
         Level.kisten.clear();
-        System.out.println("fertig");
-        Var.leben = 4;
         Ball.dispose();
         Var.gamestatus=0;
         Level.LevelCreate(Le+1);

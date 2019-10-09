@@ -481,9 +481,7 @@ public class GameScreen extends ScreenAdapter {
 
         if(Var.leben <= 0){
             Ball.dispose();
-            Var.gamestatus = 3;
-            Var.leben=3;
-            Level.kisten.clear();
+            Level.dispose();
             Test2.INSTANCE.setScreen(new GameOverScreen());
 
         }

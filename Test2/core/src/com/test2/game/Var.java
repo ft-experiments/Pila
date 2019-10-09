@@ -14,7 +14,7 @@ public class Var {
     static float r_l = 200;
     static float s=0.05f;
     static int points = 0;
-    static int leben=3;
+    static int leben=0;
     static int p=0;
     static int steuerung = 0;
 
