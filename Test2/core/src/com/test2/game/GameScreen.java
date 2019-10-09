@@ -215,7 +215,9 @@ public class GameScreen extends ScreenAdapter {
                 Var.klebt=true;
                 Var.ballklebposition=(int)Ball.x - (int)Var.r_x;
             }
-            Gdx.input.vibrate(50);
+            if(Var.beiballberurungvibrieren==1) {
+                Gdx.input.vibrate(50);
+            }
             System.out.println((Ball.x-Var.r_x)-Var.r_l/2);
             Ball.bx -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;
             Var.points += 1;

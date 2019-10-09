@@ -31,20 +31,28 @@ public class Ball {
         if (y > Gdx.graphics.getHeight()) {
             by=by * -1;
             y=y-1;
-            Gdx.input.vibrate(50);
+            if(Var.beiballberurungvibrieren==1) {
+                Gdx.input.vibrate(50);
+            }
 
         }
         if (y<0) {
             by=by * -1;
-            Gdx.input.vibrate(50);
+            if(Var.beiballberurungvibrieren==1) {
+                Gdx.input.vibrate(50);
+            }
         }
         if (x>Gdx.graphics.getWidth()) {
             bx = bx*-1;
-            Gdx.input.vibrate(50);
+            if(Var.beiballberurungvibrieren==1) {
+                Gdx.input.vibrate(50);
+            }
         }
         if (x<0) {
             bx = bx*-1;
-            Gdx.input.vibrate(50);
+            if(Var.beiballberurungvibrieren==1) {
+                Gdx.input.vibrate(50);
+            }
         }
 
     }

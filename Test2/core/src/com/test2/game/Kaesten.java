@@ -63,7 +63,9 @@ int o=0;
 
                 }
 
-                Gdx.input.vibrate(50);
+                if(Var.beiballberurungvibrieren==1) {
+                    Gdx.input.vibrate(50);
+                }
 
 
             }

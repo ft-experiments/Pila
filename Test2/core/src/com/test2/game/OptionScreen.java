@@ -71,19 +71,37 @@ public class OptionScreen extends ScreenAdapter {
 
 
 
-
+/*
         for(int i=0;i<Switch.switchs.size();i=i+1) {
             Switch SW;
             SW = Switch.switchs.get(i);
             SW.update();
             System.out.println(SW.status);
+
+            font.getData().setScale(4);
+            font.draw(batch, "Vibrieren" , SW.x-400, SW.y+SW.h/2);
             if (SW.status == 0) {
                 batch.draw(switchoff, SW.x, SW.y, SW.w, SW.h);
             }
             if (SW.status == 1) {
                 batch.draw(switchon, SW.x, SW.y, SW.w, SW.h);
             }
+        }*/
+
+        Switch SW;
+        SW = Switch.switchs.get(0);
+        SW.update();
+        font.getData().setScale(4);
+        font.draw(batch, "Vibrieren" , SW.x-400, SW.y+SW.h/2);
+        if (SW.status == 0) {
+            batch.draw(switchoff, SW.x, SW.y, SW.w, SW.h);
+            Var.beiballberurungvibrieren=0;
         }
+        if (SW.status == 1) {
+            batch.draw(switchon, SW.x, SW.y, SW.w, SW.h);
+            Var.beiballberurungvibrieren=1;
+        }
+
 
 
 
