@@ -147,5 +147,9 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
     }
 
+    static void dispose(){
+        kisten.clear();
+    }
+
 
 }

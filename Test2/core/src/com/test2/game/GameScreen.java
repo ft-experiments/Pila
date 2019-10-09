@@ -40,6 +40,7 @@ public class GameScreen extends ScreenAdapter {
     Texture hintergrund2;
     Texture pause;
     Texture weiter;
+    Texture einstellungen;
     int u=0;
     int frame = 0;
     Texture imgfeuerball;
@@ -72,12 +73,14 @@ public class GameScreen extends ScreenAdapter {
         hintergrund2 = new Texture("hintergrund2.jpg");
         pause = new Texture("Pause.png");
         weiter = new Texture("Weiter.png");
+        einstellungen = new Texture("einstellungen.png");
 
 
 
         shapeRenderer = new ShapeRenderer();
-
-        Level.LevelCreate(1);
+        if(Var.gamestatus==0) {
+            Level.LevelCreate(1);
+        }
 
         imgfeuerball =new Texture("ballfeueranimation.png");
         final TextureRegion[][] regions = TextureRegion.split(imgfeuerball, 100,100);
@@ -372,6 +375,14 @@ public class GameScreen extends ScreenAdapter {
             batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
 
+        if(Gdx.input.isTouched()) {
+            if (Gdx.input.getX() < Var.Button_einstellungen_Width + Var.Button_einstellungen_x && Gdx.input.getX() > Var.Button_einstellungen_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_einstellungen_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_einstellungen_y - Var.Button_einstellungen_Height) {
+                Var.gamestatus=3;
+                Test2.INSTANCE.setScreen(new OptionScreen());
+            }
+        }
+        batch.draw(einstellungen, Var.Button_einstellungen_x, Var.Button_einstellungen_y, Var.Button_einstellungen_Width, Var.Button_einstellungen_Height);
+
 
 
 
@@ -485,6 +496,26 @@ public class GameScreen extends ScreenAdapter {
         img.dispose();
         shapeRenderer.dispose();
         font.dispose();
+        block_l.dispose();
+        block_rot.dispose();
+        block_gruen.dispose();
+        block_blau.dispose();
+        paddelimg.dispose();
+        block_k.dispose();
+        block_kleber.dispose();
+        hintergrund.dispose();
+        block_feuer.dispose();
+        paddelklebimg.dispose();
+        block_schneller.dispose();
+        block_langsamer.dispose();
+        block_2mal.dispose();
+        block_unzerstoerbar.dispose();
+        status_bar.dispose();
+        hintergrund2.dispose();
+        pause.dispose();
+        weiter.dispose();
+        einstellungen.dispose();
+
     }
 
     @Override
