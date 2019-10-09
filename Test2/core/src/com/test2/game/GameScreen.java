@@ -42,6 +42,7 @@ public class GameScreen extends ScreenAdapter {
     Texture weiter;
     Texture einstellungen;
     int u=0;
+    static int gamestatuspausesave= -1;
     int frame = 0;
     Texture imgfeuerball;
     Sprite feuerball;
@@ -138,6 +139,7 @@ public class GameScreen extends ScreenAdapter {
     public void render(float delta) {
         SpeichernLesen.speichern();
         // SpeichernLesen.lesen();
+        System.out.println("gamestatus "+ Var.gamestatus);
         if (Var.klebt == true) {
             klebt();
         }
@@ -361,7 +363,11 @@ public class GameScreen extends ScreenAdapter {
                     if (Var.gamestatus == 1) {
                         Var.gamestatus = 3;
                     } else if (Var.gamestatus == 3) {
-                        Var.gamestatus = 1;
+                        if(gamestatuspausesave==0){
+                            Var.gamestatus=0;
+                        }else {
+                            Var.gamestatus = 1;
+                        }
                     }
                     u=0;
                 }
@@ -377,6 +383,9 @@ public class GameScreen extends ScreenAdapter {
 
         if(Gdx.input.isTouched()) {
             if (Gdx.input.getX() < Var.Button_einstellungen_Width + Var.Button_einstellungen_x && Gdx.input.getX() > Var.Button_einstellungen_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_einstellungen_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_einstellungen_y - Var.Button_einstellungen_Height) {
+                if(Var.gamestatus==0){
+                    gamestatuspausesave=0;
+                }
                 Var.gamestatus=3;
                 Test2.INSTANCE.setScreen(new OptionScreen());
             }
