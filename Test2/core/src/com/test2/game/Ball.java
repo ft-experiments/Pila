@@ -28,7 +28,7 @@ public class Ball {
         x=x-bx;
         y=y-by;
         //System.out.println(Gdx.graphics.getWidth());
-        if (y > Gdx.graphics.getHeight()) {
+        if (y > Gdx.graphics.getHeight()-r*2-50) {
             by=by * -1;
             y=y-1;
             if(Var.beiballberurungvibrieren==1) {
@@ -42,7 +42,7 @@ public class Ball {
                 Gdx.input.vibrate(50);
             }
         }
-        if (x>Gdx.graphics.getWidth()) {
+        if (x>Gdx.graphics.getWidth()-r*2) {
             bx = bx*-1;
             if(Var.beiballberurungvibrieren==1) {
                 Gdx.input.vibrate(50);

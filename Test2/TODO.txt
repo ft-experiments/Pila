@@ -9,7 +9,7 @@
 
 
 //TODO Wenn man das level neustartet stimmt hat man im ersten level pllötzlich ein leben mehr
-//TODO Ball wird einfach so immer schneller
+//TODO Ball wird einfach so immer schneller "meinst du? ist mir noch nicht aufgefallen"
 
 
 ///////////////////////////////////////////////
