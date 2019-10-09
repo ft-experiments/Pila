@@ -40,7 +40,7 @@ public class FallKasten {
     int check() {
         int k = 0;
 
-        if (y>Var.r_y-50&&y < Var.r_y && x > Var.r_x && x < Var.r_x + Var.r_l) {
+        if (y>Var.r_y-50&&y < Var.r_y && x > Var.r_x-100 && x < Var.r_x + Var.r_l) {
             k = 1;
 
         }
