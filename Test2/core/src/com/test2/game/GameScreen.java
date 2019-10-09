@@ -40,7 +40,7 @@ public class GameScreen extends ScreenAdapter {
     Texture hintergrund2;
     Texture pause;
     Texture weiter;
-
+    int u=0;
     int frame = 0;
     Texture imgfeuerball;
     Sprite feuerball;
@@ -348,6 +348,31 @@ public class GameScreen extends ScreenAdapter {
         font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
         font.draw(batch, "Level:" + Level.Le, Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
         font.getData().setScale(3);
+
+        if(Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height)
+        {
+            if(Gdx.input.isTouched()){
+                u=1;
+            }else{
+                if(u==1 && !Gdx.input.isTouched()) {
+                    if (Var.gamestatus == 1) {
+                        Var.gamestatus = 3;
+                    } else if (Var.gamestatus == 3) {
+                        Var.gamestatus = 1;
+                    }
+                    u=0;
+                }
+
+            }
+        }
+        if(Var.gamestatus == 1) {
+            batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
+        }
+        if(Var.gamestatus == 3){
+            batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
+        }
+
+        /*
         if(Var.gamestatus == 1) {
             batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
             if (Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height) {
@@ -367,7 +392,7 @@ public class GameScreen extends ScreenAdapter {
             }
         }
         //font.draw(batch, "" + SpeichernLesen.input, 0, Gdx.graphics.getHeight()-30);
-
+*/
 
 
         int b_zahl=0;
