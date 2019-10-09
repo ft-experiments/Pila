@@ -372,27 +372,7 @@ public class GameScreen extends ScreenAdapter {
             batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
 
-        /*
-        if(Var.gamestatus == 1) {
-            batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
-            if (Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height) {
-                if (Gdx.input.isTouched()) {
-                    //Test2.INSTANCE.setScreen(new PauseScreen());
-                    Var.gamestatus = 3;
-                }
-            }
-        }
-        if(Var.gamestatus == 3) {
-            batch.draw(weiter, Var.Button_Pause_x-100, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
-            if (Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x-100 && Gdx.input.getX() > Var.Button_Pause_x-100 && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height) {
-                if (Gdx.input.isTouched()) {
-                    //Test2.INSTANCE.setScreen(new PauseScreen());
-                    Var.gamestatus = 1;
-                }
-            }
-        }
-        //font.draw(batch, "" + SpeichernLesen.input, 0, Gdx.graphics.getHeight()-30);
-*/
+
 
 
         int b_zahl=0;
