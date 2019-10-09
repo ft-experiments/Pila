@@ -22,6 +22,7 @@ public class OptionScreen extends ScreenAdapter {
     ShapeRenderer shapeRenderer;
     Texture hintergrund2;
     BitmapFont font;
+    int u=0;
 
     public OptionScreen() {
         batch = new SpriteBatch();
@@ -35,6 +36,7 @@ public class OptionScreen extends ScreenAdapter {
         Gyro = new Texture("Gyro.png");
         hintergrund2 = new Texture("hintergrund2.jpg");
         shapeRenderer = new ShapeRenderer();
+
     }
 
     @Override
@@ -83,38 +85,37 @@ public class OptionScreen extends ScreenAdapter {
 
 
 
-
+System.out.println(Gdx.input.isTouched());
         if(Gdx.input.getX() < Var.Button_steuerung_Width+Var.Button_steuerung_x && Gdx.input.getX() > Var.Button_steuerung_x && Gdx.input.getY() < Gdx.graphics.getHeight()-Var.Button_steuerung_y && Gdx.input.getY() > Gdx.graphics.getHeight()-Var.Button_steuerung_y-Var.Button_steuerung_Height)
         {
 
 
-            if(Var.steuerung == 0) {
-                batch.draw(Gyro, Var.Button_start_x, Var.Button_steuerung_y, Var.Button_steuerung_Width, Var.Button_steuerung_Height);
-            }
-            if(Var.steuerung == 1) {
-                batch.draw(Touch, Var.Button_start_x, Var.Button_steuerung_y, Var.Button_steuerung_Width, Var.Button_steuerung_Height);
-            }
-
             System.out.println(Var.steuerung);
 
-            if(Gdx.input.justTouched()){
-                if(Var.steuerung==0){
-                    Var.steuerung=1;
-                    Var.Button_steuerung_x+=300;
-                }else if(Var.steuerung==1){
-                    Var.steuerung=0;
-                    Var.Button_steuerung_x-=300;
+            if(Gdx.input.isTouched()){
+                u=1;
+
+            }else{
+                if(u==1 && !Gdx.input.isTouched()) {
+                    if (Var.steuerung == 0) {
+                        Var.steuerung = 1;
+                        //Var.Button_steuerung_x+=300;
+                    } else if (Var.steuerung == 1) {
+                        Var.steuerung = 0;
+                        //Var.Button_steuerung_x-=300;
+                    }
+                    u=0;
                 }
 
             }
-        }else{
+        }
             if(Var.steuerung == 0) {
                 batch.draw(Touch, Var.Button_steuerung_x, Var.Button_steuerung_y, Var.Button_steuerung_Width, Var.Button_steuerung_Height);
             }
             if(Var.steuerung == 1){
                 batch.draw(Gyro, Var.Button_steuerung_x, Var.Button_steuerung_y, Var.Button_steuerung_Width, Var.Button_steuerung_Height);
             }
-        }
+
 
 
         batch.end();

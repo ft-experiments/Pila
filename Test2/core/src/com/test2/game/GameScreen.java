@@ -153,7 +153,8 @@ public class GameScreen extends ScreenAdapter {
         }
 
         if (Var.gamestatus != 3){
-            if (Var.steuerung == 0) {
+
+            /*if (Var.steuerung == 0) {
                 if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
                     if (Var.r_x > 0) {
                         Var.r_x -= Var.r_speed * delta;
@@ -166,7 +167,7 @@ public class GameScreen extends ScreenAdapter {
                     }
                 }
             }
-
+*/
 
         if (Var.steuerung == 0) {
             if (Gdx.input.isTouched() == true) {
@@ -188,9 +189,15 @@ public class GameScreen extends ScreenAdapter {
             }
         }
         if (Var.steuerung == 1) {
-            if (Var.r_x > 0 || Var.r_x < Gdx.graphics.getWidth() - Var.r_l) {
+
                 Var.r_x += Gdx.input.getAccelerometerX() * delta * 300 * -1;
+                if(Var.r_x < 0){
+                    Var.r_x=0;
+                }
+            if(Var.r_x > Gdx.graphics.getWidth()-Var.r_l){
+                Var.r_x=Gdx.graphics.getWidth()-Var.r_l;
             }
+
         }
     }
 
