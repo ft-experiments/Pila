@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import jdk.javadoc.internal.tool.Start;
 
 
 import java.util.Timer;
@@ -50,6 +51,8 @@ public class GameScreen extends ScreenAdapter {
 
 
 
+
+
     //Kaesten k;
     public GameScreen() {
         INSTANCE = this;
@@ -77,6 +80,12 @@ public class GameScreen extends ScreenAdapter {
         einstellungen = new Texture("einstellungen.png");
 
 
+        if(!Var.run) { //Falls die App gerade gestartet wurde
+            Var.run = true;
+            Test2.INSTANCE.setScreen(new StartApp());
+
+
+        }
 
         shapeRenderer = new ShapeRenderer();
         if(Var.gamestatus==0) {

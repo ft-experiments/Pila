@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Var {
+    static boolean run = false; //Variabable zum Überprüfen ob der Startbildschirm läuft
     static float r_x = 10;
     static float r_y = 200;
     static float r_speed = 500.0f;
