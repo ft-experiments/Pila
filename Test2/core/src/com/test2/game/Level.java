@@ -122,7 +122,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
                             if(j==1){
                                 Level.kisten.add(new Kaesten(i * ((Gdx.graphics.getWidth())) / 11, Gdx.graphics.getHeight() - 900 + j * 50, ((Gdx.graphics.getWidth())) / 11, 50, 3));
                             }else {
-                                Level.kisten.add(new Kaesten(i * ((Gdx.graphics.getWidth())) / 11, Gdx.graphics.getHeight() - 900 + j * 50, ((Gdx.graphics.getWidth())) / 11, 50, (int) Math.floor((Math.random() * 3))));
+                                //Level.kisten.add(new Kaesten(i * ((Gdx.graphics.getWidth())) / 11, Gdx.graphics.getHeight() - 900 + j * 50, ((Gdx.graphics.getWidth())) / 11, 50, (int) Math.floor((Math.random() * 3))));
                             }
                             }
                         i = i + 1;
