@@ -39,23 +39,27 @@ int my2=0;
            // System.out.println(Gdx.graphics.getHeight() - Var.KY);           Ball.y > Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4  && Ball.x > K_x && Ball.x < K_x+100 && Ball.y < Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4+50
             if ( Ball.y > K_y-Ball.r*2 && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h) {                           //Ball.y > K_y-K_h+Ball.r && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h
 
-                mx=K_x+1;
-                my=K_y+1;
-                mx2=K_x+K_w-1;
-                my2=K_y+K_h-1;
+                mx=K_x+2;
+                my=K_y+2;
+                mx2=K_x+K_w-2;
+                my2=K_y+K_h-2;
 
                 if(Var.ballmode==0) {
                     if(Ball.y<my) {
                         Ball.by = Ball.by * -1;
+                        Ball.y -=Ball.by*2;
                     }
                     if(Ball.y>my2) {
                         Ball.by = Ball.by * -1;
+                        Ball.y -=Ball.by*2;
                     }
                     if(Ball.x<mx) {
                         Ball.bx = Ball.bx * -1;
+                        Ball.x -=Ball.bx*2;
                     }
                     if(Ball.x>mx2) {
                         Ball.bx = Ball.bx * -1;
+                        Ball.x -=Ball.bx*2;
                     }
 
 
