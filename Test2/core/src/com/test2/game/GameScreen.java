@@ -89,7 +89,7 @@ public class GameScreen extends ScreenAdapter {
 
         shapeRenderer = new ShapeRenderer();
         if(Var.gamestatus==0) {
-            Level.LevelCreate(1);
+            Level.LevelCreate(5);
         }
 
         imgfeuerball =new Texture("ballfeueranimation.png");

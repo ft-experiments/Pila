@@ -33,11 +33,11 @@ int o=0;
      void checkKolission() {
         if(v==1) {
            // System.out.println(Gdx.graphics.getHeight() - Var.KY);           Ball.y > Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4  && Ball.x > K_x && Ball.x < K_x+100 && Ball.y < Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4+50
-            if (Ball.y > K_y-K_h+Ball.r && Ball.x >  K_x && Ball.x < K_x+K_w && Ball.y < K_y+K_h) {
+            if ( Ball.y > K_y-Ball.r*2 && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h) {                           //Ball.y > K_y-K_h+Ball.r && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h
                 if(Var.ballmode==0) {
                     Ball.by = Ball.by * -1;
                 }
-                Ball.y -=2;
+               // Ball.y -=2;
 
                 switch(K_art){
                     case 0:
