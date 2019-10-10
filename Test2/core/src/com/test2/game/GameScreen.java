@@ -450,7 +450,13 @@ public class GameScreen extends ScreenAdapter {
                 }
                 Var.KY = k.K_y;
 
-
+           /* batch.end();
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            shapeRenderer.setColor(1,1,0,0f);
+            shapeRenderer.rect(k.mx,k.my,2,2);
+            shapeRenderer.rect(k.mx2,k.my2,2,2);
+            shapeRenderer.end();
+            batch.begin();*/
         }
 
         if(b_zahl == 0){
@@ -465,6 +471,7 @@ public class GameScreen extends ScreenAdapter {
 
 
         batch.end();
+
 
 
 
