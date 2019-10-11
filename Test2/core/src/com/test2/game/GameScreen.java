@@ -224,7 +224,7 @@ public class GameScreen extends ScreenAdapter {
     }
 
 
-        if(Ball.x > Var.r_x && Ball.y < Var.r_y+40 && Var.r_x+Var.r_l > Ball.x){
+        if(Ball.x+Ball.r*2 > Var.r_x && Ball.y < Var.r_y+40 && Var.r_x+Var.r_l > Ball.x){
             if(Var.kleben==0) {
                 Ball.by = Ball.by * -1;
             }
