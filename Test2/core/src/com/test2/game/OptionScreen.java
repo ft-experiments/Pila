@@ -3,17 +3,14 @@ package com.test2.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.assets.loaders.BitmapFontLoader;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-import java.awt.*;
-
 public class OptionScreen extends ScreenAdapter {
+    Texture buttonimage;
     SpriteBatch batch;
     Texture img;
     Texture startge;
@@ -24,6 +21,7 @@ public class OptionScreen extends ScreenAdapter {
     BitmapFont font;
     Texture switchon;
     Texture switchoff;
+    touchinput.Button Levelauswahl;
     int u=0;
 
     public OptionScreen() {
@@ -40,13 +38,15 @@ public class OptionScreen extends ScreenAdapter {
         switchoff = new Texture("switchoff.png");
         shapeRenderer = new ShapeRenderer();
 
+        buttonimage = new Texture("Button.png");
+
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-100,1400,400,100);
 
 
-        Switch SW;
-        SW = new Switch(Gdx.graphics.getWidth()/2-100,1200,200,100,1);
-        Switch.switchs.add(SW);
-        SW = new Switch(Gdx.graphics.getWidth()/2-100,1400,200,100,0);
-        Switch.switchs.add(SW);
+
+        touchinput.Switch SW;
+        SW = new touchinput.Switch(Gdx.graphics.getWidth()/2-100,1200,200,100,1);
+        touchinput.Switch.switchs.add(SW);
 
     }
 
@@ -71,9 +71,9 @@ public class OptionScreen extends ScreenAdapter {
 
 
 
-        for(int i=0;i<Switch.switchs.size();i=i+1) {
-            Switch SW;
-            SW = Switch.switchs.get(i);
+        for(int i = 0; i< touchinput.Switch.switchs.size(); i=i+1) {
+            touchinput.Switch SW;
+            SW = touchinput.Switch.switchs.get(i);
             SW.update();
             System.out.println(SW.status);
 
@@ -89,16 +89,13 @@ public class OptionScreen extends ScreenAdapter {
                     Var.beiballberurungvibrieren = 1;
                 }
             }
-            if(i==1) {
-                font.draw(batch, "Levelauswahl" , SW.x-400, SW.y+SW.h/2);
-                if (SW.status == 0) {
-                    batch.draw(switchoff, SW.x, SW.y, SW.w, SW.h);
-                }
-                if (SW.status == 1) {
-                    batch.draw(switchon, SW.x, SW.y, SW.w, SW.h);
-                    Test2.INSTANCE.setScreen(new LevelAuswahlScreen());
-                }
-            }
+
+        }
+        font.getData().setScale(4);
+        font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
+        batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
+        if(Levelauswahl.isPressed() == 1){
+            Test2.INSTANCE.setScreen(new LevelAuswahlScreen());
         }
 
         /*Switch SW;
