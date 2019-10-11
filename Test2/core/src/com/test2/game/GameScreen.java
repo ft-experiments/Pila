@@ -42,6 +42,9 @@ public class GameScreen extends ScreenAdapter {
     Texture pause;
     Texture weiter;
     Texture einstellungen;
+    touchinput.Button Levelauswahl;
+    touchinput.Button Buttonstart;
+    Texture buttonimage;
     int u=0;
     static int gamestatuspausesave= -1;
     int frame = 0;
@@ -78,6 +81,11 @@ public class GameScreen extends ScreenAdapter {
         pause = new Texture("Pause.png");
         weiter = new Texture("Weiter.png");
         einstellungen = new Texture("einstellungen.png");
+        buttonimage = new Texture("Button.png");
+
+
+        Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,100);
 
 
         if(!Var.run) { //Falls die App gerade gestartet wurde
@@ -330,8 +338,12 @@ public class GameScreen extends ScreenAdapter {
                 }
                 FK.art=0;
             }
-            if(FK.art != 0) {
+            if(FK.art != 0&&Var.existfallbox<3) {
+
+                Var.existfallbox =  Var.existfallbox + 1;
                 switch (FK.art) {
+
+
                     case 1:
                     batch.draw(block_l, FK.x, FK.y, 100, 50);
                     break;
@@ -358,6 +370,9 @@ public class GameScreen extends ScreenAdapter {
                 }
             }
         }
+
+
+
         if(Var.kleben==0) {
             batch.draw(paddelimg, Var.r_x, Var.r_y, Var.r_l, 30);
         }
@@ -475,6 +490,13 @@ public class GameScreen extends ScreenAdapter {
             batch.setColor(0,0,0,0.8f);
             batch.draw(status_bar,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
             batch.setColor(1,1,1,1f);
+            font.getData().setScale(4);
+            font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
+            batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
+            if(Levelauswahl.isPressed() == 1){
+                Test2.INSTANCE.setScreen(new LevelAuswahlScreen("game"));
+            }
+
         }
 
 

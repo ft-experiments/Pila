@@ -21,6 +21,8 @@ public class StartScreen extends ScreenAdapter {
     Texture switchoff;
     Texture bzs;
     touchinput.Button Start;
+    touchinput.Button Levelauswahl;
+    touchinput.Button Buttonstart;
 
     int u=0;
 
@@ -38,6 +40,11 @@ public class StartScreen extends ScreenAdapter {
         bzs = new Texture("bzs.png");
 
         Start = new touchinput.Button(0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        buttonimage = new Texture("Button.png");
+
+
+        Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,100);
 
 
 
@@ -54,10 +61,18 @@ public class StartScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-        batch.draw(bzs,Gdx.graphics.getWidth()/2-400,Gdx.graphics.getHeight()/2-100,800,200);
+        batch.draw(bzs,Gdx.graphics.getWidth()/2-400,Gdx.graphics.getHeight()/2-50,800,200);
 
         if(Start.isPressed()==1){
-            Test2.INSTANCE.setScreen(new OptionScreen());
+            Test2.INSTANCE.setScreen(new GameScreen());
+        }
+
+
+        font.getData().setScale(4);
+        font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25)-200);
+        batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y-200,Levelauswahl.w,Levelauswahl.h);
+        if(Levelauswahl.isPressed() == 1){
+            Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
         }
 
 

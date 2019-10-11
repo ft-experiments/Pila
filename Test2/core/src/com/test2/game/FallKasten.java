@@ -35,6 +35,11 @@ public class FallKasten {
         y -= 200 * de;
 
 
+        if(y<0) {
+            Var.existfallbox=-1;
+        }
+
+
     }
 
     int check() {

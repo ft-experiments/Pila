@@ -53,6 +53,8 @@ public class Var {
     static int visibl=0;
     static int beiballberurungvibrieren=0;
 
+    static int existfallbox = 0;
+
      int device = 0;
 
 

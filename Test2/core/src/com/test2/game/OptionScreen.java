@@ -93,12 +93,7 @@ if(Gdx.input.getAccelerometerY()>12) {
             }
 
         }
-        font.getData().setScale(4);
-        font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
-        batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
-        if(Levelauswahl.isPressed() == 1){
-            Test2.INSTANCE.setScreen(new LevelAuswahlScreen());
-        }
+
 
         /*Switch SW;
         SW = Switch.switchs.get(0);
