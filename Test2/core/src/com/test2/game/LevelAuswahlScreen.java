@@ -15,19 +15,20 @@ import java.awt.*;
 
 public class LevelAuswahlScreen extends ScreenAdapter {
     SpriteBatch batch;
+    BitmapFont font;
+    ShapeRenderer shapeRenderer;
     Texture img;
     Texture startge;
-    ShapeRenderer shapeRenderer;
     Texture hintergrund2;
-    BitmapFont font;
     Texture switchon;
     Texture switchoff;
-    int u=0;
+    Texture Levelbutton;
+    int u = 0;
 
     public LevelAuswahlScreen() {
         batch = new SpriteBatch();
         font = new BitmapFont();
-
+        shapeRenderer = new ShapeRenderer();
 
 
         img = new Texture("start.png");
@@ -35,12 +36,26 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         hintergrund2 = new Texture("hintergrund2.jpg");
         switchon = new Texture("switchon.png");
         switchoff = new Texture("switchoff.png");
-        shapeRenderer = new ShapeRenderer();
+        Levelbutton = new Texture("Levelauswahlbutton.png");
 
-
-
-
+        create();
     }
+    int fw=5;
+    int fh=5;
+
+    void create() {
+        for(int j=0;j<fh;j=j+1) {
+            for (int i = 0; i < fw; i = i + 1) {
+                LevelAuswahlButtons LAB;
+                LAB = new LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() / fw, j* Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, i);
+                LevelAuswahlButtons.Levelbuttons.add(LAB);
+            }
+        }
+    }
+
+
+
+
 
     @Override
     public void render(float delta) {
@@ -52,7 +67,13 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 
-
+        LevelAuswahlButtons LAB;
+        for(int i=0;i<LevelAuswahlButtons.Levelbuttons.size();i=i+1) {
+            LAB = LevelAuswahlButtons.Levelbuttons.get(i);
+            batch.draw(Levelbutton, LAB.x, LAB.y, LAB.w, LAB.h);
+            font.getData().setScale(8);
+            font.draw(batch, ""+LAB.Level , LAB.x+LAB.w/2,LAB.y+LAB.h/2);
+        }
 
         batch.end();
 

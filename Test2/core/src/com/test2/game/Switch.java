@@ -31,10 +31,7 @@ public class Switch {
 
     }
 
-    static void Create() {
 
-
-    }
 
     void update() {
         if(Gdx.input.getX() < w+x && Gdx.input.getX() >x && Gdx.input.getY() < Gdx.graphics.getHeight()-y && Gdx.input.getY() > Gdx.graphics.getHeight()-y-h)
