@@ -16,7 +16,7 @@ public class Test2 extends Game {
 	@Override
 	public void create () {
 
-		setScreen(new OptionScreen());
+		setScreen(new StartScreen());
 		//setScreen(new GameScreen());
 
 		new DoppelKlick();
