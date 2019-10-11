@@ -22,6 +22,7 @@ public class OptionScreen extends ScreenAdapter {
     Texture switchon;
     Texture switchoff;
     touchinput.Button Levelauswahl;
+    touchinput.Button Buttonstart;
     int u=0;
 
     public OptionScreen() {
@@ -40,12 +41,14 @@ public class OptionScreen extends ScreenAdapter {
 
         buttonimage = new Texture("Button.png");
 
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-100,1400,400,100);
+
+        Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,100);
 
 
 
         touchinput.Switch SW;
-        SW = new touchinput.Switch(Gdx.graphics.getWidth()/2-100,1200,200,100,1);
+        SW = new touchinput.Switch(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()-750,200,100,1);
         touchinput.Switch.switchs.add(SW);
 
     }
@@ -124,23 +127,10 @@ public class OptionScreen extends ScreenAdapter {
         font.draw(batch, "Optionen" , Gdx.graphics.getWidth()/2-200, Gdx.graphics.getHeight()-30);
 
 
-        if(Gdx.input.getX() < Var.Button_start_Width+Var.Button_start_x && Gdx.input.getX() > Var.Button_start_x && Gdx.input.getY() < Gdx.graphics.getHeight()-Var.Button_start_y && Gdx.input.getY() > Gdx.graphics.getHeight()-Var.Button_start_y-Var.Button_start_Height)
-        {
-
-            batch.draw(startge, Var.Button_start_x, Var.Button_start_y,Var.Button_start_Width,Var.Button_start_Height);
-            if(Gdx.input.isButtonJustPressed(0)) {
-                //Test2.INSTANCE.setScreen(new GameScreen());
-
-            }
-            if(Gdx.input.isTouched()){
-               // Level.dispose();
-                Test2.INSTANCE.setScreen(new GameScreen());
-            }
-
-
-
-
-        }else{batch.draw(img, Var.Button_start_x, Var.Button_start_y,Var.Button_start_Width,Var.Button_start_Height);}
+        batch.draw(img, Buttonstart.x,Buttonstart.y,Buttonstart.w,Buttonstart.h);
+        if(Buttonstart.isPressed() == 1){
+            Test2.INSTANCE.setScreen(new GameScreen());
+        }
 
 
 

@@ -23,6 +23,8 @@ public class LevelAuswahlScreen extends ScreenAdapter {
     Texture switchon;
     Texture switchoff;
     Texture Levelbutton;
+    Texture buttonimage;
+    touchinput.Button zurueck;
     int u = 0;
 
     public LevelAuswahlScreen() {
@@ -37,6 +39,8 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         switchon = new Texture("switchon.png");
         switchoff = new Texture("switchoff.png");
         Levelbutton = new Texture("Levelauswahlbutton.png");
+        buttonimage = new Texture("Button.png");
+        zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2-110,Gdx.graphics.getHeight()-500,220,100);
 
         create();
     }
@@ -68,6 +72,13 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+        font.getData().setScale(4);
+        font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
+        batch.draw(buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
+        if(zurueck.isPressed() == 1){
+            Test2.INSTANCE.setScreen(new OptionScreen());
+        }
 
         LevelAuswahlButtons LAB;
         for(int i=0;i<LevelAuswahlButtons.Levelbuttons.size();i=i+1) {
