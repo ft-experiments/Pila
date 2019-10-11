@@ -57,8 +57,6 @@ public class OptionScreen extends ScreenAdapter {
     public void render(float delta) {
 
 
-
-
         if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)){
             Gdx.app.exit();
         }
@@ -70,15 +68,16 @@ public class OptionScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-
-
+if(Gdx.input.getAccelerometerY()>12) {
+    font.draw(batch, "" + Gdx.input.getAccelerometerY(), 100, 100);
+}
 
 
         for(int i = 0; i< touchinput.Switch.switchs.size(); i=i+1) {
             touchinput.Switch SW;
             SW = touchinput.Switch.switchs.get(i);
             SW.update();
-            System.out.println(SW.status);
+           // System.out.println(SW.status);
 
             font.getData().setScale(4);
             if(i==0) {
@@ -139,12 +138,12 @@ public class OptionScreen extends ScreenAdapter {
 
 
 
-System.out.println(Gdx.input.isTouched());
+//System.out.println(Gdx.input.isTouched());
         if(Gdx.input.getX() < Var.Button_steuerung_Width+Var.Button_steuerung_x && Gdx.input.getX() > Var.Button_steuerung_x && Gdx.input.getY() < Gdx.graphics.getHeight()-Var.Button_steuerung_y && Gdx.input.getY() > Gdx.graphics.getHeight()-Var.Button_steuerung_y-Var.Button_steuerung_Height)
         {
 
 
-            System.out.println(Var.steuerung);
+            //System.out.println(Var.steuerung);
 
             if(Gdx.input.isTouched()){
                 u=1;

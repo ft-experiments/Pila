@@ -156,7 +156,7 @@ public class GameScreen extends ScreenAdapter {
 
         SpeichernLesen.speichern();
         // SpeichernLesen.lesen();
-        System.out.println("gamestatus "+ Var.gamestatus);
+       // System.out.println("gamestatus "+ Var.gamestatus);
         if (Var.klebt == true) {
             klebt();
         }
@@ -164,7 +164,7 @@ public class GameScreen extends ScreenAdapter {
         FallKasten.de = delta;
 
         if (Var.gamestatus == 0) {
-            if (DoppelKlick.DoppelKlick() == 1) {
+            if (DoppelKlick.DoppelKlick() == 1 || Gdx.input.getAccelerometerY()>10) {
                 new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
 
                 Var.gamestatus = 1;
@@ -235,7 +235,7 @@ public class GameScreen extends ScreenAdapter {
             if(Var.beiballberurungvibrieren==1) {
                 Gdx.input.vibrate(50);
             }
-            System.out.println((Ball.x-Var.r_x)-Var.r_l/2);
+            //System.out.println((Ball.x-Var.r_x)-Var.r_l/2);
             Ball.bx -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;
             Var.points += 1;
             Var.r_speed +=5;
