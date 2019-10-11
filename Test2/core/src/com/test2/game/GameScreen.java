@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-import jdk.javadoc.internal.tool.Start;
+//import jdk.javadoc.internal.tool.Start;
 
 
 import java.util.Timer;
