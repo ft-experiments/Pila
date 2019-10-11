@@ -34,20 +34,22 @@ public class Switch {
 
 
     void update() {
-        if(Gdx.input.getX() < w+x && Gdx.input.getX() >x && Gdx.input.getY() < Gdx.graphics.getHeight()-y && Gdx.input.getY() > Gdx.graphics.getHeight()-y-h)
-        {
+        if(Gdx.input.isTouched()) {
+            if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {
 
-            if(Gdx.input.isTouched()){
-                u=1;
-            }else {
-                if(u==1 && !Gdx.input.isTouched()) {
-                    if (status == 0) {
-                        status = 1;
-                    }else if (status == 1) {
-                        status = 0;
-                    }
-                    u = 0;
+
+                u = 1;
+
+            }
+
+        }else {
+            if(u==1 && !Gdx.input.isTouched()) {
+                if (status == 0) {
+                    status = 1;
+                }else if (status == 1) {
+                    status = 0;
                 }
+                u = 0;
             }
         }
 

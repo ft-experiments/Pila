@@ -31,7 +31,6 @@ public class OptionScreen extends ScreenAdapter {
         font = new BitmapFont();
 
 
-
         img = new Texture("start.png");
         startge = new Texture("startge.png");
         Touch = new Texture("Touch.png");
