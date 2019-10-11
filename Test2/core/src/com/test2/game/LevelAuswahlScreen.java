@@ -41,13 +41,15 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         create();
     }
     int fw=5;
-    int fh=5;
+    int fh=1;
 
     void create() {
+        int le=0;
         for(int j=0;j<fh;j=j+1) {
             for (int i = 0; i < fw; i = i + 1) {
+                le=le+1;
                 LevelAuswahlButtons LAB;
-                LAB = new LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() / fw, j* Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, i);
+                LAB = new LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() / fw, j* Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, le);
                 LevelAuswahlButtons.Levelbuttons.add(LAB);
             }
         }
@@ -72,7 +74,8 @@ public class LevelAuswahlScreen extends ScreenAdapter {
             LAB = LevelAuswahlButtons.Levelbuttons.get(i);
             batch.draw(Levelbutton, LAB.x, LAB.y, LAB.w, LAB.h);
             font.getData().setScale(8);
-            font.draw(batch, ""+LAB.Level , LAB.x+LAB.w/2,LAB.y+LAB.h/2);
+            font.draw(batch, ""+LAB.Level , LAB.x+LAB.w/2-50,LAB.y+LAB.h/2+50);
+            LAB.check();
         }
 
         batch.end();

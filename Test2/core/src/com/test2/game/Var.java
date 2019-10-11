@@ -45,6 +45,7 @@ public class Var {
     static boolean klebt=false;
     static boolean ballupdate = true;
     static int ballklebposition = 0;
+    static int createlevel=1;
 
     static int KY=0;
     static int starten=0;

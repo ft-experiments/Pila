@@ -89,7 +89,7 @@ public class GameScreen extends ScreenAdapter {
 
         shapeRenderer = new ShapeRenderer();
         if(Var.gamestatus==0) {
-            Level.LevelCreate(1);
+            Level.LevelCreate(Var.createlevel);
         }
 
         imgfeuerball =new Texture("ballfeueranimation.png");
@@ -146,6 +146,14 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
+
+        if(LevelAuswahlButtons.newlevel==1) {
+            Level.dispose();
+            Ball.dispose();
+            Level.LevelCreate(Var.createlevel);
+            LevelAuswahlButtons.newlevel=0;
+        }
+
         SpeichernLesen.speichern();
         // SpeichernLesen.lesen();
         System.out.println("gamestatus "+ Var.gamestatus);
