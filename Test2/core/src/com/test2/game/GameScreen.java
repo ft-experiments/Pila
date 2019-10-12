@@ -88,7 +88,7 @@ public class GameScreen extends ScreenAdapter {
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-700,400,100);
-        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-850,400,100);
+        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-100,200,200);
 
 
 
@@ -381,7 +381,7 @@ public class GameScreen extends ScreenAdapter {
         batch.setColor(1,1,1,1f);
         font.getData().setScale(3);
         font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
-        font.draw(batch, "Level:" + Level.Le+Weiter.isPressed(), Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Level:" + Level.Le, Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
         font.getData().setScale(3);
 
         if(Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height)
@@ -390,11 +390,16 @@ public class GameScreen extends ScreenAdapter {
                 u=1;
             }else{
                 if(u==1 && !Gdx.input.isTouched()) {
-                    if (Var.gamestatus == 1) {
-                        Var.gamestatus = 3;
+                    if (Var.gamestatus != 3) {
+                        if(Var.gamestatus==0){
+                            gamestatuspausesave=0;
+                        }else {
+                            Var.gamestatus = 3;
+                        }
                     } else if (Var.gamestatus == 3) {
                         if(gamestatuspausesave==0){
                             Var.gamestatus=0;
+                            gamestatuspausesave=-1;
                         }else {
                             Var.gamestatus = 1;
                         }
@@ -404,11 +409,11 @@ public class GameScreen extends ScreenAdapter {
 
             }
         }
-        if(Var.gamestatus == 1) {
+        if(Var.gamestatus != 3) {
             batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
         if(Var.gamestatus == 3){
-          //  batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
+            batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
 
         if(Gdx.input.isTouched()) {
@@ -494,17 +499,24 @@ public class GameScreen extends ScreenAdapter {
             shapeRenderer.end();
             batch.begin();
 
-            batch.draw(bigpause, Weiter.x+100, Weiter.y+300, 200, 200 );
-
-            if (Gdx.input.getX() < 200 + Weiter.x+100 && Gdx.input.getX() > Weiter.x+100 && Gdx.input.getY() < Gdx.graphics.getHeight() - Weiter.y+300 && Gdx.input.getY() > Gdx.graphics.getHeight() - Weiter.y+300 - 200) {
-                Var.gamestatus=1;
-
+            batch.draw(bigpause, Weiter.x, Weiter.y, Weiter.w, Weiter.h );
+            if(Weiter.isPressed()==1){
+                if (Var.gamestatus == 3) {
+                    if(gamestatuspausesave==0){
+                        Var.gamestatus=0;
+                    }else {
+                        Var.gamestatus = 1;
+                    }
+                }
             }
+
+
+
             font.getData().setScale(4);
 
-            font.draw(batch, "Levelauswahl" , Weiter.x+30, Weiter.y+Weiter.h/2+25);
-            batch.draw(buttonimage, Weiter.x,Weiter.y,Weiter.w,Weiter.h);
-            if(Weiter.isPressed()==1){
+            font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
+            batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
+            if(Levelauswahl.isPressed()==1){
                 Test2.INSTANCE.setScreen(new LevelAuswahlScreen("game"));
 
             }
