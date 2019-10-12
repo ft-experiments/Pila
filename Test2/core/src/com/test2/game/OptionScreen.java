@@ -23,6 +23,7 @@ public class OptionScreen extends ScreenAdapter {
     Texture switchoff;
     touchinput.Button Levelauswahl;
     touchinput.Button Buttonstart;
+
     int u=0;
 
     public OptionScreen() {
@@ -48,8 +49,14 @@ public class OptionScreen extends ScreenAdapter {
 
 
         touchinput.Switch SW;
-        SW = new touchinput.Switch(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()-750,200,100,1);
+
+        SW = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*3,200,100,1);
         touchinput.Switch.switchs.add(SW);
+
+        touchinput.Switch fpsshow;
+        fpsshow = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*2,200,100,1);
+
+        touchinput.Switch.switchs.add(fpsshow);
 
     }
 
@@ -68,14 +75,16 @@ public class OptionScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-if(Gdx.input.getAccelerometerY()>12) {
+    if(Gdx.input.getAccelerometerY()>12) {
     font.draw(batch, "" + Gdx.input.getAccelerometerY(), 100, 100);
 }
 
 
         for(int i = 0; i< touchinput.Switch.switchs.size(); i=i+1) {
             touchinput.Switch SW;
+
             SW = touchinput.Switch.switchs.get(i);
+
             SW.update();
            // System.out.println(SW.status);
 
@@ -92,7 +101,30 @@ if(Gdx.input.getAccelerometerY()>12) {
                 }
             }
 
+
+            touchinput.Switch fpsshow;
+
+            fpsshow = touchinput.Switch.switchs.get(i);
+            fpsshow.update();
+
+            // System.out.println(SW.status);
+
+            font.getData().setScale(4);
+            if(i==0) {
+                font.draw(batch, "FPS-Anzeigen" , fpsshow.x-400, fpsshow.y+fpsshow.h/2);
+                if (fpsshow.status == 0) {
+                    batch.draw(switchoff, fpsshow.x, fpsshow.y, fpsshow.w, fpsshow.h);
+                    //DONT SHOW FPS
+                }
+                if (fpsshow.status == 1) {
+                    batch.draw(switchon, fpsshow.x, fpsshow.y, fpsshow.w, fpsshow.h);
+                    //SHOW Fps
+                }
+            }
+
         }
+
+
 
 
 
@@ -119,7 +151,7 @@ if(Gdx.input.getAccelerometerY()>12) {
 
         font.getData().setScale(5);
 
-        font.draw(batch, "Optionen" , Gdx.graphics.getWidth()/2-200, Gdx.graphics.getHeight()-30);
+        font.draw(batch, "Optionen" , Gdx.graphics.getWidth()/2-150, Gdx.graphics.getHeight()-30);
 
 
         batch.draw(img, Buttonstart.x,Buttonstart.y,Buttonstart.w,Buttonstart.h);
