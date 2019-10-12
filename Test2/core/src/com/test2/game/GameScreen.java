@@ -88,6 +88,12 @@ public class GameScreen extends ScreenAdapter {
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,100);
 
 
+        if(!Var.run) { //Falls die App gerade gestartet wurde
+            Var.run = true;
+            Test2.INSTANCE.setScreen(new StartApp());
+
+
+        }
 
         shapeRenderer = new ShapeRenderer();
         if(Var.gamestatus==0) {
