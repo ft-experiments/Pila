@@ -95,6 +95,7 @@ if(Gdx.input.getAccelerometerY()>12) {
         }
 
 
+
         /*Switch SW;
         SW = Switch.switchs.get(0);
         SW.update();
