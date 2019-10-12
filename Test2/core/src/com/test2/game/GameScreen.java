@@ -390,20 +390,23 @@ public class GameScreen extends ScreenAdapter {
                 u=1;
             }else{
                 if(u==1 && !Gdx.input.isTouched()) {
-                    if (Var.gamestatus != 3) {
-                        if(Var.gamestatus==0){
-                            gamestatuspausesave=0;
-                        }else {
-                            Var.gamestatus = 3;
-                        }
-                    } else if (Var.gamestatus == 3) {
+
+                    if(Var.gamestatus==1){
+                        Var.gamestatus=3;
+                    }else if(Var.gamestatus==3){
                         if(gamestatuspausesave==0){
-                            Var.gamestatus=0;
+                            Var.gamestatus=gamestatuspausesave;
                             gamestatuspausesave=-1;
                         }else {
                             Var.gamestatus = 1;
                         }
+                    }else if(Var.gamestatus==0){
+                        Var.gamestatus=3;
+                        gamestatuspausesave=0;
                     }
+
+
+
                     u=0;
                 }
 
@@ -501,12 +504,11 @@ public class GameScreen extends ScreenAdapter {
 
             batch.draw(bigpause, Weiter.x, Weiter.y, Weiter.w, Weiter.h );
             if(Weiter.isPressed()==1){
-                if (Var.gamestatus == 3) {
-                    if(gamestatuspausesave==0){
-                        Var.gamestatus=0;
-                    }else {
-                        Var.gamestatus = 1;
-                    }
+                if(gamestatuspausesave==0){
+                    Var.gamestatus=gamestatuspausesave;
+                    gamestatuspausesave=-1;
+                }else{
+                    Var.gamestatus=1;
                 }
             }
 
