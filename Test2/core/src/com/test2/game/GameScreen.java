@@ -44,6 +44,7 @@ public class GameScreen extends ScreenAdapter {
     Texture einstellungen;
     touchinput.Button Levelauswahl;
     touchinput.Button Buttonstart;
+    touchinput.Button Weiter;
     Texture buttonimage;
     int u=0;
     static int gamestatuspausesave= -1;
@@ -85,7 +86,8 @@ public class GameScreen extends ScreenAdapter {
 
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,100);
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-700,400,100);
+        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-850,400,100);
 
 
 
@@ -377,8 +379,8 @@ public class GameScreen extends ScreenAdapter {
         batch.draw(status_bar,0,Gdx.graphics.getHeight()-50,Gdx.graphics.getWidth(),50);
         batch.setColor(1,1,1,1f);
         font.getData().setScale(3);
-        font.draw(batch, "Leben:" + Var.existfallbox, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
-        font.draw(batch, "Level:" + Level.Le, Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Level:" + Level.Le+Weiter.isPressed(), Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
         font.getData().setScale(3);
 
         if(Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height)
@@ -480,12 +482,25 @@ public class GameScreen extends ScreenAdapter {
         }
 
         if(Var.gamestatus == 3){
-            batch.setColor(0,0,0,0.8f);
+            batch.setColor(0,0,0,0.6f);
             batch.draw(status_bar,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
             batch.setColor(1,1,1,1f);
+
+            batch.end();
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            shapeRenderer.setColor(1,1,0,0f);
+            shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
+            shapeRenderer.end();
+            batch.begin();
+
             font.getData().setScale(4);
             font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
             batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
+            font.draw(batch, "Weiter" , Weiter.x+30, Weiter.y+Weiter.h/2+25);
+            batch.draw(buttonimage, Weiter.x,Weiter.y,Weiter.w,Weiter.h);
+            if(Weiter.isPressed()==1){
+                Var.gamestatus=1;
+            }
             if(Levelauswahl.isPressed() == 1){
                 Test2.INSTANCE.setScreen(new LevelAuswahlScreen("game"));
             }

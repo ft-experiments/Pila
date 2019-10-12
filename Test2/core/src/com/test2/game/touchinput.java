@@ -88,6 +88,7 @@ public class touchinput {
             }else {
                 if(u==1 && !Gdx.input.isTouched()) {
                     ip=1;
+                    u=0;
             }
 
         }
