@@ -489,7 +489,7 @@ public class GameScreen extends ScreenAdapter {
 
             batch.end();
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-            shapeRenderer.setColor(1,1,0,0f);
+            shapeRenderer.setColor(0.4f, 0.2f, 0.8f, 0.6f);
             shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
             shapeRenderer.end();
             batch.begin();
