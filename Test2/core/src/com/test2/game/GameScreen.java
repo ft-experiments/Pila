@@ -46,6 +46,7 @@ public class GameScreen extends ScreenAdapter {
     touchinput.Button Buttonstart;
     touchinput.Button Weiter;
     Texture buttonimage;
+    Texture bigpause;
     int u=0;
     static int gamestatuspausesave= -1;
     int frame = 0;
@@ -83,7 +84,7 @@ public class GameScreen extends ScreenAdapter {
         weiter = new Texture("Weiter.png");
         einstellungen = new Texture("einstellungen.png");
         buttonimage = new Texture("Button.png");
-
+        bigpause = new Texture("bigpause.png");
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-700,400,100);
@@ -407,7 +408,7 @@ public class GameScreen extends ScreenAdapter {
             batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
         if(Var.gamestatus == 3){
-            batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
+          //  batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
 
         if(Gdx.input.isTouched()) {
@@ -484,7 +485,7 @@ public class GameScreen extends ScreenAdapter {
         if(Var.gamestatus == 3){
             batch.setColor(0,0,0,0.6f);
             batch.draw(status_bar,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-            batch.setColor(1,1,1,1f);
+            batch.setColor(0.4f, 0.2f, 0.8f, 0.6f);
 
             batch.end();
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
@@ -493,17 +494,21 @@ public class GameScreen extends ScreenAdapter {
             shapeRenderer.end();
             batch.begin();
 
+            batch.draw(bigpause, Weiter.x+100, Weiter.y+300, 200, 200 );
+
+            if (Gdx.input.getX() < 200 + Weiter.x+100 && Gdx.input.getX() > Weiter.x+100 && Gdx.input.getY() < Gdx.graphics.getHeight() - Weiter.y+300 && Gdx.input.getY() > Gdx.graphics.getHeight() - Weiter.y+300 - 200) {
+                Var.gamestatus=1;
+
+            }
             font.getData().setScale(4);
-            font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
-            batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
-            font.draw(batch, "Weiter" , Weiter.x+30, Weiter.y+Weiter.h/2+25);
+
+            font.draw(batch, "Levelauswahl" , Weiter.x+30, Weiter.y+Weiter.h/2+25);
             batch.draw(buttonimage, Weiter.x,Weiter.y,Weiter.w,Weiter.h);
             if(Weiter.isPressed()==1){
-                Var.gamestatus=1;
-            }
-            if(Levelauswahl.isPressed() == 1){
                 Test2.INSTANCE.setScreen(new LevelAuswahlScreen("game"));
+
             }
+
 
         }
 
