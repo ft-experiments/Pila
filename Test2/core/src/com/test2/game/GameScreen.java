@@ -361,7 +361,6 @@ public class GameScreen extends ScreenAdapter {
         batch.draw(status_bar, 0, Gdx.graphics.getHeight() - 50, Gdx.graphics.getWidth(), 50);
         batch.setColor(1, 1, 1, 1f);
         font.getData().setScale(3);
-<<<<<<< HEAD
         font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth() - 200, Gdx.graphics.getHeight() - 5);
         font.draw(batch, "Level:" + Level.Le + Weiter.isPressed(), Gdx.graphics.getWidth() - 550, Gdx.graphics.getHeight() - 5);
         font.getData().setScale(3);
@@ -372,22 +371,6 @@ public class GameScreen extends ScreenAdapter {
             } else {
                 if (u == 1 && !Gdx.input.isTouched()) {
                     if (Var.gamestatus == 1) {
-=======
-        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
-        font.draw(batch, "Level:" + Level.Le+Var.gamestatus, Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
-        font.getData().setScale(3);
-
-        if(Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height)
-        {
-            if(Gdx.input.isTouched()){
-                u=1;
-            }else{
-                if(u==1 && !Gdx.input.isTouched()) {
-                    if (Var.gamestatus != 3) {
-                        if(Var.gamestatus==0){
-                            gamestatuspausesave=0;
-                        }
->>>>>>> d04b490d2a9c4b5f0c45127cc388a8fc29d9db17
                         Var.gamestatus = 3;
                     } else if (Var.gamestatus == 3) {
                         if (gamestatuspausesave == 0) {
@@ -401,19 +384,11 @@ public class GameScreen extends ScreenAdapter {
 
             }
         }
-<<<<<<< HEAD
         if (Var.gamestatus != 3) {
             batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
         if (Var.gamestatus == 3) {
            // batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
-=======
-
-            batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
-
-        if(Var.gamestatus == 3){
-            batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
->>>>>>> d04b490d2a9c4b5f0c45127cc388a8fc29d9db17
         }
 
         if (Gdx.input.isTouched()) {
@@ -494,26 +469,10 @@ public class GameScreen extends ScreenAdapter {
             shapeRenderer.end();
             batch.begin();
 
-<<<<<<< HEAD
             batch.draw(bigpause, Weiter.x+100, Weiter.y+300, 200, 200 );
 
             if (Gdx.input.getX() < 200 + Weiter.x+100 && Gdx.input.getX() > Weiter.x+100 && Gdx.input.getY() < Gdx.graphics.getHeight() - Weiter.y+300 && Gdx.input.getY() > Gdx.graphics.getHeight() - Weiter.y+300 - 200) {
                 
-=======
-            font.getData().setScale(4);
-            font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
-            batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
-            font.draw(batch, "Weiter" , Weiter.x+30, Weiter.y+Weiter.h/2+25);
-            batch.draw(buttonimage, Weiter.x,Weiter.y,Weiter.w,Weiter.h);
-            if(Weiter.isPressed()==1){
-                if (Var.gamestatus == 3) {
-                    if(gamestatuspausesave==0){
-                        Var.gamestatus=0;
-                    }else {
-                        Var.gamestatus = 1;
-                    }
-                }
->>>>>>> d04b490d2a9c4b5f0c45127cc388a8fc29d9db17
             }
                 font.getData().setScale(4);
 
