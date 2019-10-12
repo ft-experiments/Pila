@@ -39,7 +39,7 @@ public class Var {
     static int Button_einstellungen_y = Gdx.graphics.getHeight()-Button_einstellungen_Height;
 
     static int i;
-    static int ballmode=0;
+    static int ballmode=1;
     static int kleben=0;
     static boolean klebt=false;
     static boolean ballupdate = true;
