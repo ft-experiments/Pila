@@ -35,9 +35,6 @@ public class FallKasten {
         y -= 200 * de;
 
 
-        if(y<0) {
-            Var.existfallbox=-1;
-        }
 
 
     }
@@ -46,11 +43,13 @@ public class FallKasten {
         int k = 0;
 
         if (y>Var.r_y-50&&y < Var.r_y && x > Var.r_x-100 && x < Var.r_x + Var.r_l) {
+
             k = 1;
 
         }
         if (y < Var.r_y - 400) {
             art = 0;
+
 
 
         }
@@ -69,11 +68,11 @@ public class FallKasten {
     static void trigger(int Kastenx, int Kasteny) {
         FallKasten FK;
         System.out.println("möglich");
-        if (Math.floor(Math.random() * Math.floor(3)) == 1) {
+        if (Math.floor(Math.random() * Math.floor(3))==1) {
             System.out.println("placed");
-            FK = new FallKasten(Kastenx, Kasteny, (int) Math.floor((Math.random() * 8)));
+            int zblock = (int) Math.floor((Math.random() * 8));
+            FK = new FallKasten(Kastenx, Kasteny, zblock);
             Fallkasten.add(FK);
-
         }
 
 

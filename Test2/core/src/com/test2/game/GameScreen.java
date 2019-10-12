@@ -88,12 +88,6 @@ public class GameScreen extends ScreenAdapter {
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,100);
 
 
-        if(!Var.run) { //Falls die App gerade gestartet wurde
-            Var.run = true;
-            Test2.INSTANCE.setScreen(new StartApp());
-
-
-        }
 
         shapeRenderer = new ShapeRenderer();
         if(Var.gamestatus==0) {
@@ -338,9 +332,8 @@ public class GameScreen extends ScreenAdapter {
                 }
                 FK.art=0;
             }
-            if(FK.art != 0&&Var.existfallbox<3) {
+            if(FK.art != 0) {
 
-                Var.existfallbox =  Var.existfallbox + 1;
                 switch (FK.art) {
 
 
@@ -384,7 +377,7 @@ public class GameScreen extends ScreenAdapter {
         batch.draw(status_bar,0,Gdx.graphics.getHeight()-50,Gdx.graphics.getWidth(),50);
         batch.setColor(1,1,1,1f);
         font.getData().setScale(3);
-        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Leben:" + Var.existfallbox, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
         font.draw(batch, "Level:" + Level.Le, Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
         font.getData().setScale(3);
 
