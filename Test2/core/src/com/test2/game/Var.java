@@ -23,8 +23,8 @@ public class Var {
     static int Button_start_x = Gdx.graphics.getWidth()/2-Button_start_Width/2;
     static int Button_start_y = 300;
 
-    static int Button_steuerung_Height = 200;
-    static int Button_steuerung_Width = 100;
+    static int Button_steuerung_Height = 300;
+    static int Button_steuerung_Width = 200;
     static int Button_steuerung_x = Gdx.graphics.getWidth()/2-Button_steuerung_Width/2;
     static int Button_steuerung_y = 800;
 
@@ -50,6 +50,8 @@ public class Var {
     static int starten=0;
     static int gamestatus=0;
     static int beiballberurungvibrieren=1;
+
+    static boolean showfps = false;
 
     static int existfallbox = 0;
 

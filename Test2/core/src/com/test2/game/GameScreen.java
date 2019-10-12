@@ -47,6 +47,7 @@ public class GameScreen extends ScreenAdapter {
     touchinput.Button Weiter;
     Texture buttonimage;
     Texture bigpause;
+
     int u=0;
     static int gamestatuspausesave= -1;
     int frame = 0;
@@ -582,6 +583,21 @@ public class GameScreen extends ScreenAdapter {
             Level.dispose();
             Test2.INSTANCE.setScreen(new GameOverScreen());
 
+        }
+
+
+
+
+        if(Var.showfps) {
+            batch.begin();
+            batch.setColor(1,0,0,1);
+            font.setColor(Color.RED);
+
+            font.draw(batch, Integer.toString(Gdx.graphics.getFramesPerSecond()), 10, 50);
+
+            batch.end();
+            batch.setColor(1,1,1,1);
+            font.setColor(Color.WHITE);
         }
 
     }
