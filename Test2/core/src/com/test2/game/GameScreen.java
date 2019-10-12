@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-//import jdk.javadoc.internal.tool.Start;
+
 
 
 import java.util.Timer;
@@ -88,7 +88,7 @@ public class GameScreen extends ScreenAdapter {
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-700,400,100);
-        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-100,200,200);
+        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2+100,200,200);
 
 
 
@@ -416,7 +416,7 @@ public class GameScreen extends ScreenAdapter {
             batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
         if(Var.gamestatus == 3){
-            batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
+           // batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
 
         if(Gdx.input.isTouched()) {
@@ -519,6 +519,12 @@ public class GameScreen extends ScreenAdapter {
             font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
             batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
             if(Levelauswahl.isPressed()==1){
+
+
+
+
+                //COUNTDOWM
+
                 Test2.INSTANCE.setScreen(new LevelAuswahlScreen("game"));
 
             }
@@ -542,29 +548,29 @@ public class GameScreen extends ScreenAdapter {
 
         shapeRenderer.setColor(1,1,0,0f);
 
-
+    if(Var.gamestatus!=3) {
         //shapeRenderer.rect(Var.r_x,20,Var.r_l,20);
-        if(Var.ballupdate==true) {
-            if(Var.gamestatus==1) {
+        if (Var.ballupdate == true) {
+            if (Var.gamestatus == 1) {
                 Ball.update();
             }
         }
 
-        if(true) {
+        if (true) {
             switch (Var.ballmode) {
                 case 0:
-                shapeRenderer.setColor(1,1,0,0);
-                shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                    shapeRenderer.setColor(1, 1, 0, 0);
+                    shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
                     break;
 
             }
         }
-        if(Var.gamestatus==0){
-            shapeRenderer.ellipse((int)(Var.r_x+Var.r_l/2)-15, (int)(Var.r_y+100), 15 * 2, 15 * 2);
+        if (Var.gamestatus == 0) {
+            shapeRenderer.ellipse((int) (Var.r_x + Var.r_l / 2) - 15, (int) (Var.r_y + 100), 15 * 2, 15 * 2);
         }
         //shapeRenderer.ellipse(Var.r_x-Ball.x, 40, 5,5);
 
-
+    }
 
         shapeRenderer.end();
 
