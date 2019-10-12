@@ -49,7 +49,7 @@ public class Var {
     static int KY=0;
     static int starten=0;
     static int gamestatus=0;
-    static int beiballberurungvibrieren=0;
+    static int beiballberurungvibrieren=1;
 
     static int existfallbox = 0;
 
