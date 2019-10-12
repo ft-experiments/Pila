@@ -30,7 +30,7 @@ public class Var {
 
     static int Button_Pause_Height = 50;
     static int Button_Pause_Width = 50;
-    static int Button_Pause_x = Gdx.graphics.getWidth()-260;
+    static int Button_Pause_x = Gdx.graphics.getWidth()-300;
     static int Button_Pause_y = Gdx.graphics.getHeight()-Button_Pause_Height;
 
     static int Button_einstellungen_Height = 50;
@@ -49,7 +49,7 @@ public class Var {
     static int KY=0;
     static int starten=0;
     static int gamestatus=0;
-    static int beiballberurungvibrieren=0;
+    static int beiballberurungvibrieren=1;
 
     static int existfallbox = 0;
 

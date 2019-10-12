@@ -46,6 +46,7 @@ public class GameScreen extends ScreenAdapter {
     touchinput.Button Buttonstart;
     touchinput.Button Weiter;
     Texture buttonimage;
+    Texture bigpause;
     int u=0;
     static int gamestatuspausesave= -1;
     int frame = 0;
@@ -83,7 +84,7 @@ public class GameScreen extends ScreenAdapter {
         weiter = new Texture("Weiter.png");
         einstellungen = new Texture("einstellungen.png");
         buttonimage = new Texture("Button.png");
-
+        bigpause = new Texture("bigpause.png");
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-700,400,100);
@@ -151,16 +152,16 @@ public class GameScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
 
-        if(LevelAuswahlButtons.newlevel==1) {
+        if (LevelAuswahlButtons.newlevel == 1) {
             Level.dispose();
             Ball.dispose();
             Level.LevelCreate(Var.createlevel);
-            LevelAuswahlButtons.newlevel=0;
+            LevelAuswahlButtons.newlevel = 0;
         }
 
         SpeichernLesen.speichern();
         // SpeichernLesen.lesen();
-       // System.out.println("gamestatus "+ Var.gamestatus);
+        // System.out.println("gamestatus "+ Var.gamestatus);
         if (Var.klebt == true) {
             klebt();
         }
@@ -168,7 +169,7 @@ public class GameScreen extends ScreenAdapter {
         FallKasten.de = delta;
 
         if (Var.gamestatus == 0) {
-            if (DoppelKlick.DoppelKlick() == 1 || Gdx.input.getAccelerometerY()>10) {
+            if (DoppelKlick.DoppelKlick() == 1 || Gdx.input.getAccelerometerY() > 10) {
                 new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
 
                 Var.gamestatus = 1;
@@ -178,7 +179,7 @@ public class GameScreen extends ScreenAdapter {
 
         }
 
-        if (Var.gamestatus != 3){
+        if (Var.gamestatus != 3) {
 
             /*if (Var.steuerung == 0) {
                 if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
@@ -195,8 +196,8 @@ public class GameScreen extends ScreenAdapter {
             }
 */
 
-        if (Var.steuerung == 0) {
-            if (Gdx.input.isTouched() == true) {
+            if (Var.steuerung == 0) {
+                if (Gdx.input.isTouched() == true) {
               /*  //System.out.println(Gdx.input.getX());
 
                 if (Gdx.input.getX() < Gdx.graphics.getWidth() / 2) {
@@ -209,50 +210,50 @@ public class GameScreen extends ScreenAdapter {
                         Var.r_x += Var.r_speed * delta;
                     }
                 }*/
-                if (Gdx.input.getX() - Var.r_l / 2 > 0 && Gdx.input.getX() - Var.r_l / 2 < Gdx.graphics.getWidth() - Var.r_l) {
-                    Var.r_x = Gdx.input.getX() - Var.r_l / 2;
+                    if (Gdx.input.getX() - Var.r_l / 2 > 0 && Gdx.input.getX() - Var.r_l / 2 < Gdx.graphics.getWidth() - Var.r_l) {
+                        Var.r_x = Gdx.input.getX() - Var.r_l / 2;
+                    }
                 }
             }
-        }
-        if (Var.steuerung == 1) {
+            if (Var.steuerung == 1) {
 
                 Var.r_x += Gdx.input.getAccelerometerX() * delta * 300 * -1;
-                if(Var.r_x < 0){
-                    Var.r_x=0;
+                if (Var.r_x < 0) {
+                    Var.r_x = 0;
                 }
-            if(Var.r_x > Gdx.graphics.getWidth()-Var.r_l){
-                Var.r_x=Gdx.graphics.getWidth()-Var.r_l;
+                if (Var.r_x > Gdx.graphics.getWidth() - Var.r_l) {
+                    Var.r_x = Gdx.graphics.getWidth() - Var.r_l;
+                }
+
             }
-
         }
-    }
 
 
-        if(Ball.x+Ball.r*2 > Var.r_x && Ball.y < Var.r_y+40 && Var.r_x+Var.r_l > Ball.x){
-            if(Var.kleben==0) {
+        if (Ball.x + Ball.r * 2 > Var.r_x && Ball.y < Var.r_y + 40 && Var.r_x + Var.r_l > Ball.x) {
+            if (Var.kleben == 0) {
                 Ball.by = Ball.by * -1;
             }
-            if(Var.kleben==1){
-                Var.klebt=true;
-                Var.ballklebposition=(int)Ball.x - (int)Var.r_x;
+            if (Var.kleben == 1) {
+                Var.klebt = true;
+                Var.ballklebposition = (int) Ball.x - (int) Var.r_x;
             }
-            if(Var.beiballberurungvibrieren==1) {
+            if (Var.beiballberurungvibrieren == 1) {
                 Gdx.input.vibrate(50);
             }
             //System.out.println((Ball.x-Var.r_x)-Var.r_l/2);
-            Ball.bx -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;
+            Ball.bx -= ((Ball.x - Var.r_x) - Var.r_l / 2) * Var.s;
             Var.points += 1;
-            Var.r_speed +=5;
+            Var.r_speed += 5;
         }
-        if(Ball.y < Var.r_y && Var.p==0){
+        if (Ball.y < Var.r_y && Var.p == 0) {
             FallKasten.zuruecksetzen();
             Var.leben -= 1;
-            Var.p=1;
-            Var.gamestatus=0;
+            Var.p = 1;
+            Var.gamestatus = 0;
             Ball.dispose();
         }
-        if(Ball.y > Var.r_y){
-            Var.p=0;
+        if (Ball.y > Var.r_y) {
+            Var.p = 0;
         }
 
         /*
@@ -265,7 +266,7 @@ public class GameScreen extends ScreenAdapter {
 
         */
 
-        if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)){
+        if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit();
         }
         /*if(Gdx.input.isTouched()) {
@@ -273,49 +274,32 @@ public class GameScreen extends ScreenAdapter {
         }*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
-        batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());                ////////////
-        if(Var.ballmode==1) {
+        batch.draw(hintergrund2, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());                ////////////
+        if (Var.ballmode == 1) {
             batch.draw(feuerball, Ball.x, Ball.y, 30, 30);
         }
 
-        for(int i=0;i<FallKasten.Fallkasten.size();i=i+1) {
-            Var.i=i;
+        for (int i = 0; i < FallKasten.Fallkasten.size(); i = i + 1) {
+            Var.i = i;
             FallKasten FK;
-            FK =FallKasten.Fallkasten.get(i);
-            if(Var.gamestatus==1) {
+            FK = FallKasten.Fallkasten.get(i);
+            if (Var.gamestatus == 1) {
                 FK.update();
             }
             FK.check();
-            if(FK.check()==1 && FK.art !=0){
+            if (FK.check() == 1 && FK.art != 0) {
                 switch (FK.art) {
                     case 1:
-                        if(Var.r_l < 400) {
+                        if (Var.r_l < 400) {
                             Var.r_l += 50;
                         }
                         break;
                     case 2:
-                        if(Var.r_l > 100) {
+                        if (Var.r_l > 100) {
                             Var.r_l -= 50;
                         }
                         break;
@@ -323,25 +307,25 @@ public class GameScreen extends ScreenAdapter {
                         Var.ballmode = 1;
                         break;
                     case 4:
-                        Var.kleben=1;
+                        Var.kleben = 1;
                         break;
                     case 5:
-                        Ball.by += Ball.by/2;
+                        Ball.by += Ball.by / 2;
                         break;
                     case 6:
-                        Ball.by -= Ball.by/2;
+                        Ball.by -= Ball.by / 2;
                         break;
                 }
-                FK.art=0;
+                FK.art = 0;
             }
-            if(FK.art != 0) {
+            if (FK.art != 0) {
 
                 switch (FK.art) {
 
 
                     case 1:
-                    batch.draw(block_l, FK.x, FK.y, 100, 50);
-                    break;
+                        batch.draw(block_l, FK.x, FK.y, 100, 50);
+                        break;
 
                     case 2:
                         batch.draw(block_k, FK.x, FK.y, 100, 50);
@@ -361,112 +345,104 @@ public class GameScreen extends ScreenAdapter {
                         break;
 
 
-
                 }
             }
         }
 
 
-
-        if(Var.kleben==0) {
+        if (Var.kleben == 0) {
             batch.draw(paddelimg, Var.r_x, Var.r_y, Var.r_l, 30);
         }
-        if(Var.kleben==1)   {
+        if (Var.kleben == 1) {
             batch.draw(paddelklebimg, Var.r_x, Var.r_y, Var.r_l, 30);
         }
 
-        batch.setColor(1,1,1,0.5f);
-        batch.draw(status_bar,0,Gdx.graphics.getHeight()-50,Gdx.graphics.getWidth(),50);
-        batch.setColor(1,1,1,1f);
+        batch.setColor(1, 1, 1, 0.5f);
+        batch.draw(status_bar, 0, Gdx.graphics.getHeight() - 50, Gdx.graphics.getWidth(), 50);
+        batch.setColor(1, 1, 1, 1f);
         font.getData().setScale(3);
-        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
-        font.draw(batch, "Level:" + Level.Le+Weiter.isPressed(), Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth() - 200, Gdx.graphics.getHeight() - 5);
+        font.draw(batch, "Level:" + Level.Le + Weiter.isPressed(), Gdx.graphics.getWidth() - 550, Gdx.graphics.getHeight() - 5);
         font.getData().setScale(3);
 
-        if(Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height)
-        {
-            if(Gdx.input.isTouched()){
-                u=1;
-            }else{
-                if(u==1 && !Gdx.input.isTouched()) {
+        if (Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height) {
+            if (Gdx.input.isTouched()) {
+                u = 1;
+            } else {
+                if (u == 1 && !Gdx.input.isTouched()) {
                     if (Var.gamestatus == 1) {
                         Var.gamestatus = 3;
                     } else if (Var.gamestatus == 3) {
-                        if(gamestatuspausesave==0){
-                            Var.gamestatus=0;
-                        }else {
+                        if (gamestatuspausesave == 0) {
+                            Var.gamestatus = 0;
+                        } else {
                             Var.gamestatus = 1;
                         }
                     }
-                    u=0;
+                    u = 0;
                 }
 
             }
         }
-        if(Var.gamestatus == 1) {
+        if (Var.gamestatus != 3) {
             batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
-        if(Var.gamestatus == 3){
-            batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
+        if (Var.gamestatus == 3) {
+           // batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
 
-        if(Gdx.input.isTouched()) {
+        if (Gdx.input.isTouched()) {
             if (Gdx.input.getX() < Var.Button_einstellungen_Width + Var.Button_einstellungen_x && Gdx.input.getX() > Var.Button_einstellungen_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_einstellungen_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_einstellungen_y - Var.Button_einstellungen_Height) {
-                if(Var.gamestatus==0){
-                    gamestatuspausesave=0;
+                if (Var.gamestatus == 0) {
+                    gamestatuspausesave = 0;
                 }
-                Var.gamestatus=3;
+                Var.gamestatus = 3;
                 Test2.INSTANCE.setScreen(new OptionScreen());
             }
         }
         batch.draw(einstellungen, Var.Button_einstellungen_x, Var.Button_einstellungen_y, Var.Button_einstellungen_Width, Var.Button_einstellungen_Height);
 
 
-
-
-        int b_zahl=0;
-        for(int i=0;i<Level.kisten.size();i=i+1) {
+        int b_zahl = 0;
+        for (int i = 0; i < Level.kisten.size(); i = i + 1) {
             Kaesten k;
             k = Level.kisten.get(i);
 
 
-
-
-
-            if(k.v==1 && k.K_art!=4){
+            if (k.v == 1 && k.K_art != 4) {
                 b_zahl += 1;
             }
 
-                k.checkKolission();
-                if(k.v==1) {
-                    switch (k.K_art) {
-                        case 0 :
-                            batch.draw(block_rot, k.K_x, k.K_y, k.K_w, k.K_h);
+            k.checkKolission();
+            if (k.v == 1) {
+                switch (k.K_art) {
+                    case 0:
+                        batch.draw(block_rot, k.K_x, k.K_y, k.K_w, k.K_h);
                         break;
-                        case 1 :
-                            batch.draw(block_gruen, k.K_x, k.K_y, k.K_w, k.K_h);
-                            break;
-                        case 2 :
-                            batch.draw(block_blau, k.K_x, k.K_y, k.K_w, k.K_h);
-                            break;
-                        case 3 :
-                            if(k.o==0) {
-                                batch.draw(block_2mal, k.K_x, k.K_y, k.K_w, k.K_h);
-                            }
-                            if(k.o==1){
-                                batch.setColor(1,1,1,0.5f);
-                                batch.draw(block_2mal, k.K_x, k.K_y, k.K_w, k.K_h);
-                                batch.setColor(1,1,1,1f);
-                            }
-                            break;
-                        case 4 :
-                            batch.draw(block_unzerstoerbar, k.K_x, k.K_y, k.K_w, k.K_h);
-                            break;
-
-                    }
+                    case 1:
+                        batch.draw(block_gruen, k.K_x, k.K_y, k.K_w, k.K_h);
+                        break;
+                    case 2:
+                        batch.draw(block_blau, k.K_x, k.K_y, k.K_w, k.K_h);
+                        break;
+                    case 3:
+                        if (k.o == 0) {
+                            batch.draw(block_2mal, k.K_x, k.K_y, k.K_w, k.K_h);
+                        }
+                        if (k.o == 1) {
+                            batch.setColor(1, 1, 1, 0.5f);
+                            batch.draw(block_2mal, k.K_x, k.K_y, k.K_w, k.K_h);
+                            batch.setColor(1, 1, 1, 1f);
+                        }
+                        break;
+                    case 4:
+                        batch.draw(block_unzerstoerbar, k.K_x, k.K_y, k.K_w, k.K_h);
+                        break;
 
                 }
-                Var.KY = k.K_y;
+
+            }
+            Var.KY = k.K_y;
 
            /* batch.end();
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
@@ -477,33 +453,35 @@ public class GameScreen extends ScreenAdapter {
             batch.begin();*/
         }
 
-        if(b_zahl == 0){
+        if (b_zahl == 0) {
             Level.Levelup();
         }
 
-        if(Var.gamestatus == 3){
-            batch.setColor(0,0,0,0.6f);
-            batch.draw(status_bar,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-            batch.setColor(1,1,1,1f);
+        if (Var.gamestatus == 3) {
+            batch.setColor(0, 0, 0, 0.6f);
+            batch.draw(status_bar, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.setColor(1, 1, 1, 1f);
 
             batch.end();
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-            shapeRenderer.setColor(1,1,0,0f);
-            shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
+            shapeRenderer.setColor(0.4f, 0.2f, 0.8f, 0.6f);
+            shapeRenderer.rect(Gdx.graphics.getWidth() / 2 - 250, Gdx.graphics.getHeight() / 2 - 700 / 2, 500, 700);
             shapeRenderer.end();
             batch.begin();
 
-            font.getData().setScale(4);
-            font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
-            batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
-            font.draw(batch, "Weiter" , Weiter.x+30, Weiter.y+Weiter.h/2+25);
-            batch.draw(buttonimage, Weiter.x,Weiter.y,Weiter.w,Weiter.h);
-            if(Weiter.isPressed()==1){
-                Var.gamestatus=1;
+            batch.draw(bigpause, Weiter.x+100, Weiter.y+300, 200, 200 );
+
+            if (Gdx.input.getX() < 200 + Weiter.x+100 && Gdx.input.getX() > Weiter.x+100 && Gdx.input.getY() < Gdx.graphics.getHeight() - Weiter.y+300 && Gdx.input.getY() > Gdx.graphics.getHeight() - Weiter.y+300 - 200) {
+                
             }
-            if(Levelauswahl.isPressed() == 1){
+                font.getData().setScale(4);
+
+            font.draw(batch, "Levelauswahl", Weiter.x + 30, Weiter.y + Weiter.h / 2 + 25);
+            batch.draw(buttonimage, Weiter.x, Weiter.y, Weiter.w, Weiter.h);
+            if (Weiter.isPressed() == 1) {
                 Test2.INSTANCE.setScreen(new LevelAuswahlScreen("game"));
             }
+
 
         }
 
@@ -511,52 +489,46 @@ public class GameScreen extends ScreenAdapter {
         batch.end();
 
 
+        if (Var.gamestatus != 3) {
+
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+
+            shapeRenderer.setColor(1, 1, 0, 0f);
 
 
-
-
-
-
-
-
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-
-        shapeRenderer.setColor(1,1,0,0f);
-
-
-        //shapeRenderer.rect(Var.r_x,20,Var.r_l,20);
-        if(Var.ballupdate==true) {
-            if(Var.gamestatus==1) {
-                Ball.update();
+            //shapeRenderer.rect(Var.r_x,20,Var.r_l,20);
+            if (Var.ballupdate == true) {
+                if (Var.gamestatus == 1) {
+                    Ball.update();
+                }
             }
-        }
 
-        if(true) {
-            switch (Var.ballmode) {
-                case 0:
-                shapeRenderer.setColor(1,1,0,0);
-                shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
-                    break;
+            if (true) {
+                switch (Var.ballmode) {
+                    case 0:
+                        shapeRenderer.setColor(1, 1, 0, 0);
+                        shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                        break;
+
+                }
+            }
+            if (Var.gamestatus == 0) {
+                shapeRenderer.ellipse((int) (Var.r_x + Var.r_l / 2) - 15, (int) (Var.r_y + 100), 15 * 2, 15 * 2);
+            }
+            //shapeRenderer.ellipse(Var.r_x-Ball.x, 40, 5,5);
+
+
+            shapeRenderer.end();
+
+
+            if (Var.leben <= 0) {
+                Ball.dispose();
+                Level.dispose();
+                Test2.INSTANCE.setScreen(new GameOverScreen());
 
             }
-        }
-        if(Var.gamestatus==0){
-            shapeRenderer.ellipse((int)(Var.r_x+Var.r_l/2)-15, (int)(Var.r_y+100), 15 * 2, 15 * 2);
-        }
-        //shapeRenderer.ellipse(Var.r_x-Ball.x, 40, 5,5);
-
-
-
-        shapeRenderer.end();
-
-
-        if(Var.leben <= 0){
-            Ball.dispose();
-            Level.dispose();
-            Test2.INSTANCE.setScreen(new GameOverScreen());
 
         }
-
     }
 
     @Override
