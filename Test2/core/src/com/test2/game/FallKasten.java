@@ -17,6 +17,7 @@ public class FallKasten {
     int art = 0;
 
 
+
     FallKasten(int _x, int _y, int _art) {
         x = _x;
         y = _y;
@@ -42,9 +43,15 @@ public class FallKasten {
     int check() {
         int k = 0;
 
+
+
+
+
         if (y>Var.r_y-50&&y < Var.r_y && x > Var.r_x-100 && x < Var.r_x + Var.r_l) {
 
             k = 1;
+
+
 
         }
         if (y < Var.r_y - 400) {
@@ -53,6 +60,8 @@ public class FallKasten {
 
 
         }
+
+        Var.maxfallbox = Fallkasten.size();
 
 
         return k;
@@ -68,11 +77,18 @@ public class FallKasten {
     static void trigger(int Kastenx, int Kasteny) {
         FallKasten FK;
         System.out.println("möglich");
-        if (Math.floor(Math.random() * Math.floor(3))==1) {
-            System.out.println("placed");
-            int zblock = (int) Math.floor((Math.random() * 8));
-            FK = new FallKasten(Kastenx, Kasteny, zblock);
-            Fallkasten.add(FK);
+
+        if(Var.maxfallbox<3) {
+            if (Math.floor(Math.random() * Math.floor(3)) == 1) {
+                System.out.println("placed");
+                int zblock = (int) Math.floor((Math.random() * 8));
+                FK = new FallKasten(Kastenx, Kasteny, zblock);
+                Fallkasten.add(FK);
+
+            }
+
+        }else{
+            System.out.println("Zu viele");
         }
 
 
