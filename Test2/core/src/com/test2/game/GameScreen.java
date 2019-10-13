@@ -89,7 +89,7 @@ public class GameScreen extends ScreenAdapter {
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-700,400,100);
-        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2+100,200,200);
+        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-100,200,200);
 
 
 
@@ -302,7 +302,7 @@ public class GameScreen extends ScreenAdapter {
         if(Var.ballmode==1) {
             batch.draw(feuerball, Ball.x, Ball.y, 30, 30);
         }
-
+        int zaeler = 0;
         for(int i=0;i<FallKasten.Fallkasten.size();i=i+1) {
             Var.i=i;
             FallKasten FK;
@@ -339,7 +339,7 @@ public class GameScreen extends ScreenAdapter {
                 FK.art=0;
             }
             if(FK.art != 0) {
-
+                zaeler+=1;
                 switch (FK.art) {
 
 
@@ -368,8 +368,9 @@ public class GameScreen extends ScreenAdapter {
 
                 }
             }
-        }
 
+        }
+        Var.existfallbox=zaeler;
 
 
         if(Var.kleben==0) {
@@ -384,7 +385,7 @@ public class GameScreen extends ScreenAdapter {
         batch.setColor(1,1,1,1f);
         font.getData().setScale(3);
         font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
-        font.draw(batch, "Level:" + Level.Le + " "+ Var.maxfallbox, Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Level:" + Level.Le + " "+ Var.existfallbox, Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
         font.getData().setScale(3);
 
         if(Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height)
