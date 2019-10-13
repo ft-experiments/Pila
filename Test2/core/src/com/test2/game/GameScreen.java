@@ -443,6 +443,8 @@ public class GameScreen extends ScreenAdapter {
 
 
 
+
+
         int b_zahl=0;
         for(int i=0;i<Level.kisten.size();i=i+1) {
             Kaesten k;
@@ -589,6 +591,30 @@ public class GameScreen extends ScreenAdapter {
         //shapeRenderer.ellipse(Var.r_x-Ball.x, 40, 5,5);
 
     }
+
+
+    //ablauf der objekte
+        for(int i=0;i<FallKasten.Fallkasten.size();i=i+1) {
+            FallKasten FK;
+            FK =FallKasten.Fallkasten.get(i);
+            switch (FK.art){
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+            }
+        }
+
+
+
 
         shapeRenderer.end();
 
