@@ -51,7 +51,7 @@ public class Var {
     static int gamestatus=0;
     static int beiballberurungvibrieren=1;
     static int ballstartmode=1;
-    static int maxfallbox = 0;
+
 
     static boolean showfps = false;
 

@@ -148,17 +148,21 @@ public class OptionScreen extends ScreenAdapter {
             batch.draw(switchon, toggelcontrol.x, toggelcontrol.y, toggelcontrol.w, toggelcontrol.h);
             batch.draw(Gyro, toggelcontrol.x-600, toggelcontrol.y-75, 100, 200);
             Var.steuerung = 1;
+
         }
 
+        font.draw(batch, "Instant-Start", ballstartmode.x - 400, ballstartmode.y + ballstartmode.h / 2);
+
         if(ballstartmode.isswitched() == 0){
-            font.draw(batch, "sofort start", ballstartmode.x - 450, ballstartmode.y + ballstartmode.h / 2);
+
             batch.draw(switchoff, ballstartmode.x, ballstartmode.y, ballstartmode.w, ballstartmode.h);
-            Var.ballstartmode=0;
+            Var.ballstartmode=1;
         }
         if(ballstartmode.isswitched() == 1){
-            font.draw(batch, "mit interaktion", ballstartmode.x - 450, ballstartmode.y + ballstartmode.h / 2);
+
             batch.draw(switchon, ballstartmode.x, ballstartmode.y, ballstartmode.w, ballstartmode.h);
-            Var.ballstartmode=1;
+
+            Var.ballstartmode=0;
         }
 
 

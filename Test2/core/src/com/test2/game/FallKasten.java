@@ -61,7 +61,7 @@ public class FallKasten {
 
         }
 
-        Var.maxfallbox = Fallkasten.size();
+
 
 
         return k;
