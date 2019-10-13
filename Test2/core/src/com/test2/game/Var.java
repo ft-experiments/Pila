@@ -16,7 +16,7 @@ public class Var {
     static int points = 0;
     static int leben=0;
     static int p=0;
-    static int steuerung = 0;
+
 
     static int Button_start_Height = 300;
     static int Button_start_Width = 600;
@@ -38,22 +38,32 @@ public class Var {
     static int Button_einstellungen_x = 300;
     static int Button_einstellungen_y = Gdx.graphics.getHeight()-Button_einstellungen_Height;
 
+
     static int i;
+    static boolean klebt=false;
     static int ballmode=0;
     static int kleben=0;
-    static boolean klebt=false;
-    static boolean ballupdate = true;
-    static int ballklebposition = 0;
+
+
+    static  int ballstartmode=1;
+    static int steuerung = 0;
+    static boolean showfps = true;
+    static int beiballberurungvibrieren=1;
+
+
     static int createlevel=1;
 
+    static boolean ballupdate = true;
+    static int ballklebposition = 0;
+
+
     static int KY=0;
-    static int starten=0;
+    static int starten=1;
     static int gamestatus=0;
-    static int beiballberurungvibrieren=1;
-    static int ballstartmode=1;
 
 
-    static boolean showfps = false;
+
+
 
     static int existfallbox = 0;
 

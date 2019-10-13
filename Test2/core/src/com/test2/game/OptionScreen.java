@@ -28,6 +28,7 @@ public class OptionScreen extends ScreenAdapter {
     touchinput.Switch toggelcontrol;
     touchinput.Switch ballstartmode;
     int u=0;
+    int bb;
 
     public OptionScreen() {
         batch = new SpriteBatch();
@@ -51,20 +52,21 @@ public class OptionScreen extends ScreenAdapter {
 
 
 
+            SW = new touchinput.Switch(Gdx.graphics.getWidth() / 2 + 100, Gdx.graphics.getHeight() / 8 * 3, 200, 100, Var.beiballberurungvibrieren);
 
+        if(Var.showfps==true) {
+            bb=1;
+        }
+        if(Var.showfps==false){
+            bb=0;
+        }
 
-        SW = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*3,200,100,1);
+            fpsshow = new touchinput.Switch(Gdx.graphics.getWidth() / 2 + 100, Gdx.graphics.getHeight() / 8 * 4, 200, 100, bb);
 
+            toggelcontrol = new touchinput.Switch(Gdx.graphics.getWidth() / 2 + 100, Gdx.graphics.getHeight() / 8 * 5, 200, 100, Var.steuerung);
 
+            ballstartmode = new touchinput.Switch(Gdx.graphics.getWidth() / 2 + 100, Gdx.graphics.getHeight() / 8 * 6, 200, 100, Var.ballstartmode);
 
-
-        fpsshow = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*4,200,100,0);
-
-
-
-        toggelcontrol = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*5,200,100,0);
-
-        ballstartmode = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*6,200,100,1);
 
     }
 
@@ -156,13 +158,13 @@ public class OptionScreen extends ScreenAdapter {
         if(ballstartmode.isswitched() == 0){
 
             batch.draw(switchoff, ballstartmode.x, ballstartmode.y, ballstartmode.w, ballstartmode.h);
-            Var.ballstartmode=1;
+            Var.ballstartmode=0;
         }
         if(ballstartmode.isswitched() == 1){
 
             batch.draw(switchon, ballstartmode.x, ballstartmode.y, ballstartmode.w, ballstartmode.h);
 
-            Var.ballstartmode=0;
+            Var.ballstartmode=1;
         }
 
 
