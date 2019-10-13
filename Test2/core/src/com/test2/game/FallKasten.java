@@ -78,8 +78,8 @@ public class FallKasten {
         FallKasten FK;
         System.out.println("möglich");
 
-        if(Var.maxfallbox<3) {
-            if (Math.floor(Math.random() * Math.floor(3)) == 1) {
+        if(Var.existfallbox <= 3) {
+            if (Math.floor(Math.random() * Math.floor(3)) != 1000) {
                 System.out.println("placed");
                 int zblock = (int) Math.floor((Math.random() * 8));
                 FK = new FallKasten(Kastenx, Kasteny, zblock);
