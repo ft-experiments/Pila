@@ -53,16 +53,16 @@ public class OptionScreen extends ScreenAdapter {
 
 
         SW = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*3,200,100,1);
-        touchinput.Switch.switchs.add(SW);
+
 
 
 
         fpsshow = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*4,200,100,0);
 
-        touchinput.Switch.switchs.add(fpsshow);
+
 
         toggelcontrol = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*5,200,100,0);
-        touchinput.Switch.switchs.add(toggelcontrol);
+
     }
 
     @Override
@@ -88,19 +88,16 @@ public class OptionScreen extends ScreenAdapter {
         //for(int i = 0; i< touchinput.Switch.switchs.size(); i=i+1) {
         //touchinput.Switch SW;
         // if(i==0) {
-        SW = touchinput.Switch.switchs.get(0);
-
-        SW.update();
         // System.out.println(SW.status);
 
         font.getData().setScale(4);
         // if (i == 0) {
         font.draw(batch, "Vibrieren", SW.x - 400, SW.y + SW.h / 2);
-        if (SW.status == 0) {
+        if (SW.isswitched() == 0) {
             batch.draw(switchoff, SW.x, SW.y, SW.w, SW.h);
             Var.beiballberurungvibrieren = 0;
         }
-        if (SW.status == 1) {
+        if (SW.isswitched() == 1) {
             batch.draw(switchon, SW.x, SW.y, SW.w, SW.h);
             Var.beiballberurungvibrieren = 1;
         }
@@ -113,39 +110,37 @@ public class OptionScreen extends ScreenAdapter {
           //  if(i==1) {
 
 
-                fpsshow = touchinput.Switch.switchs.get(1);
-                fpsshow.update();
+
 
                 // System.out.println(SW.status);
 
                 font.getData().setScale(4);
                // if (i == 0) {
                     font.draw(batch, "FPS-Anzeigen", fpsshow.x - 400, fpsshow.y + fpsshow.h / 2);
-                    if (fpsshow.status == 0) {
+                    if (fpsshow.isswitched() == 0) {
                         batch.draw(switchoff, fpsshow.x, fpsshow.y, fpsshow.w, fpsshow.h);
                         Var.showfps = false;
                     }
-                    if (fpsshow.status == 1) {
+                    if (fpsshow.isswitched()== 1) {
                         batch.draw(switchon, fpsshow.x, fpsshow.y, fpsshow.w, fpsshow.h);
                         Var.showfps = true;
                     }
 
 
-        toggelcontrol = touchinput.Switch.switchs.get(2);
-        toggelcontrol.update();
+
 
         // System.out.println(SW.status);
 
         font.getData().setScale(4);
         // if (i == 0) {
 
-        if (toggelcontrol.status == 0) {
+        if (toggelcontrol.isswitched() == 0) {
             font.draw(batch, "Touch-Steuerung", toggelcontrol.x - 450, toggelcontrol.y + toggelcontrol.h / 2);
             batch.draw(switchoff, toggelcontrol.x, toggelcontrol.y, toggelcontrol.w, toggelcontrol.h);
             batch.draw(Touch, toggelcontrol.x-600, toggelcontrol.y-75, 100, 200);
             Var.steuerung = 0;
         }
-        if (toggelcontrol.status == 1) {
+        if (toggelcontrol.isswitched() == 1) {
             font.draw(batch, "Gyro-Steuerung", toggelcontrol.x - 425, toggelcontrol.y + toggelcontrol.h / 2);
             batch.draw(switchon, toggelcontrol.x, toggelcontrol.y, toggelcontrol.w, toggelcontrol.h);
             batch.draw(Gyro, toggelcontrol.x-600, toggelcontrol.y-75, 100, 200);
