@@ -331,6 +331,7 @@ public class GameScreen extends ScreenAdapter {
                         break;
                     case 3:
                         Var.ballmode = 1;
+                        Ablauf.feuerballablauf=100;
                         break;
                     case 4:
                         Var.kleben=1;
@@ -603,6 +604,13 @@ public class GameScreen extends ScreenAdapter {
 
 
         shapeRenderer.end();
+        batch.begin();
+        if(Var.ballmode==1) {
+            font.getData().setScale(2);
+            font.draw(batch, ""+Ablauf.feuerballablauf+"%", 50, Gdx.graphics.getHeight()-3);
+
+        }
+        batch.end();
 
 
         if(Var.leben <= 0){
