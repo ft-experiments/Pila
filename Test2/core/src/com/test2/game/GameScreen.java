@@ -542,7 +542,9 @@ public class GameScreen extends ScreenAdapter {
             font.draw(batch, "neustart" , neustartbutton.x+30, neustartbutton.y+neustartbutton.h/2+25);
             batch.draw(buttonimage, neustartbutton.x,neustartbutton.y,neustartbutton.w,neustartbutton.h);
             if(neustartbutton.isPressed()==1){
+                Level.dispose();
                 Level.LevelCreate(Level.Le);
+                FallKasten.Fallkasten.clear();
             }
 
 
