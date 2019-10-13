@@ -93,8 +93,7 @@ public class GameScreen extends ScreenAdapter {
         neustartbutton = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-800,400,100);
         Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-200,200,200);
 
-
-
+        new Ablauf();
 
         shapeRenderer = new ShapeRenderer();
         if(Var.gamestatus==0) {
