@@ -9,7 +9,7 @@
 
 
 //TODO Wenn man das level neustartet stimmt hat man im ersten level pllötzlich ein leben mehr
-//TODO Ball wird einfach so immer schneller "meinst du? ist mir noch nicht aufgefallen"
+//TODO Ball wird einfach so immer schneller wenn man gegen ecken stößt
 
 
 
@@ -19,9 +19,12 @@
 
 
 
-//TODO Kollisionsmaske für paddel zu klein
-//TODO Pause Menü auch mit ESC-Taste kommen
 
+//TODO Pause Menü auch mit ESC-Taste kommen
+//TODO Ablauf in richtiger reihenfolge
+//TODO Ablauf auserhalb der Statusbar
+//TODO Feuerball auf Zeit
+//TODO Menü Relativ
 
 
 
@@ -32,5 +35,5 @@
 /////////////////////////////////////////////////
 
 
-//TODO Ablaufzeit der Objekte mit cool down oben links
-//TODO countdown nach beenden der Pause
+
+//TODO countdown nach beenden der Pause!!!
