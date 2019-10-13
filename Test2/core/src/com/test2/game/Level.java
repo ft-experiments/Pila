@@ -138,15 +138,16 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
     }
 
     static void Levelup() {
-        Level.kisten.clear();
-        Ball.dispose();
-        Var.gamestatus=0;
+        Level.dispose();
         Level.LevelCreate(Le+1);
 
     }
 
     static void dispose(){
-        kisten.clear();
+        Level.kisten.clear();
+        FallKasten.Fallkasten.clear();
+        Ball.dispose();
+        Var.gamestatus=0;
     }
 
 

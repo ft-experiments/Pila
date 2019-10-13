@@ -45,6 +45,7 @@ public class GameScreen extends ScreenAdapter {
     touchinput.Button Levelauswahl;
     touchinput.Button Buttonstart;
     touchinput.Button Weiter;
+    touchinput.Button neustartbutton;
     Texture buttonimage;
     Texture bigpause;
 
@@ -89,7 +90,9 @@ public class GameScreen extends ScreenAdapter {
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-700,400,100);
-        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-100,200,200);
+        neustartbutton = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-800,400,100);
+        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-200,200,200);
+
 
 
 
@@ -450,7 +453,7 @@ public class GameScreen extends ScreenAdapter {
 
 
             if(k.v==1 && k.K_art!=4){
-                b_zahl += 1;
+                    b_zahl += 1;
             }
 
                 k.checkKolission();
@@ -534,6 +537,12 @@ public class GameScreen extends ScreenAdapter {
 
                 Test2.INSTANCE.setScreen(new LevelAuswahlScreen("game"));
 
+            }
+
+            font.draw(batch, "neustart" , neustartbutton.x+30, neustartbutton.y+neustartbutton.h/2+25);
+            batch.draw(buttonimage, neustartbutton.x,neustartbutton.y,neustartbutton.w,neustartbutton.h);
+            if(neustartbutton.isPressed()==1){
+                Level.dispose();
             }
 
 
