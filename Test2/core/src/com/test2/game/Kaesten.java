@@ -43,7 +43,7 @@ int my2=0;
                 my=K_y+2;
                 mx2=K_x+K_w-2;
                 my2=K_y+K_h-2;
-
+                if(Var.ballmode==1){Ablauf.feuerballablauf-=100/20;}
                 if(Var.ballmode==0) {
                     if(Ball.y<my) {
                         Ball.by = Ball.by * -1;
