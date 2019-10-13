@@ -597,6 +597,9 @@ public class GameScreen extends ScreenAdapter {
     //ablauf der objekte
         if(Var.ballmode==1){
             shapeRenderer.rect(0,Gdx.graphics.getHeight()-25,Ablauf.feuerballablauf*2,25);
+            if(Ablauf.feuerballablauf<=0){
+                Var.ballmode=0;
+            }
         }
 
 
