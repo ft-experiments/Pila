@@ -99,7 +99,6 @@ public class GameScreen extends ScreenAdapter {
         if(Var.gamestatus==0) {
             Level.LevelCreate(Var.createlevel);
         }
-
         imgfeuerball =new Texture("ballfeueranimation.png");
         final TextureRegion[][] regions = TextureRegion.split(imgfeuerball, 100,100);
         feuerball = new Sprite(regions[0][0]);
@@ -306,7 +305,9 @@ public class GameScreen extends ScreenAdapter {
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());                ////////////
         if(Var.ballmode==1) {
+            batch.setColor(Ablauf.feuerballablauf/100f,Ablauf.feuerballablauf/100f,Ablauf.feuerballablauf/100f,1);
             batch.draw(feuerball, Ball.x, Ball.y, 30, 30);
+            batch.setColor(1,1,1,1);
         }
         int zaeler = 0;
         for(int i=0;i<FallKasten.Fallkasten.size();i=i+1) {
