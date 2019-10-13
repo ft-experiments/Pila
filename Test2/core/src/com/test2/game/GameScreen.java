@@ -149,7 +149,7 @@ public class GameScreen extends ScreenAdapter {
             Ball.by=-bys;
             Var.klebt=false;
             Var.ballupdate=true;
-            Ablauf.klebablauf-=100/10;
+            Ablauf.klebablauf-=100/5;
         }
     }
 
