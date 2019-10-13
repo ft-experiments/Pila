@@ -4,7 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Ablauf {
-    static int feuerballablauf=100;
+    static int feuerballablauf;
     static int klebablauf=100;
 
     static Timer ablauf;
@@ -17,11 +17,12 @@ public class Ablauf {
             @Override
             public void run() {
                 if(Var.ballmode==1) {
-                    feuerballablauf -= 1;
+                    //feuerballablauf -= 1;
+                    feuerballablauf = feuerballablauf -1;
                 }
 
             }
-        },0, 250);
+        },0, 50);
 
     }
 }

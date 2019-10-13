@@ -13,6 +13,9 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 import java.util.Timer;
 import java.util.TimerTask;
+import java.util.concurrent.TimeUnit;
+
+import static com.sun.tools.doclint.Entity.lang;
 
 public class GameScreen extends ScreenAdapter {
 
@@ -172,7 +175,7 @@ public class GameScreen extends ScreenAdapter {
         FallKasten.de = delta;
 
         if (Var.gamestatus == 0) {
-            if(Var.ballstartmode==1) {
+            if(Var.ballstartmode==0) {
                  if (DoppelKlick.DoppelKlick() == 1 || Gdx.input.getAccelerometerY()>10) {
 
                 new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
@@ -180,7 +183,7 @@ public class GameScreen extends ScreenAdapter {
 
 
                  }
-            }else if(Var.ballstartmode==0){
+            }else if(Var.ballstartmode==1){
                 new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
                 Var.gamestatus = 1;
             }
@@ -332,7 +335,7 @@ public class GameScreen extends ScreenAdapter {
                         break;
                     case 3:
                         Var.ballmode = 1;
-                        Ablauf.feuerballablauf=100;
+                        Ablauf.feuerballablauf=200;
                         break;
                     case 4:
                         Var.kleben=1;
@@ -518,14 +521,7 @@ public class GameScreen extends ScreenAdapter {
             batch.begin();
 
             batch.draw(bigpause, Weiter.x, Weiter.y, Weiter.w, Weiter.h );
-            if(Weiter.isPressed()==1){
-                if(gamestatuspausesave==0){
-                    Var.gamestatus=gamestatuspausesave;
-                    gamestatuspausesave=-1;
-                }else{
-                    Var.gamestatus=1;
-                }
-            }
+
 
 
 
@@ -537,8 +533,10 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-
                 //COUNTDOWM
+
+
+
 
                 Test2.INSTANCE.setScreen(new LevelAuswahlScreen("game"));
 
@@ -551,12 +549,57 @@ public class GameScreen extends ScreenAdapter {
                 Level.LevelCreate(Level.Le);
                 FallKasten.Fallkasten.clear();
             }
+            batch.end();
+            if(Weiter.isPressed()==1){
+                if(gamestatuspausesave==0){
+                    Var.gamestatus=gamestatuspausesave;
+                    gamestatuspausesave=-1;
+                }else{
+
+                    //COUNTDOWN
 
 
+                    Var.gamestatus=1;
+
+                    try {
+
+
+                        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                        shapeRenderer.setColor(1f, 0.0f, 0.0f, 1f);
+                        shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
+                        shapeRenderer.end();
+
+                        System.out.println("3");
+                        TimeUnit.SECONDS.sleep(1);
+
+                        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                        shapeRenderer.setColor(0f, 0.0f, 1.0f, 1f);
+                        shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
+                        shapeRenderer.end();
+                        System.out.println("2");
+                        TimeUnit.SECONDS.sleep(1);
+
+                        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                        shapeRenderer.setColor(0f, 1.0f, 0.0f, 1f);
+                        shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
+                        shapeRenderer.end();
+                        System.out.println("1");
+                        TimeUnit.SECONDS.sleep(1);
+                        System.out.println("GO");
+
+                    }catch (java.lang.InterruptedException e) {
+                        System.out.println("UUps");
+                    }
+                }
+            }
+            batch.begin();
         }
 
 
+
         batch.end();
+
+
 
 
 
@@ -599,7 +642,7 @@ public class GameScreen extends ScreenAdapter {
     //ablauf der objekte
         if(Var.ballmode==1){
             shapeRenderer.setColor(1, 0, 0, 0);
-            shapeRenderer.rect(0,Gdx.graphics.getHeight()-25,Ablauf.feuerballablauf*2,25);
+            shapeRenderer.rect(0,Gdx.graphics.getHeight()-25,Ablauf.feuerballablauf,25);
             if(Ablauf.feuerballablauf<=0){
                 Var.ballmode=0;
             }
@@ -621,7 +664,7 @@ public class GameScreen extends ScreenAdapter {
         batch.begin();
         if(Var.ballmode==1) {
             font.getData().setScale(2);
-            font.draw(batch, ""+Ablauf.feuerballablauf+"%", 50, Gdx.graphics.getHeight()-3);
+            font.draw(batch, ""+Ablauf.feuerballablauf/2+"%", 50, Gdx.graphics.getHeight()-3);
 
         }
         if(Var.kleben==1){
