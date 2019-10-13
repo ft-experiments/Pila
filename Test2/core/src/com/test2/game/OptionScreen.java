@@ -26,6 +26,7 @@ public class OptionScreen extends ScreenAdapter {
     touchinput.Switch fpsshow;
     touchinput.Switch SW;
     touchinput.Switch toggelcontrol;
+    touchinput.Switch ballstartmode;
     int u=0;
 
     public OptionScreen() {
@@ -62,6 +63,8 @@ public class OptionScreen extends ScreenAdapter {
 
 
         toggelcontrol = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*5,200,100,0);
+
+        ballstartmode = new touchinput.Switch(Gdx.graphics.getWidth()/2+100,Gdx.graphics.getHeight()/8*6,200,100,1);
 
     }
 
@@ -145,6 +148,17 @@ public class OptionScreen extends ScreenAdapter {
             batch.draw(switchon, toggelcontrol.x, toggelcontrol.y, toggelcontrol.w, toggelcontrol.h);
             batch.draw(Gyro, toggelcontrol.x-600, toggelcontrol.y-75, 100, 200);
             Var.steuerung = 1;
+        }
+
+        if(ballstartmode.isswitched() == 0){
+            font.draw(batch, "sofort start", ballstartmode.x - 450, ballstartmode.y + ballstartmode.h / 2);
+            batch.draw(switchoff, ballstartmode.x, ballstartmode.y, ballstartmode.w, ballstartmode.h);
+            Var.ballstartmode=0;
+        }
+        if(ballstartmode.isswitched() == 1){
+            font.draw(batch, "mit interaktion", ballstartmode.x - 450, ballstartmode.y + ballstartmode.h / 2);
+            batch.draw(switchon, ballstartmode.x, ballstartmode.y, ballstartmode.w, ballstartmode.h);
+            Var.ballstartmode=1;
         }
 
 
