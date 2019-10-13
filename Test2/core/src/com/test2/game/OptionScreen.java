@@ -142,11 +142,13 @@ public class OptionScreen extends ScreenAdapter {
         if (toggelcontrol.status == 0) {
             font.draw(batch, "Touch-Steuerung", toggelcontrol.x - 450, toggelcontrol.y + toggelcontrol.h / 2);
             batch.draw(switchoff, toggelcontrol.x, toggelcontrol.y, toggelcontrol.w, toggelcontrol.h);
+            batch.draw(Touch, toggelcontrol.x-600, toggelcontrol.y-75, 100, 200);
             Var.steuerung = 0;
         }
         if (toggelcontrol.status == 1) {
             font.draw(batch, "Gyro-Steuerung", toggelcontrol.x - 425, toggelcontrol.y + toggelcontrol.h / 2);
             batch.draw(switchon, toggelcontrol.x, toggelcontrol.y, toggelcontrol.w, toggelcontrol.h);
+            batch.draw(Gyro, toggelcontrol.x-600, toggelcontrol.y-75, 100, 200);
             Var.steuerung = 1;
         }
 
