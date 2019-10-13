@@ -149,6 +149,7 @@ public class GameScreen extends ScreenAdapter {
             Ball.by=-bys;
             Var.klebt=false;
             Var.ballupdate=true;
+            Ablauf.klebablauf-=100/10;
         }
     }
 
@@ -335,6 +336,7 @@ public class GameScreen extends ScreenAdapter {
                         break;
                     case 4:
                         Var.kleben=1;
+                        Ablauf.klebablauf=100;
                         break;
                     case 5:
                         Ball.by += Ball.by/2;
@@ -596,9 +598,18 @@ public class GameScreen extends ScreenAdapter {
 
     //ablauf der objekte
         if(Var.ballmode==1){
+            shapeRenderer.setColor(1, 0, 0, 0);
             shapeRenderer.rect(0,Gdx.graphics.getHeight()-25,Ablauf.feuerballablauf*2,25);
             if(Ablauf.feuerballablauf<=0){
                 Var.ballmode=0;
+            }
+        }
+
+        if(Var.kleben==1){
+            shapeRenderer.setColor(0, 1, 0, 0);
+            shapeRenderer.rect(0,Gdx.graphics.getHeight()-50,Ablauf.klebablauf*2,25);
+            if(Ablauf.klebablauf<=0){
+                Var.kleben=0;
             }
         }
 
@@ -612,6 +623,10 @@ public class GameScreen extends ScreenAdapter {
             font.getData().setScale(2);
             font.draw(batch, ""+Ablauf.feuerballablauf+"%", 50, Gdx.graphics.getHeight()-3);
 
+        }
+        if(Var.kleben==1){
+            font.getData().setScale(2);
+            font.draw(batch, ""+Ablauf.klebablauf+"%", 50, Gdx.graphics.getHeight()-3-25);
         }
         batch.end();
 
