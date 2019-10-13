@@ -23,7 +23,6 @@
 //TODO Pause Menü auch mit ESC-Taste kommen
 //TODO Ablauf in richtiger reihenfolge
 //TODO Ablauf auserhalb der Statusbar
-//TODO Feuerball auf Zeit
 //TODO Menü Relativ
 
 
