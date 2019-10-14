@@ -516,9 +516,7 @@ public class GameScreen extends ScreenAdapter {
             batch.end();
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
             shapeRenderer.setColor(0.4f, 0.2f, 0.8f, 0.6f);
-            if(Var.gamestatus != 5) {
-                shapeRenderer.rect(Gdx.graphics.getWidth() / 2 - 250, Gdx.graphics.getHeight() / 2 - 700 / 2, 500, 700);
-            }
+            shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
             shapeRenderer.end();
             batch.begin();
 
@@ -557,7 +555,7 @@ public class GameScreen extends ScreenAdapter {
                     Var.gamestatus=gamestatuspausesave;
                     gamestatuspausesave=-1;
                 }else{
-                    Var.gamestatus=5;
+
                     //COUNTDOWN
 
 
@@ -569,15 +567,19 @@ public class GameScreen extends ScreenAdapter {
                         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
                         shapeRenderer.setColor(1f, 0.0f, 0.0f, 1f);
                         shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
+                        shapeRenderer.end();
 
                         System.out.println("3");
                         TimeUnit.SECONDS.sleep(1);
 
+                        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
                         shapeRenderer.setColor(0f, 0.0f, 1.0f, 1f);
                         shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
+                        shapeRenderer.end();
                         System.out.println("2");
                         TimeUnit.SECONDS.sleep(1);
 
+                        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
                         shapeRenderer.setColor(0f, 1.0f, 0.0f, 1f);
                         shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
                         shapeRenderer.end();

@@ -41,7 +41,7 @@ public class Var {
 
     static int i;
     static boolean klebt=false;
-    static int ballmode=0;
+    static int ballmode=1;
     static int kleben=0;
 
 
