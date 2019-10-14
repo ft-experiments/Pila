@@ -731,6 +731,12 @@ public class GameScreen extends ScreenAdapter {
     }
 
     @Override
+    public void pause() {
+        super.pause();
+        Var.gamestatus=3;
+    }
+
+    @Override
     public void hide() {
         this.dispose();
     }
