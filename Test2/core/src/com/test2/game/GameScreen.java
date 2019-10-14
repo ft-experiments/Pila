@@ -169,8 +169,8 @@ public class GameScreen extends ScreenAdapter {
             LevelAuswahlButtons.newlevel=0;
         }
 
-        SpeichernLesen.speichern();
-        // SpeichernLesen.lesen();
+       
+
        // System.out.println("gamestatus "+ Var.gamestatus);
         if (Var.klebt == true) {
             klebt();
