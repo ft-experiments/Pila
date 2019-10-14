@@ -209,6 +209,7 @@ public class OptionScreen extends ScreenAdapter {
 
     @Override
     public void hide() {
+        LoadSave.saveall();
         this.dispose();
     }
 }

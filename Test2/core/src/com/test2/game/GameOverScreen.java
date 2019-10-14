@@ -103,6 +103,7 @@ public class GameOverScreen extends ScreenAdapter {
 
     @Override
     public void hide() {
+        LoadSave.saveall();
         this.dispose();
     }
 }
