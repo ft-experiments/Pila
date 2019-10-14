@@ -5,7 +5,7 @@ import java.util.TimerTask;
 
 public class Smooth {
     int smooth = 1000;
-    int rum;
+    int rum=10;
     static int r;
 
 
@@ -19,6 +19,7 @@ public class Smooth {
 
             @Override
             public void run() {
+
                 if(Ablauf.klebablaufsoll > Ablauf.klebablauf) {
                     Ablauf.klebablaufsoll -= 1;
                 }
@@ -29,6 +30,7 @@ public class Smooth {
 
             }
         }, 0, 10);
+
     }
 
 
