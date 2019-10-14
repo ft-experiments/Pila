@@ -642,7 +642,7 @@ public class GameScreen extends ScreenAdapter {
     //ablauf der objekte
         if(Var.ballmode==1){
             shapeRenderer.setColor(1, 0, 0, 0);
-            shapeRenderer.rect(0,Gdx.graphics.getHeight()-25,Ablauf.feuerballablauf,25);
+            shapeRenderer.rect(0,Gdx.graphics.getHeight()-25,Ablauf.feuerballablauf/10,25);
             if(Ablauf.feuerballablauf<=0){
                 Var.ballmode=0;
             }
