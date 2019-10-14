@@ -4,7 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Ablauf {
-    static int feuerballablauf;
+    static int feuerballablauf=100;
     static int klebablauf=100;
 
     static Timer ablauf;
