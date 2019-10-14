@@ -1,8 +1,5 @@
 package com.test2.game;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -21,7 +18,7 @@ public class GameScreen extends ScreenAdapter {
 
     public static GameScreen INSTANCE;
 
-
+    LoadSave LoadSave;
     SpriteBatch batch;
     Texture img;
     Texture block_l;
@@ -66,7 +63,11 @@ public class GameScreen extends ScreenAdapter {
 
     //Kaesten k;
     public GameScreen() {
+
+
+
         INSTANCE = this;
+        LoadSave = new LoadSave();
         batch = new SpriteBatch();
         font = new BitmapFont();
         block_l = new Texture("block_l.png");
@@ -160,7 +161,7 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-
+        LoadSave.saveall();
         if(LevelAuswahlButtons.newlevel==1) {
             Level.dispose();
             Ball.dispose();

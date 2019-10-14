@@ -2,6 +2,7 @@ package com.test2.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -24,9 +25,14 @@ public class StartScreen extends ScreenAdapter {
     touchinput.Button Levelauswahl;
     touchinput.Button Buttonstart;
 
+    LoadSave LoadSavee;
+
     int u=0;
 
     public StartScreen() {
+        LoadSavee = new LoadSave();
+
+
         batch = new SpriteBatch();
         font = new BitmapFont();
 
@@ -53,8 +59,8 @@ public class StartScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
 
-
-
+        LoadSavee.saveall();
+        LoadSavee.loadall();
 
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -69,7 +75,7 @@ public class StartScreen extends ScreenAdapter {
 
 
         font.getData().setScale(4);
-        font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25)-200);
+        font.draw(batch, "Levelauswahl      "+LoadSave.prefs.getInteger("vibrieren") , Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25)-200);
         batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y-200,Levelauswahl.w,Levelauswahl.h);
         if(Levelauswahl.isPressed() == 1){
             Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
