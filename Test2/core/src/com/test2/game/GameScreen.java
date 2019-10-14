@@ -642,7 +642,7 @@ public class GameScreen extends ScreenAdapter {
     //ablauf der objekte
         if(Var.ballmode==1){
             shapeRenderer.setColor(1, 0, 0, 0);
-            shapeRenderer.rect(0,Gdx.graphics.getHeight()-25,Ablauf.feuerballablauf/10,25);
+            shapeRenderer.rect(0,Gdx.graphics.getHeight()-25,Ablauf.feuerballablauf/5,25);
             if(Ablauf.feuerballablauf<=0){
                 Var.ballmode=0;
             }
@@ -650,7 +650,7 @@ public class GameScreen extends ScreenAdapter {
 
         if(Var.kleben==1){
             shapeRenderer.setColor(0, 1, 0, 0);
-            shapeRenderer.rect(0,Gdx.graphics.getHeight()-50,Ablauf.klebablauf*2,25);
+            shapeRenderer.rect(0,Gdx.graphics.getHeight()-50,Ablauf.klebablaufsoll/5,25);
             if(Ablauf.klebablauf<=0){
                 Var.kleben=0;
             }

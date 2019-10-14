@@ -4,10 +4,13 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Ablauf {
+    static Timer ablauf;
     static int feuerballablauf=1000; //promille
     static int klebablauf=100;
+    static int klebablaufsoll=1000;
 
-    static Timer ablauf;
+
+    int smooth;
     static int T=0;
 
     public Ablauf(){
@@ -25,6 +28,9 @@ public class Ablauf {
         },0, 50);
 
     }
+
+
+
 
     static void feuerballzuruck(){
         feuerballablauf=1000;
