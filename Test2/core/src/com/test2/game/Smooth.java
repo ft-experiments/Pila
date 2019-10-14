@@ -11,16 +11,20 @@ public class Smooth {
 
     static Timer ablauf;
 
-    public Smooth(int _r) {
-        r=_r;
+    public Smooth() {
 
+        Ablauf.klebablaufsoll=Ablauf.klebablaufsoll;
         ablauf = new Timer();
         ablauf.scheduleAtFixedRate(new TimerTask() {
 
             @Override
             public void run() {
-
-                Ablauf.klebablaufsoll -= 1;
+                if(Ablauf.klebablaufsoll > Ablauf.klebablauf) {
+                    Ablauf.klebablaufsoll -= 1;
+                }
+                if(Ablauf.klebablaufsoll < Ablauf.klebablauf) {
+                    Ablauf.klebablaufsoll += 1;
+                }
 
 
             }

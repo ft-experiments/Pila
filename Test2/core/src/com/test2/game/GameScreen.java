@@ -51,6 +51,7 @@ public class GameScreen extends ScreenAdapter {
     touchinput.Button neustartbutton;
     Texture buttonimage;
     Texture bigpause;
+    Smooth ka;
 
     int u=0;
     static int gamestatuspausesave= -1;
@@ -90,6 +91,7 @@ public class GameScreen extends ScreenAdapter {
         einstellungen = new Texture("einstellungen.png");
         buttonimage = new Texture("Button.png");
         bigpause = new Texture("bigpause.png");
+        ka = new Smooth();
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-700,400,100);
@@ -150,7 +152,8 @@ public class GameScreen extends ScreenAdapter {
             Ball.by=-bys;
             Var.klebt=false;
             Var.ballupdate=true;
-            Ablauf.klebablauf-=100/5;
+            Ablauf.klebablauf-=100;
+
         }
     }
 
@@ -339,7 +342,7 @@ public class GameScreen extends ScreenAdapter {
                         break;
                     case 4:
                         Var.kleben=1;
-                        Ablauf.klebablauf=100;
+                        Ablauf.klebzuruck();
                         break;
                     case 5:
                         Ball.by += Ball.by/2;
@@ -669,7 +672,7 @@ public class GameScreen extends ScreenAdapter {
         }
         if(Var.kleben==1){
             font.getData().setScale(2);
-            font.draw(batch, ""+Ablauf.klebablauf+"%", 50, Gdx.graphics.getHeight()-3-25);
+            font.draw(batch, ""+Ablauf.klebablaufsoll/10+"%", 50, Gdx.graphics.getHeight()-3-25);
         }
         batch.end();
 
