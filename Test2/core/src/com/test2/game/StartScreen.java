@@ -27,6 +27,8 @@ public class StartScreen extends ScreenAdapter {
 
     LoadSave LoadSavee;
 
+    Preferences prefs = Gdx.app.getPreferences("einstellungen");
+
     int u=0;
 
     public StartScreen() {
@@ -58,9 +60,10 @@ public class StartScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
+        prefs.putInteger("vibrieren", 1);
+        System.out.println(prefs.getInteger("vibrieren"));
 
-        LoadSavee.saveall();
-        LoadSavee.loadall();
+
 
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -75,7 +78,7 @@ public class StartScreen extends ScreenAdapter {
 
 
         font.getData().setScale(4);
-        font.draw(batch, "Levelauswahl      "+LoadSave.prefs.getInteger("vibrieren") , Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25)-200);
+        font.draw(batch, "Levelauswahl      "+prefs.getInteger("vibrieren") , Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25)-200);
         batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y-200,Levelauswahl.w,Levelauswahl.h);
         if(Levelauswahl.isPressed() == 1){
             Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
