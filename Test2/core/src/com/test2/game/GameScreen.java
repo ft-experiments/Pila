@@ -656,6 +656,7 @@ public class GameScreen extends ScreenAdapter {
             shapeRenderer.rect(0,Gdx.graphics.getHeight()-50,Ablauf.klebablaufsoll/5,25);
             if(Ablauf.klebablaufsoll<=0){
                 Var.kleben=0;
+                Ablauf.klebablaufsoll=1000;
             }
         }
 
