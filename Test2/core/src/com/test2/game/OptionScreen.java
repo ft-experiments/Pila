@@ -143,13 +143,13 @@ public class OptionScreen extends ScreenAdapter {
             font.draw(batch, "Touch-Steuerung", toggelcontrol.x - 450, toggelcontrol.y + toggelcontrol.h / 2);
             batch.draw(switchoff, toggelcontrol.x, toggelcontrol.y, toggelcontrol.w, toggelcontrol.h);
             batch.draw(Touch, toggelcontrol.x-600, toggelcontrol.y-75, 100, 200);
-            Var.steuerung = 1;
+            Var.steuerung = 0;
         }
         if (toggelcontrol.isswitched() == 1) {
             font.draw(batch, "Gyro-Steuerung", toggelcontrol.x - 425, toggelcontrol.y + toggelcontrol.h / 2);
             batch.draw(switchon, toggelcontrol.x, toggelcontrol.y, toggelcontrol.w, toggelcontrol.h);
             batch.draw(Gyro, toggelcontrol.x-600, toggelcontrol.y-75, 100, 200);
-            Var.steuerung = 0;
+            Var.steuerung = 1;
 
         }
 
@@ -158,13 +158,13 @@ public class OptionScreen extends ScreenAdapter {
         if(ballstartmode.isswitched() == 0){
 
             batch.draw(switchoff, ballstartmode.x, ballstartmode.y, ballstartmode.w, ballstartmode.h);
-            Var.ballstartmode=1;
+            Var.ballstartmode=0;
         }
         if(ballstartmode.isswitched() == 1){
 
             batch.draw(switchon, ballstartmode.x, ballstartmode.y, ballstartmode.w, ballstartmode.h);
 
-            Var.ballstartmode=0;
+            Var.ballstartmode=1;
         }
 
 

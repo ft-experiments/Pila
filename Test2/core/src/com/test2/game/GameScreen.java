@@ -15,7 +15,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
-import static com.sun.tools.doclint.Entity.lang;
+
 
 public class GameScreen extends ScreenAdapter {
 
