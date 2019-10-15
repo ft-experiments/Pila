@@ -140,7 +140,9 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
     static void Levelup() {
         Level.dispose();
         Level.LevelCreate(Le+1);
-        Var.levelbesitz+=1;
+        if(Le>Var.levelbesitz) {
+            Var.levelbesitz += 1;
+        }
     }
 
     static void dispose(){
