@@ -52,7 +52,7 @@ public class Var {
 
 
     static int createlevel=1;
-    static int levelbesitz=3;
+    static int levelbesitz=1;
 
     static boolean ballupdate = true;
     static int ballklebposition = 0;

@@ -25,6 +25,8 @@ public class LoadSave {
         Var.steuerung=prefs.getInteger("steuerung");
 
         Var.ballstartmode=prefs.getInteger("ballstartmode");
+        Var.levelbesitz=prefs.getInteger("levelbesitz");
+        if(Var.levelbesitz==0){Var.levelbesitz=1;}
     }
 
 
@@ -42,6 +44,8 @@ public class LoadSave {
         prefs.putInteger("steuerung", Var.steuerung);
 
         prefs.putInteger("ballstartmode", Var.ballstartmode);
+
+        prefs.putInteger("levelbesitz", Var.levelbesitz);
 
         prefs.flush();
     }
