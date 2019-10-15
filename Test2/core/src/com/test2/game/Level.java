@@ -9,11 +9,37 @@ int L;
     static int Le=0;
 static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
+    static int[] Level6 = {10,5,200   , 1,0,1,0,4,4,0,1,0,1,
+                                        1,1,1,1,0,0,1,1,1,1,
+                                        2,2,2,2,0,0,2,2,2,2,
+                                        0,0,4,0,0,0,0,4,0,0,
+                                        3,3,0,0,1,1,0,0,3,3
+    };
+
+
 
     Level(int _L) {
         L=_L;
 
     }
+    static int x=0;
+    static int y=0;
+    static int i=0;
+    static void levelcreater(int[] l){
+
+        y=0;
+        while(y<l[1]){
+            x=0;
+             while(x<l[0]){
+                 i=i+1;
+                 Level.kisten.add(new Kaesten(x * Gdx.graphics.getWidth() / l[0],Gdx.graphics.getHeight()-y*50-l[2], Gdx.graphics.getWidth() / l[0], 50, l[i+2]));
+                 x=x+1;
+             }
+             y=y+1;
+        }
+
+    }
+
 
     static void LevelCreate(int l){
         int i;
@@ -131,6 +157,11 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
                 }
 
 
+                break;
+            case 6:
+                Le=6;
+                Var.leben=4;
+                levelcreater(Level6);
                 break;
 
         }
