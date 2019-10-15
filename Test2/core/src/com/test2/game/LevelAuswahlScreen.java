@@ -24,6 +24,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
     Texture switchoff;
     Texture Levelbutton;
     Texture buttonimage;
+    Texture Levelbuttonrot;
     touchinput.Button zurueck;
 
    String back;
@@ -42,6 +43,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         switchoff = new Texture("switchoff.png");
         Levelbutton = new Texture("Levelauswahlbutton.png");
         buttonimage = new Texture("Button.png");
+        Levelbuttonrot = new Texture("Levelauswahlbuttonrot.png");
         zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2-110,Gdx.graphics.getHeight()-500,220,100);
 
         back = referrer;
@@ -92,16 +94,18 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         }
 
         LevelAuswahlButtons LAB;
-        for(int i=0;i<LevelAuswahlButtons.Levelbuttons.size();i=i+1) {
-            LAB = LevelAuswahlButtons.Levelbuttons.get(i);
-            if(i<=Var.levelbesitz) {
-                batch.setColor(1, 0, 0, 1);
+        for(int b=0;b<LevelAuswahlButtons.Levelbuttons.size();b=b+1) {
+            LAB = LevelAuswahlButtons.Levelbuttons.get(b);
+            if(LAB.Level-1>=Var.levelbesitz) {
+                batch.draw(Levelbuttonrot, LAB.x, LAB.y, LAB.w, LAB.h);
             }
-            batch.draw(Levelbutton, LAB.x, LAB.y, LAB.w, LAB.h);
-            batch.setColor(1,1,1,1);
+            if(LAB.Level-1<Var.levelbesitz){
+                batch.draw(Levelbutton, LAB.x, LAB.y, LAB.w, LAB.h);
+            }
+
             font.getData().setScale(8);
-            font.draw(batch, ""+LAB.Level+Var.levelbesitz , LAB.x+LAB.w/2-50,LAB.y+LAB.h/2+50);
-            if(i<=Var.levelbesitz) {
+            font.draw(batch, ""+LAB.Level , LAB.x+LAB.w/2-50,LAB.y+LAB.h/2+50);
+            if(b<Var.levelbesitz) {
                 LAB.check();
             }
         }
@@ -112,7 +116,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-        shapeRenderer.setColor(1,0,0,1);
+        //shapeRenderer.setColor(1,0,0,1);
         //shapeRenderer.rect(0,0,100,100);
 
         shapeRenderer.end();
