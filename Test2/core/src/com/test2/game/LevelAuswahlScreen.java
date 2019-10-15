@@ -94,10 +94,16 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         LevelAuswahlButtons LAB;
         for(int i=0;i<LevelAuswahlButtons.Levelbuttons.size();i=i+1) {
             LAB = LevelAuswahlButtons.Levelbuttons.get(i);
+            if(i<=Var.levelbesitz) {
+                batch.setColor(1, 0, 0, 1);
+            }
             batch.draw(Levelbutton, LAB.x, LAB.y, LAB.w, LAB.h);
+            batch.setColor(1,1,1,1);
             font.getData().setScale(8);
-            font.draw(batch, ""+LAB.Level , LAB.x+LAB.w/2-50,LAB.y+LAB.h/2+50);
-            LAB.check();
+            font.draw(batch, ""+LAB.Level+Var.levelbesitz , LAB.x+LAB.w/2-50,LAB.y+LAB.h/2+50);
+            if(i<=Var.levelbesitz) {
+                LAB.check();
+            }
         }
 
         batch.end();
