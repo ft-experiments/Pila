@@ -15,6 +15,23 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
                                         0,0,4,0,0,0,0,4,0,0,
                                         3,3,0,0,1,1,0,0,3,3
     };
+    static int[] Level7 = {
+            10,12,100   ,
+            0,5,5,5,1,2,5,5,5,0,
+            0,0,5,5,2,1,5,5,0,0,
+            5,0,0,5,1,2,5,0,0,5,
+            5,5,0,0,2,1,0,0,5,5,
+            5,5,5,0,1,2,0,5,5,5,
+            3,3,3,3,2,1,3,3,3,3,
+            5,5,5,5,1,2,5,5,5,5,
+            5,5,5,0,2,1,0,5,5,5,
+            5,5,0,0,1,2,0,0,5,5,
+            5,0,0,5,2,1,5,0,0,5,
+            0,0,5,5,1,2,5,5,0,0,
+            0,5,5,5,2,1,5,5,5,0
+
+
+    };
 
 
 
@@ -161,6 +178,12 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
                 Var.leben=4;
                 Level.wo=0;
                 levelcreater(Level6);
+                break;
+            case 7:
+                Le=7;
+                Var.leben=4;
+                Level.wo=0;
+                levelcreater(Level7);
                 break;
 
         }

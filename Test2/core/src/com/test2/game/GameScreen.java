@@ -464,7 +464,7 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-            if(k.v==1 && k.K_art!=4){
+            if(k.v==1 && k.K_art!=4 && k.K_art!=5){
                     b_zahl += 1;
             }
 

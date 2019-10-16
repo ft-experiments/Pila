@@ -44,24 +44,26 @@ int my2=0;
                 mx2=K_x+K_w-2;
                 my2=K_y+K_h-2;
                 //if(Var.ballmode==1){Ablauf.feuerballablauf-=100/20;}
-                if(Var.ballmode==0) {
-                    if(Ball.y<my) {
-                        Ball.by = Ball.by * -1;
-                        Ball.y -=Ball.by*2;
-                    }
-                    if(Ball.y>my2) {
-                        Ball.by = Ball.by * -1;
-                        Ball.y -=Ball.by*2;
-                    }
-                    if(Ball.x<mx) {
-                        Ball.bx = Ball.bx * -1;
-                        Ball.x -=Ball.bx*2;
-                    }
-                    if(Ball.x>mx2) {
-                        Ball.bx = Ball.bx * -1;
-                        Ball.x -=Ball.bx*2;
-                    }
 
+                if(Var.ballmode==0) {
+                    if (K_art != 5){
+                        if (Ball.y < my) {
+                            Ball.by = Ball.by * -1;
+                            Ball.y -= Ball.by * 2;
+                        }
+                    if (Ball.y > my2) {
+                        Ball.by = Ball.by * -1;
+                        Ball.y -= Ball.by * 2;
+                    }
+                    if (Ball.x < mx) {
+                        Ball.bx = Ball.bx * -1;
+                        Ball.x -= Ball.bx * 2;
+                    }
+                    if (Ball.x > mx2) {
+                        Ball.bx = Ball.bx * -1;
+                        Ball.x -= Ball.bx * 2;
+                    }
+                }
 
                    // Ball.bx = Ball.bx * -1;
                 }
@@ -88,11 +90,15 @@ int my2=0;
                             FallKasten.trigger(K_x, K_y);
                         }
                         break;
+                    case 5:
+                        break;
 
                 }
 
-                if(Var.beiballberurungvibrieren==1) {
-                    Gdx.input.vibrate(50);
+                if(K_art!=5) {
+                    if (Var.beiballberurungvibrieren == 1) {
+                        Gdx.input.vibrate(50);
+                    }
                 }
 
 
