@@ -24,20 +24,18 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
     }
     static int x=0;
     static int y=0;
-    static int i=0;
-    static void levelcreater(int[] l){
-
-        y=0;
-        while(y<l[1]){
-            x=0;
-             while(x<l[0]){
-                 i=i+1;
-                 Level.kisten.add(new Kaesten(x * Gdx.graphics.getWidth() / l[0],Gdx.graphics.getHeight()-y*50-l[2], Gdx.graphics.getWidth() / l[0], 50, l[i+2]));
-                 x=x+1;
-             }
-             y=y+1;
+    static int wo=0;
+    static void levelcreater(int[] l) {
+        y = 0;
+        while (y < l[1]) {
+            x = 0;
+            while (x < l[0]) {
+                wo = wo + 1;
+                Level.kisten.add(new Kaesten(x * Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight() - y * 50 - l[2], Gdx.graphics.getWidth() / l[0], 50, l[wo + 2]));
+                x = x + 1;
+            }
+            y = y + 1;
         }
-
     }
 
 
@@ -161,6 +159,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
             case 6:
                 Le=6;
                 Var.leben=4;
+                Level.wo=0;
                 levelcreater(Level6);
                 break;
 
