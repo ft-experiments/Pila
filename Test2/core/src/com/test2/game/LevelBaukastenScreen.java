@@ -135,20 +135,6 @@ batch.end();
 
 
 
-            popup();
-            if (b.check() == 1) {
-                if(Gdx.input.getX()<blocks.get(b_pop).K_x || Gdx.input.getX()>blocks.get(b_pop).K_x+200  ){   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2
-                    popup=1;
-
-                    b_pop=i;
-
-                }
-
-            }
-
-            if (b.check() == 0) {
-
-            }
 
 
 
@@ -161,16 +147,37 @@ batch.end();
 
 
 
+        popup(b_pop);
+        for(int i=0;i<blocks.size();i=i+1) {
+            LevelBauBlock b;
+            b = blocks.get(i);
+            popup(b_pop);
+                    if (b.check() == 1) {
+                        if(Gdx.input.getX()<blocks.get(b_pop).K_x || Gdx.input.getX()>blocks.get(b_pop).K_x+200  ){   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2
+                            popup=1;
+                            popup(i);
+                        }
 
+                    }
+
+                    if (b.check() == 0) {
+
+                    }
+
+
+
+
+
+        }
 
 
     }
 
-    void popup(){
+    void popup(int _b){
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-        //b_pop= _b;
+        b_pop= _b;
         LevelBauBlock b;
-        b = blocks.get(b_pop);
+        b = blocks.get(_b);
         x_pop = b.K_x;
         y_pop = b.K_y;
         if(popup==1){
@@ -239,7 +246,7 @@ batch.end();
 
             //}
             batch.end();
-
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
 
 
 
