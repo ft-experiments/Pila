@@ -71,7 +71,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         leer=new touchinput.Button(0,0,150,75);
         wpopup=new touchinput.Button(0,0,200,525);
 
-    levelcreater(20,10);
+    levelcreater(10,12);
 
 
     }
@@ -143,21 +143,21 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
         }
 
-        
 
 
+        if (Gdx.input.getX() < wpopup.w + wpopup.x && Gdx.input.getX() > wpopup.x && Gdx.input.getY() < Gdx.graphics.getHeight() - wpopup.y && Gdx.input.getY() > Gdx.graphics.getHeight() - wpopup.y - wpopup.h) {   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2{
+            System.out.println(b_pop);
+
+        } else {
+            popup = 0;
+        }
 
 
         for(int i=0;i<blocks.size();i=i+1) {
             LevelBauBlock b;
             b = blocks.get(i);
             popup();
-            if (Gdx.input.getX() < wpopup.w + wpopup.x && Gdx.input.getX() > wpopup.x && Gdx.input.getY() < Gdx.graphics.getHeight() - wpopup.y && Gdx.input.getY() > Gdx.graphics.getHeight() - wpopup.y - wpopup.h) {   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2{
-                System.out.println(b_pop);
 
-            } else {
-                popup = 0;
-            }
                 if (b.check() == 1) {
                     popup = 1;
                     if (Gdx.input.getX() < wpopup.w + wpopup.x && Gdx.input.getX() > wpopup.x && Gdx.input.getY() < Gdx.graphics.getHeight() - wpopup.y && Gdx.input.getY() > Gdx.graphics.getHeight() - wpopup.y - wpopup.h) {   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2{
@@ -193,7 +193,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         if(popup==1){
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
             shapeRenderer.setColor(255,100,255,1);
-            shapeRenderer.rect(x_pop+b.K_w/2,y_pop-525+b.K_h/2,200,525);
+            //shapeRenderer.rect(x_pop+b.K_w/2,y_pop-525+b.K_h/2,200,525);
             wpopup.x=x_pop+b.K_w/2;
             wpopup.y=y_pop-525+b.K_h/2;
             shapeRenderer.setColor(255,255,0,1);
