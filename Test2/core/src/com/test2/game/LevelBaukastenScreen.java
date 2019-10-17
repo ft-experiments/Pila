@@ -39,8 +39,10 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
     int popup=0;
 
-    static int x_pop=0;
-    static int y_pop=0;
+    static int x_pop=10000;
+    static int y_pop=10000;
+    static int b_pop=10;
+
 
     static ArrayList<LevelBauBlock> blocks = new ArrayList<LevelBauBlock>();
 
@@ -71,6 +73,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     levelcreater(20,10);
 
 
+
     }
     static  int wo;
     static int x;
@@ -95,19 +98,19 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
 
-
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-
+batch.end();
 
 
 
         for(int i=0;i<blocks.size();i=i+1) {
             LevelBauBlock b;
             b = blocks.get(i);
+            batch.begin();
             switch(b.K_art) {
                 case 0:
                     batch.draw(blockrot, b.K_x, b.K_y, b.K_w, b.K_h);
@@ -128,7 +131,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
                     batch.draw(buttonimage, b.K_x, b.K_y, b.K_w, b.K_h);
                     break;
             }
-
+            batch.end();
 
 
 
@@ -139,98 +142,115 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         }
 
 
-        batch.end();
 
 
 
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
 
+
+        popup(b_pop);
         for(int i=0;i<blocks.size();i=i+1) {
             LevelBauBlock b;
             b = blocks.get(i);
+            popup(b_pop);
+                    if (b.check() == 1) {
+                        if(Gdx.input.getX()<blocks.get(b_pop).K_x || Gdx.input.getX()>blocks.get(b_pop).K_x+200  ){   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2
+                            popup=1;
+                            popup(i);
+                        }
 
-                if (b.check() == 1) {
-                    popup = 1;
-                    x_pop=b.K_x;
-                }
-
-                if (b.check() == 0 ) {
-                    popup = 0;
-                }
-
-            if(popup==1){
-                shapeRenderer.setColor(255,100,255,1);
-                shapeRenderer.rect(b.K_x+b.K_w/2,b.K_y-525+b.K_h/2,200,525);
-                shapeRenderer.setColor(255,255,0,1);
-                shapeRenderer.ellipse(b.K_x+b.K_w/2-10,b.K_y-10+b.K_h/2,20,20);
-
-                shapeRenderer.end();
-                batch.begin();
-                //if(b.check()==1){
-
-                    rot.x=x_pop+b.K_w/2+25;
-                    rot.y=b.K_y-100+b.K_h/2;
-                    batch.draw(blockrot, rot.x,rot.y,rot.w,rot.h);
-                    font.getData().setScale(4);
-                    font.draw(batch, "rot", rot.x+30, rot.y+(rot.h/2+25));
-                    if(rot.isPressed() == 1){
-                        b.K_art=0;
                     }
 
-                    gruen.x=x_pop+b.K_w/2+25;
-                    gruen.y=b.K_y-180+b.K_h/2;
-                    batch.draw(blockgruen, gruen.x,gruen.y,gruen.w,gruen.h);
-                    font.getData().setScale(4);
-                    font.draw(batch, "grün", blau.x+30, gruen.y+(gruen.h/2+25));
-                    if(blau.isPressed() == 1){
-                        b.K_art=1;
+                    if (b.check() == 0) {
+
                     }
 
-                    blau.x=x_pop+b.K_w/2+25;
-                    blau.y=b.K_y-260+b.K_h/2;
-                    batch.draw(blockblau, blau.x,blau.y,blau.w,blau.h);
-                    font.getData().setScale(4);
-                    font.draw(batch, "blau", blau.x+30, blau.y+(blau.h/2+25));
-                    if(blau.isPressed() == 1){
-                        b.K_art=2;
-                    }
-
-                doppelt.x=x_pop+b.K_w/2+25;
-                doppelt.y=b.K_y-340+b.K_h/2;
-                batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
-                font.getData().setScale(4);
-                font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
-                if(doppelt.isPressed() == 1){
-                    b.K_art=3;
-                }
-
-                unzers.x=x_pop+b.K_w/2+25;
-                unzers.y=b.K_y-420+b.K_h/2;
-                batch.draw(unzer, unzers.x,unzers.y,unzers.w,unzers.h);
-                font.getData().setScale(4);
-                font.draw(batch, "unz", unzers.x+30, unzers.y+(unzers.h/2+25));
-                if(unzers.isPressed() == 1){
-                    b.K_art=4;
-                }
-
-                leer.x=x_pop+b.K_w/2+25;
-                leer.y=b.K_y-500+b.K_h/2;
-                batch.draw(buttonimage, leer.x,leer.y,leer.w,leer.h);
-                font.getData().setScale(4);
-                font.draw(batch, "leer", leer.x+30, leer.y+(leer.h/2+25));
-                if(leer.isPressed() == 1){
-                    b.K_art=5;
-                }
-
-                //}
-                batch.end();
-                shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
 
 
 
-            }
+
         }
 
+
+    }
+
+    void popup(int _b){
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+        b_pop= _b;
+        LevelBauBlock b;
+        b = blocks.get(_b);
+        x_pop = b.K_x;
+        y_pop = b.K_y;
+        if(popup==1){
+            shapeRenderer.setColor(255,100,255,1);
+            shapeRenderer.rect(x_pop+b.K_w/2,y_pop-525+b.K_h/2,200,525);
+            shapeRenderer.setColor(255,255,0,1);
+            shapeRenderer.ellipse(x_pop+b.K_w/2-10,y_pop-10+b.K_h/2,20,20);
+
+            shapeRenderer.end();
+            batch.begin();
+            //if(b.check()==1){
+
+            rot.x=x_pop+b.K_w/2+25;
+            rot.y=y_pop-100+b.K_h/2;
+            batch.draw(blockrot, rot.x,rot.y,rot.w,rot.h);
+            font.getData().setScale(4);
+            font.draw(batch, "rot", rot.x+30, rot.y+(rot.h/2+25));
+            if(rot.isPressed() == 1){
+                b.K_art=0;
+            }
+
+            gruen.x=x_pop+b.K_w/2+25;
+            gruen.y=y_pop-180+b.K_h/2;
+            batch.draw(blockgruen, gruen.x,gruen.y,gruen.w,gruen.h);
+            font.getData().setScale(4);
+            font.draw(batch, "grün", gruen.x+30, gruen.y+(gruen.h/2+25));
+            if(gruen.isPressed() == 1){
+                b.K_art=1;
+            }
+
+            blau.x=x_pop+b.K_w/2+25;
+            blau.y=y_pop-260+b.K_h/2;
+            batch.draw(blockblau, blau.x,blau.y,blau.w,blau.h);
+            font.getData().setScale(4);
+            font.draw(batch, "blau", blau.x+30, blau.y+(blau.h/2+25));
+            if(blau.isPressed() == 1){
+                b.K_art=2;
+            }
+
+            doppelt.x=x_pop+b.K_w/2+25;
+            doppelt.y=y_pop-340+b.K_h/2;
+            batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
+            font.getData().setScale(4);
+            font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
+            if(doppelt.isPressed() == 1){
+                b.K_art=3;
+            }
+
+            unzers.x=x_pop+b.K_w/2+25;
+            unzers.y=y_pop-420+b.K_h/2;
+            batch.draw(unzer, unzers.x,unzers.y,unzers.w,unzers.h);
+            font.getData().setScale(4);
+            font.draw(batch, "unz", unzers.x+30, unzers.y+(unzers.h/2+25));
+            if(unzers.isPressed() == 1){
+                b.K_art=4;
+            }
+
+            leer.x=x_pop+b.K_w/2+25;
+            leer.y=y_pop-500+b.K_h/2;
+            batch.draw(buttonimage, leer.x,leer.y,leer.w,leer.h);
+            font.getData().setScale(4);
+            font.draw(batch, "leer", leer.x+30, leer.y+(leer.h/2+25));
+            if(leer.isPressed() == 1){
+                b.K_art=5;
+            }
+
+            //}
+            batch.end();
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+
+
+
+        }
         shapeRenderer.end();
     }
 
