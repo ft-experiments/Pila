@@ -208,7 +208,7 @@ a++;
         batch.begin();
 
         font.getData().setScale(4);
-        font.draw(batch, "Gamescreen", zuruck.x+30, zuruck.y+(zuruck.h/2+25));
+        font.draw(batch, "LevelAuswahl", zuruck.x+30, zuruck.y+(zuruck.h/2+25));
         batch.draw(buttonimage, zuruck.x,zuruck.y,zuruck.w,zuruck.h);
         if(zuruck.isPressed() == 1){
             Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
