@@ -38,11 +38,18 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     touchinput.Button leer;
     touchinput.Button wpopup;
 
+    touchinput.Button zuruck;
+
     int popup=0;
 
     static int x_pop=0;
     static int y_pop=0;
     static int b_pop=0;
+
+    static int w=0;
+    static int h=0;
+
+    static int[] LevelBa = new int[140];
 
     static ArrayList<LevelBauBlock> blocks = new ArrayList<LevelBauBlock>();
 
@@ -71,6 +78,8 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         leer=new touchinput.Button(0,0,150,75);
         wpopup=new touchinput.Button(0,0,200,525);
 
+        zuruck = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-100,400,100);
+
     levelcreater(10,12);
 
 
@@ -78,7 +87,9 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     static  int wo;
     static int x;
     static int y;
-    static void levelcreater( int w, int h) {
+    static void levelcreater( int _w, int _h) {
+        w=_w;
+        h=_h;
         y = 0;
         while (y < h) {
             x = 0;
@@ -95,9 +106,25 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
 
 
+    static void save(){
+        int a=0;
+        LevelBa[0]=10;
+        LevelBa[1]=12;
+        LevelBa[2]=200;
+        LevelBa[3]=0;
+        a=4;
+while(a<w*h+4) {
+    LevelBa[a] = blocks.get(a-4).K_art;
+a++;
+}
+
+    }
+
+
+
     @Override
     public void render(float delta) {
-
+        save();
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
@@ -178,11 +205,17 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
 
 
+        batch.begin();
 
-
-
-
+        font.getData().setScale(4);
+        font.draw(batch, "Gamescreen", zuruck.x+30, zuruck.y+(zuruck.h/2+25));
+        batch.draw(buttonimage, zuruck.x,zuruck.y,zuruck.w,zuruck.h);
+        if(zuruck.isPressed() == 1){
+            Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
+        }
+        batch.end();
     }
+
     void popup(){
 
         //b_pop= _b;
@@ -270,11 +303,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
     }
 
-    @Override
-    public void dispose() {
-        batch.dispose();
-        img.dispose();
-    }
+
 
     @Override
     public void hide() {
