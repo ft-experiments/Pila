@@ -4,13 +4,16 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.assets.loaders.BitmapFontLoader;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import org.omg.CORBA.Environment;
 
+import javax.naming.Context;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -78,7 +81,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         leer=new touchinput.Button(0,0,150,75);
         wpopup=new touchinput.Button(0,0,200,525);
 
-        zuruck = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-100,400,100);
+        zuruck = new touchinput.Button(0,0,400,100);
 
     levelcreater(10,12);
 
@@ -87,7 +90,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     static  int wo;
     static int x;
     static int y;
-    static void levelcreater( int _w, int _h) {
+    static void levelcreater(int _w, int _h) {
         w=_w;
         h=_h;
         y = 0;
@@ -118,13 +121,14 @@ while(a<w*h+4) {
 a++;
 }
 
+
+
     }
 
 
 
     @Override
     public void render(float delta) {
-        save();
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
@@ -172,6 +176,26 @@ a++;
 
 
 
+        ModeButtons();
+
+
+
+        batch.begin();
+
+        font.getData().setScale(4);
+        font.draw(batch, "LevelAuswahl", zuruck.x+30, zuruck.y+(zuruck.h/2+25));
+        batch.draw(buttonimage, zuruck.x,zuruck.y,zuruck.w,zuruck.h);
+        if(zuruck.isPressed() == 1){
+            save();
+            Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
+        }
+        batch.end();
+    }
+
+
+
+
+    void Modepopup(){
         if (Gdx.input.getX() < wpopup.w + wpopup.x && Gdx.input.getX() > wpopup.x && Gdx.input.getY() < Gdx.graphics.getHeight() - wpopup.y && Gdx.input.getY() > Gdx.graphics.getHeight() - wpopup.y - wpopup.h) {   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2{
             System.out.println(b_pop);
 
@@ -185,36 +209,179 @@ a++;
             b = blocks.get(i);
             popup();
 
-                if (b.check() == 1) {
-                    popup = 1;
-                    if (Gdx.input.getX() < wpopup.w + wpopup.x && Gdx.input.getX() > wpopup.x && Gdx.input.getY() < Gdx.graphics.getHeight() - wpopup.y && Gdx.input.getY() > Gdx.graphics.getHeight() - wpopup.y - wpopup.h) {   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2{
-                        System.out.println(b_pop);
+            if (b.check() == 1) {
+                popup = 1;
+                if (Gdx.input.getX() < wpopup.w + wpopup.x && Gdx.input.getX() > wpopup.x && Gdx.input.getY() < Gdx.graphics.getHeight() - wpopup.y && Gdx.input.getY() > Gdx.graphics.getHeight() - wpopup.y - wpopup.h) {   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2{
+                    System.out.println(b_pop);
 
-                    } else {
-                        popup = 1;
-                        b_pop = i;
+                } else {
+                    popup = 1;
+                    b_pop = i;
+                }
+
+            }
+
+
+
+
+
+        }
+    }
+
+    void ModeButtons(){
+
+        for(int i=0;i<blocks.size();i=i+1) {
+            LevelBauBlock b;
+            b = blocks.get(i);
+            if(b.check()==1){
+                b.marked=1;
+            }
+            if(Gdx.input.getY()<100){
+                b.marked=0;
+            }
+
+
+
+
+            if(b.marked==1) {
+                shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                shapeRenderer.setColor(255, 255, 0, 1);
+                shapeRenderer.ellipse(b.K_x + b.K_w / 2 - 10, b.K_y - 10 + b.K_h / 2, 20, 20);
+                shapeRenderer.end();
+            }
+
+
+            batch.begin();
+
+
+            rot.x=100;
+            rot.y=100;
+            batch.draw(blockrot, rot.x,rot.y,rot.w,rot.h);
+            font.getData().setScale(4);
+            font.draw(batch, "rot", rot.x+30, rot.y+(rot.h/2+25));
+            if(rot.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=0;
                     }
 
                 }
 
+            }
 
 
+
+
+
+
+            gruen.x=250;
+            gruen.y=100;
+            batch.draw(blockgruen, gruen.x,gruen.y,gruen.w,gruen.h);
+            font.getData().setScale(4);
+            font.draw(batch, "grün", gruen.x+30, gruen.y+(gruen.h/2+25));
+            if(gruen.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=1;
+                    }
+
+                }
+
+            }
+
+            blau.x=400;
+            blau.y=100;
+            batch.draw(blockblau, blau.x,blau.y,blau.w,blau.h);
+            font.getData().setScale(4);
+            font.draw(batch, "blau", blau.x+30, blau.y+(blau.h/2+25));
+            if(blau.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=2;
+                    }
+
+                }
+
+            }
+
+
+
+            doppelt.x=550;
+            doppelt.y=100;
+            batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
+            font.getData().setScale(4);
+            font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
+            if(doppelt.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=3;
+                    }
+
+                }
+
+            }
+
+            unzers.x=700;
+            unzers.y=100;
+            batch.draw(unzer, unzers.x,unzers.y,unzers.w,unzers.h);
+            font.getData().setScale(4);
+            font.draw(batch, "unz", unzers.x+30, unzers.y+(unzers.h/2+25));
+            if(unzers.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=4;
+                    }
+
+                }
+
+            }
+
+            leer.x=850;
+            leer.y=100;
+            batch.draw(buttonimage, leer.x,leer.y,leer.w,leer.h);
+            font.getData().setScale(4);
+            font.draw(batch, "leer", leer.x+30, leer.y+(leer.h/2+25));
+            if(leer.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=5;
+                    }
+
+                }
+
+            }
+
+
+
+
+
+
+
+            batch.end();
 
 
         }
 
 
 
-        batch.begin();
 
-        font.getData().setScale(4);
-        font.draw(batch, "LevelAuswahl", zuruck.x+30, zuruck.y+(zuruck.h/2+25));
-        batch.draw(buttonimage, zuruck.x,zuruck.y,zuruck.w,zuruck.h);
-        if(zuruck.isPressed() == 1){
-            Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
-        }
-        batch.end();
+
     }
+
+
+
 
     void popup(){
 
@@ -302,6 +469,7 @@ a++;
         }
 
     }
+
 
 
 
