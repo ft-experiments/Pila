@@ -96,7 +96,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
             while (x < w) {
                 wo = wo + 1;
 
-                        blocks.add(new LevelBauBlock(x * Gdx.graphics.getWidth() / w, Gdx.graphics.getHeight() - y * 50 - 200, Gdx.graphics.getWidth() / w, 50, 0));
+                        blocks.add(new LevelBauBlock(x * Gdx.graphics.getWidth() / w, Gdx.graphics.getHeight() - y * 50 - 200, Gdx.graphics.getWidth() / w, 50, 5));
 
                 x = x + 1;
             }
