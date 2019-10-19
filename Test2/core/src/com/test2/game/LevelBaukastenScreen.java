@@ -1,17 +1,17 @@
 package com.test2.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
+
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.assets.loaders.BitmapFontLoader;
+
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
+
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-import java.awt.*;
+
 import java.util.ArrayList;
 
 public class LevelBaukastenScreen extends ScreenAdapter {
@@ -36,11 +36,20 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     touchinput.Button doppelt;
     touchinput.Button unzers;
     touchinput.Button leer;
+    touchinput.Button wpopup;
+
+    touchinput.Button zuruck;
 
     int popup=0;
 
     static int x_pop=0;
     static int y_pop=0;
+    static int b_pop=0;
+
+    static int w=0;
+    static int h=0;
+
+    static int[] LevelBa = new int[140];
 
     static ArrayList<LevelBauBlock> blocks = new ArrayList<LevelBauBlock>();
 
@@ -67,22 +76,27 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         doppelt=new touchinput.Button(0,0,150,75);
         unzers=new touchinput.Button(0,0,150,75);
         leer=new touchinput.Button(0,0,150,75);
+        wpopup=new touchinput.Button(0,0,200,525);
 
-    levelcreater(20,10);
+        zuruck = new touchinput.Button(0,0,400,100);
+
+    levelcreater(10,12);
 
 
     }
     static  int wo;
     static int x;
     static int y;
-    static void levelcreater( int w, int h) {
+    static void levelcreater(int _w, int _h) {
+        w=_w;
+        h=_h;
         y = 0;
         while (y < h) {
             x = 0;
             while (x < w) {
                 wo = wo + 1;
 
-                        blocks.add(new LevelBauBlock(x * Gdx.graphics.getWidth() / w, Gdx.graphics.getHeight() - y * 50 - 200, Gdx.graphics.getWidth() / w, 50, 0));
+                        blocks.add(new LevelBauBlock(x * Gdx.graphics.getWidth() / w, Gdx.graphics.getHeight() - y * 50 - 200, Gdx.graphics.getWidth() / w, 50, 5));
 
                 x = x + 1;
             }
@@ -92,22 +106,40 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
 
 
+    static void save(){
+        int a=0;
+        LevelBa[0]=10;
+        LevelBa[1]=12;
+        LevelBa[2]=200;
+        LevelBa[3]=0;
+        a=4;
+while(a<w*h+4) {
+    LevelBa[a] = blocks.get(a-4).K_art;
+a++;
+}
+
+
+
+    }
+
+
+
     @Override
     public void render(float delta) {
-
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-
+        batch.end();
 
 
 
         for(int i=0;i<blocks.size();i=i+1) {
             LevelBauBlock b;
             b = blocks.get(i);
+            batch.begin();
             switch(b.K_art) {
                 case 0:
                     batch.draw(blockrot, b.K_x, b.K_y, b.K_w, b.K_h);
@@ -128,6 +160,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
                     batch.draw(buttonimage, b.K_x, b.K_y, b.K_w, b.K_h);
                     break;
             }
+            batch.end();
 
 
 
@@ -139,106 +172,303 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         }
 
 
+
+        ModeButtons();
+
+
+
+        batch.begin();
+
+        font.getData().setScale(4);
+        font.draw(batch, "LevelAuswahl", zuruck.x+30, zuruck.y+(zuruck.h/2+25));
+        batch.draw(buttonimage, zuruck.x,zuruck.y,zuruck.w,zuruck.h);
+        if(zuruck.isPressed() == 1){
+            save();
+            Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
+        }
         batch.end();
+    }
 
 
 
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+
+    void Modepopup(){
+        if (Gdx.input.getX() < wpopup.w + wpopup.x && Gdx.input.getX() > wpopup.x && Gdx.input.getY() < Gdx.graphics.getHeight() - wpopup.y && Gdx.input.getY() > Gdx.graphics.getHeight() - wpopup.y - wpopup.h) {   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2{
+            System.out.println(b_pop);
+
+        } else {
+            popup = 0;
+        }
+
 
         for(int i=0;i<blocks.size();i=i+1) {
             LevelBauBlock b;
             b = blocks.get(i);
+            popup();
 
-                if (b.check() == 1) {
+            if (b.check() == 1) {
+                popup = 1;
+                if (Gdx.input.getX() < wpopup.w + wpopup.x && Gdx.input.getX() > wpopup.x && Gdx.input.getY() < Gdx.graphics.getHeight() - wpopup.y && Gdx.input.getY() > Gdx.graphics.getHeight() - wpopup.y - wpopup.h) {   //x_pop+b.K_w/2-10,y_pop-10+b.K_h/2{
+                    System.out.println(b_pop);
+
+                } else {
                     popup = 1;
-                    x_pop=b.K_x;
+                    b_pop = i;
                 }
-
-                if (b.check() == 0 ) {
-                    popup = 0;
-                }
-
-            if(popup==1){
-                shapeRenderer.setColor(255,100,255,1);
-                shapeRenderer.rect(b.K_x+b.K_w/2,b.K_y-525+b.K_h/2,200,525);
-                shapeRenderer.setColor(255,255,0,1);
-                shapeRenderer.ellipse(b.K_x+b.K_w/2-10,b.K_y-10+b.K_h/2,20,20);
-
-                shapeRenderer.end();
-                batch.begin();
-                //if(b.check()==1){
-
-                    rot.x=x_pop+b.K_w/2+25;
-                    rot.y=b.K_y-100+b.K_h/2;
-                    batch.draw(blockrot, rot.x,rot.y,rot.w,rot.h);
-                    font.getData().setScale(4);
-                    font.draw(batch, "rot", rot.x+30, rot.y+(rot.h/2+25));
-                    if(rot.isPressed() == 1){
-                        b.K_art=0;
-                    }
-
-                    gruen.x=x_pop+b.K_w/2+25;
-                    gruen.y=b.K_y-180+b.K_h/2;
-                    batch.draw(blockgruen, gruen.x,gruen.y,gruen.w,gruen.h);
-                    font.getData().setScale(4);
-                    font.draw(batch, "grün", blau.x+30, gruen.y+(gruen.h/2+25));
-                    if(blau.isPressed() == 1){
-                        b.K_art=1;
-                    }
-
-                    blau.x=x_pop+b.K_w/2+25;
-                    blau.y=b.K_y-260+b.K_h/2;
-                    batch.draw(blockblau, blau.x,blau.y,blau.w,blau.h);
-                    font.getData().setScale(4);
-                    font.draw(batch, "blau", blau.x+30, blau.y+(blau.h/2+25));
-                    if(blau.isPressed() == 1){
-                        b.K_art=2;
-                    }
-
-                doppelt.x=x_pop+b.K_w/2+25;
-                doppelt.y=b.K_y-340+b.K_h/2;
-                batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
-                font.getData().setScale(4);
-                font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
-                if(doppelt.isPressed() == 1){
-                    b.K_art=3;
-                }
-
-                unzers.x=x_pop+b.K_w/2+25;
-                unzers.y=b.K_y-420+b.K_h/2;
-                batch.draw(unzer, unzers.x,unzers.y,unzers.w,unzers.h);
-                font.getData().setScale(4);
-                font.draw(batch, "unz", unzers.x+30, unzers.y+(unzers.h/2+25));
-                if(unzers.isPressed() == 1){
-                    b.K_art=4;
-                }
-
-                leer.x=x_pop+b.K_w/2+25;
-                leer.y=b.K_y-500+b.K_h/2;
-                batch.draw(buttonimage, leer.x,leer.y,leer.w,leer.h);
-                font.getData().setScale(4);
-                font.draw(batch, "leer", leer.x+30, leer.y+(leer.h/2+25));
-                if(leer.isPressed() == 1){
-                    b.K_art=5;
-                }
-
-                //}
-                batch.end();
-                shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-
-
 
             }
+
+
+
+
+
+        }
+    }
+
+    void ModeButtons(){
+
+        for(int i=0;i<blocks.size();i=i+1) {
+            LevelBauBlock b;
+            b = blocks.get(i);
+            if(b.check()==1){
+                b.marked=1;
+            }
+            if(Gdx.input.getY()<100){
+                b.marked=0;
+            }
+
+
+
+
+            if(b.marked==1) {
+                shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                shapeRenderer.setColor(255, 255, 0, 1);
+                shapeRenderer.ellipse(b.K_x + b.K_w / 2 - 10, b.K_y - 10 + b.K_h / 2, 20, 20);
+                shapeRenderer.end();
+            }
+
+
+            batch.begin();
+
+
+            rot.x=100;
+            rot.y=100;
+            batch.draw(blockrot, rot.x,rot.y,rot.w,rot.h);
+            font.getData().setScale(4);
+            font.draw(batch, "rot", rot.x+30, rot.y+(rot.h/2+25));
+            if(rot.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=0;
+                    }
+
+                }
+
+            }
+
+
+
+
+
+
+            gruen.x=250;
+            gruen.y=100;
+            batch.draw(blockgruen, gruen.x,gruen.y,gruen.w,gruen.h);
+            font.getData().setScale(4);
+            font.draw(batch, "grün", gruen.x+30, gruen.y+(gruen.h/2+25));
+            if(gruen.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=1;
+                    }
+
+                }
+
+            }
+
+            blau.x=400;
+            blau.y=100;
+            batch.draw(blockblau, blau.x,blau.y,blau.w,blau.h);
+            font.getData().setScale(4);
+            font.draw(batch, "blau", blau.x+30, blau.y+(blau.h/2+25));
+            if(blau.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=2;
+                    }
+
+                }
+
+            }
+
+
+
+            doppelt.x=550;
+            doppelt.y=100;
+            batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
+            font.getData().setScale(4);
+            font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
+            if(doppelt.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=3;
+                    }
+
+                }
+
+            }
+
+            unzers.x=700;
+            unzers.y=100;
+            batch.draw(unzer, unzers.x,unzers.y,unzers.w,unzers.h);
+            font.getData().setScale(4);
+            font.draw(batch, "unz", unzers.x+30, unzers.y+(unzers.h/2+25));
+            if(unzers.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=4;
+                    }
+
+                }
+
+            }
+
+            leer.x=850;
+            leer.y=100;
+            batch.draw(buttonimage, leer.x,leer.y,leer.w,leer.h);
+            font.getData().setScale(4);
+            font.draw(batch, "leer", leer.x+30, leer.y+(leer.h/2+25));
+            if(leer.isPressed() == 1){
+                for(int a=0;a<blocks.size();a=a+1) {
+                    LevelBauBlock bb;
+                    bb = blocks.get(a);
+                    if(bb.marked==1){
+                        bb.K_art=5;
+                    }
+
+                }
+
+            }
+
+
+
+
+
+
+
+            batch.end();
+
+
         }
 
-        shapeRenderer.end();
+
+
+
+
     }
 
-    @Override
-    public void dispose() {
-        batch.dispose();
-        img.dispose();
+
+
+
+    void popup(){
+
+        //b_pop= _b;
+        LevelBauBlock b;
+        b = blocks.get(b_pop);
+        x_pop = b.K_x;
+        y_pop = b.K_y;
+        if(popup==1){
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+            shapeRenderer.setColor(255,100,255,1);
+            //shapeRenderer.rect(x_pop+b.K_w/2,y_pop-525+b.K_h/2,200,525);
+            wpopup.x=x_pop+b.K_w/2;
+            wpopup.y=y_pop-525+b.K_h/2;
+            shapeRenderer.setColor(255,255,0,1);
+            shapeRenderer.ellipse(x_pop+b.K_w/2-10,y_pop-10+b.K_h/2,20,20);
+            shapeRenderer.end();
+            batch.begin();
+            batch.draw(buttonimage, wpopup.x,wpopup.y,wpopup.w,wpopup.h);
+            batch.end();
+
+            batch.begin();
+            //if(b.check()==1){
+
+            rot.x=x_pop+b.K_w/2+25;
+            rot.y=y_pop-100+b.K_h/2;
+            batch.draw(blockrot, rot.x,rot.y,rot.w,rot.h);
+            font.getData().setScale(4);
+            font.draw(batch, "rot", rot.x+30, rot.y+(rot.h/2+25));
+            if(rot.isPressed() == 1){
+                b.K_art=0;
+            }
+
+            gruen.x=x_pop+b.K_w/2+25;
+            gruen.y=y_pop-180+b.K_h/2;
+            batch.draw(blockgruen, gruen.x,gruen.y,gruen.w,gruen.h);
+            font.getData().setScale(4);
+            font.draw(batch, "grün", gruen.x+30, gruen.y+(gruen.h/2+25));
+            if(gruen.isPressed() == 1){
+                b.K_art=1;
+            }
+
+            blau.x=x_pop+b.K_w/2+25;
+            blau.y=y_pop-260+b.K_h/2;
+            batch.draw(blockblau, blau.x,blau.y,blau.w,blau.h);
+            font.getData().setScale(4);
+            font.draw(batch, "blau", blau.x+30, blau.y+(blau.h/2+25));
+            if(blau.isPressed() == 1){
+                b.K_art=2;
+            }
+
+            doppelt.x=x_pop+b.K_w/2+25;
+            doppelt.y=y_pop-340+b.K_h/2;
+            batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
+            font.getData().setScale(4);
+            font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
+            if(doppelt.isPressed() == 1){
+                b.K_art=3;
+            }
+
+            unzers.x=x_pop+b.K_w/2+25;
+            unzers.y=y_pop-420+b.K_h/2;
+            batch.draw(unzer, unzers.x,unzers.y,unzers.w,unzers.h);
+            font.getData().setScale(4);
+            font.draw(batch, "unz", unzers.x+30, unzers.y+(unzers.h/2+25));
+            if(unzers.isPressed() == 1){
+                b.K_art=4;
+            }
+
+            leer.x=x_pop+b.K_w/2+25;
+            leer.y=y_pop-500+b.K_h/2;
+            batch.draw(buttonimage, leer.x,leer.y,leer.w,leer.h);
+            font.getData().setScale(4);
+            font.draw(batch, "leer", leer.x+30, leer.y+(leer.h/2+25));
+            if(leer.isPressed() == 1){
+                b.K_art=5;
+            }
+
+            //}
+            batch.end();
+
+
+
+
+        }
+
     }
+
+
+
 
     @Override
     public void hide() {

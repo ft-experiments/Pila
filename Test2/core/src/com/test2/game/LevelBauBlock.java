@@ -12,6 +12,7 @@ public class LevelBauBlock {
     int K_w;
     int K_h;
     int K_art;
+    int marked=0;
 
 
 
