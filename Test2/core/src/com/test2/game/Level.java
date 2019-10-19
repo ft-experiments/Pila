@@ -9,8 +9,56 @@ int L;
     static int Le=0;
 static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
+    static int[] Level1 = {11,2,Gdx.graphics.getHeight()/10,0   ,
+            1,0,1,0,1,0,1,0,1,0,1,
+            0,1,0,1,0,1,0,1,0,1,0
+    };
 
-    static int[] Level6 = {10,5,200,0   ,
+    static int[] Level2 = {11,6,Gdx.graphics.getHeight()/3,0   ,
+            0,1,0,1,0,1,0,1,0,1,0,
+            1,0,1,0,1,0,1,0,1,0,5,
+            0,1,0,1,0,1,0,5,5,5,5,
+            1,0,1,0,1,5,5,5,5,5,5,
+            0,1,0,5,5,5,5,5,5,5,5,
+            1,5,5,5,5,5,5,5,5,5,5
+    };
+
+    static int[] Level3 = {14,6,Gdx.graphics.getHeight()/3,0   ,
+            5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,5,5,5,5,
+            3,3,3,3,3,3,3,3,0,0,5,5,5,5,
+            0,1,0,0,1,0,1,3,0,0,0,0,5,5,
+            1,0,1,0,1,1,0,3,0,0,0,0,0,0,
+            1,0,1,0,1,0,1,3,0,0,0,0,0,0
+    };
+
+    static int[] Level4 = {11,9,Gdx.graphics.getHeight()/3,0   ,
+            0,1,0,0,1,0,1,0,0,1,0,
+            5,5,5,5,5,5,5,5,5,5,5,
+            1,0,1,0,1,1,0,0,1,0,1,
+            5,5,5,5,5,5,5,5,5,5,5,
+            1,1,1,0,1,0,1,0,1,1,1,
+            5,5,5,5,5,5,5,5,5,5,5,
+            1,0,1,0,1,0,1,0,1,0,1,
+            5,5,5,5,5,5,5,5,5,5,5,
+            3,3,3,3,3,3,3,3,3,3,3
+    };
+
+    static int[] Level5 = {11,10,Gdx.graphics.getHeight()/4,0   ,
+            0,2,2,2,0,4,0,2,2,2,0,
+            0,2,2,2,0,4,0,2,2,2,0,
+            0,2,2,2,0,4,0,2,2,2,0,
+            0,0,2,4,4,4,4,4,2,0,0,
+            0,0,1,4,4,4,4,4,1,0,0,
+            0,1,1,1,0,4,0,1,1,1,0,
+            0,1,1,1,0,4,0,1,1,1,0,
+            0,1,1,1,0,4,0,1,1,1,0,
+            3,3,3,3,3,4,3,3,3,3,3,
+            0,0,0,0,0,4,0,0,0,0,0
+    };
+
+
+    static int[] Level6 = {10,5,Gdx.graphics.getHeight()/10,0   ,
             1,0,1,0,4,4,0,1,0,1,
             1,1,1,1,0,0,1,1,1,1,
             2,2,2,2,0,0,2,2,2,2,
@@ -18,7 +66,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
             3,3,0,0,1,1,0,0,3,3
     };
     static int[] Level7 = {
-            10,12,100,0,
+            10,12,Gdx.graphics.getHeight()/10,0,
             0,5,5,5,1,5,5,5,5,0,
             0,0,5,5,5,1,5,5,0,0,
             5,0,0,5,1,5,5,0,0,5,
@@ -75,111 +123,35 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
             case 1:
                 Le=1;
                 Var.leben = 4;
-                /*
-                int j=Gdx.graphics.getHeight()-300;
-                while(j<Gdx.graphics.getHeight()-200) {
-                    int i =0;
-                    while (i < Gdx.graphics.getWidth()) {
-
-                        Level.kisten.add( new Kaesten(i, j, 100, 50,(int)Math.floor((Math.random() * 3))));
-                        i = i + 100;
-
-                    }
-                    j=j+50;
-                }
-
-                 */
-                i=0;
-                while(i<2) {
-                    j = 0;
-                    while (j < 11) {
-                        Level.kisten.add(new Kaesten(j * Gdx.graphics.getWidth() / 11,Gdx.graphics.getHeight()-i*50-200, Gdx.graphics.getWidth() / 11, 50, (int) Math.floor((Math.random() * 3))));
-                        j = j + 1;
-                    }
-                    i=i+1;
-                }
+                Level.wo=0;
+                levelcreater(Level1);
                 break;
 
             case 2:
                 Le=2;
                 Var.leben = 4;
-                i=0;
-                a=0;
-                while(i<6) {
-                    j = 0;
-                    while (j < 11-a) {
-                        Level.kisten.add(new Kaesten(j * Gdx.graphics.getWidth() / 11,Gdx.graphics.getHeight()-i*50-500, Gdx.graphics.getWidth() / 11, 50, (int) Math.floor((Math.random() * 3))));
-                        j = j + 1;
-                    }
-                    i=i+1;
-                    a=a+2f;
-
-                }
-
+                Level.wo=0;
+                levelcreater(Level2);
                 break;
 
             case 3:
                 Le=3;
                 Var.leben = 4;
-                i=0;
-                a=0;
-                while(i<5) {
-                    j = 0;
-                    while (j < 0-a) {
-                        Level.kisten.add(new Kaesten(j * Gdx.graphics.getWidth() / 15,Gdx.graphics.getHeight()-i*50-300, Gdx.graphics.getWidth() / 15, 50, (int) Math.floor((Math.random() * 3))));
-                        j = j + 1;
-                    }
-                    i=i+1;
-                    a=a-3f;
-
-                }
-
-
+                Level.wo=0;
+                levelcreater(Level3);
                 break;
 
             case 4:
                 Le=4;
                 Var.leben = 4;
-                i=0;
-                a=0;
-                j=0;
-                while(j<10) {
-                    i=0;
-                    while (i < 12) {
-                        if(j==0){
-                            Level.kisten.add(new Kaesten(i * Gdx.graphics.getWidth() / 12, Gdx.graphics.getHeight() - 500 + j * 50, Gdx.graphics.getWidth() / 12, 50, 3));
-                        }else {
-                            Level.kisten.add(new Kaesten(i * Gdx.graphics.getWidth() / 12, Gdx.graphics.getHeight() - 500 + j * 50, Gdx.graphics.getWidth() / 12, 50, (int) Math.floor((Math.random() * 3))));
-                        }
-                        i = i + 1;
-                    }
-                    j=j+2;
-                }
+                Level.wo=0;
+                levelcreater(Level4);
                 break;
             case 5:
                 Le=5;
-                Var.leben=6;
-                i=0;
-                j=0;
-                a=0;
-                while(j<10) {
-                    i=0;
-                    while (i < 11) {
-                        if(i==5){
-                            Level.kisten.add(new Kaesten(i * ((Gdx.graphics.getWidth())) / 11, Gdx.graphics.getHeight() - 900 + j * 50, ((Gdx.graphics.getWidth())) / 11, 50, 4));
-                        }else {
-                            if(j==1){
-                                Level.kisten.add(new Kaesten(i * ((Gdx.graphics.getWidth())) / 11, Gdx.graphics.getHeight() - 900 + j * 50, ((Gdx.graphics.getWidth())) / 11, 50, 3));
-                            }else {
-                                Level.kisten.add(new Kaesten(i * ((Gdx.graphics.getWidth())) / 11, Gdx.graphics.getHeight() - 900 + j * 50, ((Gdx.graphics.getWidth())) / 11, 50, (int) Math.floor((Math.random() * 3))));
-                            }
-                            }
-                        i = i + 1;
-                    }
-                    j=j+1;
-                }
-
-
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level5);
                 break;
             case 6:
                 Le=6;
