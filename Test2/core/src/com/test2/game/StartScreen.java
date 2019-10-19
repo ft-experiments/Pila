@@ -24,6 +24,7 @@ public class StartScreen extends ScreenAdapter {
     touchinput.Button Start;
     touchinput.Button Levelauswahl;
     touchinput.Button Buttonstart;
+    touchinput.Button LevelBaukasten;
 
     LoadSave LoadSavee;
 
@@ -52,6 +53,7 @@ public class StartScreen extends ScreenAdapter {
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,100);
+        LevelBaukasten = new touchinput.Button(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()-500,500,100);
 
 
 
@@ -84,6 +86,12 @@ public class StartScreen extends ScreenAdapter {
         batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
         if(Levelauswahl.isPressed() == 1){
             Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
+        }
+
+        font.draw(batch, "LevelBaukasten", LevelBaukasten.x+30, LevelBaukasten.y+(LevelBaukasten.h/2+25));
+        batch.draw(buttonimage, LevelBaukasten.x,LevelBaukasten.y,LevelBaukasten.w,LevelBaukasten.h);
+        if(LevelBaukasten.isPressed() == 1){
+            Test2.INSTANCE.setScreen(new LevelBaukastenScreen());
         }
 
 
