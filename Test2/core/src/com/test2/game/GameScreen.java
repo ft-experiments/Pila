@@ -397,11 +397,11 @@ public class GameScreen extends ScreenAdapter {
         }
 
         batch.setColor(1,1,1,0.5f);
-        batch.draw(status_bar,0,Gdx.graphics.getHeight()-50,Gdx.graphics.getWidth(),50);
+        batch.draw(status_bar,0,Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/25,Gdx.graphics.getWidth(),Gdx.graphics.getHeight()/25);
         batch.setColor(1,1,1,1f);
-        font.getData().setScale(3);
-        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-200, Gdx.graphics.getHeight()-5);
-        font.draw(batch, "Level:" + Level.Le + " ", Gdx.graphics.getWidth()-550, Gdx.graphics.getHeight()-5);
+        font.getData().setScale(Gdx.graphics.getHeight()/426,Gdx.graphics.getHeight()/426);
+        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-(Gdx.graphics.getHeight()/426)*53, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Level:" + Level.Le + " ", Gdx.graphics.getWidth()/2-150/2, Gdx.graphics.getHeight()-5);
         font.getData().setScale(3);
 
         if(Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height)

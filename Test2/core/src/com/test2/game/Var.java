@@ -28,14 +28,14 @@ public class Var {
     static int Button_steuerung_x = Gdx.graphics.getWidth()/2-Button_steuerung_Width/2;
     static int Button_steuerung_y = 800;
 
-    static int Button_Pause_Height = 50;
-    static int Button_Pause_Width = 50;
-    static int Button_Pause_x = Gdx.graphics.getWidth()-300;
+    static int Button_Pause_Height = Gdx.graphics.getHeight()/25;
+    static int Button_Pause_Width = Gdx.graphics.getHeight()/25;
+    static float Button_Pause_x = Gdx.graphics.getWidth()-Gdx.graphics.getWidth()/3.5f;
     static int Button_Pause_y = Gdx.graphics.getHeight()-Button_Pause_Height;
 
-    static int Button_einstellungen_Height = 50;
-    static int Button_einstellungen_Width = 50;
-    static int Button_einstellungen_x = 300;
+    static int Button_einstellungen_Height = Gdx.graphics.getHeight()/25;
+    static int Button_einstellungen_Width = Gdx.graphics.getHeight()/25;
+    static float Button_einstellungen_x = Button_Pause_x-Gdx.graphics.getHeight()/25-Gdx.graphics.getWidth()/30;
     static int Button_einstellungen_y = Gdx.graphics.getHeight()-Button_einstellungen_Height;
 
 
@@ -45,7 +45,7 @@ public class Var {
     static int kleben=0;
 
 
-    static  int ballstartmode=1;
+    static  int ballstartmode=0;
     static int steuerung = 0;
     static boolean showfps = true;
     static int beiballberurungvibrieren=1;
