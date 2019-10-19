@@ -1,10 +1,6 @@
 package com.test2.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
-import com.badlogic.gdx.files.FileHandle;
-
-import javax.naming.Context;
-import java.io.File;
 
 public class LoadSave {
 
@@ -35,7 +31,6 @@ public class LoadSave {
 
 
     static void saveall(){
-
         prefs.putInteger("vibrieren", Var.beiballberurungvibrieren);
 
         if(Var.showfps==true){
@@ -52,6 +47,7 @@ public class LoadSave {
 
         prefs.putInteger("levelbesitz", Var.levelbesitz);
 
+
         prefs.flush();
     }
 
@@ -59,6 +55,3 @@ public class LoadSave {
         return prefs.getInteger("vibrieren");
     }
 }
-
-
-

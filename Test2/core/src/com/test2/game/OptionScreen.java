@@ -22,7 +22,6 @@ public class OptionScreen extends ScreenAdapter {
     Texture switchon;
     Texture switchoff;
     touchinput.Button Levelauswahl;
-    touchinput.Button Baukasten;
     touchinput.Button Buttonstart;
     touchinput.Switch fpsshow;
     touchinput.Switch SW;
@@ -50,7 +49,6 @@ public class OptionScreen extends ScreenAdapter {
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()/10,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,100);
-        Baukasten = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-200,400,100);
 
 
 
@@ -96,15 +94,6 @@ public class OptionScreen extends ScreenAdapter {
         //touchinput.Switch SW;
         // if(i==0) {
         // System.out.println(SW.status);
-
-
-        font.getData().setScale(4);
-        font.draw(batch, "LevelBau", Baukasten.x+30, Baukasten.y+(Baukasten.h/2+25));
-        batch.draw(buttonimage, Baukasten.x,Baukasten.y,Baukasten.w,Baukasten.h);
-        if(Baukasten.isPressed() == 1){
-            Test2.INSTANCE.setScreen(new LevelBaukastenScreen());
-        }
-
 
         font.getData().setScale(4);
         // if (i == 0) {
@@ -190,8 +179,6 @@ public class OptionScreen extends ScreenAdapter {
         if(Buttonstart.isPressed() == 1){
             Test2.INSTANCE.setScreen(new GameScreen());
         }
-
-
 
 
 

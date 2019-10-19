@@ -1,7 +1,6 @@
 package com.test2.game.desktop;
 
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.test2.game.Test2;
@@ -13,8 +12,7 @@ public class DesktopLauncher {
 		config.setTitle("Felix");
 		config.useVsync(true);
 		config.setWindowIcon("badlogic.jpg");
-		config.setWindowedMode(800,1000);
-		//config.setFullscreenMode(Lwjgl3ApplicationConfiguration.getDisplayMode());    //fullscreen
+		config.setFullscreenMode(Lwjgl3ApplicationConfiguration.getDisplayMode());    //fullscreen
 		new Lwjgl3Application(new Test2(), config);
 		//com.test2.game.Var.
 	}

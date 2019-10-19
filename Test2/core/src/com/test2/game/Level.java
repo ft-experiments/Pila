@@ -9,7 +9,6 @@ int L;
     static int Le=0;
 static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
-
     static int[] Level6 = {10,5,200,0   ,
             1,0,1,0,4,4,0,1,0,1,
             1,1,1,1,0,0,1,1,1,1,
@@ -193,19 +192,10 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
                 Level.wo=0;
                 levelcreater(Level7);
                 break;
-            case 8:
-                Le=8;
-                Var.leben=4;
-                Level.wo=0;
-                levelcreater(LevelBaukastenScreen.LevelBa);
-                break;
 
         }
 
-
     }
-
-
 
     static void Levelup() {
         Level.dispose();

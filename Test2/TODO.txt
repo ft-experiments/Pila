@@ -13,10 +13,6 @@
 
 //TODO Klebeball wird mit ins nächste Level genommen
 //TODO Bei Gameover kommt man ins 1. Level
-//TODO Unserstörbarer Block kollision
-//TODO Begrenzung geht nicht für Fallblöcke/Wahrscheinlichkeit zu hoch zum erscheinen
-//TODO Leveldesigner stürzt ab
-//TODO Kollision für Leveldeigner geht nicht richtig
 
 ///////////////////////////////////////////////
 ///////////////////Änderungen//////////////////
