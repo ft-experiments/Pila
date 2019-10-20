@@ -102,7 +102,7 @@ public class OptionScreen extends ScreenAdapter {
         // System.out.println(SW.status);
 
 
-        font.getData().setScale(4);
+        font.getData().setScale(Gdx.graphics.getWidth()/270);
         font.draw(batch, "LevelBau", Baukasten.x+30, Baukasten.y+(Baukasten.h/2+25));
         batch.draw(buttonimage, Baukasten.x,Baukasten.y,Baukasten.w,Baukasten.h);
         if(Baukasten.isPressed() == 1){
