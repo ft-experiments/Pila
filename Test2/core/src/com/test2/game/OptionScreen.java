@@ -30,6 +30,10 @@ public class OptionScreen extends ScreenAdapter {
     touchinput.Switch ballstartmode;
     int u=0;
     int bb;
+    int switchy=Gdx.graphics.getHeight() / 8;
+    int switchsx=Gdx.graphics.getWidth()-Gdx.graphics.getWidth()/4;
+    int switchh=(int)(Gdx.graphics.getHeight()/17.26f);
+    int switchw=(int)(Gdx.graphics.getWidth()/5.4f);
 
     public OptionScreen() {
         batch = new SpriteBatch();
@@ -50,11 +54,11 @@ public class OptionScreen extends ScreenAdapter {
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()/10,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,100);
-        Baukasten = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-200,400,100);
+        Baukasten = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight() / 8 * 2,(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.26f));
 
 
 
-            SW = new touchinput.Switch(Gdx.graphics.getWidth() / 2 + 100, Gdx.graphics.getHeight() / 8 * 3, 200, 100, Var.beiballberurungvibrieren);
+            SW = new touchinput.Switch(switchsx, switchy * 3, switchw, switchh, Var.beiballberurungvibrieren);
 
         if(Var.showfps==true) {
             bb=1;
@@ -63,11 +67,11 @@ public class OptionScreen extends ScreenAdapter {
             bb=0;
         }
 
-            fpsshow = new touchinput.Switch(Gdx.graphics.getWidth() / 2 + 100, Gdx.graphics.getHeight() / 8 * 4, 200, 100, bb);
+            fpsshow = new touchinput.Switch(switchsx, switchy * 4, switchw, switchh, bb);
 
-            toggelcontrol = new touchinput.Switch(Gdx.graphics.getWidth() / 2 + 100, Gdx.graphics.getHeight() / 8 * 5, 200, 100, Var.steuerung);
+            toggelcontrol = new touchinput.Switch(switchsx, switchy * 5, switchw, switchh, Var.steuerung);
 
-            ballstartmode = new touchinput.Switch(Gdx.graphics.getWidth() / 2 + 100, Gdx.graphics.getHeight() / 8 * 6, 200, 100, Var.ballstartmode);
+            ballstartmode = new touchinput.Switch(switchsx, switchy * 6, switchw, switchh, Var.ballstartmode);
 
 
     }
