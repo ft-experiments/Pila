@@ -63,6 +63,9 @@ public class Var {
     static int gamestatus=0;
 
 
+    static int LBSsho=0;
+
+
 
 
 

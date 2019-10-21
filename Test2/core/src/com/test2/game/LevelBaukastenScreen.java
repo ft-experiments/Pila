@@ -86,7 +86,9 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
         zuruck = new touchinput.Button(0,0,320,60);
 
-    levelcreater(10,12);
+        if(Var.LBSsho==0) {
+            levelcreater(10, 12);
+        }
 
 
     }
@@ -232,6 +234,8 @@ a++;
 
         }
     }
+
+
 
     void ModeButtons(){
 
@@ -561,4 +565,13 @@ a++;
     public void hide() {
         this.dispose();
     }
+
+
+    @Override
+    public void dispose() {
+        Var.LBSsho=1;
+        super.dispose();
+    }
+
+
 }
