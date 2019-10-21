@@ -92,7 +92,7 @@ public class StartScreen extends ScreenAdapter {
         font.draw(batch, "LevelBaukasten", LevelBaukasten.x+30, LevelBaukasten.y+(LevelBaukasten.h/2+25));
         batch.draw(buttonimage, LevelBaukasten.x,LevelBaukasten.y,LevelBaukasten.w,LevelBaukasten.h);
         if(LevelBaukasten.isPressed() == 1){
-            Test2.INSTANCE.setScreen(new LevelBaukastenScreen());
+            Test2.INSTANCE.setScreen(new EigeneLevelManageScreen());
         }
 
 

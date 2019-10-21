@@ -106,7 +106,7 @@ public class OptionScreen extends ScreenAdapter {
         font.draw(batch, "LevelBau", Baukasten.x+30, Baukasten.y+(Baukasten.h/2+25));
         batch.draw(buttonimage, Baukasten.x,Baukasten.y,Baukasten.w,Baukasten.h);
         if(Baukasten.isPressed() == 1){
-            Test2.INSTANCE.setScreen(new LevelBaukastenScreen());
+            Test2.INSTANCE.setScreen(new EigeneLevelManageScreen());
         }
 
 
