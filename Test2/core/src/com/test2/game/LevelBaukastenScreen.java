@@ -45,6 +45,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     static int x_pop=0;
     static int y_pop=0;
     static int b_pop=0;
+    static int f_select=0;
 
     static int w=0;
     static int h=0;
@@ -70,6 +71,9 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         doppeltblock=new Texture("block_2mal.png");
         unzer=new Texture("block_unzerstoerbar.png");
 
+
+
+
         rot=new touchinput.Button(0,0,150,75);
         gruen=new touchinput.Button(0,0,150,75);
         blau=new touchinput.Button(0,0,150,75);
@@ -78,7 +82,9 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         leer=new touchinput.Button(0,0,150,75);
         wpopup=new touchinput.Button(0,0,200,525);
 
-        zuruck = new touchinput.Button(0,0,400,100);
+
+
+        zuruck = new touchinput.Button(0,0,320,60);
 
     levelcreater(10,12);
 
@@ -87,16 +93,18 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     static  int wo;
     static int x;
     static int y;
+    static int ao;
     static void levelcreater(int _w, int _h) {
         w=_w;
         h=_h;
+        ao=200;
         y = 0;
         while (y < h) {
             x = 0;
             while (x < w) {
                 wo = wo + 1;
 
-                        blocks.add(new LevelBauBlock(x * Gdx.graphics.getWidth() / w, Gdx.graphics.getHeight() - y * 50 - 200, Gdx.graphics.getWidth() / w, 50, 5));
+                        blocks.add(new LevelBauBlock(x * Gdx.graphics.getWidth() / w, Gdx.graphics.getHeight() - y * 50 - ao, Gdx.graphics.getWidth() / w, 50, 5));
 
                 x = x + 1;
             }
@@ -179,8 +187,8 @@ a++;
 
         batch.begin();
 
-        font.getData().setScale(4);
-        font.draw(batch, "LevelAuswahl", zuruck.x+30, zuruck.y+(zuruck.h/2+25));
+        font.getData().setScale(3,3);
+        font.draw(batch, "LevelAuswahl", zuruck.x+30, zuruck.y+(zuruck.h/2+20));
         batch.draw(buttonimage, zuruck.x,zuruck.y,zuruck.w,zuruck.h);
         if(zuruck.isPressed() == 1){
             save();
@@ -249,14 +257,21 @@ a++;
 
 
             batch.begin();
+            batch.setColor(0.3f,0.3f,0.3f,1f);
 
-
-            rot.x=100;
-            rot.y=100;
+            rot.x=Gdx.graphics.getWidth()-rot.w;
+            rot.y=0;
+            if(f_select==1){
+                batch.setColor(1,1,1,1);
+            }
             batch.draw(blockrot, rot.x,rot.y,rot.w,rot.h);
             font.getData().setScale(4);
             font.draw(batch, "rot", rot.x+30, rot.y+(rot.h/2+25));
+            if(f_select==1){
+                batch.setColor(0.3f,0.3f,0.3f,1f);
+            }
             if(rot.isPressed() == 1){
+                f_select=1;
                 for(int a=0;a<blocks.size();a=a+1) {
                     LevelBauBlock bb;
                     bb = blocks.get(a);
@@ -273,12 +288,19 @@ a++;
 
 
 
-            gruen.x=250;
-            gruen.y=100;
+            gruen.x=Gdx.graphics.getWidth()-gruen.w*2;
+            gruen.y=0;
+            if(f_select==2){
+                batch.setColor(1,1,1,1);
+            }
             batch.draw(blockgruen, gruen.x,gruen.y,gruen.w,gruen.h);
             font.getData().setScale(4);
             font.draw(batch, "grün", gruen.x+30, gruen.y+(gruen.h/2+25));
+            if(f_select==2){
+                batch.setColor(0.3f,0.3f,0.3f,1f);
+            }
             if(gruen.isPressed() == 1){
+                f_select=2;
                 for(int a=0;a<blocks.size();a=a+1) {
                     LevelBauBlock bb;
                     bb = blocks.get(a);
@@ -290,12 +312,19 @@ a++;
 
             }
 
-            blau.x=400;
-            blau.y=100;
+            blau.x=Gdx.graphics.getWidth()-blau.w*3;
+            blau.y=0;
+            if(f_select==3){
+                batch.setColor(1,1,1,1);
+            }
             batch.draw(blockblau, blau.x,blau.y,blau.w,blau.h);
             font.getData().setScale(4);
             font.draw(batch, "blau", blau.x+30, blau.y+(blau.h/2+25));
+            if(f_select==3){
+                batch.setColor(0.3f,0.3f,0.3f,1f);
+            }
             if(blau.isPressed() == 1){
+                f_select=3;
                 for(int a=0;a<blocks.size();a=a+1) {
                     LevelBauBlock bb;
                     bb = blocks.get(a);
@@ -309,12 +338,19 @@ a++;
 
 
 
-            doppelt.x=550;
-            doppelt.y=100;
+            doppelt.x=Gdx.graphics.getWidth()-doppelt.w*1;
+            doppelt.y=doppelt.h;
+            if(f_select==4){
+                batch.setColor(1,1,1,1);
+            }
             batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
             font.getData().setScale(4);
             font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
+            if(f_select==4){
+                batch.setColor(0.3f,0.3f,0.3f,1f);
+            }
             if(doppelt.isPressed() == 1){
+                f_select=4;
                 for(int a=0;a<blocks.size();a=a+1) {
                     LevelBauBlock bb;
                     bb = blocks.get(a);
@@ -326,12 +362,19 @@ a++;
 
             }
 
-            unzers.x=700;
-            unzers.y=100;
+            unzers.x=Gdx.graphics.getWidth()-unzers.w*2;
+            unzers.y=unzers.h;
+            if(f_select==5){
+                batch.setColor(1,1,1,1);
+            }
             batch.draw(unzer, unzers.x,unzers.y,unzers.w,unzers.h);
             font.getData().setScale(4);
             font.draw(batch, "unz", unzers.x+30, unzers.y+(unzers.h/2+25));
+            if(f_select==5){
+                batch.setColor(0.3f,0.3f,0.3f,1f);
+            }
             if(unzers.isPressed() == 1){
+                f_select=5;
                 for(int a=0;a<blocks.size();a=a+1) {
                     LevelBauBlock bb;
                     bb = blocks.get(a);
@@ -343,12 +386,19 @@ a++;
 
             }
 
-            leer.x=850;
-            leer.y=100;
+            leer.x=Gdx.graphics.getWidth()-leer.w*3;
+            leer.y=leer.h;
+            if(f_select==6){
+                batch.setColor(1,1,1,1);
+            }
             batch.draw(buttonimage, leer.x,leer.y,leer.w,leer.h);
             font.getData().setScale(4);
             font.draw(batch, "leer", leer.x+30, leer.y+(leer.h/2+25));
+            if(f_select==6){
+                batch.setColor(0.3f,0.3f,0.3f,1f);
+            }
             if(leer.isPressed() == 1){
+                f_select=6;
                 for(int a=0;a<blocks.size();a=a+1) {
                     LevelBauBlock bb;
                     bb = blocks.get(a);
@@ -366,8 +416,45 @@ a++;
 
 
 
+            batch.setColor(1,1,1,1);
             batch.end();
+            if(b.check()==1) {
+                shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                switch (f_select) {
+                    case 1:
+                        shapeRenderer.setColor(255, 255, 0, 1);
+                        shapeRenderer.ellipse(rot.x, rot.y, 20, 20);
+                        b.K_art = 0;
 
+                        break;
+                    case 2:
+                        shapeRenderer.setColor(255, 255, 0, 1);
+                        shapeRenderer.ellipse(gruen.x, gruen.y, 20, 20);
+                        b.K_art = 1;
+                        break;
+                    case 3:
+                        shapeRenderer.setColor(255, 255, 0, 1);
+                        shapeRenderer.ellipse(blau.x, blau.y, 20, 20);
+                        b.K_art = 2;
+                        break;
+                    case 4:
+                        shapeRenderer.setColor(255, 255, 0, 1);
+                        shapeRenderer.ellipse(doppelt.x, doppelt.y, 20, 20);
+                        b.K_art = 3;
+                        break;
+                    case 5:
+                        shapeRenderer.setColor(255, 255, 0, 1);
+                        shapeRenderer.ellipse(unzers.x, unzers.y, 20, 20);
+                        b.K_art = 4;
+                        break;
+                    case 6:
+                        shapeRenderer.setColor(255, 255, 0, 1);
+                        shapeRenderer.ellipse(leer.x, leer.y, 20, 20);
+                        b.K_art = 5;
+                        break;
+                }
+                shapeRenderer.end();
+            }
 
         }
 

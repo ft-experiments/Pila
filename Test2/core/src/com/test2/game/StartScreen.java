@@ -73,7 +73,7 @@ public class StartScreen extends ScreenAdapter {
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         //batch.draw(bzs,Gdx.graphics.getWidth()/2-400,Gdx.graphics.getHeight()/2-50,800,200);
-
+        font.getData().setScale(Gdx.graphics.getWidth()/270,Gdx.graphics.getHeight()/444);
         font.draw(batch, "weiter spielen", Start.x+30, Start.y+(Start.h/2+25));
         batch.draw(buttonimage, Start.x,Start.y,Start.w,Start.h);
         if(Start.isPressed()==1){
@@ -82,7 +82,7 @@ public class StartScreen extends ScreenAdapter {
         }
 
 
-        font.getData().setScale(4);
+
         font.draw(batch, "Levelauswahl", Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25));
         batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
         if(Levelauswahl.isPressed() == 1){
