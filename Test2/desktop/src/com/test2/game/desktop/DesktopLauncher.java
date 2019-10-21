@@ -13,7 +13,8 @@ public class DesktopLauncher {
 		config.setTitle("Felix");
 		config.useVsync(true);
 		config.setWindowIcon("badlogic.jpg");
-		config.setWindowedMode(800,1000);
+		config.setWindowPosition(0,0);
+		config.setWindowedMode(720,1280);
 		//config.setFullscreenMode(Lwjgl3ApplicationConfiguration.getDisplayMode());    //fullscreen
 		new Lwjgl3Application(new Test2(), config);
 		//com.test2.game.Var.
