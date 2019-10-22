@@ -39,6 +39,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     touchinput.Button wpopup;
 
     touchinput.Button zuruck;
+    touchinput.Button speichern;
 
     int popup=0;
 
@@ -74,17 +75,18 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
 
 
-        rot=new touchinput.Button(0,0,150,75);
-        gruen=new touchinput.Button(0,0,150,75);
-        blau=new touchinput.Button(0,0,150,75);
-        doppelt=new touchinput.Button(0,0,150,75);
-        unzers=new touchinput.Button(0,0,150,75);
-        leer=new touchinput.Button(0,0,150,75);
+        rot=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        gruen=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        blau=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        doppelt=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        unzers=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        leer=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
         wpopup=new touchinput.Button(0,0,200,525);
 
 
 
-        zuruck = new touchinput.Button(0,0,320,60);
+        zuruck = new touchinput.Button(0,0,Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10);
+        speichern = new touchinput.Button(0,Gdx.graphics.getWidth()/10,Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10);
 
         if(Var.LBSsho==0) {
             levelcreater(10, 12);
@@ -130,6 +132,13 @@ a++;
 
 
 
+    }
+
+
+    static void spielen(){
+        Var.gamestatus=0;
+        Level.dispose();
+        Var.createlevel=-1;
     }
 
 
@@ -190,12 +199,21 @@ a++;
         batch.begin();
 
         font.getData().setScale(3,3);
-        font.draw(batch, "LevelAuswahl", zuruck.x+30, zuruck.y+(zuruck.h/2+20));
+        font.draw(batch, "Spielen", zuruck.x+30, zuruck.y+(zuruck.h/2+20));
         batch.draw(buttonimage, zuruck.x,zuruck.y,zuruck.w,zuruck.h);
         if(zuruck.isPressed() == 1){
             save();
-            Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
+            spielen();
+            Test2.INSTANCE.setScreen(new GameScreen());
         }
+
+        font.getData().setScale(3,3);
+        font.draw(batch, "Speichern", speichern.x+30, speichern.y+(speichern.h/2+20));
+        batch.draw(buttonimage, speichern.x,speichern.y,speichern.w,speichern.h);
+        if(speichern.isPressed() == 1){
+            save();
+        }
+
         batch.end();
     }
 
