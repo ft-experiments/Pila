@@ -40,6 +40,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
     touchinput.Button zuruck;
     touchinput.Button speichern;
+    touchinput.Button neu;
 
     int popup=0;
 
@@ -87,10 +88,21 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
         zuruck = new touchinput.Button(0,0,Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10);
         speichern = new touchinput.Button(0,Gdx.graphics.getWidth()/10,Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10);
+        neu = new touchinput.Button(Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10,Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10);
 
-        if(Var.LBSsho==0) {
-            levelcreater(10, 12);
+
+
+
+        if(EigeneLevelManageScreen.LoadEigenesLevel==0) {
+            if (Var.LBSsho == 0) {
+                levelcreater(10, 12);
+            }
         }
+        if(EigeneLevelManageScreen.LoadEigenesLevel!=0) {
+            LoadSave.getArrayPrefs("EigeneLevel"+EigeneLevelManageScreen.LoadEigenesLevel);
+        }
+
+
 
 
     }
@@ -129,6 +141,9 @@ while(a<w*h+4) {
     LevelBa[a] = blocks.get(a-4).K_art;
 a++;
 }
+
+LoadSave.setArrayPrefs("EigeneLevel"+EigeneLevelManageScreen.LoadEigenesLevel,LevelBa);
+
 
 
 
@@ -212,6 +227,14 @@ a++;
         batch.draw(buttonimage, speichern.x,speichern.y,speichern.w,speichern.h);
         if(speichern.isPressed() == 1){
             save();
+        }
+
+        font.getData().setScale(3,3);
+        font.draw(batch, "neu", neu.x+30, neu.y+(neu.h/2+20));
+        batch.draw(buttonimage, neu.x,neu.y,neu.w,neu.h);
+        if(neu.isPressed() == 1){
+            blocks.clear();
+            levelcreater(10,12);
         }
 
         batch.end();

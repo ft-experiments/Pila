@@ -5,12 +5,14 @@ import com.badlogic.gdx.files.FileHandle;
 
 import javax.naming.Context;
 import java.io.File;
+import java.util.ArrayList;
 
 public class LoadSave {
 
     static int bi=0;
 
     static Preferences prefs = Gdx.app.getPreferences("einstellungen");
+    static Preferences EigeneLevel = Gdx.app.getPreferences("EigeneLevel");
     public LoadSave(){
 
     }
@@ -55,6 +57,28 @@ public class LoadSave {
 
         prefs.flush();
     }
+
+
+    public static void setArrayPrefs(String arrayName, int[] array) {
+        Preferences el = Gdx.app.getPreferences("preferencename");
+        el.putInteger(arrayName +"_size", array.length);
+        for(int i=0;i<array.length;i++)
+            el.putInteger(arrayName + "_" + i, array[i]);
+            el.flush();
+    }
+    public static int[] getArrayPrefs(String arrayName) {
+        Preferences prefs = Gdx.app.getPreferences("preferencename");
+        int size = prefs.getInteger(arrayName + "_size", 0);
+       // ArrayList<String> array = new ArrayList<>(size);
+        int[] array = new int[140];
+        for(int i=0;i<size;i++) {
+            System.out.println((prefs.getInteger(arrayName + "_" + i)));
+            LevelBaukastenScreen.LevelBa[i] = (prefs.getInteger(arrayName + "_" + i));
+        }
+        return array;
+    }
+
+
 
     int loadvibr(){
         return prefs.getInteger("vibrieren");

@@ -17,6 +17,8 @@ import java.util.ArrayList;
 public class EigeneLevelManageScreen extends ScreenAdapter {
 
     static ArrayList<touchinput.Button> EigeneLevelButtons = new ArrayList<touchinput.Button>();
+    static int LoadEigenesLevel=0;
+    static int marked=0;
 
     SpriteBatch batch;
     BitmapFont font;
@@ -76,6 +78,7 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
+        int b=0;
 
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -83,7 +86,7 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         font.getData().setScale(4);
-        font.draw(batch, "Neues Level", newLevel.x+30, newLevel.y+(newLevel.h/2+25));
+        font.draw(batch, "Edit", newLevel.x+30, newLevel.y+(newLevel.h/2+25));
         batch.draw(buttonimage, newLevel.x,newLevel.y,newLevel.w,newLevel.h);
         if(newLevel.isPressed() == 1){
             Test2.INSTANCE.setScreen(new LevelBaukastenScreen());
@@ -93,11 +96,23 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
 
 
         touchinput.Button B;
-        for(int b=0;b<EigeneLevelButtons.size();b=b+1) {
+        b=0;
+        while(b<EigeneLevelButtons.size()) {
             B = EigeneLevelButtons.get(b);
-            batch.draw(buttonimage,B.x,B.y,B.w,B.h);
+            if(marked==b){
+                batch.draw(Levelbutton,B.x,B.y,B.w,B.h);
+            }else {
+                batch.draw(buttonimage, B.x, B.y, B.w, B.h);
+            }
             font.getData().setScale(4);
-            font.draw(batch, ""+b,B.x+B.w/2,B.y+B.h/2);
+            font.draw(batch, ""+(b+1),B.x+B.w/2,B.y+B.h/2);
+            if(B.isPressed()==1){
+                marked=b;
+                EigeneLevelManageScreen.LoadEigenesLevel=b+1;
+                b=0;
+              //  Test2.INSTANCE.setScreen(new LevelBaukastenScreen());
+            }
+            b=b+1;
         }
 
 
@@ -117,6 +132,7 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
 
     @Override
     public void dispose() {
+        super.dispose();
         batch.dispose();
         img.dispose();
     }
