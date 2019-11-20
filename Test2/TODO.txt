@@ -8,10 +8,8 @@
 /////////////////////////////////////////////////
 
 
-//TODO Wenn man das level neustartet stimmt hat man im ersten level pllötzlich ein leben mehr
 //TODO Ball wird einfach so immer schneller wenn man gegen ecken stößt
 //TODO Unserstörbarer Block kollision
-//TODO Begrenzung geht nicht für Fallblöcke/Wahrscheinlichkeit zu hoch zum erscheinen
 
 ///////////////////////////////////////////////
 ///////////////////Änderungen//////////////////

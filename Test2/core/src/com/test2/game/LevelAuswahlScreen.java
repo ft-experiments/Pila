@@ -44,7 +44,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         Levelbutton = new Texture("Levelauswahlbutton.png");
         buttonimage = new Texture("Button.png");
         Levelbuttonrot = new Texture("Levelauswahlbuttonrot.png");
-        zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2-110,Gdx.graphics.getHeight()/1,220,100);
+        zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2,Gdx.graphics.getHeight()-100,220,100);
 
         back = referrer;
         create();
@@ -53,14 +53,15 @@ public class LevelAuswahlScreen extends ScreenAdapter {
     int fh=10;
 
     void create() {
-        int le=0;
-        for(int j=0;j<fh;j=j+1) {
-            for (int i = 0; i < fw; i = i + 1) {
-                le=le+1;
+        int le=fw*fh+2;
+        for(int j=1;j<fh;j=j+1) {
+            for (int i = fw; i > -1; i = i - 1) {
+                System.out.println(i);
+                le=le-1;
                 LevelAuswahlButtons LAB;
                 LAB = new LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() / fw, j* Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, le);
                 //LevelAuswahlButtons.Levelbuttons.add(LAB,i);
-                LevelAuswahlButtons.Levelbuttons.add(i,LAB);
+                LevelAuswahlButtons.Levelbuttons.add(LAB);
             }
         }
     }
