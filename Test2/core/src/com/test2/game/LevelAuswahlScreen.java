@@ -44,13 +44,13 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         Levelbutton = new Texture("Levelauswahlbutton.png");
         buttonimage = new Texture("Button.png");
         Levelbuttonrot = new Texture("Levelauswahlbuttonrot.png");
-        zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2-110,Gdx.graphics.getHeight()-500,220,100);
+        zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2-110,Gdx.graphics.getHeight()/1,220,100);
 
         back = referrer;
         create();
     }
-    int fw=9;
-    int fh=1;
+    int fw=8;
+    int fh=10;
 
     void create() {
         int le=0;
@@ -97,14 +97,14 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         for(int b=0;b<LevelAuswahlButtons.Levelbuttons.size();b=b+1) {
             LAB = LevelAuswahlButtons.Levelbuttons.get(b);
             if(LAB.Level-1>=Var.levelbesitz) {
-                batch.draw(Levelbuttonrot, LAB.x, LAB.y, LAB.w, LAB.h);
+                batch.draw(Levelbuttonrot, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
             }
             if(LAB.Level-1<Var.levelbesitz){
-                batch.draw(Levelbutton, LAB.x, LAB.y, LAB.w, LAB.h);
+                batch.draw(Levelbutton, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
             }
 
-            font.getData().setScale(8);
-            font.draw(batch, ""+LAB.Level , LAB.x+LAB.w/2-50,LAB.y+LAB.h/2+50);
+            font.getData().setScale(4);
+            font.draw(batch, ""+(LAB.Level) , LAB.x+LAB.w/2-30,LAB.y+LAB.h/2+30);
             if(b<Var.levelbesitz) {
                 LAB.check();
             }

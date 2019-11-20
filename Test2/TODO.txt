@@ -10,9 +10,6 @@
 
 //TODO Wenn man das level neustartet stimmt hat man im ersten level pllötzlich ein leben mehr
 //TODO Ball wird einfach so immer schneller wenn man gegen ecken stößt
-
-//TODO Klebeball wird mit ins nächste Level genommen
-//TODO Bei Gameover kommt man ins 1. Level
 //TODO Unserstörbarer Block kollision
 //TODO Begrenzung geht nicht für Fallblöcke/Wahrscheinlichkeit zu hoch zum erscheinen
 
@@ -23,10 +20,7 @@
 
 
 
-//TODO Pause Menü auch mit ESC-Taste kommen
 //TODO Ablauf in richtiger reihenfolge
-//TODO Ablauf auserhalb der Statusbar
-//TODO Menü Relativ
 //TODO Feuerball smooth auffüllen wie bei klebe ball
 //TODO Hauptmenü besser
 
@@ -36,6 +30,6 @@
 //////////////////Featurs///////////////////////
 /////////////////////////////////////////////////
 
-
+//TODO standarteinstellungen
 
 //TODO countdown nach beenden der Pause!!!

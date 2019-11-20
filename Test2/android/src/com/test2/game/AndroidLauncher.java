@@ -27,7 +27,7 @@ public class AndroidLauncher extends AndroidApplication {
 		if(keyCode == event.KEYCODE_BACK) {
 			if (!pressedOnce) {
 				pressedOnce = true;
-				Toast.makeText(getApplicationContext(), "Erneut drückenm um das Spiel zu beenden", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getApplicationContext(), "Erneut drücken, um das Spiel zu beenden", Toast.LENGTH_SHORT).show();
 				new Handler().postDelayed(new Runnable() {
 					@Override
 					public void run() {

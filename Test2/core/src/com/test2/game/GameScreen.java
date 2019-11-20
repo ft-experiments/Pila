@@ -95,9 +95,10 @@ public class GameScreen extends ScreenAdapter {
         ka = new Smooth();
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-700,400,100);
-        neustartbutton = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-800,400,100);
-        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-200,200,200);
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.732f),400,(int)(Gdx.graphics.getHeight()/14.8f));
+        neustartbutton = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.089f),400,(int)(Gdx.graphics.getHeight()/14.8));
+        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-(int)(Gdx.graphics.getHeight()/5.92),200,200);
+
 
         new Ablauf();
 
@@ -515,16 +516,21 @@ public class GameScreen extends ScreenAdapter {
         if(Var.gamestatus == 3){
             batch.setColor(0,0,0,0.6f);
             batch.draw(status_bar,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-            batch.setColor(0.4f, 0.2f, 0.8f, 0.6f);
-
             batch.end();
+
+
+
+            batch.setColor(1f, 1f, 1f, 0.6f);
+
+
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
             shapeRenderer.setColor(0.4f, 0.2f, 0.8f, 0.6f);
-            shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
+            shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-350,500,Gdx.graphics.getHeight()/1.828f);
             shapeRenderer.end();
             batch.begin();
-
+            batch.setColor(0.4f, 0.2f, 0.8f, 0.6f);
             batch.draw(bigpause, Weiter.x, Weiter.y, Weiter.w, Weiter.h );
+            batch.setColor(1f,1f,1f,1f);
 
 
 
@@ -565,35 +571,7 @@ public class GameScreen extends ScreenAdapter {
 
                     Var.gamestatus=1;
 
-                    try {
 
-
-                        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-                        shapeRenderer.setColor(1f, 0.0f, 0.0f, 1f);
-                        shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
-                        shapeRenderer.end();
-
-                        System.out.println("3");
-                        TimeUnit.SECONDS.sleep(1);
-
-                        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-                        shapeRenderer.setColor(0f, 0.0f, 1.0f, 1f);
-                        shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
-                        shapeRenderer.end();
-                        System.out.println("2");
-                        TimeUnit.SECONDS.sleep(1);
-
-                        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-                        shapeRenderer.setColor(0f, 1.0f, 0.0f, 1f);
-                        shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-700/2,500,700);
-                        shapeRenderer.end();
-                        System.out.println("1");
-                        TimeUnit.SECONDS.sleep(1);
-                        System.out.println("GO");
-
-                    }catch (java.lang.InterruptedException e) {
-                        System.out.println("UUps");
-                    }
                 }
             }
             batch.begin();
@@ -700,7 +678,7 @@ public class GameScreen extends ScreenAdapter {
             batch.setColor(1,1,1,1);
             font.setColor(Color.WHITE);
         }
-
+        System.out.println(Gdx.graphics.getHeight());
     }
 
     @Override

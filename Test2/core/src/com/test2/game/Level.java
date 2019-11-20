@@ -14,7 +14,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
             0,1,0,1,0,1,0,1,0,1,0
     };
 
-    static int[] Level2 = {11,6,Gdx.graphics.getHeight()/3,0   ,
+    static int[] Level2 = {11,6,Gdx.graphics.getHeight()/4,0   ,
             0,1,0,1,0,1,0,1,0,1,0,
             1,0,1,0,1,0,1,0,1,0,5,
             0,1,0,1,0,1,0,5,5,5,5,
@@ -23,16 +23,16 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
             1,5,5,5,5,5,5,5,5,5,5
     };
 
-    static int[] Level3 = {14,6,Gdx.graphics.getHeight()/3,0   ,
-            5,5,5,5,5,5,5,5,5,5,5,5,5,5,
-            5,5,5,5,5,5,5,5,5,5,5,5,5,5,
-            3,3,3,3,3,3,3,3,0,0,5,5,5,5,
-            0,1,0,0,1,0,1,3,0,0,0,0,5,5,
-            1,0,1,0,1,1,0,3,0,0,0,0,0,0,
-            1,0,1,0,1,0,1,3,0,0,0,0,0,0
+    static int[] Level3 = {12,6,Gdx.graphics.getHeight()/4,0   ,
+            5,5,5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,5,5,
+            3,3,3,3,3,3,3,3,0,0,5,5,
+            0,1,0,0,1,0,1,3,0,0,0,0,
+            1,0,1,0,1,1,0,3,0,0,0,0,
+            1,0,1,0,1,0,1,3,0,0,0,0
     };
 
-    static int[] Level4 = {11,9,Gdx.graphics.getHeight()/3,0   ,
+    static int[] Level4 = {11,9,Gdx.graphics.getHeight()/5,0   ,
             0,1,0,0,1,0,1,0,0,1,0,
             5,5,5,5,5,5,5,5,5,5,5,
             1,0,1,0,1,1,0,0,1,0,1,
@@ -44,7 +44,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
             3,3,3,3,3,3,3,3,3,3,3
     };
 
-    static int[] Level5 = {11,10,Gdx.graphics.getHeight()/4,0   ,
+    static int[] Level5 = {11,10,Gdx.graphics.getHeight()/6,0   ,
             0,2,2,2,0,4,0,2,2,2,0,
             0,2,2,2,0,4,0,2,2,2,0,
             0,2,2,2,0,4,0,2,2,2,0,
@@ -58,7 +58,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
     };
 
 
-    static int[] Level6 = {10,5,Gdx.graphics.getHeight()/10,0   ,
+    static int[] Level6 = {10,5,Gdx.graphics.getHeight()/8,0   ,
             1,0,1,0,4,4,0,1,0,1,
             1,1,1,1,0,0,1,1,1,1,
             2,2,2,2,0,0,2,2,2,2,
@@ -214,6 +214,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
     static void Levelup() {
         Level.dispose();
         Level.LevelCreate(Le+1);
+        Var.kleben=0;
         if(Le>Var.levelbesitz) {
             Var.levelbesitz += 1;
         }
