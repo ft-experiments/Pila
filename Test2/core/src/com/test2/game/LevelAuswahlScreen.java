@@ -56,7 +56,6 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         int le=fw*fh+2;
         for(int j=1;j<fh;j=j+1) {
             for (int i = fw; i > -1; i = i - 1) {
-                System.out.println(i);
                 le=le-1;
                 LevelAuswahlButtons LAB;
                 LAB = new LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() / fw, j* Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, le);
@@ -106,7 +105,8 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
             font.getData().setScale(4);
             font.draw(batch, ""+(LAB.Level) , LAB.x+LAB.w/2-30,LAB.y+LAB.h/2+30);
-            if(b<Var.levelbesitz) {
+            //System.out.println(b);
+            if(LAB.Level<=Var.levelbesitz) {
                 LAB.check();
             }
         }

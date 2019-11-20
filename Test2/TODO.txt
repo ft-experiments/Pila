@@ -10,6 +10,9 @@
 
 //TODO Ball wird einfach so immer schneller wenn man gegen ecken stößt
 //TODO Unserstörbarer Block kollision
+//TODO BAll steckt in der wand fest
+//TODO feuerball manchmal schneller ablaufen
+//TODO ball nimmt manchmal aus irgendwelchen unbekannten buggichen völlig überflüssigen Gründen die eigentlich leider gut für den spieler seienden fähigkeitten des verbuggten feuerballs an.
 
 ///////////////////////////////////////////////
 ///////////////////Änderungen//////////////////
@@ -18,7 +21,6 @@
 
 
 
-//TODO Ablauf in richtiger reihenfolge
 //TODO Feuerball smooth auffüllen wie bei klebe ball
 //TODO Hauptmenü besser
 //TODO Reihen folge ändern in Levelauwahl
@@ -31,4 +33,4 @@
 
 //TODO standarteinstellungen
 
-//TODO countdown nach beenden der Pause!!!
+//TODO countdown nach beenden der Pause
