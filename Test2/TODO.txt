@@ -28,7 +28,7 @@
 //TODO Ablauf auserhalb der Statusbar
 //TODO Menü Relativ
 //TODO Feuerball smooth auffüllen wie bei klebe ball
-
+//TODO Hauptmenü besser
 
 
 
