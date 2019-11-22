@@ -10,7 +10,7 @@ import com.test2.game.Var;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
-		config.setTitle("Felix");
+		config.setTitle("Akandoid");
 		config.useVsync(true);
 		config.setWindowIcon("badlogic.jpg");
 		config.setWindowPosition(0,0);

@@ -1,8 +1,6 @@
 package com.test2.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.Preferences;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -10,7 +8,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-import javax.swing.text.html.Option;
+
 
 public class StartScreen extends ScreenAdapter {
     Texture buttonimage;
@@ -29,15 +27,14 @@ public class StartScreen extends ScreenAdapter {
     LoadSave LoadSavee;
 
 
-    int u=0;
+
 
     public StartScreen() {
-        LoadSavee = new LoadSave();
 
+            LoadSavee = new LoadSave();
 
         batch = new SpriteBatch();
         font = new BitmapFont();
-
 
         hintergrund2 = new Texture("hintergrund2.jpg");
         switchon = new Texture("switchon.png");
@@ -47,14 +44,14 @@ public class StartScreen extends ScreenAdapter {
         buttonimage = new Texture("Button.png");
         bzs = new Texture("bzs.png");
 
-        LevelBaukasten = new touchinput.Button(Gdx.graphics.getWidth()/2-(int)(Gdx.graphics.getWidth()/2.7f/2), (int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/2.54),(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.76f));
+        LevelBaukasten = new touchinput.Button(Gdx.graphics.getWidth() / 2 - (int) (Gdx.graphics.getWidth() / 2.7f / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 2.54), (int) (Gdx.graphics.getWidth() / 2.7f), (int) (Gdx.graphics.getHeight() / 17.76f));
         buttonimage = new Texture("Button.png");
 
 
         System.out.println(Gdx.graphics.getHeight());
         //Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,(int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/3.55f),600,300);
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-(int)(Gdx.graphics.getWidth()/2.7f/2),(int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/2.96f),(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.76f));
-        Start = new touchinput.Button((int)(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/2.16/2),(int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/3.55f),(int)(Gdx.graphics.getWidth()/2.16),(int)(Gdx.graphics.getHeight()/17.76f));
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth() / 2 - (int) (Gdx.graphics.getWidth() / 2.7f / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 2.96f), (int) (Gdx.graphics.getWidth() / 2.7f), (int) (Gdx.graphics.getHeight() / 17.76f));
+        Start = new touchinput.Button((int) (Gdx.graphics.getWidth() / 2 - Gdx.graphics.getWidth() / 2.16 / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 3.55f), (int) (Gdx.graphics.getWidth() / 2.16), (int) (Gdx.graphics.getHeight() / 17.76f));
 
 
 
@@ -62,7 +59,7 @@ public class StartScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-
+        Var.ingame=false;
 
         LoadSavee.loadall();
 
@@ -89,13 +86,14 @@ public class StartScreen extends ScreenAdapter {
             Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
         }
 
-        font.draw(batch, "LevelBaukasten", LevelBaukasten.x+30, LevelBaukasten.y+(LevelBaukasten.h/2+25));
-        batch.draw(buttonimage, LevelBaukasten.x,LevelBaukasten.y,LevelBaukasten.w,LevelBaukasten.h);
-        if(LevelBaukasten.isPressed() == 1){
-            Test2.INSTANCE.setScreen(new EigeneLevelManageScreen());
+        if(Var.EnableAlpha) {
+            font.draw(batch, "LevelBaukasten", LevelBaukasten.x + 30, LevelBaukasten.y + (LevelBaukasten.h / 2 + 25));
+            batch.draw(buttonimage, LevelBaukasten.x, LevelBaukasten.y, LevelBaukasten.w, LevelBaukasten.h);
+            if (LevelBaukasten.isPressed() == 1) {
+                Test2.INSTANCE.setScreen(new EigeneLevelManageScreen());
+            }
+
         }
-
-
         batch.end();
 
 

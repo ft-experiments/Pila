@@ -66,15 +66,16 @@ public class Var {
     static int LBSsho=0;
 
 
-
+    static boolean ingame = false;
 
 
     static int existfallbox = 0;
 
+    static boolean done = false;
 
 
-
-
+//TODO Hier auf true stellen um Levelbaukasten zu Aktivieren
+    static boolean EnableAlpha = false;
 
 
 

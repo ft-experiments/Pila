@@ -71,6 +71,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
+        Var.ingame = true;
 
 
         Gdx.gl.glClearColor(0, 0, 0, 1);

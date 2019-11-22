@@ -101,14 +101,14 @@ public class OptionScreen extends ScreenAdapter {
         // if(i==0) {
         // System.out.println(SW.status);
 
-
-        font.getData().setScale(Gdx.graphics.getWidth()/270);
-        font.draw(batch, "LevelBau", Baukasten.x+30, Baukasten.y+(Baukasten.h/2+25));
-        batch.draw(buttonimage, Baukasten.x,Baukasten.y,Baukasten.w,Baukasten.h);
-        if(Baukasten.isPressed() == 1){
-            Test2.INSTANCE.setScreen(new EigeneLevelManageScreen());
+        if(Var.EnableAlpha) {
+            font.getData().setScale(Gdx.graphics.getWidth() / 270);
+            font.draw(batch, "LevelBau", Baukasten.x + 30, Baukasten.y + (Baukasten.h / 2 + 25));
+            batch.draw(buttonimage, Baukasten.x, Baukasten.y, Baukasten.w, Baukasten.h);
+            if (Baukasten.isPressed() == 1) {
+                Test2.INSTANCE.setScreen(new EigeneLevelManageScreen());
+            }
         }
-
 
         font.getData().setScale(4);
         // if (i == 0) {
