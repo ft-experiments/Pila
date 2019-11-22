@@ -47,13 +47,13 @@ public class StartScreen extends ScreenAdapter {
         buttonimage = new Texture("Button.png");
         bzs = new Texture("bzs.png");
 
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-(int)(Gdx.graphics.getWidth()/2.7f/2), (int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/2.54),(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.76f));
+        LevelBaukasten = new touchinput.Button(Gdx.graphics.getWidth()/2-(int)(Gdx.graphics.getWidth()/2.7f/2), (int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/2.54),(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.76f));
         buttonimage = new Texture("Button.png");
 
 
         System.out.println(Gdx.graphics.getHeight());
         //Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,(int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/3.55f),600,300);
-        LevelBaukasten = new touchinput.Button(Gdx.graphics.getWidth()/2-(int)(Gdx.graphics.getWidth()/2.7f/2),(int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/2.96f),(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.76f));
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-(int)(Gdx.graphics.getWidth()/2.7f/2),(int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/2.96f),(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.76f));
         Start = new touchinput.Button((int)(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/2.16/2),(int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/3.55f),(int)(Gdx.graphics.getWidth()/2.16),(int)(Gdx.graphics.getHeight()/17.76f));
 
 
