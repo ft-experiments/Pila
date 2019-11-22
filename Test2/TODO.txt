@@ -10,11 +10,9 @@
 
 //TODO Ball wird einfach so immer schneller wenn man gegen ecken stößt
 //TODO Unserstörbarer Block kollision
-//TODO BAll steckt in der wand fest
 //TODO feuerball manchmal schneller ablaufen
 //TODO ball zersört im normalen modus mehrere Blöcke
 //TODO Zurücktaste Fehler beheben
-//TODO Fehler in der Auswahl-Engine
 
 ///////////////////////////////////////////////
 ///////////////////Änderungen//////////////////

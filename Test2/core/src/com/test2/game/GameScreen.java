@@ -128,7 +128,7 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-   // FallKasten.autocreate(10000);
+
 
 
 
