@@ -21,7 +21,7 @@
 
 
 
-
+//TODO Schrift schärfer
 //TODO Hauptmenü besser
 //TODO Reihen folge ändern in Levelauwahl
 
