@@ -32,7 +32,7 @@ public class LoadSave {
 
         Var.ballstartmode=prefs.getInteger("ballstartmode");
         Var.levelbesitz=prefs.getInteger("levelbesitz");
-        if(Var.levelbesitz==0){Var.levelbesitz=1;}
+        if(Var.levelbesitz==0){Var.levelbesitz=1;Var.beiballberurungvibrieren=1;Var.ballstartmode=1;saveall();}
     }
 
 

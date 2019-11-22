@@ -44,7 +44,7 @@ public class Ball {
         }
         if (x>Gdx.graphics.getWidth()-2*r) {
 
-                x = Gdx.graphics.getWidth()-20;
+                x = Gdx.graphics.getWidth()-30;
                 bx = bx * -1;
 
 
