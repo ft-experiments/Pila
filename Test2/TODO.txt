@@ -12,7 +12,9 @@
 //TODO Unserstörbarer Block kollision
 //TODO BAll steckt in der wand fest
 //TODO feuerball manchmal schneller ablaufen
-//TODO ball nimmt manchmal aus irgendwelchen unbekannten buggichen völlig überflüssigen Gründen die eigentlich leider gut für den spieler seienden fähigkeitten des verbuggten feuerballs an.
+//TODO ball zersört im normalen modus mehrere Blöcke
+//TODO Zurücktaste Fehler beheben
+//TODO Fehler in der Auswahl-Engine
 
 ///////////////////////////////////////////////
 ///////////////////Änderungen//////////////////

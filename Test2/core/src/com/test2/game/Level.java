@@ -202,7 +202,11 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
                 Level.wo=0;
                 levelcreater(Level8);
                 break;
-
+            case 9:
+                Le=9;
+                Var.leben = 4;
+                Level.wo=0;
+                levelcreater(Level9);
 
 
 
