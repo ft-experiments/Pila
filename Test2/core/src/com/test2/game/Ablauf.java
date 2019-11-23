@@ -30,7 +30,7 @@ public class Ablauf {
                 }
 
             }
-        },0, 75);
+        },0, 50);
 
     }
 

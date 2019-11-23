@@ -77,7 +77,7 @@ public class Var {
     static boolean gotostart=false;
 
 //TODO Hier auf true stellen um Levelbaukasten zu Aktivieren
-    static boolean EnableAlpha = false;
+    static boolean EnableAlpha = true;
 
 
 
