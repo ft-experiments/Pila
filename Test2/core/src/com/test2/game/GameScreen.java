@@ -128,7 +128,7 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-   // FallKasten.autocreate(10000);
+
 
 
 
@@ -162,6 +162,7 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
+        Var.ingame = true;
         LoadSave.saveall();
         if(LevelAuswahlButtons.newlevel==1) {
             Level.dispose();

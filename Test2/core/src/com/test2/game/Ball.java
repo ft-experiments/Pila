@@ -42,14 +42,21 @@ public class Ball {
                 Gdx.input.vibrate(50);
             }
         }
-        if (x>Gdx.graphics.getWidth()-r*2) {
-            bx = bx*-1;
+        if (x>Gdx.graphics.getWidth()-2*r) {
+
+                x = Gdx.graphics.getWidth()-30;
+                bx = bx * -1;
+
+
             if(Var.beiballberurungvibrieren==1) {
                 Gdx.input.vibrate(50);
             }
         }
         if (x<0) {
-            bx = bx*-1;
+
+                bx = bx * -1;
+                x = 5;
+
             if(Var.beiballberurungvibrieren==1) {
                 Gdx.input.vibrate(50);
             }

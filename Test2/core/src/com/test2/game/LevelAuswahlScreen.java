@@ -49,18 +49,26 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         back = referrer;
         create();
     }
+<<<<<<< HEAD
     int fw=9;
     int fh=10;
+=======
+    int fw=8; //NICHT ÄNDERN
+    int fh=10;  //NICHT ÄNDERN
+>>>>>>> origin/master
 
     void create() {
-        int le=fw*fh+2;
-        for(int j=1;j<fh;j=j+1) {
-            for (int i = fw; i > -1; i = i - 1) {
-                le=le-1;
+        int le=1;
+        for(int j=fh-1;j>-1;j=j-1) {
+            for (int i = 0; i < fw; i = i + 1) {
+
+
                 LevelAuswahlButtons LAB;
-                LAB = new LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() / fw, j* Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, le);
+                LAB = new LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() /fw, j* Gdx.graphics.getWidth() / (fh-2), Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, le);
                 //LevelAuswahlButtons.Levelbuttons.add(LAB,i);
                 LevelAuswahlButtons.Levelbuttons.add(LAB);
+                System.out.println(i);
+                le=le+1;
             }
         }
     }
@@ -71,6 +79,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
+        Var.ingame = true;
 
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
