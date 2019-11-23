@@ -162,6 +162,7 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
+        System.out.println(delta);
         Var.ingame = true;
         LoadSave.saveall();
         if(LevelAuswahlButtons.newlevel==1) {
@@ -341,6 +342,7 @@ public class GameScreen extends ScreenAdapter {
                         break;
                     case 3:
                         Var.ballmode = 1;
+                        Ablauf.feuerballablauf=1000;
                         Ablauf.feuerballzuruck();
                         break;
                     case 4:

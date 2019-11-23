@@ -8,11 +8,7 @@
 /////////////////////////////////////////////////
 
 
-//TODO Ball wird einfach so immer schneller wenn man gegen ecken stößt
 //TODO Unserstörbarer Block kollision
-//TODO ball zersört im normalen modus mehrere Blöcke
-//TODO feuerball manchmal schneller ablaufen
-
 //TODO Zurücktaste Fehler beheben
 
 ///////////////////////////////////////////////
