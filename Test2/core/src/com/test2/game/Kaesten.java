@@ -39,9 +39,9 @@ int my2=0;
            // System.out.println(Gdx.graphics.getHeight() - Var.KY);           Ball.y > Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4  && Ball.x > K_x && Ball.x < K_x+100 && Ball.y < Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4+50
             if (Ball.y > K_y-Ball.r*2 && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h+Ball.r*2) {                           //Ball.y > K_y-Ball.r*2 && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h
 
-                mx=K_x+2;
+                mx=K_x+3;
                 my=K_y+2;
-                mx2=K_x+K_w-2;
+                mx2=K_x+K_w-3;
                 my2=K_y+K_h-2;
                 //if(Var.ballmode==1){Ablauf.feuerballablauf-=100/20;}
 
