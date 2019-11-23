@@ -102,6 +102,25 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
     };
 
+    static int[] Level9 = {
+            10,12,Gdx.graphics.getHeight()/10,0,
+
+            3,0,2,0,3,4,4,4,4,4,
+            3,0,2,0,3,4,4,4,4,4,
+            3,0,2,0,3,4,4,4,4,4,
+            3,0,2,0,3,4,4,4,4,4,
+            3,0,2,0,3,4,4,4,4,4,
+            3,0,2,0,3,4,4,4,4,4,
+            3,0,2,0,3,4,4,4,4,4,
+            3,0,2,0,3,3,3,3,3,3,
+            0,0,2,0,0,0,0,0,0,0,
+            2,2,2,2,2,2,2,2,2,2,
+            1,1,1,1,1,1,1,1,1,1,
+            0,0,0,0,0,0,0,0,0,0
+
+
+    };
+
 
 
     Level(int _L) {
@@ -189,6 +208,12 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
                 Var.leben=6;
                 Level.wo=0;
                 levelcreater(Level8);
+                break;
+            case 9:
+                Le=9;
+                Var.leben=1;
+                Level.wo=0;
+                levelcreater(Level9);
                 break;
 
 

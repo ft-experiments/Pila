@@ -18,7 +18,6 @@ public class Test2 extends Game {
 
 		setScreen(new StartScreen());
 		//setScreen(new GameScreen());
-
 		new DoppelKlick();
 	}
 
