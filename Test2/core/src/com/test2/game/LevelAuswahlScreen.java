@@ -49,13 +49,10 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         back = referrer;
         create();
     }
-<<<<<<< HEAD
-    int fw=9;
-    int fh=10;
-=======
+
     int fw=8; //NICHT ÄNDERN
     int fh=10;  //NICHT ÄNDERN
->>>>>>> origin/master
+
 
     void create() {
         int le=1;

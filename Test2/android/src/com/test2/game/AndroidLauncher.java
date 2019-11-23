@@ -29,7 +29,7 @@ public class AndroidLauncher extends AndroidApplication {
 			if (keyCode == event.KEYCODE_BACK) {
 				if (!pressedOnce) {
 					pressedOnce = true;
-					Toast.makeText(getApplicationContext(), "Erneut drücken, um ins Hauptmneü zu kommen.", Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), "Erneut drücken, um ins Hauptmenü zu kommen.", Toast.LENGTH_SHORT).show();
 					new Handler().postDelayed(new Runnable() {
 						@Override
 						public void run() {
@@ -39,8 +39,9 @@ public class AndroidLauncher extends AndroidApplication {
 
 				} else if (pressedOnce) {
 					pressedOnce = false;
-					finish();
-					Test2.INSTANCE.setScreen(new StartScreen());
+
+					Var.gotostart=true;
+					//Test2.INSTANCE.setScreen(new StartScreen());
 
 				}
 				return true;
