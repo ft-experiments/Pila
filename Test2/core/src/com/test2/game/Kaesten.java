@@ -47,8 +47,12 @@ int my2=0;
 
                 if(Var.ballmode==0) {
                     if (K_art != 5){
+/*
 
-
+                if(Ball.by<0 && Ball.bx<0  || Ball.by<0 && Ball.bx>=0){
+                    Ball.by=Ball.by*-1;
+                }else if(Ball.bx<0)
+*/
 
                         if (Ball.y < my) {
                             Ball.by = Ball.by * -1;

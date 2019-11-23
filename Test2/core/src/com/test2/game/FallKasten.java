@@ -76,11 +76,11 @@ public class FallKasten {
 
     static void trigger(int Kastenx, int Kasteny) {
         FallKasten FK;
-        System.out.println("möglich");
+        //System.out.println("möglich");
 
         if(Var.existfallbox <= 3) {
             if (Math.floor(Math.random() * Math.floor(3)) == 1) {
-                System.out.println("placed");
+                //System.out.println("placed");
                 int zblock = (int) Math.floor((Math.random() * 8));
                 FK = new FallKasten(Kastenx, Kasteny, zblock);
                 Fallkasten.add(FK);
@@ -88,7 +88,7 @@ public class FallKasten {
             }
 
         }else{
-            System.out.println("Zu viele");
+            //System.out.println("Zu viele");
         }
 
 

@@ -162,7 +162,7 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-        System.out.println(delta);
+        //System.out.println(delta);
         Var.ingame = true;
         LoadSave.saveall();
         if(LevelAuswahlButtons.newlevel==1) {
@@ -681,7 +681,12 @@ public class GameScreen extends ScreenAdapter {
             batch.setColor(1,1,1,1);
             font.setColor(Color.WHITE);
         }
-        System.out.println(Gdx.graphics.getHeight());
+        //System.out.println(Gdx.graphics.getHeight());
+
+
+
+
+
     }
 
     @Override
