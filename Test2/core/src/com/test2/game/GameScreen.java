@@ -581,15 +581,7 @@ public class GameScreen extends ScreenAdapter {
             }
             batch.end();
             if(Weiter.isPressed()==1){      ////////Wenn der weiterbutton gedrückt ist
-                if(gamestatuspausesave==0){
-                    Var.gamestatus=gamestatuspausesave;       ////wird die Pause Beendet
-                    gamestatuspausesave=-1;
-                }else {
-                    if(Var.pausebeenden==0) {
-                        Var.pausebeenden = 1;
-                    }
-
-                }
+                Var.pausebeenden = 1;
 
             }
 
@@ -607,6 +599,7 @@ public class GameScreen extends ScreenAdapter {
             batch.begin();
 
         }
+
         if(Var.pausebeenden==1){
             Var.pausebeenden=2;
             c=currentTimeMillis();
@@ -620,7 +613,13 @@ public class GameScreen extends ScreenAdapter {
         }
 
             if(countdown>=4){
-                Var.gamestatus=1;
+                if(gamestatuspausesave==0){
+                    Var.gamestatus=gamestatuspausesave;       ////wird die Pause Beendet
+                    gamestatuspausesave=-1;
+                }else {
+                     Var.gamestatus=1;
+
+                }
                 Var.pausebeenden=0;
                 countdown=0;
             }
