@@ -623,13 +623,13 @@ public class GameScreen extends ScreenAdapter {
                 countdown=0;
             }
             if(countdown==0){
-                batch.draw(countdown1, 0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+                batch.draw(countdown1, (int)(Math.random()*Gdx.graphics.getWidth()),(int)(Math.random()*Gdx.graphics.getHeight()),250,250);
             }
             if(countdown==1){
-                batch.draw(countdown2, 0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+                batch.draw(countdown2, (int)(Math.random()*Gdx.graphics.getWidth()),(int)(Math.random()*Gdx.graphics.getHeight()),250,250);
             }
             if(countdown==2){
-                batch.draw(countdown3, 0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+                batch.draw(countdown3, (int)(Math.random()*Gdx.graphics.getWidth()),(int)(Math.random()*Gdx.graphics.getHeight()),250,250);
             }
 
         }
