@@ -21,6 +21,9 @@ public class GameScreen extends ScreenAdapter {
 
     LoadSave LoadSave;
     SpriteBatch batch;
+    Texture countdown1;
+    Texture countdown2;
+    Texture countdown3;
     Texture img;
     Texture block_l;
     Texture block_rot;
@@ -94,6 +97,9 @@ public class GameScreen extends ScreenAdapter {
         einstellungen = new Texture("einstellungen.png");
         buttonimage = new Texture("Button.png");
         bigpause = new Texture("bigpause.png");
+        countdown1 = new Texture("countdown1.png");
+        countdown2 = new Texture("countdown2.png");
+        countdown3 = new Texture("countdown3.png");
         ka = new Smooth();
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
@@ -445,7 +451,7 @@ public class GameScreen extends ScreenAdapter {
         if(Var.gamestatus != 3) {
             batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
-        if(Var.gamestatus == 3){
+        if(Var.gamestatus == 3 ){
            // batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
 
@@ -525,7 +531,7 @@ public class GameScreen extends ScreenAdapter {
 
 
         //////////////////DAS//PAUSE//POPUP//BEGINNT//HIER///////////////////////////////
-        if(Var.gamestatus == 3){
+        if(Var.gamestatus == 3 && Var.pausebeenden==0){
             batch.setColor(0,0,0,0.6f);
             batch.draw(status_bar,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());    //StatusBar wird grau gedrawd
             batch.end();
@@ -611,10 +617,19 @@ public class GameScreen extends ScreenAdapter {
                 countdown+=1;
         }
 
-            if(countdown>3){
+            if(countdown>=3){
                 Var.gamestatus=1;
                 Var.pausebeenden=0;
                 countdown=0;
+            }
+            if(countdown==0){
+                batch.draw(countdown1, 0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            }
+            if(countdown==1){
+                batch.draw(countdown2, 0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            }
+            if(countdown==2){
+                batch.draw(countdown3, 0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
             }
 
         }
