@@ -99,7 +99,9 @@ public class LevelBaukastenScreen extends ScreenAdapter {
             }
         }
         if(EigeneLevelManageScreen.LoadEigenesLevel!=0) {
-            LoadSave.getArrayPrefs("EigeneLevel"+EigeneLevelManageScreen.LoadEigenesLevel);
+            if(Var.EnableAndroidSave==true) {
+                LoadSave.getArrayPrefs("EigeneLevel" + EigeneLevelManageScreen.LoadEigenesLevel);
+            }
         }
 
 
@@ -141,9 +143,9 @@ while(a<w*h+4) {
     LevelBa[a] = blocks.get(a-4).K_art;
 a++;
 }
-
-LoadSave.setArrayPrefs("EigeneLevel"+EigeneLevelManageScreen.LoadEigenesLevel,LevelBa);
-
+        if(Var.EnableAndroidSave==true) {
+            LoadSave.setArrayPrefs("EigeneLevel" + EigeneLevelManageScreen.LoadEigenesLevel, LevelBa);
+        }
 
 
 

@@ -75,7 +75,9 @@ public class GameScreen extends ScreenAdapter {
 
 
         INSTANCE = this;
-        LoadSave = new LoadSave();
+        if(Var.EnableAndroidSave==true) {
+            LoadSave = new LoadSave();
+        }
         batch = new SpriteBatch();
         font = new BitmapFont();
         block_l = new Texture("block_l.png");
@@ -176,7 +178,9 @@ public class GameScreen extends ScreenAdapter {
     public void render(float delta) {
         //System.out.println(delta);
         Var.ingame = true;
-        LoadSave.saveall();
+        if(Var.EnableAndroidSave==true) {
+            LoadSave.saveall();
+        }
         if(LevelAuswahlButtons.newlevel==1) {
             Level.dispose();
             Ball.dispose();
@@ -272,6 +276,7 @@ public class GameScreen extends ScreenAdapter {
             }
             //System.out.println((Ball.x-Var.r_x)-Var.r_l/2);
             Ball.bx -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;
+            //Ball.by -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;
             Var.points += 1;
             Var.r_speed +=5;
         }
@@ -790,7 +795,9 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void hide() {
-        LoadSave.saveall();
+        if(Var.EnableAndroidSave==true) {
+            LoadSave.saveall();
+        }
         this.dispose();
     }
 }

@@ -12,12 +12,12 @@ public class Var {
     static float r_y = 200;
     static float r_speed = 500.0f;
     static float r_l = 200;
-    static float s=0.02f;
+    static float s=0.09f;
     static int points = 0;
     static int leben=0;
     static int p=0;
 
-    static int is=0;
+
 
     static int Button_start_Height = 300;
     static int Button_start_Width = 600;
@@ -81,6 +81,8 @@ public class Var {
 
 //TODO Hier auf true stellen um Levelbaukasten zu Aktivieren
     static boolean EnableAlpha = true;
+
+    static boolean EnableAndroidSave=true;
 
 
 

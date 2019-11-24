@@ -226,7 +226,9 @@ public class OptionScreen extends ScreenAdapter {
 
     @Override
     public void hide() {
-        LoadSave.saveall();
+        if(Var.EnableAndroidSave==true) {
+            LoadSave.saveall();
+        }
         this.dispose();
     }
 }

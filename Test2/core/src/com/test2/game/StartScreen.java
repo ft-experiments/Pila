@@ -24,14 +24,16 @@ public class StartScreen extends ScreenAdapter {
     touchinput.Button Buttonstart;
     touchinput.Button LevelBaukasten;
 
+
     LoadSave LoadSavee;
 
 
 
 
     public StartScreen() {
-
-            //LoadSavee = new LoadSave();
+        if(Var.EnableAndroidSave==true) {
+            LoadSavee = new LoadSave();
+        }
 
         batch = new SpriteBatch();
         font = new BitmapFont();
@@ -60,8 +62,9 @@ public class StartScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
         Var.ingame=false;
-
-        LoadSavee.loadall();
+        if(Var.EnableAndroidSave==true) {
+            LoadSavee.loadall();
+        }
 
 
 
