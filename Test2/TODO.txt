@@ -7,6 +7,10 @@
 /////////////////////Bugs/////////////////////////
 /////////////////////////////////////////////////
 
+//TODO gameover Start aktivity Menü Ball ist weg
+//TODO Kollision seitlich erkennen
+//TODO Kollision Paddel
+//TODO gameover relativ
 
 //TODO Zurücktaste Fehler beheben
 
@@ -16,7 +20,7 @@
 
 
 
-//TODO Schrift schärfer
+//TODO Schrift schärfer: https://www.youtube.com/watch?v=IYjnOuxjdKQ
 //TODO Hauptmenü besser
 
 
