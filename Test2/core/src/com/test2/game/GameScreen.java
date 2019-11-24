@@ -315,12 +315,12 @@ public class GameScreen extends ScreenAdapter {
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());                ////////////
         if(Var.ballmode==1) {
-            batch.setColor(Ablauf.feuerballablauf/100f,Ablauf.feuerballablauf/100f,Ablauf.feuerballablauf/100f,1);
-            batch.draw(feuerball, Ball.x, Ball.y, 30, 30);
+            batch.setColor(Ablauf.feuerballablauf/100f,Ablauf.feuerballablauf/100f,Ablauf.feuerballablauf/100f,1);  //Die animation des feuerballs wird immer dunkler
+            batch.draw(feuerball, Ball.x, Ball.y, 30, 30); //Der Feuerball wird gedrawd
             batch.setColor(1,1,1,1);
         }
         int zaeler = 0;
-        for(int i=0;i<FallKasten.Fallkasten.size();i=i+1) {
+        for(int i=0;i<FallKasten.Fallkasten.size();i=i+1) {//Hier wird abgecheckt ob man einen Fallkasten eingesammelt hat und wenn, dann wird das entsprechende gestartet
             Var.i=i;
             FallKasten FK;
             FK =FallKasten.Fallkasten.get(i);
@@ -330,29 +330,29 @@ public class GameScreen extends ScreenAdapter {
             FK.check();
             if(FK.check()==1 && FK.art !=0){
                 switch (FK.art) {
-                    case 1:
+                    case 1:        //paddel wird größer
                         if(Var.r_l < 400) {
                             Var.r_l += 50;
                         }
                         break;
-                    case 2:
+                    case 2:       //paddel wird kleiner
                         if(Var.r_l > 100) {
                             Var.r_l -= 50;
                         }
                         break;
-                    case 3:
+                    case 3:        //Der feuerball wird gestartet
                         Var.ballmode = 1;
                         Ablauf.feuerballablauf=1000;
                         Ablauf.feuerballzuruck();
                         break;
-                    case 4:
+                    case 4:         //Das Klebepaddel wird gestartet
                         Var.kleben=1;
                         Ablauf.klebzuruck();
                         break;
-                    case 5:
+                    case 5:         //Der Ball wird schneller
                         Ball.by += Ball.by/2;
                         break;
-                    case 6:
+                    case 6:         //Der Ball wird langsamer
                         Ball.by -= Ball.by/2;
                         break;
                 }
@@ -360,27 +360,27 @@ public class GameScreen extends ScreenAdapter {
             }
             if(FK.art != 0) {
                 zaeler+=1;
-                switch (FK.art) {
+                switch (FK.art) {               //hier werden die Fall kasten je nach art gedrawd
 
 
-                    case 1:
+                    case 1://läner mach Block
                          batch.draw(block_l, FK.x, FK.y, 100, 50);
                     break;
 
-                    case 2:
+                    case 2://kürzer mach Block
                         batch.draw(block_k, FK.x, FK.y, 100, 50);
                         break;
 
-                    case 3:
+                    case 3://feuerball Block
                         batch.draw(block_feuer, FK.x, FK.y, 100, 50);
                         break;
-                    case 4:
+                    case 4://Klebepaddel Block
                         batch.draw(block_kleber, FK.x, FK.y, 100, 50);
                         break;
-                    case 5:
+                    case 5://Ball schneller mach Block
                         batch.draw(block_schneller, FK.x, FK.y, 100, 50);
                         break;
-                    case 6:
+                    case 6://Ball langsamer mach Block
                         batch.draw(block_langsamer, FK.x, FK.y, 100, 50);
                         break;
 
@@ -400,6 +400,9 @@ public class GameScreen extends ScreenAdapter {
             batch.draw(paddelklebimg, Var.r_x, Var.r_y, Var.r_l, 30);
         }
 
+        ////////////////////////////STATUS//BAR/////////////////////////////
+
+        //status Bar wird grau gedrawd und die Lebgen und Level werden angezeigt
         batch.setColor(1,1,1,0.5f);
         batch.draw(status_bar,0,Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/25,Gdx.graphics.getWidth(),Gdx.graphics.getHeight()/25);
         batch.setColor(1,1,1,1f);
@@ -408,6 +411,7 @@ public class GameScreen extends ScreenAdapter {
         font.draw(batch, "Level:" + Level.Le + " ", Gdx.graphics.getWidth()/2-150/2, Gdx.graphics.getHeight()-5);
         font.getData().setScale(3);
 
+        /////Pause//Button///////////
         if(Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height)
         {
             if(Gdx.input.isTouched()){
@@ -443,6 +447,7 @@ public class GameScreen extends ScreenAdapter {
            // batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
 
+        //////////////einstellungs//Button////////////
         if(Gdx.input.isTouched()) {
             if (Gdx.input.getX() < Var.Button_einstellungen_Width + Var.Button_einstellungen_x && Gdx.input.getX() > Var.Button_einstellungen_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_einstellungen_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_einstellungen_y - Var.Button_einstellungen_Height) {
                 if(Var.gamestatus==0){
@@ -456,11 +461,11 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-
+        /////////////Status/Bar/Ende///////////////////
 
 
         int b_zahl=0;
-        for(int i=0;i<Level.kisten.size();i=i+1) {
+        for(int i=0;i<Level.kisten.size();i=i+1) {    ////////////////DIE//SPIEL//BLÖCKE//WERDEN//GEDRAWD//////////
             Kaesten k;
             k = Level.kisten.get(i);
 
@@ -475,16 +480,16 @@ public class GameScreen extends ScreenAdapter {
                 k.checkKolission();
                 if(k.v==1) {
                     switch (k.K_art) {
-                        case 0 :
+                        case 0 :            //Roter Block
                             batch.draw(block_rot, k.K_x, k.K_y, k.K_w, k.K_h);
                         break;
-                        case 1 :
+                        case 1 :            //Gruener Block
                             batch.draw(block_gruen, k.K_x, k.K_y, k.K_w, k.K_h);
                             break;
-                        case 2 :
+                        case 2 :            //Blauer Block
                             batch.draw(block_blau, k.K_x, k.K_y, k.K_w, k.K_h);
                             break;
-                        case 3 :
+                        case 3 :            //zweimal beruehr Block
                             if(k.o==0) {
                                 batch.draw(block_2mal, k.K_x, k.K_y, k.K_w, k.K_h);
                             }
@@ -494,7 +499,7 @@ public class GameScreen extends ScreenAdapter {
                                 batch.setColor(1,1,1,1f);
                             }
                             break;
-                        case 4 :
+                        case 4 :            //unzerstoerbarer Block
                             batch.draw(block_unzerstoerbar, k.K_x, k.K_y, k.K_w, k.K_h);
                             break;
 
@@ -512,13 +517,15 @@ public class GameScreen extends ScreenAdapter {
             batch.begin();*/
         }
 
-        if(b_zahl == 0){
+        if(b_zahl == 0){        //////Wenn Keine SpielBlöcke mehr da sind gehts ein Level hoch///////////////////////
             Level.Levelup();
         }
 
+
+        //////////////////DAS//PAUSE//POPUP//BEGINNT//HIER///////////////////////////////
         if(Var.gamestatus == 3){
             batch.setColor(0,0,0,0.6f);
-            batch.draw(status_bar,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(status_bar,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());    //StatusBar wird grau gedrawd
             batch.end();
 
 
@@ -528,48 +535,48 @@ public class GameScreen extends ScreenAdapter {
 
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
             shapeRenderer.setColor(0.4f, 0.2f, 0.8f, 0.6f);
-            shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-350,500,Gdx.graphics.getHeight()/1.828f);
+            shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-350,500,Gdx.graphics.getHeight()/1.828f);//Der Popup Hintergrund wied lila gedrawd
             shapeRenderer.end();
             batch.begin();
             batch.setColor(0.4f, 0.2f, 0.8f, 0.6f);
-            batch.draw(bigpause, Weiter.x, Weiter.y, Weiter.w, Weiter.h );
+            batch.draw(bigpause, Weiter.x, Weiter.y, Weiter.w, Weiter.h );  //Der BigPause Button wird gedrawd
             batch.setColor(1f,1f,1f,1f);
 
 
 
 
             font.getData().setScale(4);
-
+///////LevelAuswhlButtonwird gedrawd
             font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
             batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
-            if(Levelauswahl.isPressed()==1){
-
-
-
-                //COUNTDOWM
+            if(Levelauswahl.isPressed()==1){       //Wenn der Levelauswahl button gedrückt ist
 
 
 
 
-                Test2.INSTANCE.setScreen(new LevelAuswahlScreen("game"));
+
+
+
+
+                Test2.INSTANCE.setScreen(new LevelAuswahlScreen("game")); //////wechsle den Screen zum LevelAuswahlScreen
 
             }
-
+                ////////////////////////////Der Neustart Button//////////////////////////////
             font.draw(batch, "neustart" , neustartbutton.x+30, neustartbutton.y+neustartbutton.h/2+25);
             batch.draw(buttonimage, neustartbutton.x,neustartbutton.y,neustartbutton.w,neustartbutton.h);
-            if(neustartbutton.isPressed()==1){
-                Level.dispose();
-                Level.LevelCreate(Level.Le);
-                FallKasten.Fallkasten.clear();
+            if(neustartbutton.isPressed()==1){/////wenn der Button gedrückt wird wird das Level Neugestartet
+                Level.dispose();                //Level array clearen
+                Level.LevelCreate(Level.Le);   //Das Level neu ins Levelarray schreiben
+                FallKasten.Fallkasten.clear();//////Die Fallkästen Löschen
             }
             batch.end();
-            if(Weiter.isPressed()==1){
+            if(Weiter.isPressed()==1){      ////////Wenn der weiterbutton gedrückt ist
                 if(gamestatuspausesave==0){
-                    Var.gamestatus=gamestatuspausesave;
+                    Var.gamestatus=gamestatuspausesave;       ////wird die Pause Beendet
                     gamestatuspausesave=-1;
                 }else{
 
-                    //COUNTDOWN
+
 
 
                     Var.gamestatus=1;
@@ -580,7 +587,7 @@ public class GameScreen extends ScreenAdapter {
             batch.begin();
         }
 
-
+/////////////////////////DAS//PAUSEPOPUP//ENDED//HIER//////////////////////////////
 
         batch.end();
 
@@ -611,7 +618,7 @@ public class GameScreen extends ScreenAdapter {
             switch (Var.ballmode) {
                 case 0:
                     shapeRenderer.setColor(1, 1, 0, 0);
-                    shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                    shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);          ////Normale Ball wird gedrawd
                     break;
 
             }
@@ -650,26 +657,26 @@ public class GameScreen extends ScreenAdapter {
         batch.begin();
         if(Var.ballmode==1) {
             font.getData().setScale(2);
-            font.draw(batch, ""+Ablauf.feuerballablauf/10+"%", 50, Gdx.graphics.getHeight()-3);
+            font.draw(batch, ""+Ablauf.feuerballablauf/10+"%", 50, Gdx.graphics.getHeight()-3);  //Die Feuerball ablaufanzeige wird gedrawd
 
         }
         if(Var.kleben==1){
             font.getData().setScale(2);
-            font.draw(batch, ""+Ablauf.klebablaufsoll/10+"%", 50, Gdx.graphics.getHeight()-3-25);
+            font.draw(batch, ""+Ablauf.klebablaufsoll/10+"%", 50, Gdx.graphics.getHeight()-3-25);   //Die Klebepaddel ablaufanzeige wird gerawd
         }
         batch.end();
 
 
-        if(Var.leben <= 0){
+        if(Var.leben <= 0){          //Wenn keine Leben mehr da sind dann
             Ball.dispose();
             Level.dispose();
-            Test2.INSTANCE.setScreen(new GameOverScreen());
+            Test2.INSTANCE.setScreen(new GameOverScreen());        //gehe zu GameOverScreen
 
         }
 
 
 
-
+///////////////////Die FPS Anzeige///////////////////////
         if(Var.showfps) {
             batch.begin();
             batch.setColor(1,0,0,1);

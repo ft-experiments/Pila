@@ -86,7 +86,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
     static int[] Level8 = {
             12,13,Gdx.graphics.getHeight()/10,0,
             5,5,5,5,5,5,5,5,5,5,5,5,
-            5,5,5,5,5,1,1,5,5,5,5,5,
+            1,5,5,5,5,5,5,5,5,5,5,1,
             0,0,4,4,4,4,4,4,4,4,0,0,
             5,5,5,5,5,5,5,5,5,5,5,5,
             0,0,0,4,4,4,4,4,4,4,0,0,
@@ -105,24 +105,24 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
     static int[] Level9 = {
             10,12,Gdx.graphics.getHeight()/10,0,
 
-            3,0,2,0,3,4,4,4,4,4,
-            3,0,2,0,3,4,4,4,4,4,
-            3,0,2,0,3,4,4,4,4,4,
-            3,0,2,0,3,4,4,4,4,4,
-            3,0,2,0,3,4,4,4,4,4,
-            3,0,2,0,3,4,4,4,4,4,
-            3,0,2,0,3,4,4,4,4,4,
-            3,0,2,0,3,3,3,3,3,3,
-            0,0,2,0,0,0,0,0,0,0,
-            2,2,2,2,2,2,2,2,2,2,
-            1,1,1,1,1,1,1,1,1,1,
-            0,0,0,0,0,0,0,0,0,0
+            3,0,5,0,3,4,4,4,4,4,
+            3,0,5,0,3,4,4,4,4,4,
+            3,0,5,0,3,4,4,4,4,4,
+            3,0,5,0,3,4,4,4,4,4,
+            3,0,5,0,3,4,4,4,4,4,
+            3,0,5,0,3,4,4,4,4,4,
+            3,0,5,0,3,4,4,4,4,4,
+            3,0,5,0,3,3,3,3,3,3,
+            0,0,5,0,0,0,0,0,0,0,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            1,0,1,0,1,0,1,0,1,0
 
 
     };
 
     static int[] Level10 = {
-            10,10,Gdx.graphics.getHeight()/5,0,
+            10,10,Gdx.graphics.getHeight()/5,0, //TODO DEBUG
 
             0,0,0,0,4,0,0,5,5,5,
             0,0,0,0,4,0,0,5,5,5,
@@ -140,6 +140,160 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
 
 
+    static int[] Level11 = {
+            10,12,Gdx.graphics.getHeight()/5,0,
+
+
+            1,5,5,5,5,5,5,5,5,1,
+            1,5,5,5,3,3,5,5,5,1,
+            5,1,5,5,5,5,5,5,1,5,
+            5,5,2,0,5,5,0,2,5,5,
+            5,5,5,0,5,5,0,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            1,0,1,0,1,0,1,0,1,0,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+
+
+
+    };
+
+
+    static int[] Level12 = {
+            10,12,Gdx.graphics.getHeight()/5,0,
+
+
+            5,5,1,2,2,2,2,1,5,5,
+            5,5,0,5,5,5,5,0,5,5,
+            5,5,1,5,5,5,5,1,5,5,
+            5,5,0,5,5,5,5,0,5,5,
+            5,5,1,5,5,5,5,1,5,5,
+            5,5,0,5,5,5,5,0,5,5,
+            5,5,1,5,5,5,5,1,5,5,
+            5,5,0,5,5,5,5,0,5,5,
+            5,5,1,4,3,3,4,1,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5
+
+
+
+    };
+
+
+    static int[] Level13 = {
+            10,12,Gdx.graphics.getHeight()/5,0,
+
+
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            2,0,1,2,0,1,2,0,1,2,
+            3,5,5,5,5,5,5,5,5,3,
+            3,5,5,5,5,5,5,5,5,3,
+            1,5,5,2,0,1,2,5,5,1,
+            5,1,4,2,5,5,2,4,1,5,
+            5,5,4,2,5,5,2,4,5,5,
+            5,5,5,2,1,0,2,5,5,5,
+            5,5,5,5,5,5,5,5,5,5
+
+
+
+    };
+
+    static int[] Level25 = {
+            10,12,Gdx.graphics.getHeight()/5,0,
+
+
+            4,5,5,5,5,5,5,5,5,4,
+            0,5,4,5,5,5,5,4,5,0,
+            5,5,0,5,5,5,5,0,5,5,
+            4,5,5,5,5,5,5,5,5,4,
+            0,5,5,4,5,5,4,5,5,0,
+            5,5,5,0,5,5,0,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,4,4,5,5,5,5,
+            5,4,5,5,0,0,5,5,4,5,
+            5,0,5,5,5,5,5,5,0,5,
+            5,5,5,2,5,5,2,5,5,5,
+            3,3,3,4,3,3,4,3,3,3
+
+
+
+    };
+
+
+
+
+    static int[] Level20 = {
+            10,12,Gdx.graphics.getHeight()/5,0,
+
+
+            5,5,5,5,5,5,5,5,5,5,
+            0,5,5,5,5,5,5,5,5,0,
+            5,0,5,5,5,5,5,5,0,5,
+            5,5,0,5,5,5,5,0,5,5,
+            5,5,5,0,1,1,0,5,5,5,
+            5,5,5,5,3,3,5,5,5,5,
+            5,5,5,0,1,1,0,5,5,5,
+            5,5,0,5,5,5,5,0,5,5,
+            5,0,5,5,5,5,5,5,0,5,
+            0,5,5,5,5,5,5,5,5,0,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5
+
+
+
+    };
+
+    static int[] Level21 = {
+            10,12,Gdx.graphics.getHeight()/5,0,
+
+
+            5,5,5,5,5,5,5,5,5,5,
+            0,5,5,5,5,5,5,5,5,0,
+            4,0,5,5,5,5,5,5,0,4,
+            5,4,0,5,5,5,5,0,4,5,
+            5,5,4,0,1,1,0,4,5,5,
+            5,5,5,4,3,3,4,5,5,5,
+            5,5,4,0,1,1,0,4,5,5,
+            5,4,0,5,5,5,5,0,4,5,
+            4,0,5,5,5,5,5,5,0,4,
+            0,5,5,5,5,5,5,5,5,0,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5
+
+
+
+    };
+
+
+
+
+    static int[] Level70 = {
+            10,12,Gdx.graphics.getHeight()/5,0,
+
+
+            4,4,4,5,5,5,5,4,4,4,
+            4,3,4,5,4,4,5,4,3,4,
+            4,0,1,4,0,0,4,1,0,4,
+            0,1,5,5,5,5,5,5,1,0,
+            1,5,5,5,5,5,5,5,5,1,
+            1,5,5,5,5,5,5,5,5,1,
+            1,5,5,4,3,3,4,5,5,1,
+            1,5,5,4,0,0,4,5,5,1,
+            1,5,5,4,4,4,4,5,5,1,
+            1,5,5,5,5,5,5,5,5,1,
+            1,5,5,5,5,5,5,5,5,1,
+            1,5,5,5,5,5,5,5,5,1
+
+
+
+    };
 
     Level(int _L) {
         L=_L;
@@ -177,68 +331,493 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
         switch (l){
             case 1:
-                Le=1;
+                Le=l;
                 Var.leben = 4;
                 Level.wo=0;
                 levelcreater(Level1);
                 break;
 
             case 2:
-                Le=2;
+                Le=l;
                 Var.leben = 4;
                 Level.wo=0;
                 levelcreater(Level2);
                 break;
 
             case 3:
-                Le=3;
+                Le=l;
                 Var.leben = 4;
                 Level.wo=0;
                 levelcreater(Level3);
                 break;
 
             case 4:
-                Le=4;
+                Le=l;
                 Var.leben = 4;
                 Level.wo=0;
                 levelcreater(Level4);
                 break;
             case 5:
-                Le=5;
-                Var.leben=3;
+                Le=l;
+                Var.leben=4;
                 Level.wo=0;
                 levelcreater(Level5);
                 break;
             case 6:
-                Le=6;
+                Le=l;
                 Var.leben=4;
                 Level.wo=0;
                 levelcreater(Level6);
                 break;
             case 7:
-                Le=7;
+                Le=l;
                 Var.leben=4;
                 Level.wo=0;
                 levelcreater(Level7);
                 break;
             case 8:
-                Le=8;
+                Le=l;
                 Var.leben=6;
                 Level.wo=0;
                 levelcreater(Level8);
                 break;
             case 9:
-                Le=9;
+                Le=l;
                 Var.leben=1;
                 Level.wo=0;
                 levelcreater(Level9);
                 break;
             case 10:
-                Le=10;
-                Var.leben=100;
+                Le=l;
+                Var.leben=3;
                 Level.wo=0;
                 levelcreater(Level10);
                 break;
+            case 11:
+                Le=l;
+                Var.leben=2;
+                Level.wo=0;
+                levelcreater(Level11);
+                break;
+            case 12:
+                Le=l;
+                Var.leben=2;
+                Level.wo=0;
+                levelcreater(Level12);
+                break;
+            case 13:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level13);
+                break;
+            case 14:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 15:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 16:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 17:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 18:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 19:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 20:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level20);
+                break;
+            case 21:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level21);
+                break;
+            case 22:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 23:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 24:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 25:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level25);
+                break;
+            case 26:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 27:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 28:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 29:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 30:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 31:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 32:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 33:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 34:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 35:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 36:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 37:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 38:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 39:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 40:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 41:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 42:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 43:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 44:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 45:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 46:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 47:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 48:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 49:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 50:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 51:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 52:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 53:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 54:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 55:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 56:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 57:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 58:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 59:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 60:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 61:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 62:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 63:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 64:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 65:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 66:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 67:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 68:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 69:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 70:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level70);
+                break;
+            case 71:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 72:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 73:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 74:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 75:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 76:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 77:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 78:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 79:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+            case 80:
+                Le=l;
+                Var.leben=3;
+                Level.wo=0;
+                levelcreater(Level10);
+                break;
+
+
+
+
+
 
 
 
