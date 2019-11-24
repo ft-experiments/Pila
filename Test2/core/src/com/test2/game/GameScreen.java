@@ -7,11 +7,12 @@ import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 
-
+import java.sql.Time;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
+import static java.lang.System.currentTimeMillis;
 
 
 public class GameScreen extends ScreenAdapter {
@@ -49,8 +50,9 @@ public class GameScreen extends ScreenAdapter {
     Texture buttonimage;
     Texture bigpause;
     Smooth ka;
-
+    long c= currentTimeMillis();
     int u=0;
+    int countdown=0;
     static int gamestatuspausesave= -1;
     int frame = 0;
     Texture imgfeuerball;
@@ -574,17 +576,47 @@ public class GameScreen extends ScreenAdapter {
                 if(gamestatuspausesave==0){
                     Var.gamestatus=gamestatuspausesave;       ////wird die Pause Beendet
                     gamestatuspausesave=-1;
-                }else{
-
-
-
-
-                    Var.gamestatus=1;
-
+                }else {
+                    if(Var.pausebeenden==0) {
+                        Var.pausebeenden = 1;
+                    }
 
                 }
+
             }
+
+
+
+
+
+
+
+
+
+
+
+
             batch.begin();
+
+        }
+        if(Var.pausebeenden==1){
+            Var.pausebeenden=2;
+            c=currentTimeMillis();
+            }
+        if(Var.pausebeenden==2) {
+            System.out.println("tata");
+            if(currentTimeMillis()>c+1000){
+                System.out.println("tatatiti");
+                c=currentTimeMillis();
+                countdown+=1;
+        }
+
+            if(countdown>3){
+                Var.gamestatus=1;
+                Var.pausebeenden=0;
+                countdown=0;
+            }
+
         }
 
 /////////////////////////DAS//PAUSEPOPUP//ENDED//HIER//////////////////////////////
