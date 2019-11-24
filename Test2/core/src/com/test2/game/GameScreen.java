@@ -1,5 +1,6 @@
 package com.test2.game;
 import com.badlogic.gdx.*;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
@@ -62,13 +63,15 @@ public class GameScreen extends ScreenAdapter {
     Texture imgfeuerball;
     Sprite feuerball;
     TextureRegion[][] regions;
-
+    static Sound start = Gdx.audio.newSound(Gdx.files.internal("start.mp3"));
 
 
 
 
     //Kaesten k;
     public GameScreen() {
+
+
 
 
 
@@ -625,19 +628,20 @@ public class GameScreen extends ScreenAdapter {
             }
 
             if(countdown==0){
-                batch.setColor(0,1,1,1);
+                batch.setColor(0,0,1,1);
                 batch.draw(countdown1, (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
             }
             if(countdown==1){
-                batch.setColor(1,0,1,1);
+                batch.setColor(1,0,0,1);
                 batch.draw(countdown2, (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
             }
             if(countdown==2){
-                batch.setColor(0,0,1,1);
+                batch.setColor(1,1,0,1);
                 batch.draw(countdown3, (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
             }
             if(countdown==3){
-                batch.setColor(0,1,1,1);
+                start.play(1.0f);
+                batch.setColor(0,1,0,1);
                 batch.draw(los,        (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
             }
 
