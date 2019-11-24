@@ -31,7 +31,7 @@ public class LevelBauBlock {
 
     int check() {
         int g = 0;
-            if (Gdx.input.getX() < K_w + K_x && Gdx.input.getX() > K_x && Gdx.input.getY() < Gdx.graphics.getHeight() - K_y && Gdx.input.getY() > Gdx.graphics.getHeight() - K_y - K_h) {
+            if (Gdx.input.getX() < K_w + K_x && Gdx.input.getX() > K_x && Gdx.input.getY() < Gdx.graphics.getHeight() - K_y && Gdx.input.getY() > Gdx.graphics.getHeight() - K_y - K_h   && Gdx.input.isButtonPressed(0)) {
                 g = 1;
             }
 

@@ -31,7 +31,7 @@ public class StartScreen extends ScreenAdapter {
 
     public StartScreen() {
 
-            LoadSavee = new LoadSave();
+            //LoadSavee = new LoadSave();
 
         batch = new SpriteBatch();
         font = new BitmapFont();
