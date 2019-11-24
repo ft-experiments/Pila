@@ -21,6 +21,7 @@ public class GameScreen extends ScreenAdapter {
 
     LoadSave LoadSave;
     SpriteBatch batch;
+    Texture los;
     Texture countdown1;
     Texture countdown2;
     Texture countdown3;
@@ -100,6 +101,7 @@ public class GameScreen extends ScreenAdapter {
         countdown1 = new Texture("countdown1.png");
         countdown2 = new Texture("countdown2.png");
         countdown3 = new Texture("countdown3.png");
+        los = new Texture("los.png");
         ka = new Smooth();
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
@@ -617,7 +619,7 @@ public class GameScreen extends ScreenAdapter {
                 countdown+=1;
         }
 
-            if(countdown>=3){
+            if(countdown>=4){
                 Var.gamestatus=1;
                 Var.pausebeenden=0;
                 countdown=0;
@@ -630,6 +632,9 @@ public class GameScreen extends ScreenAdapter {
             }
             if(countdown==2){
                 batch.draw(countdown3, (int)(Math.random()*Gdx.graphics.getWidth()),(int)(Math.random()*Gdx.graphics.getHeight()),250,250);
+            }
+            if(countdown==3){
+                batch.draw(los, (int)(Math.random()*Gdx.graphics.getWidth()),(int)(Math.random()*Gdx.graphics.getHeight()),250,250);
             }
 
         }
