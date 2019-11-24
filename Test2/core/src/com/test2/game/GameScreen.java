@@ -606,7 +606,7 @@ public class GameScreen extends ScreenAdapter {
             }
         if(Var.pausebeenden==2) {
             System.out.println("tata");
-            if(currentTimeMillis()>c+1000){
+            if(currentTimeMillis()>c+500){
                 System.out.println("tatatiti");
                 c=currentTimeMillis();
                 countdown+=1;
