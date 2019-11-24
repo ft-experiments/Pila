@@ -625,16 +625,16 @@ public class GameScreen extends ScreenAdapter {
                 countdown=0;
             }
             if(countdown==0){
-                batch.draw(countdown1, (int)(Math.random()*Gdx.graphics.getWidth()),(int)(Math.random()*Gdx.graphics.getHeight()),250,250);
+                batch.draw(countdown1, (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
             }
             if(countdown==1){
-                batch.draw(countdown2, (int)(Math.random()*Gdx.graphics.getWidth()),(int)(Math.random()*Gdx.graphics.getHeight()),250,250);
+                batch.draw(countdown2, (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
             }
             if(countdown==2){
-                batch.draw(countdown3, (int)(Math.random()*Gdx.graphics.getWidth()),(int)(Math.random()*Gdx.graphics.getHeight()),250,250);
+                batch.draw(countdown3, (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
             }
             if(countdown==3){
-                batch.draw(los, (int)(Math.random()*Gdx.graphics.getWidth()),(int)(Math.random()*Gdx.graphics.getHeight()),250,250);
+                batch.draw(los,        (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
             }
 
         }
