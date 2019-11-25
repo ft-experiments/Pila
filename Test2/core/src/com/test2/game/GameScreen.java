@@ -183,9 +183,13 @@ static double gamestcreendelta=0;
         gamestcreendelta=delta;
         //System.out.println(delta);
         Var.ingame = true;
+
+
         if(Var.EnableAndroidSave==true) {
             LoadSave.saveall();
         }
+
+
         if(LevelAuswahlButtons.newlevel==1) {
             Level.dispose();
             Ball.dispose();
@@ -202,7 +206,7 @@ static double gamestcreendelta=0;
 
         FallKasten.de = delta;
 
-        if (Var.gamestatus == 0) {
+        if (Var.gamestatus == 0) {    //Ball erstellen
             if(Var.ballstartmode==0) {
                  if (DoppelKlick.DoppelKlick() == 1 || Gdx.input.getAccelerometerY()>10) {
 
@@ -229,21 +233,7 @@ static double gamestcreendelta=0;
 
 
 
-        if(Ball.x+Ball.r*2 > Var.r_x && Ball.y < Var.r_y+40 && Var.r_x+Var.r_l > Ball.x){               //Das abprallen des Balls am Paddel
-            if(Var.kleben==0) {
-                Ball.by = Ball.by * -1;
-            }
-            if(Var.kleben==1){
-                Var.klebt=true;
-                Var.ballklebposition=(int)Ball.x - (int)Var.r_x;
-            }
-            if(Var.beiballberurungvibrieren==1) {
-                Gdx.input.vibrate(50);
-            }
-
-            Ball.bx -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;       //Ball ablenken je nach aufprall x
-
-        }
+            Paddel.ballcollision();
 
 
 
@@ -271,12 +261,6 @@ static double gamestcreendelta=0;
 
 
 
-        if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)){
-            Gdx.app.exit();
-        }
-        /*if(Gdx.input.isTouched()) {
-            Gdx.input.vibrate(100);
-        }*/
 
 
 
@@ -301,11 +285,17 @@ static double gamestcreendelta=0;
 
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());                ////////////
+
+
+
         if(Var.ballmode==1) {
             batch.setColor(Ablauf.feuerballablauf/100f,Ablauf.feuerballablauf/100f,Ablauf.feuerballablauf/100f,1);  //Die animation des feuerballs wird immer dunkler
             batch.draw(feuerball, Ball.x, Ball.y, 30, 30); //Der Feuerball wird gedrawd
             batch.setColor(1,1,1,1);
         }
+
+
+
         int zaeler = 0;
         for(int i=0;i<FallKasten.Fallkasten.size();i=i+1) {//Hier wird abgecheckt ob man einen Fallkasten eingesammelt hat und wenn, dann wird das entsprechende gestartet
             Var.i=i;
@@ -647,14 +637,10 @@ static double gamestcreendelta=0;
             }
         }
 
-        if (true) {
-            switch (Var.ballmode) {
-                case 0:
+        if (Var.ballmode==0){
                     shapeRenderer.setColor(1, 1, 0, 0);
                     shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);          ////Normale Ball wird gedrawd
-                    break;
 
-            }
         }
         if (Var.gamestatus == 0) {
             shapeRenderer.ellipse((int) (Var.r_x + Var.r_l / 2) - 15, (int) (Var.r_y + 100), 15 * 2, 15 * 2);

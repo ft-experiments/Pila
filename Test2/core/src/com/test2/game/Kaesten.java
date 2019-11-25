@@ -55,19 +55,19 @@ int my2=0;
 */
 
                         if (Ball.y < my) {
-                            Ball.by = Ball.by * -1;
+                            Ball.richtungsumkehr_y();
                             Ball.y -= Ball.by * 2;
                         }
                     if (Ball.y > my2) {
-                        Ball.by = Ball.by * -1;
+                        Ball.richtungsumkehr_y();
                         Ball.y -= Ball.by * 2;
                     }
                     if (Ball.x < mx) {
-                        Ball.bx = Ball.bx * -1;
+                        Ball.richtungsumkehr_x();
                         Ball.x -= Ball.bx * 2;
                     }
                     if (Ball.x > mx2) {
-                        Ball.bx = Ball.bx * -1;
+                        Ball.richtungsumkehr_x();
                         Ball.x -= Ball.bx * 2;
                     }
 

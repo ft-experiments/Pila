@@ -21,6 +21,12 @@ public class Ball {
         resistance=_res;
     }
 
+
+
+
+
+
+
     static void update() {
         by=by+gravity;
         by=by*resistance;
@@ -29,7 +35,7 @@ public class Ball {
         y=y-by;
         //System.out.println(Gdx.graphics.getWidth());
         if (y > Gdx.graphics.getHeight()-r*2-50) {
-            by=by * -1;
+            richtungsumkehr_y();
             y=y-1;
             if(Var.beiballberurungvibrieren==1) {
                 Gdx.input.vibrate(50);
@@ -37,7 +43,7 @@ public class Ball {
 
         }
         if (y<0) {
-            by=by * -1;
+            richtungsumkehr_y();
             if(Var.beiballberurungvibrieren==1) {
                 Gdx.input.vibrate(50);
             }
@@ -45,7 +51,7 @@ public class Ball {
         if (x>Gdx.graphics.getWidth()-2*r) {
 
                 x = Gdx.graphics.getWidth()-30;
-                bx = bx * -1;
+                richtungsumkehr_x();
 
 
             if(Var.beiballberurungvibrieren==1) {
@@ -54,7 +60,7 @@ public class Ball {
         }
         if (x<0) {
 
-                bx = bx * -1;
+                richtungsumkehr_x();
                 x = 5;
 
             if(Var.beiballberurungvibrieren==1) {
@@ -63,6 +69,22 @@ public class Ball {
         }
 
     }
+
+
+    static void richtungsumkehr_y(){
+
+            Ball.by=Ball.by*-1;
+
+    }
+
+    static void richtungsumkehr_x(){
+
+        Ball.bx=Ball.bx*-1;
+
+    }
+
+
+
     static void dispose(){
         x=0;
         y =0;
