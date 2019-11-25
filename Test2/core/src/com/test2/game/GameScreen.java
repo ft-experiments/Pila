@@ -185,14 +185,13 @@ static double gamestcreendelta=0;
         Var.ingame = true;
 
 
-        if(Var.EnableAndroidSave==true) {
-            LoadSave.saveall();
-        }
+        //if(Var.EnableAndroidSave==true) {
+         //   LoadSave.saveall();
+        //}
 
 
         if(LevelAuswahlButtons.newlevel==1) {
             Level.dispose();
-            Ball.dispose();
             Level.LevelCreate(Var.createlevel);
             LevelAuswahlButtons.newlevel=0;
         }
@@ -494,9 +493,22 @@ static double gamestcreendelta=0;
             batch.begin();*/
         }
 
+
+
+
+
         if(b_zahl == 0){        //////Wenn Keine SpielBlöcke mehr da sind gehts ein Level hoch///////////////////////
             Level.Levelup();
         }
+
+
+
+
+
+
+
+
+
 
 
         //////////////////DAS//PAUSE//POPUP//BEGINNT//HIER///////////////////////////////
@@ -609,10 +621,14 @@ static double gamestcreendelta=0;
             }
 
         }
-
+        batch.end();
 /////////////////////////DAS//PAUSEPOPUP//ENDED//HIER//////////////////////////////
 
-        batch.end();
+
+
+
+
+
 
 
 
