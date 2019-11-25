@@ -176,6 +176,7 @@ public class GameScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
+
         //System.out.println(delta);
         Var.ingame = true;
         if(Var.EnableAndroidSave==true) {
@@ -280,13 +281,17 @@ public class GameScreen extends ScreenAdapter {
             Var.points += 1;
             Var.r_speed +=5;
         }
+        System.out.println("Game Status vorher= "+Var.gamestatus);
         if(Ball.y < Var.r_y && Var.p==0){
             FallKasten.zuruecksetzen();
             Var.leben -= 1;
             Var.p=1;
-            Var.gamestatus=0;
+
+            Var.gamestatus = 0;
+
             Ball.dispose();
         }
+        System.out.println("Game Status nachher= "+Var.gamestatus);
         if(Ball.y > Var.r_y){
             Var.p=0;
         }
@@ -755,8 +760,10 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-
-
+if(Var.geheinpause==1) {
+    Var.gamestatus = 3;
+    Var.geheinpause=0;
+}
     }
 
     @Override
