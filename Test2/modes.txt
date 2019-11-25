@@ -1,0 +1,7 @@
+Var.gamestatus :
+1   Spiel läuft
+3   Spiel pausiert
+
+Var.steuerung :
+0   Touchsteuerung
+1   gyrosteuerung

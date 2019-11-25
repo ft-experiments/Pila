@@ -899,5 +899,11 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
         Var.gamestatus=0;
     }
 
+    static void reset(){
+        FallKasten.Fallkasten.clear();
+        Level.kisten.clear();
+        Level.LevelCreate(Level.Le);
+    }
+
 
 }

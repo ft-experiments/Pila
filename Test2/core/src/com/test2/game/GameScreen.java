@@ -117,9 +117,13 @@ public class GameScreen extends ScreenAdapter {
         new Ablauf();
 
         shapeRenderer = new ShapeRenderer();
+
+
         if(Var.gamestatus==0) {
-            Level.LevelCreate(Var.createlevel);
+            Level.LevelCreate(Var.createlevel);                                      ///////////////////////////////////////////////////////////////
         }
+
+
         imgfeuerball =new Texture("ballfeueranimation.png");
         final TextureRegion[][] regions = TextureRegion.split(imgfeuerball, 100,100);
         feuerball = new Sprite(regions[0][0]);
@@ -173,10 +177,10 @@ public class GameScreen extends ScreenAdapter {
         }
     }
 
-
+static double gamestcreendelta=0;
     @Override
     public void render(float delta) {
-
+        gamestcreendelta=delta;
         //System.out.println(delta);
         Var.ingame = true;
         if(Var.EnableAndroidSave==true) {
@@ -214,57 +218,18 @@ public class GameScreen extends ScreenAdapter {
 
         }
 
-        if (Var.gamestatus != 3){
 
-            /*if (Var.steuerung == 0) {
-                if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
-                    if (Var.r_x > 0) {
-                        Var.r_x -= Var.r_speed * delta;
 
-                    }
-                }
-                if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
-                    if (Var.r_x < Gdx.graphics.getWidth() - Var.r_l) {
-                        Var.r_x += Var.r_speed * delta;
-                    }
-                }
-            }
-*/
 
-        if (Var.steuerung == 0) {
-            if (Gdx.input.isTouched() == true) {
-              /*  //System.out.println(Gdx.input.getX());
 
-                if (Gdx.input.getX() < Gdx.graphics.getWidth() / 2) {
-                    if (Var.r_x > 0) {
-                        Var.r_x -= Var.r_speed * delta;
-                    }
-                }
-                if (Gdx.input.getX() > Gdx.graphics.getWidth() / 2) {
-                    if (Var.r_x < Gdx.graphics.getWidth() - Var.r_l) {
-                        Var.r_x += Var.r_speed * delta;
-                    }
-                }*/
-                if (Gdx.input.getX() - Var.r_l / 2 > 0 && Gdx.input.getX() - Var.r_l / 2 < Gdx.graphics.getWidth() - Var.r_l) {
-                    Var.r_x = Gdx.input.getX() - Var.r_l / 2;
-                }
-            }
-        }
-        if (Var.steuerung == 1) {
+        if (Var.gamestatus != 3){                  //nur steuerbar wenn keine pause
+            Paddel.steuerung(Var.steuerung);
 
-                Var.r_x += Gdx.input.getAccelerometerX() * delta * 300 * -1;
-                if(Var.r_x < 0){
-                    Var.r_x=0;
-                }
-            if(Var.r_x > Gdx.graphics.getWidth()-Var.r_l){
-                Var.r_x=Gdx.graphics.getWidth()-Var.r_l;
-            }
-
-        }
     }
 
 
-        if(Ball.x+Ball.r*2 > Var.r_x && Ball.y < Var.r_y+40 && Var.r_x+Var.r_l > Ball.x){
+
+        if(Ball.x+Ball.r*2 > Var.r_x && Ball.y < Var.r_y+40 && Var.r_x+Var.r_l > Ball.x){               //Das abprallen des Balls am Paddel
             if(Var.kleben==0) {
                 Ball.by = Ball.by * -1;
             }
@@ -275,14 +240,19 @@ public class GameScreen extends ScreenAdapter {
             if(Var.beiballberurungvibrieren==1) {
                 Gdx.input.vibrate(50);
             }
-            //System.out.println((Ball.x-Var.r_x)-Var.r_l/2);
-            Ball.bx -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;
-            //Ball.by -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;
-            Var.points += 1;
-            Var.r_speed +=5;
+
+            Ball.bx -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;       //Ball ablenken je nach aufprall x
+
         }
-        System.out.println("Game Status vorher= "+Var.gamestatus);
-        if(Ball.y < Var.r_y && Var.p==0){
+
+
+
+
+
+
+
+
+        if(Ball.y < Var.r_y && Var.p==0){   //wenn ball verloren
             FallKasten.zuruecksetzen();
             Var.leben -= 1;
             Var.p=1;
@@ -291,20 +261,15 @@ public class GameScreen extends ScreenAdapter {
 
             Ball.dispose();
         }
-        System.out.println("Game Status nachher= "+Var.gamestatus);
+
+
+
+
         if(Ball.y > Var.r_y){
             Var.p=0;
         }
 
-        /*
-        if(Gdx.input.isKeyPressed(Input.Keys.W)){
-            Var.r_y += Var.r_speed * delta;
-        }
-        if(Gdx.input.isKeyPressed(Input.Keys.S)){
-            Var.r_y -= Var.r_speed * delta;
-        }
 
-        */
 
         if(Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)){
             Gdx.app.exit();
@@ -736,8 +701,8 @@ public class GameScreen extends ScreenAdapter {
 
 
         if(Var.leben <= 0){          //Wenn keine Leben mehr da sind dann
-            Ball.dispose();
-            Level.dispose();
+
+
             Test2.INSTANCE.setScreen(new GameOverScreen());        //gehe zu GameOverScreen
 
         }
