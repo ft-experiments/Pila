@@ -32,7 +32,17 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
     public LevelAuswahlScreen(String referrer) {
         batch = new SpriteBatch();
-        font = new BitmapFont();
+
+
+        //schriftart
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 50;
+        font = generator.generateFont(parameter); // font size 12 pixels
+        generator.dispose(); // don't forget to dispose to avoid memory leaks!
+//
+
+
         shapeRenderer = new ShapeRenderer();
 
 
@@ -84,7 +94,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 
-        font.getData().setScale(4);
+        //font.getData().setScale(4);
         font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
         batch.draw(buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
         if(zurueck.isPressed() == 1){
@@ -109,7 +119,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
                 batch.draw(Levelbutton, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
             }
 
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, ""+(LAB.Level) , LAB.x+LAB.w/2-30,LAB.y+LAB.h/2+30);
             //System.out.println(b);
             if(LAB.Level<=Var.levelbesitz) {

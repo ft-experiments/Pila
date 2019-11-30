@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 
@@ -79,7 +80,20 @@ public class GameScreen extends ScreenAdapter {
             LoadSave = new LoadSave();
         }
         batch = new SpriteBatch();
-        font = new BitmapFont();
+
+
+
+
+        //schriftart
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 50;
+        font = generator.generateFont(parameter); // font size 12 pixels
+        generator.dispose(); // don't forget to dispose to avoid memory leaks!
+//
+
+
+
         block_l = new Texture("block_l.png");
         block_rot = new Texture("block_rot.png");
         block_gruen = new Texture("block_gruen.png");
@@ -382,10 +396,10 @@ static double gamestcreendelta=0;
         batch.setColor(1,1,1,0.5f);
         batch.draw(status_bar,0,Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/25,Gdx.graphics.getWidth(),Gdx.graphics.getHeight()/25);
         batch.setColor(1,1,1,1f);
-        font.getData().setScale(Gdx.graphics.getHeight()/426,Gdx.graphics.getHeight()/426);
+        //font.getData().setScale(Gdx.graphics.getHeight()/426,Gdx.graphics.getHeight()/426);
         font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-(Gdx.graphics.getHeight()/426)*53, Gdx.graphics.getHeight()-5);
         font.draw(batch, "Level:" + Level.Le + " ", Gdx.graphics.getWidth()/2-150/2, Gdx.graphics.getHeight()-5);
-        font.getData().setScale(3);
+        //font.getData().setScale(3);
 
         /////Pause//Button///////////
         if(Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height)
@@ -534,7 +548,7 @@ static double gamestcreendelta=0;
 
 
 
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
 ///////LevelAuswhlButtonwird gedrawd
             font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
             batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
@@ -691,12 +705,12 @@ static double gamestcreendelta=0;
         shapeRenderer.end();
         batch.begin();
         if(Var.ballmode==1) {
-            font.getData().setScale(2);
+            font.getData().setScale(0.5f);
             font.draw(batch, ""+Ablauf.feuerballablauf/10+"%", 50, Gdx.graphics.getHeight()-3);  //Die Feuerball ablaufanzeige wird gedrawd
 
         }
         if(Var.kleben==1){
-            font.getData().setScale(2);
+            font.getData().setScale(0.5f);
             font.draw(batch, ""+Ablauf.klebablaufsoll/10+"%", 50, Gdx.graphics.getHeight()-3-25);   //Die Klebepaddel ablaufanzeige wird gerawd
         }
         batch.end();

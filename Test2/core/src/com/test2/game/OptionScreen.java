@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 public class OptionScreen extends ScreenAdapter {
@@ -37,7 +38,17 @@ public class OptionScreen extends ScreenAdapter {
 
     public OptionScreen() {
         batch = new SpriteBatch();
-        font = new BitmapFont();
+
+
+
+        //schriftart
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 50;
+        font = generator.generateFont(parameter); // font size 12 pixels
+        generator.dispose(); // don't forget to dispose to avoid memory leaks!
+//
+
 
 
         img = new Texture("start.png");
@@ -102,7 +113,7 @@ public class OptionScreen extends ScreenAdapter {
         // System.out.println(SW.status);
 
         if(Var.EnableAlpha) {
-            font.getData().setScale(Gdx.graphics.getWidth() / 270);
+            //font.getData().setScale(Gdx.graphics.getWidth() / 270);
             font.draw(batch, "LevelBau", Baukasten.x + 30, Baukasten.y + (Baukasten.h / 2 + 25));
             batch.draw(buttonimage, Baukasten.x, Baukasten.y, Baukasten.w, Baukasten.h);
             if (Baukasten.isPressed() == 1) {
@@ -110,7 +121,7 @@ public class OptionScreen extends ScreenAdapter {
             }
         }
 
-        font.getData().setScale(4);
+        //font.getData().setScale(4);
         // if (i == 0) {
         font.draw(batch, "Vibrieren", SW.x - 400, SW.y + SW.h / 2);
         if (SW.isswitched() == 0) {
@@ -134,7 +145,7 @@ public class OptionScreen extends ScreenAdapter {
 
                 // System.out.println(SW.status);
 
-                font.getData().setScale(4);
+                //font.getData().setScale(4);
                // if (i == 0) {
                     font.draw(batch, "FPS-Anzeigen", fpsshow.x - 400, fpsshow.y + fpsshow.h / 2);
                     if (fpsshow.isswitched() == 0) {
@@ -151,7 +162,7 @@ public class OptionScreen extends ScreenAdapter {
 
         // System.out.println(SW.status);
 
-        font.getData().setScale(4);
+        //font.getData().setScale(4);
         // if (i == 0) {
 
         if (toggelcontrol.isswitched() == 0) {
@@ -185,7 +196,7 @@ public class OptionScreen extends ScreenAdapter {
 
 
 
-        font.getData().setScale(5);
+        //font.getData().setScale(5);
 
         font.draw(batch, "Optionen" , Gdx.graphics.getWidth()/2-150, Gdx.graphics.getHeight()-30);
 

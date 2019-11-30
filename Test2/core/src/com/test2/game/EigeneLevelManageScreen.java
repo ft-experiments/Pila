@@ -39,7 +39,16 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
 
     public EigeneLevelManageScreen() {
         batch = new SpriteBatch();
-        font = new BitmapFont();
+
+        //schriftart
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 50;
+        font = generator.generateFont(parameter); // font size 12 pixels
+        generator.dispose(); // don't forget to dispose to avoid memory leaks!
+//
+
+
         shapeRenderer = new ShapeRenderer();
 
 
@@ -85,7 +94,7 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-        font.getData().setScale(4);
+        //font.getData().setScale(4);
         font.draw(batch, "Edit", newLevel.x+30, newLevel.y+(newLevel.h/2+25));
         batch.draw(buttonimage, newLevel.x,newLevel.y,newLevel.w,newLevel.h);
         if(newLevel.isPressed() == 1){
@@ -104,7 +113,7 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
             }else {
                 batch.draw(buttonimage, B.x, B.y, B.w, B.h);
             }
-            font.getData().setScale(4);
+            //Data().setScale(4);
             font.draw(batch, ""+(b+1),B.x+B.w/2,B.y+B.h/2);
             if(B.isPressed()==1){
                 marked=b;

@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 
@@ -36,7 +37,19 @@ public class StartScreen extends ScreenAdapter {
         }
 
         batch = new SpriteBatch();
-        font = new BitmapFont();
+
+
+
+//schriftart
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 50;
+        font = generator.generateFont(parameter); // font size 12 pixels
+        generator.dispose(); // don't forget to dispose to avoid memory leaks!
+//
+
+
+
 
         hintergrund2 = new Texture("hintergrund2.jpg");
         switchon = new Texture("switchon.png");
@@ -73,7 +86,7 @@ public class StartScreen extends ScreenAdapter {
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         //batch.draw(bzs,Gdx.graphics.getWidth()/2-400,Gdx.graphics.getHeight()/2-50,800,200);
-        font.getData().setScale(Gdx.graphics.getWidth()/270,Gdx.graphics.getHeight()/444);
+        //font.getData().setScale(Gdx.graphics.getWidth()/270,Gdx.graphics.getHeight()/444);
         font.draw(batch, "weiter spielen", Start.x+30, Start.y+(Start.h/2+25));
         batch.draw(buttonimage, Start.x,Start.y,Start.w,Start.h);
         if(Start.isPressed()==1){

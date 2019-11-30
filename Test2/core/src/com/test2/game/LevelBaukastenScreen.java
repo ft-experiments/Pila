@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 
@@ -58,7 +59,18 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
     public LevelBaukastenScreen() {
         batch = new SpriteBatch();
-        font = new BitmapFont();
+
+
+        //schriftart
+        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
+        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
+        parameter.size = 50;
+        font = generator.generateFont(parameter); // font size 12 pixels
+        generator.dispose(); // don't forget to dispose to avoid memory leaks!
+//
+
+
+
         shapeRenderer = new ShapeRenderer();
 
 
@@ -215,7 +227,7 @@ a++;
 
         batch.begin();
 
-        font.getData().setScale(3,3);
+        //font.getData().setScale(3,3);
         font.draw(batch, "Spielen", zuruck.x+30, zuruck.y+(zuruck.h/2+20));
         batch.draw(buttonimage, zuruck.x,zuruck.y,zuruck.w,zuruck.h);
         if(zuruck.isPressed() == 1){
@@ -224,14 +236,14 @@ a++;
             Test2.INSTANCE.setScreen(new GameScreen());
         }
 
-        font.getData().setScale(3,3);
+        //font.getData().setScale(3,3);
         font.draw(batch, "Speichern", speichern.x+30, speichern.y+(speichern.h/2+20));
         batch.draw(buttonimage, speichern.x,speichern.y,speichern.w,speichern.h);
         if(speichern.isPressed() == 1){
             save();
         }
 
-        font.getData().setScale(3,3);
+        //font.getData().setScale(3,3);
         font.draw(batch, "neu", neu.x+30, neu.y+(neu.h/2+20));
         batch.draw(buttonimage, neu.x,neu.y,neu.w,neu.h);
         if(neu.isPressed() == 1){
@@ -312,7 +324,7 @@ a++;
                 batch.setColor(1,1,1,1);
             }
             batch.draw(blockrot, rot.x,rot.y,rot.w,rot.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "rot", rot.x+30, rot.y+(rot.h/2+25));
             if(f_select==1){
                 batch.setColor(0.3f,0.3f,0.3f,1f);
@@ -341,7 +353,7 @@ a++;
                 batch.setColor(1,1,1,1);
             }
             batch.draw(blockgruen, gruen.x,gruen.y,gruen.w,gruen.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "grün", gruen.x+30, gruen.y+(gruen.h/2+25));
             if(f_select==2){
                 batch.setColor(0.3f,0.3f,0.3f,1f);
@@ -365,7 +377,7 @@ a++;
                 batch.setColor(1,1,1,1);
             }
             batch.draw(blockblau, blau.x,blau.y,blau.w,blau.h);
-            font.getData().setScale(4);
+           // font.getData().setScale(4);
             font.draw(batch, "blau", blau.x+30, blau.y+(blau.h/2+25));
             if(f_select==3){
                 batch.setColor(0.3f,0.3f,0.3f,1f);
@@ -391,7 +403,7 @@ a++;
                 batch.setColor(1,1,1,1);
             }
             batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
             if(f_select==4){
                 batch.setColor(0.3f,0.3f,0.3f,1f);
@@ -415,7 +427,7 @@ a++;
                 batch.setColor(1,1,1,1);
             }
             batch.draw(unzer, unzers.x,unzers.y,unzers.w,unzers.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "unz", unzers.x+30, unzers.y+(unzers.h/2+25));
             if(f_select==5){
                 batch.setColor(0.3f,0.3f,0.3f,1f);
@@ -439,7 +451,7 @@ a++;
                 batch.setColor(1,1,1,1);
             }
             batch.draw(buttonimage, leer.x,leer.y,leer.w,leer.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "leer", leer.x+30, leer.y+(leer.h/2+25));
             if(f_select==6){
                 batch.setColor(0.3f,0.3f,0.3f,1f);
@@ -540,7 +552,7 @@ a++;
             rot.x=x_pop+b.K_w/2+25;
             rot.y=y_pop-100+b.K_h/2;
             batch.draw(blockrot, rot.x,rot.y,rot.w,rot.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "rot", rot.x+30, rot.y+(rot.h/2+25));
             if(rot.isPressed() == 1){
                 b.K_art=0;
@@ -549,7 +561,7 @@ a++;
             gruen.x=x_pop+b.K_w/2+25;
             gruen.y=y_pop-180+b.K_h/2;
             batch.draw(blockgruen, gruen.x,gruen.y,gruen.w,gruen.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "grün", gruen.x+30, gruen.y+(gruen.h/2+25));
             if(gruen.isPressed() == 1){
                 b.K_art=1;
@@ -558,7 +570,7 @@ a++;
             blau.x=x_pop+b.K_w/2+25;
             blau.y=y_pop-260+b.K_h/2;
             batch.draw(blockblau, blau.x,blau.y,blau.w,blau.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "blau", blau.x+30, blau.y+(blau.h/2+25));
             if(blau.isPressed() == 1){
                 b.K_art=2;
@@ -567,7 +579,7 @@ a++;
             doppelt.x=x_pop+b.K_w/2+25;
             doppelt.y=y_pop-340+b.K_h/2;
             batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
             if(doppelt.isPressed() == 1){
                 b.K_art=3;
@@ -576,7 +588,7 @@ a++;
             unzers.x=x_pop+b.K_w/2+25;
             unzers.y=y_pop-420+b.K_h/2;
             batch.draw(unzer, unzers.x,unzers.y,unzers.w,unzers.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "unz", unzers.x+30, unzers.y+(unzers.h/2+25));
             if(unzers.isPressed() == 1){
                 b.K_art=4;
@@ -585,7 +597,7 @@ a++;
             leer.x=x_pop+b.K_w/2+25;
             leer.y=y_pop-500+b.K_h/2;
             batch.draw(buttonimage, leer.x,leer.y,leer.w,leer.h);
-            font.getData().setScale(4);
+            //font.getData().setScale(4);
             font.draw(batch, "leer", leer.x+30, leer.y+(leer.h/2+25));
             if(leer.isPressed() == 1){
                 b.K_art=5;
