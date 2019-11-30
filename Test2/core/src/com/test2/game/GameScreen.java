@@ -198,7 +198,7 @@ static double gamestcreendelta=0;
 
        
 
-       // System.out.println("gamestatus "+ Var.gamestatus);
+
         if (Var.klebt == true) {
             klebt();
         }

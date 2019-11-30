@@ -1,4 +1,5 @@
 Var.gamestatus :
+0   ball verloren
 1   Spiel läuft
 3   Spiel pausiert
 
