@@ -29,9 +29,9 @@ Verbuggter Level-Baukasten
 
 ## 🚀 Benutzung
 
-Stelle sichere das du in den Einstellenungen ´Apps aus anderen Quellen als den Playstore zulassen´ eingeschaltet hast
+Stelle sichere das du in den Einstellungen `Apps aus anderen Quellen als den Playstore zulassen` eingeschaltet hast
 
-Dann kannst du die ´.apk´ einfach auf das Handy übertragen und installieren.
+Dann kannst du die `.apk` einfach auf das Handy übertragen und installieren.
 
 Danach kannst du auch schon loslegen.
 
