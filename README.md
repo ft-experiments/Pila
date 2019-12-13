@@ -43,15 +43,12 @@ Danach kannst du auch schon loslegen.
 //TODO gameover Start aktivity Menü Ball ist weg
 //TODO Kollision seitlich erkennen
 //TODO Kollision Paddel
-//TODO gameover relativ
 
 //TODO Zurücktaste Fehler beheben
 
 
 ///////////////////Änderungen//////////////////
 
-
-//TODO Schrift schärfer: https://www.youtube.com/watch?v=IYjnOuxjdKQ
 //TODO Hauptmenü besser
 
 
@@ -61,4 +58,4 @@ Danach kannst du auch schon loslegen.
 //TODO countdown nach beenden der Pause
 //TODO sound effekts
 
-##`VIEL SPAß`
+`VIEL SPAß`
