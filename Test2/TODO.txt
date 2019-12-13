@@ -10,8 +10,7 @@
 //TODO gameover Start aktivity Menü Ball ist weg
 //TODO Kollision seitlich erkennen
 //TODO Kollision Paddel
-//TODO gameover relativ
-
+//TODO Ball nicht vorhanden bei Countdown
 //TODO Zurücktaste Fehler beheben
 
 ///////////////////////////////////////////////
@@ -19,8 +18,6 @@
 //////////////////////////////////////////////
 
 
-
-//TODO Schrift schärfer: https://www.youtube.com/watch?v=IYjnOuxjdKQ
 //TODO Hauptmenü besser
 
 
@@ -30,6 +27,4 @@
 /////////////////////////////////////////////////
 
 
-
-//TODO countdown nach beenden der Pause
 //TODO sound effekts
