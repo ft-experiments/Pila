@@ -33,7 +33,7 @@ public class Var {
 
     static int Button_Pause_Height = Gdx.graphics.getHeight()/25;
     static int Button_Pause_Width = Gdx.graphics.getHeight()/25;
-    static float Button_Pause_x = Gdx.graphics.getWidth()-Gdx.graphics.getWidth()/3.5f;
+    static float Button_Pause_x = Gdx.graphics.getWidth()-Gdx.graphics.getWidth()/2.9f;
     static int Button_Pause_y = Gdx.graphics.getHeight()-Button_Pause_Height;
 
     static int Button_einstellungen_Height = Gdx.graphics.getHeight()/25;

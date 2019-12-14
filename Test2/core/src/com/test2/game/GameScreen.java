@@ -397,8 +397,8 @@ static double gamestcreendelta=0;
         batch.draw(status_bar,0,Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/25,Gdx.graphics.getWidth(),Gdx.graphics.getHeight()/25);
         batch.setColor(1,1,1,1f);
         //font.getData().setScale(Gdx.graphics.getHeight()/426,Gdx.graphics.getHeight()/426);
-        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-(Gdx.graphics.getHeight()/426)*53, Gdx.graphics.getHeight()-5);
-        font.draw(batch, "Level:" + Level.Le + " ", Gdx.graphics.getWidth()/2-150/2, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-(Gdx.graphics.getHeight()/426)*62, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Level:" + Level.Le + " ", Gdx.graphics.getWidth()/6*2, Gdx.graphics.getHeight()-5);
         //font.getData().setScale(3);
 
         /////Pause//Button///////////
@@ -726,11 +726,12 @@ static double gamestcreendelta=0;
         if(Var.ballmode==1) {
             font.getData().setScale(0.5f);
             font.draw(batch, ""+Ablauf.feuerballablauf/10+"%", 50, Gdx.graphics.getHeight()-3);  //Die Feuerball ablaufanzeige wird gedrawd
-
+            font.getData().setScale(1f);
         }
         if(Var.kleben==1){
             font.getData().setScale(0.5f);
             font.draw(batch, ""+Ablauf.klebablaufsoll/10+"%", 50, Gdx.graphics.getHeight()-3-25);   //Die Klebepaddel ablaufanzeige wird gerawd
+            font.getData().setScale(1f);
         }
         batch.end();
 
