@@ -10,6 +10,7 @@
 //TODO gameover Start aktivity Menü Ball ist weg
 //TODO Kollision seitlich erkennen
 //TODO Kollision Paddel
+//TODO Im Gamescreen beim verlassen und betreten des Spiels seltsames kollisions verhalten
 
 ///////////////////////////////////////////////
 ///////////////////Änderungen//////////////////
