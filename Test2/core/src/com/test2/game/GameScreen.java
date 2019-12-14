@@ -22,6 +22,9 @@ public class GameScreen extends ScreenAdapter {
 
     public static GameScreen INSTANCE;
 
+
+    Test2 game;
+
     LoadSave LoadSave;
     SpriteBatch batch;
     Texture los;
@@ -445,7 +448,8 @@ static double gamestcreendelta=0;
                     gamestatuspausesave=0;
                 }
                 Var.gamestatus=3;
-                Test2.INSTANCE.setScreen(new OptionScreen());
+
+                Test2.INSTANCE.setScreen(new OptionScreen(Test2.INSTANCE));
             }
         }
         batch.draw(einstellungen, Var.Button_einstellungen_x, Var.Button_einstellungen_y, Var.Button_einstellungen_Width, Var.Button_einstellungen_Height);

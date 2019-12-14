@@ -11,11 +11,12 @@ import com.kotcrab.vis.ui.widget.toast.Toast;
 public class Test2 extends Game {
 
 	public static Test2 INSTANCE;
-
-	public Test2(){
+	AndroidInterfaces aoi;
+	public Test2(AndroidInterfaces maoi){
+		aoi=maoi;
 		INSTANCE = this;
 	}
-	
+	public boolean backpressed=false;
 	@Override
 	public void create () {
 

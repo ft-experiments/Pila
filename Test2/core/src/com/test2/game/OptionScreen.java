@@ -2,6 +2,7 @@ package com.test2.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
 
 import com.badlogic.gdx.graphics.GL20;
@@ -10,12 +11,16 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 
+public class OptionScreen extends ScreenAdapter implements Screen {
 
-public class OptionScreen extends ScreenAdapter {
-
-
+    Test2 game;
+    private Stage stage;
+    private Skin skin;
 
 
     Texture buttonimage;
@@ -54,18 +59,14 @@ public class OptionScreen extends ScreenAdapter {
 
 
 
-sendmessage toast;
-sendmessage toast1;
-sendmessage toast2;
-sendmessage toast3;
 
 
 
 
-    public OptionScreen() {
+    public OptionScreen(Test2 gg) {
         batch = new SpriteBatch();
 
-
+        game=gg;
 
         //schriftart
         FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
@@ -73,15 +74,10 @@ sendmessage toast3;
         parameter.size = 50;
         font = generator.generateFont(parameter); // font size 12 pixels
         generator.dispose(); // don't forget to dispose to avoid memory leaks!
-//
-        sendmessage.ToastFactory toastFactory = new sendmessage.ToastFactory.Builder()
-                .font(font)
-                .build();
 
-         toast = toastFactory.create("Wenn du das ausschaltest, deaktivierst du das Vibrieren, wenn der Ball an die Wände anstößst.", sendmessage.Length.LONG);
-         toast1 = toastFactory.create("Hiermit kannst du zwischen den beiden Modi Touch (Dabei steurst du das Paddel mit dem Finger) und Gyro (Dabei steuerst du das Paddel durch die bewegung des Handys) wechslen.", sendmessage.Length.LONG);
-         toast2 = toastFactory.create("Wenn du das einschaltest bekommst du unten rechts eine Anzeige, wieviele Bilder pro Sekunde angezeigt werden.", sendmessage.Length.LONG);
-         toast3 = toastFactory.create("Wenn du das ausschaltest dann musst du immer wenn du ein Leben verloren hast das Weitermachen mit einem Doppelklick bestätigen.", sendmessage.Length.LONG);
+
+
+
 
         info = new Texture("info.png");
         info1 = new Texture("info.png");
@@ -130,41 +126,43 @@ sendmessage toast3;
 
 
 
-            vibrate = new touchinput.Button(SW.x - 450, SW.y + SW.h / 2, 70, 70);
+            vibrate = new touchinput.Button(SW.x - 535, SW.y + SW.h / 2-50, 70, 70);
 
-            control = new touchinput.Button(toggelcontrol.x - 450, toggelcontrol.y + toggelcontrol.h / 2, 70, 70);
+            control = new touchinput.Button(toggelcontrol.x - 535, toggelcontrol.y + toggelcontrol.h / 2-50, 70 ,70);
 
-            fps = new touchinput.Button(fpsshow.x - 450, fpsshow.y + fpsshow.h / 2, 70, 70);
+            fps = new touchinput.Button(fpsshow.x - 535, fpsshow.y + fpsshow.h / 2-50, 70 ,70);
 
-            instant = new touchinput.Button(ballstartmode.x - 450, ballstartmode.y + ballstartmode.h / 2, 70, 70);
+            instant = new touchinput.Button(ballstartmode.x - 535, ballstartmode.y + ballstartmode.h / 2-50, 70 ,70);
 
 
     }
 
 
 
-    @Override
+
+
     public void render(float delta) {
 
-        //Toast.makeText(getApplicationContext(), "Image has been uploaded", Toast.LENGTH_SHORT).show();
-        if(vibrate.isPressed()==1) {
 
-            toast.render(Gdx.graphics.getDeltaTime());
+
+
+        if(vibrate.isPressed()==1) {
+            game.aoi.toast("Wenn du das ausschaltest, deaktivierst du das Vibrieren, wenn der Ball an die Wände anstößst.");
+
         }
 
         if(control.isPressed()==1) {
 
-            toast1.render(Gdx.graphics.getDeltaTime());
+            game.aoi.toast("Hiermit kannst du zwischen den beiden Modi Touch (Dabei steurst du das Paddel mit dem Finger) und Gyro (Dabei steuerst du das Paddel durch die bewegung des Handys) wechslen.");
         }
 
         if(fps.isPressed()==1) {
-
-            toast2.render(Gdx.graphics.getDeltaTime());
+        game.aoi.toast("Wenn du das einschaltest bekommst du unten rechts eine Anzeige, wieviele Bilder pro Sekunde angezeigt werden.");
         }
 
         if(instant.isPressed()==1) {
+            game.aoi.toast("Wenn du das ausschaltest dann musst du immer wenn du ein Leben verloren hast das Weitermachen mit einem Doppelklick bestätigen.");
 
-            toast3.render(Gdx.graphics.getDeltaTime());
         }
 
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
