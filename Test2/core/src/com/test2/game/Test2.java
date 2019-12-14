@@ -3,6 +3,9 @@ package com.test2.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.kotcrab.vis.ui.widget.toast.Toast;
+
+
 
 
 public class Test2 extends Game {

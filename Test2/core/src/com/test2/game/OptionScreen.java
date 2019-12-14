@@ -3,6 +3,7 @@ package com.test2.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
+
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -10,10 +11,20 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
+
+
 public class OptionScreen extends ScreenAdapter {
+
+
+
+
     Texture buttonimage;
     SpriteBatch batch;
     Texture img;
+    Texture info;
+    Texture info1;
+    Texture info2;
+    Texture info3;
     Texture startge;
     Texture Touch;
     Texture Gyro;
@@ -29,12 +40,27 @@ public class OptionScreen extends ScreenAdapter {
     touchinput.Switch SW;
     touchinput.Switch toggelcontrol;
     touchinput.Switch ballstartmode;
+
+    touchinput.Button instant;
+    touchinput.Button control;
+    touchinput.Button fps;
+    touchinput.Button vibrate;
     int u=0;
     int bb;
     int switchy=Gdx.graphics.getHeight() / 8;
     int switchsx=Gdx.graphics.getWidth()-Gdx.graphics.getWidth()/4;
     int switchh=(int)(Gdx.graphics.getHeight()/17.26f);
     int switchw=(int)(Gdx.graphics.getWidth()/5.4f);
+
+
+
+sendmessage toast;
+sendmessage toast1;
+sendmessage toast2;
+sendmessage toast3;
+
+
+
 
     public OptionScreen() {
         batch = new SpriteBatch();
@@ -48,8 +74,19 @@ public class OptionScreen extends ScreenAdapter {
         font = generator.generateFont(parameter); // font size 12 pixels
         generator.dispose(); // don't forget to dispose to avoid memory leaks!
 //
+        sendmessage.ToastFactory toastFactory = new sendmessage.ToastFactory.Builder()
+                .font(font)
+                .build();
 
+         toast = toastFactory.create("Wenn du das ausschaltest, deaktivierst du das Vibrieren, wenn der Ball an die Wände anstößst.", sendmessage.Length.LONG);
+         toast1 = toastFactory.create("Hiermit kannst du zwischen den beiden Modi Touch (Dabei steurst du das Paddel mit dem Finger) und Gyro (Dabei steuerst du das Paddel durch die bewegung des Handys) wechslen.", sendmessage.Length.LONG);
+         toast2 = toastFactory.create("Wenn du das einschaltest bekommst du unten rechts eine Anzeige, wieviele Bilder pro Sekunde angezeigt werden.", sendmessage.Length.LONG);
+         toast3 = toastFactory.create("Wenn du das ausschaltest dann musst du immer wenn du ein Leben verloren hast das Weitermachen mit einem Doppelklick bestätigen.", sendmessage.Length.LONG);
 
+        info = new Texture("info.png");
+        info1 = new Texture("info.png");
+        info2 = new Texture("info.png");
+        info3 = new Texture("info.png");
 
         img = new Texture("start.png");
         startge = new Texture("startge.png");
@@ -64,12 +101,17 @@ public class OptionScreen extends ScreenAdapter {
 
 
         Buttonstart = new touchinput.Button((int)(Gdx.graphics.getWidth()/2-(Gdx.graphics.getWidth()/1.8f/2)),Gdx.graphics.getHeight()/10,(int)(Gdx.graphics.getWidth()/1.8f),(int)(Gdx.graphics.getHeight()/5.753f));
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,100);
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,70);
         Baukasten = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight() / 8 * 2,(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.26f));
 
 
 
             SW = new touchinput.Switch(switchsx, switchy * 3, switchw, switchh, Var.beiballberurungvibrieren);
+
+
+
+
+
 
         if(Var.showfps==true) {
             bb=1;
@@ -78,6 +120,8 @@ public class OptionScreen extends ScreenAdapter {
             bb=0;
         }
 
+            SW = new touchinput.Switch(switchsx, switchy * 3, switchw, switchh, Var.beiballberurungvibrieren);
+
             fpsshow = new touchinput.Switch(switchsx, switchy * 4, switchw, switchh, bb);
 
             toggelcontrol = new touchinput.Switch(switchsx, switchy * 5, switchw, switchh, Var.steuerung);
@@ -85,17 +129,49 @@ public class OptionScreen extends ScreenAdapter {
             ballstartmode = new touchinput.Switch(switchsx, switchy * 6, switchw, switchh, Var.ballstartmode);
 
 
+
+            vibrate = new touchinput.Button(SW.x - 450, SW.y + SW.h / 2, 70, 70);
+
+            control = new touchinput.Button(toggelcontrol.x - 450, toggelcontrol.y + toggelcontrol.h / 2, 70, 70);
+
+            fps = new touchinput.Button(fpsshow.x - 450, fpsshow.y + fpsshow.h / 2, 70, 70);
+
+            instant = new touchinput.Button(ballstartmode.x - 450, ballstartmode.y + ballstartmode.h / 2, 70, 70);
+
+
     }
+
+
 
     @Override
     public void render(float delta) {
 
+        //Toast.makeText(getApplicationContext(), "Image has been uploaded", Toast.LENGTH_SHORT).show();
+        if(vibrate.isPressed()==1) {
+
+            toast.render(Gdx.graphics.getDeltaTime());
+        }
+
+        if(control.isPressed()==1) {
+
+            toast1.render(Gdx.graphics.getDeltaTime());
+        }
+
+        if(fps.isPressed()==1) {
+
+            toast2.render(Gdx.graphics.getDeltaTime());
+        }
+
+        if(instant.isPressed()==1) {
+
+            toast3.render(Gdx.graphics.getDeltaTime());
+        }
 
         if (Gdx.input.isKeyJustPressed(Input.Keys.ESCAPE)) {
             Gdx.app.exit();
         }
         /*if(Gdx.input.isTouched()) {
-            Gdx.input.vibrate(100);
+           
         }*/
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -103,7 +179,7 @@ public class OptionScreen extends ScreenAdapter {
         batch.begin();
         batch.draw(hintergrund2, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         if (Gdx.input.getAccelerometerY() > 12) {
-            font.draw(batch, "" + Gdx.input.getAccelerometerY(), 100, 100);
+            font.draw(batch, "" + Gdx.input.getAccelerometerY(), 70, 70);
         }
 
 
@@ -124,6 +200,7 @@ public class OptionScreen extends ScreenAdapter {
         //font.getData().setScale(4);
         // if (i == 0) {
         font.draw(batch, "Vibrieren", SW.x - 400, SW.y + SW.h / 2);
+        batch.draw( info, SW.x - 535, SW.y + SW.h / 2-50, 70, 70);
         if (SW.isswitched() == 0) {
             batch.draw(switchoff, SW.x, SW.y, SW.w, SW.h);
             Var.beiballberurungvibrieren = 0;
@@ -148,6 +225,7 @@ public class OptionScreen extends ScreenAdapter {
                 //font.getData().setScale(4);
                // if (i == 0) {
                     font.draw(batch, "FPS-Anzeigen", fpsshow.x - 400, fpsshow.y + fpsshow.h / 2);
+                     batch.draw( info1, fpsshow.x - 535, fpsshow.y + fpsshow.h / 2-50, 70 ,70);
                     if (fpsshow.isswitched() == 0) {
                         batch.draw(switchoff, fpsshow.x, fpsshow.y, fpsshow.w, fpsshow.h);
                         Var.showfps = false;
@@ -164,7 +242,7 @@ public class OptionScreen extends ScreenAdapter {
 
         //font.getData().setScale(4);
         // if (i == 0) {
-
+        batch.draw( info2, toggelcontrol.x - 535, toggelcontrol.y + toggelcontrol.h / 2-50, 70 ,70);
         if (toggelcontrol.isswitched() == 0) {
             font.draw(batch, "Touch-Steuerung", toggelcontrol.x - 450, toggelcontrol.y + toggelcontrol.h / 2);
             batch.draw(switchoff, toggelcontrol.x, toggelcontrol.y, toggelcontrol.w, toggelcontrol.h);
@@ -179,6 +257,7 @@ public class OptionScreen extends ScreenAdapter {
 
         }
 
+        batch.draw( info3, ballstartmode.x - 535, ballstartmode.y + ballstartmode.h / 2-50, 70 ,70);
         font.draw(batch, "Instant-Start", ballstartmode.x - 400, ballstartmode.y + ballstartmode.h / 2);
 
         if(ballstartmode.isswitched() == 0){
@@ -224,9 +303,11 @@ public class OptionScreen extends ScreenAdapter {
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(1,0,0,1);
-        //shapeRenderer.rect(0,0,100,100);
+        
 
         shapeRenderer.end();
+
+
     }
 
     @Override
@@ -241,5 +322,8 @@ public class OptionScreen extends ScreenAdapter {
             LoadSave.saveall();
         }
         this.dispose();
+    }
+   public void toast(String text) {
+
     }
 }

@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 
 
 import java.sql.Time;
@@ -609,6 +610,8 @@ static double gamestcreendelta=0;
                 countdown=0;
             }
             if(countdown==0){
+
+
                 batch.end();
                 shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
                 shapeRenderer.setColor(1, 1, 0, 0);
