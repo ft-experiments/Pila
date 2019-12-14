@@ -122,6 +122,8 @@ public class StartScreen extends ScreenAdapter {
         //shapeRenderer.rect(0,0,100,100);
 
         shapeRenderer.end();
+
+
     }
 
     @Override
