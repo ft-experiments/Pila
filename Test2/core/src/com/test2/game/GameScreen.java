@@ -171,10 +171,7 @@ public class GameScreen extends ScreenAdapter {
 
     }
 
-    void statusBar(){
 
-
-    }
 
     void klebt(){
         float bys=Ball.by;
@@ -275,24 +272,6 @@ static double gamestcreendelta=0;
         if(Ball.y > Var.r_y){
             Var.p=0;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -516,14 +495,6 @@ static double gamestcreendelta=0;
 
 
 
-
-
-
-
-
-
-
-
         //////////////////DAS//PAUSE//POPUP//BEGINNT//HIER///////////////////////////////
         if(Var.gamestatus == 3 && Var.pausebeenden==0){
             batch.setColor(0,0,0,0.6f);
@@ -572,19 +543,10 @@ static double gamestcreendelta=0;
                 FallKasten.Fallkasten.clear();//////Die Fallkästen Löschen
             }
             batch.end();
-            if(Weiter.isPressed()==1){      ////////Wenn der weiterbutton gedrückt ist
+            if(Weiter.isPressed()==1) {      ////////Wenn der weiterbutton gedrückt ist
                 Var.pausebeenden = 1;
 
             }
-
-
-
-
-
-
-
-
-
 
 
 

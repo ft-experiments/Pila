@@ -50,7 +50,6 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     touchinput.Button control;
     touchinput.Button fps;
     touchinput.Button vibrate;
-    int u=0;
     int bb;
     int switchy=Gdx.graphics.getHeight() / 8;
     int switchsx=Gdx.graphics.getWidth()-Gdx.graphics.getWidth()/4;
@@ -208,20 +207,6 @@ public class OptionScreen extends ScreenAdapter implements Screen {
             Var.beiballberurungvibrieren = 1;
         }
 
-
-                //}
-
-          //  }
-
-          //  if(i==1) {
-
-
-
-
-                // System.out.println(SW.status);
-
-                //font.getData().setScale(4);
-               // if (i == 0) {
                     font.draw(batch, "FPS-Anzeigen", fpsshow.x - 400, fpsshow.y + fpsshow.h / 2);
                      batch.draw( info1, fpsshow.x - 535, fpsshow.y + fpsshow.h / 2-50, 70 ,70);
                     if (fpsshow.isswitched() == 0) {
@@ -236,10 +221,6 @@ public class OptionScreen extends ScreenAdapter implements Screen {
 
 
 
-        // System.out.println(SW.status);
-
-        //font.getData().setScale(4);
-        // if (i == 0) {
         batch.draw( info2, toggelcontrol.x - 535, toggelcontrol.y + toggelcontrol.h / 2-50, 70 ,70);
         if (toggelcontrol.isswitched() == 0) {
             font.draw(batch, "Touch-Steuerung", toggelcontrol.x - 450, toggelcontrol.y + toggelcontrol.h / 2);

@@ -65,8 +65,8 @@ public class StartScreen extends ScreenAdapter {
 
         System.out.println(Gdx.graphics.getHeight());
         //Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,(int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/3.55f),600,300);
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth() / 2 - (int) (Gdx.graphics.getWidth() / 2.7f / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 2.96f), (int) (Gdx.graphics.getWidth() / 2.7f), (int) (Gdx.graphics.getHeight() / 17.76f));
-        Start = new touchinput.Button((int) (Gdx.graphics.getWidth() / 2 - Gdx.graphics.getWidth() / 2.16 / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 3.55f), (int) (Gdx.graphics.getWidth() / 2.16), (int) (Gdx.graphics.getHeight() / 17.76f));
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth() / 2 - (int) (Gdx.graphics.getWidth() / 2.7f / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 3.0f), (int) (Gdx.graphics.getWidth() / 2.7f), (int) (Gdx.graphics.getHeight() / 17.76f));
+        Start = new touchinput.Button((int) (Gdx.graphics.getWidth() / 2 - Gdx.graphics.getWidth() / 2.16 / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 3.9f), (int) (Gdx.graphics.getWidth() / 2.16), (int) (Gdx.graphics.getHeight() / 17.76f));
 
 
 
@@ -85,9 +85,10 @@ public class StartScreen extends ScreenAdapter {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
         batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-        //batch.draw(bzs,Gdx.graphics.getWidth()/2-400,Gdx.graphics.getHeight()/2-50,800,200);
-        //font.getData().setScale(Gdx.graphics.getWidth()/270,Gdx.graphics.getHeight()/444);
+
+    font.getData().setScale(0.7f);
         font.draw(batch, "weiter spielen", Start.x+30, Start.y+(Start.h/2+25));
+        font.getData().setScale(1f);
         batch.draw(buttonimage, Start.x,Start.y,Start.w,Start.h);
         if(Start.isPressed()==1){
             Var.createlevel=Var.levelbesitz;
@@ -95,8 +96,9 @@ public class StartScreen extends ScreenAdapter {
         }
 
 
-
+        font.getData().setScale(0.7f);
         font.draw(batch, "Levelauswahl", Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25));
+        font.getData().setScale(1f);
         batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
         if(Levelauswahl.isPressed() == 1){
             Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
