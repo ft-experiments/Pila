@@ -134,7 +134,7 @@ public class GameScreen extends ScreenAdapter {
 
 
         if(Var.gamestatus==0) {
-            Level.LevelCreate(Var.createlevel);                                      ///////////////////////////////////////////////////////////////
+            Level.LevelCreate(Var.createlevel);
         }
 
 
@@ -322,12 +322,12 @@ static double gamestcreendelta=0;
                 switch (FK.art) {
                     case 1:        //paddel wird größer
                         if(Var.r_l < 400) {
-                            Var.r_l += 50;
+                            Var.r_l += 30;
                         }
                         break;
                     case 2:       //paddel wird kleiner
                         if(Var.r_l > 100) {
-                            Var.r_l -= 50;
+                            Var.r_l -= 30;
                         }
                         break;
                     case 3:        //Der feuerball wird gestartet
@@ -340,10 +340,10 @@ static double gamestcreendelta=0;
                         Ablauf.klebzuruck();
                         break;
                     case 5:         //Der Ball wird schneller
-                        Ball.by += Ball.by/2;
+                        Ball.by += Ball.by/4;
                         break;
                     case 6:         //Der Ball wird langsamer
-                        Ball.by -= Ball.by/2;
+                        Ball.by -= Ball.by/4;
                         break;
                 }
                 FK.art=0;
@@ -498,13 +498,7 @@ static double gamestcreendelta=0;
                 }
                 Var.KY = k.K_y;
 
-           /* batch.end();
-            shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-            shapeRenderer.setColor(1,1,0,0f);
-            shapeRenderer.rect(k.mx,k.my,2,2);
-            shapeRenderer.rect(k.mx2,k.my2,2,2);
-            shapeRenderer.end();
-            batch.begin();*/
+
         }
 
 
@@ -595,12 +589,10 @@ static double gamestcreendelta=0;
 
         if(Var.pausebeenden==1){
             Var.pausebeenden=2;
-            c=currentTimeMillis();
+            c=currentTimeMillis()-200;
             }
         if(Var.pausebeenden==2) {
-            System.out.println("tata");
-            if(currentTimeMillis()>c+700){
-                System.out.println("tatatiti");
+            if(currentTimeMillis()>c+300){
                 c=currentTimeMillis();
                 countdown+=1;
         }
@@ -617,21 +609,48 @@ static double gamestcreendelta=0;
                 countdown=0;
             }
             if(countdown==0){
-                batch.setColor(0,0,1,1);
-                batch.draw(countdown1, (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
+                batch.end();
+                shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                shapeRenderer.setColor(1, 1, 0, 0);
+                shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                shapeRenderer.end();
+                batch.begin();
+                //batch.setColor(0,0,1f,1f);
+                batch.draw(countdown1,Gdx.graphics.getWidth()/5*1,Gdx.graphics.getHeight()/7*5,250,250);
+                //TODO HIER SONDEFFEKT PIEPEN
             }
             if(countdown==1){
-
-                batch.setColor(1,0,0,1);
-                batch.draw(countdown2, (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
+                batch.end();
+                shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                shapeRenderer.setColor(1, 1, 0, 0);
+                shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                shapeRenderer.end();
+                batch.begin();
+                //batch.setColor(1f,0,0,1f);
+                batch.draw(countdown2, Gdx.graphics.getWidth()/5*2,Gdx.graphics.getHeight()/7*4,250,250);
+                //TODO HIER SONDEFFEKT PIEPEN
             }
             if(countdown==2){
-                batch.setColor(1,1,0,1);
-                batch.draw(countdown3, (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
+                batch.end();
+                shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                shapeRenderer.setColor(1, 1, 0, 0);
+                shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                shapeRenderer.end();
+                batch.begin();
+                //batch.setColor(1f,0.3f,0,1f);
+                batch.draw(countdown3, Gdx.graphics.getWidth()/5*1,Gdx.graphics.getHeight()/7*3,250,250);
+                //TODO HIER SONDEFFEKT PIEPEN
             }
             if(countdown==3){
-                batch.setColor(0,1,0,1);
-                batch.draw(los,        (int)(Math.random()*(Gdx.graphics.getWidth()-250)),(int)(Math.random()*(Gdx.graphics.getHeight()-250)),250,250);
+                batch.end();
+                shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+                shapeRenderer.setColor(1, 1, 0, 0);
+                shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                shapeRenderer.end();
+                batch.begin();
+                //batch.setColor(0,0.3f,0,1f);
+                batch.draw(los,        Gdx.graphics.getWidth()/5*2.5f,Gdx.graphics.getHeight()/7*2,250,250);
+                //TODO HIER SONDEFFEKT PIEPEN
             }
 
         }
@@ -737,7 +756,6 @@ static double gamestcreendelta=0;
             batch.setColor(1,1,1,1);
             font.setColor(Color.WHITE);
         }
-        //System.out.println(Gdx.graphics.getHeight());
 
 
 
