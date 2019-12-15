@@ -94,7 +94,7 @@ public class GameScreen extends ScreenAdapter {
         parameter.size = 50;
         font = generator.generateFont(parameter); // font size 12 pixels
         generator.dispose(); // don't forget to dispose to avoid memory leaks!
-//
+
 
 
 
@@ -164,11 +164,6 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-
-
-
-
-
     }
 
 
@@ -211,8 +206,6 @@ static double gamestcreendelta=0;
             LevelAuswahlButtons.newlevel=0;
         }
 
-       
-
 
         if (Var.klebt == true) {
             klebt();
@@ -248,10 +241,6 @@ static double gamestcreendelta=0;
 
 
             Paddel.ballcollision();
-
-
-
-
 
 
 
@@ -381,7 +370,7 @@ static double gamestcreendelta=0;
         batch.setColor(1,1,1,1f);
         //font.getData().setScale(Gdx.graphics.getHeight()/426,Gdx.graphics.getHeight()/426);
         font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-(Gdx.graphics.getHeight()/426)*62, Gdx.graphics.getHeight()-5);
-        font.draw(batch, "Level:" + Level.Le + " ", Gdx.graphics.getWidth()/6*2, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Level:" + Level.Le + " ", Gdx.graphics.getWidth()/24*7, Gdx.graphics.getHeight()-5);
         //font.getData().setScale(3);
 
         /////Pause//Button///////////
@@ -515,9 +504,6 @@ static double gamestcreendelta=0;
             batch.draw(bigpause, Weiter.x, Weiter.y, Weiter.w, Weiter.h );  //Der BigPause Button wird gedrawd
             batch.setColor(1f,1f,1f,1f);
 
-
-
-
             //font.getData().setScale(4);
 ///////LevelAuswhlButtonwird gedrawd
             font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
@@ -556,7 +542,7 @@ static double gamestcreendelta=0;
 
         if(Var.pausebeenden==1){
             Var.pausebeenden=2;
-            c=currentTimeMillis()-200;
+            c=currentTimeMillis();
             }
         if(Var.pausebeenden==2) {
             if(currentTimeMillis()>c+300){

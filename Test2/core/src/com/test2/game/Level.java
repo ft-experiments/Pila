@@ -960,8 +960,8 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
     }
 
     static void reset(){
-        FallKasten.Fallkasten.clear();
-        Level.kisten.clear();
+
+        Level.dispose();
         Level.LevelCreate(Level.Le);
     }
 

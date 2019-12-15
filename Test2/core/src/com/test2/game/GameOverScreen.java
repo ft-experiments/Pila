@@ -39,11 +39,6 @@ public class GameOverScreen extends ScreenAdapter {
     @Override
     public void render(float delta) {
 
-
-
-
-
-
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
@@ -51,10 +46,6 @@ public class GameOverScreen extends ScreenAdapter {
         batch.draw(gameover,Gdx.graphics.getWidth()/2-500,Gdx.graphics.getHeight()/2+200,1000,300);
         font.getData().setScale(8);
         //font.draw(batch, "Game Over" , Gdx.graphics.getWidth()/2-300, Gdx.graphics.getHeight()/2+200);
-
-
-
-
 
 
         if(Gdx.input.getX() < Var.Button_start_Width+Var.Button_start_x && Gdx.input.getX() > Var.Button_start_x && Gdx.input.getY() < Gdx.graphics.getHeight()-Var.Button_start_y && Gdx.input.getY() > Gdx.graphics.getHeight()-Var.Button_start_y-Var.Button_start_Height)
@@ -70,6 +61,7 @@ public class GameOverScreen extends ScreenAdapter {
             if(Gdx.input.isTouched()){
                 //Var.gamestatus=0;
                 Level.reset();
+
                 Test2.INSTANCE.setScreen(new GameScreen());
             }
 
@@ -77,11 +69,6 @@ public class GameOverScreen extends ScreenAdapter {
 
 
         }else{batch.draw(neustart, Var.Button_start_x, Var.Button_start_y,Var.Button_start_Width,Var.Button_start_Height);}
-
-
-
-
-
 
         batch.end();
 

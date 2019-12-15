@@ -100,7 +100,9 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         if(zurueck.isPressed() == 1){
             Level.dispose();
             if(back=="game") {
+
                 Test2.INSTANCE.setScreen(new GameScreen());
+
             }
 
             if(back=="start") {

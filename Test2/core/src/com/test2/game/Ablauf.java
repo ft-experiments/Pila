@@ -27,6 +27,9 @@ public class Ablauf {
                 if(Var.ballmode==1) {
                     //feuerballablauf -= 1;
                     feuerballablauf = feuerballablauf - 1000/200;
+                }else{
+                    ablauf.cancel();
+
                 }
 
             }
