@@ -52,7 +52,7 @@ public class Ablauf {
                     if(feuerballablauf==1000)
                         reached = 1;
                 }
-                System.out.println(reached);
+               // System.out.println(reached);
 
             }
         },0, 5);

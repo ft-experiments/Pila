@@ -74,7 +74,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
                 LAB = new LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() /fw, j* Gdx.graphics.getWidth() / (fh-2), Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, le);
                 //LevelAuswahlButtons.Levelbuttons.add(LAB,i);
                 LevelAuswahlButtons.Levelbuttons.add(LAB);
-                System.out.println(i);
+                //System.out.println(i);
                 le=le+1;
             }
         }
