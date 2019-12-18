@@ -243,8 +243,8 @@ getdata = new Timer();
 
                 enddiff_y = tempselection_y_max - tempselection_y_min;
 
-                System.out.println("y " + enddiff_x);
-                System.out.println("x " + enddiff_y);
+                System.out.println("x: " + enddiff_x);
+                System.out.println("y: " + enddiff_y);
 
 
                 savediffx1 = 0;
