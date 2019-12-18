@@ -190,6 +190,24 @@ public class GameScreen extends ScreenAdapter {
 static double gamestcreendelta=0;
     @Override
     public void render(float delta) {
+
+
+        if(GameOverScreen.restartgameaftergameover) {
+            try {
+                Ablauf.ablauf.cancel();
+                Ablauf.ablauf2.cancel();
+            }catch(Exception e) {}
+            Ablauf.feuerballablauf=1000;
+            Ablauf.feuerballablaufsoll=1000;
+            Level.dispose();                //Level array clearen
+            Level.LevelCreate(Level.Le);   //Das Level neu ins Levelarray schreiben
+            FallKasten.Fallkasten.clear();//////Die Fallkästen Löschen
+            GameOverScreen.restartgameaftergameover = false;
+        }
+
+
+
+
         gamestcreendelta=delta;
         //System.out.println(delta);
         Var.ingame = true;

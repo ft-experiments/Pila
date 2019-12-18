@@ -300,6 +300,8 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
     };
 
 
+
+
     static int[] Level20 = {
             10,12,Gdx.graphics.getHeight()/5,0,
 
@@ -986,7 +988,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
 
 
-
+        //Levelbaukasten
 
             case -1:
                 Le=-1;

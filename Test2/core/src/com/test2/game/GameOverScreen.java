@@ -21,6 +21,7 @@ public class GameOverScreen extends ScreenAdapter {
     BitmapFont font;
     Texture hintergrund2;
     Texture gameover;
+   public static boolean restartgameaftergameover = false;
 
     public GameOverScreen() {
 
@@ -61,7 +62,7 @@ public class GameOverScreen extends ScreenAdapter {
             if(Gdx.input.isTouched()){
                 //Var.gamestatus=0;
                 Level.reset();
-
+                restartgameaftergameover = true;
                 Test2.INSTANCE.setScreen(new GameScreen());
             }
 
