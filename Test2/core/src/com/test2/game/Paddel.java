@@ -57,9 +57,10 @@ public class Paddel {
 
             }
             Var.stopedbypaddel = true;
-
-            Ball.bx -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;       //Ball ablenken je nach aufprall x
-
+            System.out.println(Ball.bx);
+            //if(Ball.bx<0.1&&Ball.bx>-0.1) {
+                Ball.bx -= ((Ball.x - Var.r_x) - Var.r_l / 2) * Var.s;       //Ball ablenken je nach aufprall x
+            //}
         }
     }
 

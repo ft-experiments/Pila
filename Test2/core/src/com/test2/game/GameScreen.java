@@ -350,7 +350,7 @@ static double gamestcreendelta=0;
             }catch(Exception e) {}
 
             try {
-                a.cancel();
+
 
             }catch(Exception e) {}
 
