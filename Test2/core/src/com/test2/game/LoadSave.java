@@ -72,7 +72,7 @@ public class LoadSave {
        // ArrayList<String> array = new ArrayList<>(size);
         int[] array = new int[140];
         for(int i=0;i<size;i++) {
-            System.out.println((prefs.getInteger(arrayName + "_" + i)));
+            //System.out.println((prefs.getInteger(arrayName + "_" + i)));
             LevelBaukastenScreen.LevelBa[i] = (prefs.getInteger(arrayName + "_" + i));
         }
         return array;

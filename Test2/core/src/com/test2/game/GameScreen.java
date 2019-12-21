@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 
 
 import java.sql.Time;
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
@@ -68,9 +69,32 @@ public class GameScreen extends ScreenAdapter {
     Texture imgfeuerball;
     Sprite feuerball;
     TextureRegion[][] regions;
-
-
-
+    float Random_x[] = new float[100];
+    float Random_y[] = new float[100];
+    int datacounter = 0;
+    static float min = 999999999;
+    static float max = 0;
+    static float foundmax_x;
+    static float foundmin_x;
+    static float diff_x;
+    static float foundmax_y;
+    static float foundmin_y;
+    static float diff_y;
+    TimerTask temp;
+    Timer getdata;
+    float savediffx1 = 0;
+    float savediffy1 = 0;
+    float savediffx2 = 0;
+    float savediffy2 = 0;
+    float savediffx3 = 0;
+    float savediffy3 = 0;
+    float tempselection_x_max = 0;
+    float tempselection_x_min = 0;
+    float tempselection_y_max = 0;
+    float tempselection_y_min = 0;
+    float enddiff_x;
+    float enddiff_y;
+    Timer a;
 
     //Kaesten k;
     public GameScreen() {
@@ -145,7 +169,7 @@ public class GameScreen extends ScreenAdapter {
         imgfeuerball =new Texture("ballfeueranimation.png");
         final TextureRegion[][] regions = TextureRegion.split(imgfeuerball, 100,100);
         feuerball = new Sprite(regions[0][0]);
-        Timer a;
+
         a= new Timer();
 
         a.scheduleAtFixedRate(new TimerTask(){
@@ -163,8 +187,128 @@ public class GameScreen extends ScreenAdapter {
         },0, 100);
 
 
+getdata = new Timer();
+
+        getdata.scheduleAtFixedRate(temp =  new TimerTask() {
+    @Override
+    public void run() {
+        if(datacounter<40) {
+
+            Random_x[datacounter] = Ball.x;
+            Random_y[datacounter] = Ball.y;
+            datacounter++;
+
+
+        }else{
+            foundmin_y = findmin(Random_y);
+           foundmax_y = findmax(Random_y);
+
+           foundmax_x = findmax(Random_x);
+           foundmin_x = findmin(Random_x);
+
+           diff_y= foundmax_y - foundmin_y;
+
+
+
+
+            foundmin_x = findmin(Random_x);
+            foundmax_x = findmax(Random_x);
+
+            diff_x= foundmax_x - foundmin_x;
+
+            datacounter = 0;
+
+            if(savediffx1==0) {
+                savediffx1 = diff_x;
+                savediffy1 = diff_y;
+
+            }else if(savediffx2==0) {
+                savediffx2 = diff_x;
+                savediffy2 = diff_y;
+
+
+            }else if(savediffx3==0) {
+                savediffx3 = diff_x;
+                savediffy3 = diff_y;
+
+            }else{
+
+
+                tempselection_x_max = Math.max(savediffx1, Math.max(savediffx2, savediffx3));
+                tempselection_x_min = Math.min(savediffx1, Math.min(savediffx2, savediffx3));
+
+               enddiff_x = tempselection_x_max - tempselection_x_min;
+
+                tempselection_y_max = Math.max(savediffy1, Math.max(savediffy2, savediffy3));
+                tempselection_y_min = Math.min(savediffy1, Math.min(savediffy2, savediffy3));
+
+                enddiff_y = tempselection_y_max - tempselection_y_min;
+
+                System.out.println("x: " + enddiff_x);
+                System.out.println("y: " + enddiff_y);
+
+                Ball_bring_out(enddiff_x, enddiff_y);
+
+                savediffx1 = 0;
+                savediffy1 = 0;
+                savediffx2 = 0;
+                savediffy2 = 0;
+                savediffx3 = 0;
+                savediffy3 = 0;
+
+
+                
+                
+            }
+
+
+        }
+    }
+    },0,50);
 
     }
+
+    private void Ball_bring_out(float x, float y) {
+
+        if(!Var.stopedbypaddel) {
+
+            if (x > 0.2f && x < 40) {
+
+                Ball.bx = -0.5f;
+                System.out.println("Moment");
+
+            } else if (y > 0.2f && y < 40) {
+
+                if (Math.random() == 1) {
+                    System.out.println("y triggered 1");
+                    Ball.bx = 0.5f;
+                } else {
+                    Ball.bx = -0.5f;
+                    System.out.println("y triggered 2");
+                }
+
+            }
+        }
+        Var.stopedbypaddel = false;
+    }
+
+
+    public static float findmin(float [] array) {
+        min = 999999999;
+        for(int i = 0; i<array.length; i++) {
+            if(array[i]<min)min=array[i];
+        }
+        return min;
+}
+
+public static float findmax(float [] array) {
+        max = 0;
+        for(int i = 0; i< array.length; i++) {
+            if(array[i]>max)max=array[i];
+        }
+        return max;
+}
+
 
 
 
@@ -192,11 +336,25 @@ static double gamestcreendelta=0;
     public void render(float delta) {
 
 
+
+
+
         if(GameOverScreen.restartgameaftergameover) {
             try {
                 Ablauf.ablauf.cancel();
-                Ablauf.ablauf2.cancel();
+
             }catch(Exception e) {}
+            try {
+                Ablauf.ablauf2.cancel();
+
+            }catch(Exception e) {}
+
+            try {
+                a.cancel();
+
+            }catch(Exception e) {}
+
+
             Ablauf.feuerballablauf=1000;
             Ablauf.feuerballablaufsoll=1000;
             Level.dispose();                //Level array clearen
@@ -211,6 +369,8 @@ static double gamestcreendelta=0;
         gamestcreendelta=delta;
         //System.out.println(delta);
         Var.ingame = true;
+
+
 
 
         //if(Var.EnableAndroidSave==true) {
@@ -255,14 +415,7 @@ static double gamestcreendelta=0;
             Paddel.steuerung(Var.steuerung);
 
     }
-
-
-
             Paddel.ballcollision();
-
-
-
-
         if(Ball.y < Var.r_y && Var.p==0){   //wenn ball verloren
             FallKasten.zuruecksetzen();
             Var.leben -= 1;

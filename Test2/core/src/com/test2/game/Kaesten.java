@@ -71,7 +71,7 @@ int my2=0;
                         Ball.x -= Ball.bx * 2;
                     }
 
-                System.out.println((int)(Math.random()*2));
+                //System.out.println((int)(Math.random()*2));
                     int random=(int)(Math.random()*2);
                     Ball.bx=Ball.bx+random/2;
                     Ball.by=Ball.by-random/2;
