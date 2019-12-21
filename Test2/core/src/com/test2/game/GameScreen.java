@@ -94,6 +94,7 @@ public class GameScreen extends ScreenAdapter {
     float tempselection_y_min = 0;
     float enddiff_x;
     float enddiff_y;
+    Timer a;
 
     //Kaesten k;
     public GameScreen() {
@@ -168,7 +169,7 @@ public class GameScreen extends ScreenAdapter {
         imgfeuerball =new Texture("ballfeueranimation.png");
         final TextureRegion[][] regions = TextureRegion.split(imgfeuerball, 100,100);
         feuerball = new Sprite(regions[0][0]);
-        Timer a;
+
         a= new Timer();
 
         a.scheduleAtFixedRate(new TimerTask(){
@@ -255,7 +256,7 @@ getdata = new Timer();
                 savediffx3 = 0;
                 savediffy3 = 0;
 
-                Var.stopedbypaddel =false;
+
                 
                 
             }
@@ -288,6 +289,7 @@ getdata = new Timer();
 
             }
         }
+        Var.stopedbypaddel = false;
     }
 
 
@@ -340,8 +342,19 @@ static double gamestcreendelta=0;
         if(GameOverScreen.restartgameaftergameover) {
             try {
                 Ablauf.ablauf.cancel();
-                Ablauf.ablauf2.cancel();
+
             }catch(Exception e) {}
+            try {
+                Ablauf.ablauf2.cancel();
+
+            }catch(Exception e) {}
+
+            try {
+                a.cancel();
+
+            }catch(Exception e) {}
+
+
             Ablauf.feuerballablauf=1000;
             Ablauf.feuerballablaufsoll=1000;
             Level.dispose();                //Level array clearen

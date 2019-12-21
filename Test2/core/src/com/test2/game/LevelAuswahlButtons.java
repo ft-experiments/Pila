@@ -36,6 +36,7 @@ static int newlevel=0;
             if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {
                 newlevel=1;
                 Var.createlevel=Level;
+                GameOverScreen.restartgameaftergameover =true;
                 Test2.INSTANCE.setScreen(new GameScreen());
             }
         }
