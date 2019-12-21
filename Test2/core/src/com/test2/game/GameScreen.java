@@ -357,6 +357,10 @@ static double gamestcreendelta=0;
 
             Ablauf.feuerballablauf=1000;
             Ablauf.feuerballablaufsoll=1000;
+
+
+           Ablauf.klebablauf=1000;
+           Ablauf.klebablaufsoll=1000;
             Level.dispose();                //Level array clearen
             Level.LevelCreate(Level.Le);   //Das Level neu ins Levelarray schreiben
             FallKasten.Fallkasten.clear();//////Die Fallkästen Löschen
