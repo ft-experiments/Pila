@@ -45,11 +45,14 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     touchinput.Switch SW;
     touchinput.Switch toggelcontrol;
     touchinput.Switch ballstartmode;
+    
 
     touchinput.Button instant;
     touchinput.Button control;
     touchinput.Button fps;
     touchinput.Button vibrate;
+
+
     int bb;
     int switchy=Gdx.graphics.getHeight() / 8;
     int switchsx=Gdx.graphics.getWidth()-Gdx.graphics.getWidth()/4;

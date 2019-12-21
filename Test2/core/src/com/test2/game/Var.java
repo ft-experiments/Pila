@@ -88,7 +88,8 @@ public class Var {
 
     static boolean EnableAndroidSave=true;
 
-
+    static boolean sound_effects = true; //Zum deaktivieren der Sound Effekts
+    static boolean sound_music = true;  //Zum deaktivieren der Musik
 
 
 
