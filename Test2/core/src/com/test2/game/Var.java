@@ -19,7 +19,7 @@ public class Var {
     static int leben=0;
     static int p=0;
 
-
+    static boolean stopedbypaddel = false;
 
     static int Button_start_Height = 300;
     static int Button_start_Width = 600;

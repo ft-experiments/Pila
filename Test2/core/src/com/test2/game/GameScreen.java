@@ -246,6 +246,7 @@ getdata = new Timer();
                 System.out.println("x: " + enddiff_x);
                 System.out.println("y: " + enddiff_y);
 
+                Ball_bring_out(enddiff_x, enddiff_y);
 
                 savediffx1 = 0;
                 savediffy1 = 0;
@@ -254,7 +255,7 @@ getdata = new Timer();
                 savediffx3 = 0;
                 savediffy3 = 0;
 
-                
+                Var.stopedbypaddel =false;
                 
                 
             }
@@ -262,12 +263,35 @@ getdata = new Timer();
 
         }
     }
-    },0,100);
+    },0,50);
 
     }
 
+    private void Ball_bring_out(float x, float y) {
 
-public static float findmin(float [] array) {
+        if(!Var.stopedbypaddel) {
+
+            if (x > 0.2f && x < 40) {
+
+                Ball.bx = -0.5f;
+                System.out.println("Moment");
+
+            } else if (y > 0.2f && y < 40) {
+
+                if (Math.random() == 1) {
+                    System.out.println("y triggered 1");
+                    Ball.bx = 0.5f;
+                } else {
+                    Ball.bx = -0.5f;
+                    System.out.println("y triggered 2");
+                }
+
+            }
+        }
+    }
+
+
+    public static float findmin(float [] array) {
         min = 999999999;
         for(int i = 0; i<array.length; i++) {
             if(array[i]<min)min=array[i];

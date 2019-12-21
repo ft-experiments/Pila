@@ -54,7 +54,9 @@ public class Paddel {
             }
             if(Var.beiballberurungvibrieren==1) {
                 Gdx.input.vibrate(50);
+
             }
+            Var.stopedbypaddel = true;
 
             Ball.bx -= ((Ball.x-Var.r_x)-Var.r_l/2)*Var.s;       //Ball ablenken je nach aufprall x
 
