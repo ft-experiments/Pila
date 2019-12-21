@@ -341,11 +341,11 @@ static double gamestcreendelta=0;
 
         if(GameOverScreen.restartgameaftergameover) {
             try {
-                Ablauf.ablauf.cancel();
+                //Ablauf.ablauf.cancel();
 
             }catch(Exception e) {}
             try {
-                Ablauf.ablauf2.cancel();
+                //Ablauf.ablauf2.cancel();
 
             }catch(Exception e) {}
 
@@ -357,6 +357,10 @@ static double gamestcreendelta=0;
 
             Ablauf.feuerballablauf=1000;
             Ablauf.feuerballablaufsoll=1000;
+
+            Var.gamestatus = 1;
+            Var.kleben = 0;
+            Var.ballmode = 0;
 
 
            Ablauf.klebablauf=1000;
@@ -702,6 +706,9 @@ static double gamestcreendelta=0;
                 Level.dispose();                //Level array clearen
                 Level.LevelCreate(Level.Le);   //Das Level neu ins Levelarray schreiben
                 FallKasten.Fallkasten.clear();//////Die Fallkästen Löschen
+                Var.gamestatus = 1;
+                Var.kleben = 0;
+                Var.ballmode = 0;
             }
             batch.end();
             if(Weiter.isPressed()==1) {      ////////Wenn der weiterbutton gedrückt ist

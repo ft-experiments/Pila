@@ -84,6 +84,8 @@ public class Var {
 //TODO Hier auf true stellen um Levelbaukasten zu Aktivieren
     static boolean EnableAlpha = false;
 
+
+
     static boolean EnableAndroidSave=true;
 
 
