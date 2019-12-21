@@ -95,7 +95,12 @@ public class GameScreen extends ScreenAdapter {
     float enddiff_x;
     float enddiff_y;
     Timer a;
-
+    Sound start;
+    Sound start_finish;
+    long id1;
+    long id2;
+    long id3;
+    long id4;
     //Kaesten k;
     public GameScreen() {
 
@@ -149,6 +154,8 @@ public class GameScreen extends ScreenAdapter {
         countdown3 = new Texture("countdown3.png");
         los = new Texture("los.png");
         ka = new Smooth();
+        start = Gdx.audio.newSound(Gdx.files.internal("start.mp3"));
+        start_finish = Gdx.audio.newSound(Gdx.files.internal("start_last.mp3"));
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.732f),400,(int)(Gdx.graphics.getHeight()/14.8f));
@@ -713,6 +720,7 @@ static double gamestcreendelta=0;
             batch.end();
             if(Weiter.isPressed()==1) {      ////////Wenn der weiterbutton gedrückt ist
                 Var.pausebeenden = 1;
+                countdown = 0;
 
             }
 
@@ -741,9 +749,10 @@ static double gamestcreendelta=0;
 
                 }
                 Var.pausebeenden=0;
-                countdown=0;
+                countdown=4;
             }
             if(countdown==0){
+
 
 
                 batch.end();
@@ -754,9 +763,17 @@ static double gamestcreendelta=0;
                 batch.begin();
                 //batch.setColor(0,0,1f,1f);
                 batch.draw(countdown1,Gdx.graphics.getWidth()/5*1,Gdx.graphics.getHeight()/7*5,250,250);
+                if(id1==0) {
+                     id1 = start.play(0.6f);
+                     System.out.println("1");
+
+                     id4 = 0;
+                }
+
                 //TODO HIER SONDEFFEKT PIEPEN
             }
             if(countdown==1){
+
                 batch.end();
                 shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
                 shapeRenderer.setColor(1, 1, 0, 0);
@@ -765,6 +782,11 @@ static double gamestcreendelta=0;
                 batch.begin();
                 //batch.setColor(1f,0,0,1f);
                 batch.draw(countdown2, Gdx.graphics.getWidth()/5*2,Gdx.graphics.getHeight()/7*4,250,250);
+                if(id2==0) {
+                    id2 = start.play(0.6f);
+                    System.out.println("2");
+                    id1=0;
+                }
                 //TODO HIER SONDEFFEKT PIEPEN
             }
             if(countdown==2){
@@ -776,6 +798,11 @@ static double gamestcreendelta=0;
                 batch.begin();
                 //batch.setColor(1f,0.3f,0,1f);
                 batch.draw(countdown3, Gdx.graphics.getWidth()/5*1,Gdx.graphics.getHeight()/7*3,250,250);
+                if(id3==0) {
+                    id3 = start.play(0.6f);
+                    System.out.println("3");
+                    id2 = 0;
+                }
                 //TODO HIER SONDEFFEKT PIEPEN
             }
             if(countdown==3){
@@ -787,27 +814,20 @@ static double gamestcreendelta=0;
                 batch.begin();
                 //batch.setColor(0,0.3f,0,1f);
                 batch.draw(los,        Gdx.graphics.getWidth()/5*2.5f,Gdx.graphics.getHeight()/7*2,250,250);
+               if(id4==0) {
+                  id4 =  start_finish.play(0.6f);
+                   System.out.println("4");
+                   id1= 0;
+                   id2 = 0;
+                   id3 = 0;
+
+               }
                 //TODO HIER SONDEFFEKT PIEPEN
             }
 
         }
         batch.end();
 /////////////////////////DAS//PAUSEPOPUP//ENDED//HIER//////////////////////////////
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

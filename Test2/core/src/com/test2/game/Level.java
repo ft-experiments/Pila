@@ -1,5 +1,6 @@
 package com.test2.game;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 
 import java.util.ArrayList;
@@ -1014,6 +1015,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
         if(Le>Var.levelbesitz) {
             Var.levelbesitz += 1;
         }
+        GameOverScreen.restartgameaftergameover = true; //Für Reset der Blöcke damit keine Fehler enstehen vgl. Gamescreen restartgameaftergameover
     }
 
     static void dispose(){

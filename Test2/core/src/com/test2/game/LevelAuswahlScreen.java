@@ -98,6 +98,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
         batch.draw(buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
         if(zurueck.isPressed() == 1){
+            Var.geheinpause = 1;
             Level.dispose();
             if(back=="game") {
 
