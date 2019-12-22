@@ -82,7 +82,7 @@ public class Var {
     static int pausebeenden=0;
 
 //TODO Hier auf true stellen um Levelbaukasten zu Aktivieren
-    static boolean EnableAlpha = true;
+    static boolean EnableAlpha = false;
 
 
 
