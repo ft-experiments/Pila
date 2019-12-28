@@ -3,6 +3,7 @@ package com.test2.game;
 import com.badlogic.gdx.Gdx;
 
 public class Paddel {
+
     public void Paddel(){
 
     }
@@ -59,7 +60,17 @@ public class Paddel {
             Var.stopedbypaddel = true;
             System.out.println(Ball.bx);
             //if(Ball.bx<0.1&&Ball.bx>-0.1) {
+
                 Ball.bx -= ((Ball.x - Var.r_x) - Var.r_l / 2) * Var.s;       //Ball ablenken je nach aufprall x
+
+           //Veränderung nach zufall für mehr "action"
+           if(Math.random() < 0.5) {
+               Ball.bx =+ 1.0f;
+           }else{
+               Ball.bx =- 1.0f;
+           }
+
+
             //}
         }
     }

@@ -45,7 +45,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     touchinput.Switch SW;
     touchinput.Switch toggelcontrol;
     touchinput.Switch ballstartmode;
-    
+
 
     touchinput.Button instant;
     touchinput.Button control;
