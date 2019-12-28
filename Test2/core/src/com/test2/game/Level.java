@@ -11,7 +11,7 @@ int L;
 static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
     static int[] Leveldebug = {
-            10,10,Gdx.graphics.getHeight()/5,0, //TODO DEBUG
+            10,10,Gdx.graphics.getHeight()/5,0, //TODO DEBUG !!!Nachdem alle Level da sind löschen!!!
 
             5,4,4,4,4,4,4,4,4,4,
             5,5,5,5,5,5,5,5,5,5,

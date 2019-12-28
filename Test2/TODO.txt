@@ -9,7 +9,7 @@
 
 
 //TODO Kollision seitlich erkennen
-
+//TODO Ganz selten Timer zu schnell
 
 ///////////////////////////////////////////////
 ///////////////////Änderungen//////////////////
@@ -24,3 +24,4 @@
 
 
 //TODO Hauptmenü animation des Spiels
+//TODO Alle Level bis 80 fertig
