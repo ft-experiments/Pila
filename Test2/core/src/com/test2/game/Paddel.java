@@ -65,9 +65,9 @@ public class Paddel {
 
            //Veränderung nach zufall für mehr "action"
            if(Math.random() < 0.5) {
-               Ball.bx =+ 1.0f;
+               Ball.bx =+ 0.3f;
            }else{
-               Ball.bx =- 1.0f;
+               Ball.bx =- 0.3f;
            }
 
 
