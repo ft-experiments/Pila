@@ -27,7 +27,38 @@ public class LoadSave {
         if(prefs.getInteger("showfps")==1){
             Var.showfps=true;
         }
+        switch (prefs.getInteger("background")) {
+            case 1: {
+                Var.actbackground = Var.background1;
+                break;
+            }
 
+            case 2: {
+                Var.actbackground = Var.background2;
+                break;
+            }
+            case 3: {
+                Var.actbackground = Var.background3;
+                break;
+            }
+            case 4: {
+                Var.actbackground = Var.background4;
+                break;
+            }
+            case 5: {
+                Var.actbackground = Var.background5;
+                break;
+            }
+            case 6: {
+                Var.actbackground = Var.background6;
+                break;
+            }
+            case 7: {
+                Var.actbackground = Var.background7;
+                break;
+            }
+
+        }
         Var.steuerung=prefs.getInteger("steuerung");
 
         Var.ballstartmode=prefs.getInteger("ballstartmode");
@@ -55,6 +86,30 @@ public class LoadSave {
         prefs.putInteger("levelbesitz", Var.levelbesitz);
 
 
+        if(Var.actbackground==Var.background1) {
+            prefs.putInteger("background", 1);
+        }
+
+        if(Var.actbackground==Var.background2) {
+            prefs.putInteger("background", 2);
+        }
+        if(Var.actbackground==Var.background3) {
+            prefs.putInteger("background", 3);
+        }
+        if(Var.actbackground==Var.background4) {
+            prefs.putInteger("background", 4);
+        }
+        if(Var.actbackground==Var.background5) {
+            prefs.putInteger("background", 5);
+        }
+        if(Var.actbackground==Var.background6) {
+            prefs.putInteger("background", 6);
+        }
+        if(Var.actbackground==Var.background7) {
+            prefs.putInteger("background", 7);
+        }
+
+
         prefs.flush();
     }
 
@@ -80,9 +135,7 @@ public class LoadSave {
 
 
 
-    int loadvibr(){
-        return prefs.getInteger("vibrieren");
-    }
+
 }
 
 
