@@ -135,7 +135,6 @@ public class GameScreen extends ScreenAdapter {
         img = new Texture("badlogic.jpg");
         block_k= new Texture("block_k.png");
         block_kleber= new Texture("block_kleber.png");
-        hintergrund= new Texture("hintergrund.png");
         block_feuer= new Texture("block_feuer.png");
         paddelklebimg= new Texture("paddelkleb.png");
         block_schneller= new Texture("block_schneller.png");
@@ -143,7 +142,7 @@ public class GameScreen extends ScreenAdapter {
         block_2mal = new Texture("block_2mal.png");
         block_unzerstoerbar = new Texture("block_unzerstoerbar.png");
         status_bar = new Texture("statusbar.png");
-        hintergrund2 = new Texture("hintergrund2.jpg");
+        hintergrund2 = new Texture(Var.actbackground);
         pause = new Texture("Pause.png");
         weiter = new Texture("Weiter.png");
         einstellungen = new Texture("einstellungen.png");
@@ -934,7 +933,6 @@ if(Var.geheinpause==1) {
         paddelimg.dispose();
         block_k.dispose();
         block_kleber.dispose();
-        hintergrund.dispose();
         block_feuer.dispose();
         paddelklebimg.dispose();
         block_schneller.dispose();

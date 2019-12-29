@@ -51,7 +51,7 @@ public class StartScreen extends ScreenAdapter {
 
 
 
-        hintergrund2 = new Texture("hintergrund2.jpg");
+        hintergrund2 = new Texture(Var.actbackground);
         switchon = new Texture("switchon.png");
         switchoff = new Texture("switchoff.png");
         shapeRenderer = new ShapeRenderer();
