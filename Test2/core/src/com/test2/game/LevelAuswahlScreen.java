@@ -48,7 +48,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
         img = new Texture("start.png");
         startge = new Texture("startge.png");
-        hintergrund2 = new Texture("hintergrund2.jpg");
+        hintergrund2 = new Texture(Var.actbackground);
         switchon = new Texture("switchon.png");
         switchoff = new Texture("switchoff.png");
         Levelbutton = new Texture("Levelauswahlbutton.png");

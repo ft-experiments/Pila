@@ -32,7 +32,7 @@ public class GameOverScreen extends ScreenAdapter {
         startge = new Texture("startge.png");
         Touch = new Texture("Touch.png");
         Gyro = new Texture("Gyro.png");
-        hintergrund2 = new Texture("hintergrund2.jpg");
+        hintergrund2 = new Texture(Var.actbackground);
         gameover = new Texture("gameover.png");
         shapeRenderer = new ShapeRenderer();
     }
