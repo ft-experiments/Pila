@@ -61,17 +61,8 @@ public class Paddel {
             System.out.println(Ball.bx);
             //if(Ball.bx<0.1&&Ball.bx>-0.1) {
 
-                Ball.bx -= ((Ball.x - Var.r_x) - Var.r_l / 2) * Var.s;       //Ball ablenken je nach aufprall x
+                Ball.bx -= ((Ball.x - Var.r_x) - Var.r_l / 2) * Var.s;       //Ball ablenken je nach aufprall x die stärke veränderbar durch Var.s
 
-           //Veränderung nach zufall für mehr "action"
-           if(Math.random() < 0.5) {
-               Ball.bx =+ 0.3f;
-           }else{
-               Ball.bx =- 0.3f;
-           }
-
-
-            //}
         }
     }
 

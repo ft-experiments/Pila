@@ -344,11 +344,11 @@ static double gamestcreendelta=0;
 
         if(GameOverScreen.restartgameaftergameover) {
             try {
-                //Ablauf.ablauf.cancel();
+                Ablauf.ablauf.cancel();
 
             }catch(Exception e) {}
             try {
-                //Ablauf.ablauf2.cancel();
+                Ablauf.ablauf2.cancel();
 
             }catch(Exception e) {}
 
@@ -487,10 +487,10 @@ static double gamestcreendelta=0;
                         Ablauf.klebzuruck();
                         break;
                     case 5:         //Der Ball wird schneller
-                        Ball.by += Ball.by/4;
+                        Ball.by += Ball.by/8;
                         break;
                     case 6:         //Der Ball wird langsamer
-                        Ball.by -= Ball.by/4;
+                        Ball.by -= Ball.by/8;
                         break;
                 }
                 FK.art=0;
