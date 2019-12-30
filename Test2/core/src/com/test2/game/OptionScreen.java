@@ -31,6 +31,9 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     Texture b5;
     Texture b6;
     Texture b7;
+    Texture b8;
+    Texture b9;
+    Texture b10;
 
 
 
@@ -72,6 +75,9 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     touchinput.Button Background_5;
     touchinput.Button Background_6;
     touchinput.Button Background_7;
+    touchinput.Button Background_8;
+    touchinput.Button Background_9;
+    touchinput.Button Background_10;
 
 
     //
@@ -86,7 +92,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
 
     int xsave;
     int a;
-    int[] b = new int[8];
+    int[] b = new int[20];
 
 
 
@@ -115,6 +121,15 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         if(Var.actbackground==Var.background7) {
             temp = 7;
         }
+        if(Var.actbackground==Var.background8) {
+            temp = 8;
+        }
+        if(Var.actbackground==Var.background9) {
+            temp = 9;
+        }
+        if(Var.actbackground==Var.background10) {
+            temp = 10;
+        }
 
         batch = new SpriteBatch();
 
@@ -135,6 +150,9 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         b5 = new Texture(Var.background5);
         b6 = new Texture(Var.background6);
         b7 = new Texture(Var.background7);
+        b8 = new Texture(Var.background8);
+        b9 = new Texture(Var.background9);
+        b10 = new Texture(Var.background10);
 
 
 
@@ -172,6 +190,10 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         Background_5 = new touchinput.Button(Gdx.graphics.getWidth()/7*4,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
         Background_6 = new touchinput.Button(Gdx.graphics.getWidth()/7*5,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
         Background_7 = new touchinput.Button(Gdx.graphics.getWidth()/7*6,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+
+        Background_8 = new touchinput.Button(Gdx.graphics.getWidth()/7*7,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_9 = new touchinput.Button(Gdx.graphics.getWidth()/7*8,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_10 = new touchinput.Button(Gdx.graphics.getWidth()/7*9,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
 
 
         //hintergrundauswahlbuttons
@@ -281,6 +303,15 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         }
         if(temp==7) {
             batch.draw(b7, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        }
+        if(temp==8) {
+            batch.draw(b8, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        }
+        if(temp==9) {
+            batch.draw(b9, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        }
+        if(temp==10) {
+            batch.draw(b10, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
 
         if (Gdx.input.getAccelerometerY() > 12) {
@@ -415,7 +446,21 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         Var.actbackground = Var.background7;
         temp = 7;
         }
-
+        batch.draw(b8, Background_8.x,Background_8.y,Background_8.w,Background_8.h);
+        if(Background_8.isPressed() == 1){
+            Var.actbackground = Var.background8;
+            temp = 8;
+        }
+        batch.draw(b9, Background_9.x,Background_9.y,Background_9.w,Background_9.h);
+        if(Background_9.isPressed() == 1){
+            Var.actbackground = Var.background9;
+            temp = 9;
+        }
+        batch.draw(b10, Background_10.x,Background_10.y,Background_10.w,Background_10.h);
+        if(Background_10.isPressed() == 1){
+            Var.actbackground = Var.background10;
+            temp = 10;
+        }
 
 if(Gdx.input.isTouched()){
     if(a==0) {
@@ -427,6 +472,9 @@ if(Gdx.input.isTouched()){
         b[5]=Background_5.x;
         b[6]=Background_6.x;
         b[7]=Background_7.x;
+        b[8]=Background_8.x;
+        b[9]=Background_9.x;
+        b[10]=Background_10.x;
         a = 1;
     }
 
@@ -437,9 +485,13 @@ if(Gdx.input.isTouched()){
     Background_5.x=(Gdx.input.getX()-xsave)+b[5];
     Background_6.x=(Gdx.input.getX()-xsave)+b[6];
     Background_7.x=(Gdx.input.getX()-xsave)+b[7];
+    Background_8.x=(Gdx.input.getX()-xsave)+b[8];
+    Background_9.x=(Gdx.input.getX()-xsave)+b[9];
+    Background_10.x=(Gdx.input.getX()-xsave)+b[10];
 
 
-    System.out.println(Gdx.input.getX()-xsave);
+
+
 }
 if(!Gdx.input.isTouched()){
     a=0;

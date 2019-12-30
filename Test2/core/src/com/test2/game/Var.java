@@ -99,6 +99,9 @@ public class Var {
     static  String background5 = "hintergrund/hintergrund5.jpg";
     static  String background6 = "hintergrund/hintergrund6.jpg";
     static  String background7 = "hintergrund/hintergrund7.jpg";
+    static  String background8 = "hintergrund/hintergrund8.jpg";
+    static  String background9 = "hintergrund/hintergrund9.jpg";
+    static  String background10 = "hintergrund/hintergrund10.jpg";
 
     static String actbackground = background1;
 
