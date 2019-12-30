@@ -84,8 +84,9 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     int switchw=(int)(Gdx.graphics.getWidth()/5.4f);
 
 
-
-
+    int xsave;
+    int a;
+    int[] b = new int[8];
 
 
 
@@ -211,6 +212,9 @@ public class OptionScreen extends ScreenAdapter implements Screen {
             fps = new touchinput.Button(fpsshow.x - 535, fpsshow.y + fpsshow.h / 2-50, 70 ,70);
 
             instant = new touchinput.Button(ballstartmode.x - 535, ballstartmode.y + ballstartmode.h / 2-50, 70 ,70);
+
+
+
 
 
     }
@@ -413,7 +417,33 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         }
 
 
+if(Gdx.input.isTouched()){
+    if(a==0) {
+        xsave = Gdx.input.getX();
+        b[1]=Background_1.x;
+        b[2]=Background_2.x;
+        b[3]=Background_3.x;
+        b[4]=Background_4.x;
+        b[5]=Background_5.x;
+        b[6]=Background_6.x;
+        b[7]=Background_7.x;
+        a = 1;
+    }
 
+    Background_1.x=(Gdx.input.getX()-xsave)+b[1];
+    Background_2.x=(Gdx.input.getX()-xsave)+b[2];
+    Background_3.x=(Gdx.input.getX()-xsave)+b[3];
+    Background_4.x=(Gdx.input.getX()-xsave)+b[4];
+    Background_5.x=(Gdx.input.getX()-xsave)+b[5];
+    Background_6.x=(Gdx.input.getX()-xsave)+b[6];
+    Background_7.x=(Gdx.input.getX()-xsave)+b[7];
+
+
+    System.out.println(Gdx.input.getX()-xsave);
+}
+if(!Gdx.input.isTouched()){
+    a=0;
+}
 
 
 
