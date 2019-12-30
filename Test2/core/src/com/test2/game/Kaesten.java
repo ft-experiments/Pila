@@ -43,16 +43,11 @@ int my2=0;
                 my=K_y+2;
                 mx2=K_x+K_w-3;
                 my2=K_y+K_h-2;
-                //if(Var.ballmode==1){Ablauf.feuerballablauf-=100/20;}
+
 
                 if(Var.ballmode==0) {
                     if (K_art != 5){
-/*
 
-                if(Ball.by<0 && Ball.bx<0  || Ball.by<0 && Ball.bx>=0){
-                    Ball.by=Ball.by*-1;
-                }else if(Ball.bx<0)
-*/
 
                         if (Ball.y < my) {
                             Ball.richtungsumkehr_y();
@@ -71,7 +66,7 @@ int my2=0;
                         Ball.x -= Ball.bx * 2;
                     }
 
-                //System.out.println((int)(Math.random()*2));
+
                     int random=(int)(Math.random()*2);
                     Ball.bx=Ball.bx+random/2;
                     Ball.by=Ball.by-random/2;

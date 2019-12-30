@@ -19,7 +19,7 @@ public class Test2 extends Game {
 	public boolean backpressed=false;
 	@Override
 	public void create () {
-
+		LoadSave.loadall();
 		setScreen(new StartScreen());
 		//setScreen(new GameScreen());
 		new DoppelKlick();

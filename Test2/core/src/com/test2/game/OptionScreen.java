@@ -22,6 +22,18 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     private Stage stage;
     private Skin skin;
 
+    int temp = 0;
+
+    Texture b1;
+    Texture b2;
+    Texture b3;
+    Texture b4;
+    Texture b5;
+    Texture b6;
+    Texture b7;
+
+
+
 
     Texture buttonimage;
     SpriteBatch batch;
@@ -52,6 +64,18 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     touchinput.Button fps;
     touchinput.Button vibrate;
 
+    //hintergrundauswahlbuttons
+    touchinput.Button Background_1;
+    touchinput.Button Background_2;
+    touchinput.Button Background_3;
+    touchinput.Button Background_4;
+    touchinput.Button Background_5;
+    touchinput.Button Background_6;
+    touchinput.Button Background_7;
+
+
+    //
+
 
     int bb;
     int switchy=Gdx.graphics.getHeight() / 8;
@@ -66,6 +90,31 @@ public class OptionScreen extends ScreenAdapter implements Screen {
 
 
     public OptionScreen(Test2 gg) {
+
+
+        if(Var.actbackground==Var.background1) {
+           temp = 1;
+        }
+
+        if(Var.actbackground==Var.background2) {
+            temp = 2;
+        }
+        if(Var.actbackground==Var.background3) {
+            temp = 3;
+        }
+        if(Var.actbackground==Var.background4) {
+            temp = 4;
+        }
+        if(Var.actbackground==Var.background5) {
+            temp = 5;
+        }
+        if(Var.actbackground==Var.background6) {
+            temp = 6;
+        }
+        if(Var.actbackground==Var.background7) {
+            temp = 7;
+        }
+
         batch = new SpriteBatch();
 
         game=gg;
@@ -76,6 +125,17 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         parameter.size = 50;
         font = generator.generateFont(parameter); // font size 12 pixels
         generator.dispose(); // don't forget to dispose to avoid memory leaks!
+
+
+        b1 = new Texture(Var.background1);
+        b2 = new Texture(Var.background2);
+        b3 = new Texture(Var.background3);
+        b4 = new Texture(Var.background4);
+        b5 = new Texture(Var.background5);
+        b6 = new Texture(Var.background6);
+        b7 = new Texture(Var.background7);
+
+
 
 
 
@@ -98,10 +158,26 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         buttonimage = new Texture("Button.png");
 
 
-        Buttonstart = new touchinput.Button((int)(Gdx.graphics.getWidth()/2-(Gdx.graphics.getWidth()/1.8f/2)),Gdx.graphics.getHeight()/10,(int)(Gdx.graphics.getWidth()/1.8f),(int)(Gdx.graphics.getHeight()/5.753f));
+        Buttonstart = new touchinput.Button((int)(Gdx.graphics.getWidth()/2-(Gdx.graphics.getWidth()/1.8f/2)),Gdx.graphics.getHeight()-Gdx.graphics.getHeight(),(int)(Gdx.graphics.getWidth()/1.8f),(int)(Gdx.graphics.getHeight()/5.753f));
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,70);
         Baukasten = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight() / 8 * 2,(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.26f));
 
+
+
+        Background_1 = new touchinput.Button(0,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_2 = new touchinput.Button(Gdx.graphics.getWidth()/7,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_3 = new touchinput.Button(Gdx.graphics.getWidth()/7*2,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_4 = new touchinput.Button(Gdx.graphics.getWidth()/7*3,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_5 = new touchinput.Button(Gdx.graphics.getWidth()/7*4,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_6 = new touchinput.Button(Gdx.graphics.getWidth()/7*5,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_7 = new touchinput.Button(Gdx.graphics.getWidth()/7*6,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+
+
+        //hintergrundauswahlbuttons
+
+
+
+        //
 
 
             SW = new touchinput.Switch(switchsx, switchy * 3, switchw, switchh, Var.beiballberurungvibrieren);
@@ -177,7 +253,32 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        batch.draw(hintergrund2, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
+
+
+        if(temp==1) {
+            batch.draw(b1, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        }
+
+        if(temp==2) {
+            batch.draw(b2, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        }
+        if(temp==3) {
+            batch.draw(b3, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        }
+        if(temp==4) {
+            batch.draw(b4, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        }
+        if(temp==5) {
+            batch.draw(b5, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        }
+        if(temp==6) {
+            batch.draw(b6, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        }
+        if(temp==7) {
+            batch.draw(b7, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        }
+
         if (Gdx.input.getAccelerometerY() > 12) {
             font.draw(batch, "" + Gdx.input.getAccelerometerY(), 70, 70);
         }
@@ -265,6 +366,50 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         batch.draw(img, Buttonstart.x,Buttonstart.y,Buttonstart.w,Buttonstart.h);
         if(Buttonstart.isPressed() == 1){
             Test2.INSTANCE.setScreen(new GameScreen());
+        }
+
+
+
+
+        batch.draw(b1, Background_1.x,Background_1.y,Background_1.w,Background_1.h);
+        if(Background_1.isPressed() == 1){
+        Var.actbackground = Var.background1;
+        temp = 1;
+        }
+
+        batch.draw(b2, Background_2.x,Background_2.y,Background_2.w,Background_2.h);
+        if(Background_2.isPressed() == 1){
+           Var.actbackground = Var.background2;
+            temp = 2;
+        }
+
+        batch.draw(b3, Background_3.x,Background_3.y,Background_3.w,Background_3.h);
+        if(Background_3.isPressed() == 1){
+        Var.actbackground = Var.background3;
+            temp = 3;
+        }
+
+        batch.draw(b4, Background_4.x,Background_4.y,Background_4.w,Background_4.h);
+        if(Background_4.isPressed() == 1){
+        Var.actbackground = Var.background4;
+            temp = 4;
+        }
+
+        batch.draw(b5, Background_5.x,Background_5.y,Background_5.w,Background_5.h);
+        if(Background_5.isPressed() == 1){
+        Var.actbackground = Var.background5;
+            temp = 5;
+        }
+
+        batch.draw(b6, Background_6.x,Background_6.y,Background_6.w,Background_6.h);
+        if(Background_6.isPressed() == 1){
+        Var.actbackground = Var.background6;
+            temp = 6;
+        }
+        batch.draw(b7, Background_7.x,Background_7.y,Background_7.w,Background_7.h);
+        if(Background_7.isPressed() == 1){
+        Var.actbackground = Var.background7;
+        temp = 7;
         }
 
 
