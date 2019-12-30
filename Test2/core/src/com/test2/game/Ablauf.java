@@ -12,7 +12,8 @@ public class Ablauf {
     static int feuerballablaufsoll= 1000;
     static int klebablauf=1000;
     static int klebablaufsoll=1000;
-
+    static TimerTask test;
+    static TimerTask test2;
 
 
     int smooth;
@@ -20,7 +21,7 @@ public class Ablauf {
 
     public Ablauf(){
         ablauf = new Timer();
-        ablauf.scheduleAtFixedRate(new TimerTask(){
+        ablauf.scheduleAtFixedRate(  test = new TimerTask(){
 
             @Override
             public void run() {
@@ -41,7 +42,7 @@ public class Ablauf {
 
         ablauf2 = new Timer();
 
-        ablauf2.scheduleAtFixedRate(new TimerTask(){
+        ablauf2.scheduleAtFixedRate(test2 = new TimerTask(){
             int reached=0;
 
             @Override

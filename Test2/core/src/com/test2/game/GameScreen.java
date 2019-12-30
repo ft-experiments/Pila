@@ -347,13 +347,22 @@ static double gamestcreendelta=0;
                 Ablauf.ablauf.cancel();
 
             }catch(Exception e) {}
+
+            try {
+                Ablauf.ablauf.schedule(Ablauf.test, 50);
+
+            }catch(Exception e) {}
+
+
+
+
             try {
                 Ablauf.ablauf2.cancel();
 
             }catch(Exception e) {}
 
             try {
-
+                Ablauf.ablauf2.schedule(Ablauf.test2, 5);
 
             }catch(Exception e) {}
 
@@ -368,6 +377,8 @@ static double gamestcreendelta=0;
 
            Ablauf.klebablauf=1000;
            Ablauf.klebablaufsoll=1000;
+
+
             Level.dispose();                //Level array clearen
             Level.LevelCreate(Level.Le);   //Das Level neu ins Levelarray schreiben
             FallKasten.Fallkasten.clear();//////Die Fallkästen Löschen
