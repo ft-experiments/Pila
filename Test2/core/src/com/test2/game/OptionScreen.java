@@ -91,6 +91,8 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     int switchw=(int)(Gdx.graphics.getWidth()/5.4f);
 
 
+    int c=0;
+
     int xsave;
     int a;
     int[] b = new int[20];
@@ -99,7 +101,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
 
 
     public OptionScreen(Test2 gg) {
-
+        
 
         if(Var.actbackground==Var.background1) {
            temp = 1;
@@ -464,7 +466,8 @@ public class OptionScreen extends ScreenAdapter implements Screen {
             temp = 10;
         }
 
-if(Gdx.input.isTouched()){
+if(Gdx.input.isTouched() || c==0){
+    c=1;
     if(a==0) {
         xsave = Gdx.input.getX();
         b[1]=Background_1.x;
