@@ -60,6 +60,12 @@ public class LoadSave {
 
         }
         Var.steuerung=prefs.getInteger("steuerung");
+        if(prefs.getInteger("effekts")==0){
+            Var.sound_effects=false;
+        }
+        if(prefs.getInteger("effekts")==1){
+            Var.sound_effects=true;
+        }
 
         Var.ballstartmode=prefs.getInteger("ballstartmode");
         Var.levelbesitz=prefs.getInteger("levelbesitz");
@@ -85,6 +91,11 @@ public class LoadSave {
 
         prefs.putInteger("levelbesitz", Var.levelbesitz);
 
+        if(Var.sound_effects) {
+        prefs.putInteger("effekts", 1);
+        }else{
+        prefs.putInteger("effekts", 0);
+        }
 
         if(Var.actbackground==Var.background1) {
             prefs.putInteger("background", 1);
