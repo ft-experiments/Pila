@@ -403,6 +403,11 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         font.draw(batch, "Optionen" , Gdx.graphics.getWidth()/2-150, Gdx.graphics.getHeight()-30);
 
 
+
+
+
+
+
         batch.draw(img, Buttonstart.x,Buttonstart.y,Buttonstart.w,Buttonstart.h);
         if(Buttonstart.isPressed() == 1){
             Test2.INSTANCE.setScreen(new GameScreen());
@@ -411,61 +416,86 @@ public class OptionScreen extends ScreenAdapter implements Screen {
 
 
 
-        batch.draw(b1, Background_1.x,Background_1.y,Background_1.w,Background_1.h);
-        if(Background_1.isPressed() == 1){
-        Var.actbackground = Var.background1;
-        temp = 1;
-        }
 
-        batch.draw(b2, Background_2.x,Background_2.y,Background_2.w,Background_2.h);
-        if(Background_2.isPressed() == 1){
-           Var.actbackground = Var.background2;
+
+        if(Background_1.h>Background_2.h){
+            Var.actbackground = Var.background1;
+            temp = 1;
+        }else
+        if(Background_2.h>Background_3.h){
+            Var.actbackground = Var.background2;
             temp = 2;
-        }
-
-        batch.draw(b3, Background_3.x,Background_3.y,Background_3.w,Background_3.h);
-        if(Background_3.isPressed() == 1){
-        Var.actbackground = Var.background3;
+        }else
+        if(Background_3.h>Background_4.h){
+            Var.actbackground = Var.background3;
             temp = 3;
-        }
-
-        batch.draw(b4, Background_4.x,Background_4.y,Background_4.w,Background_4.h);
-        if(Background_4.isPressed() == 1){
-        Var.actbackground = Var.background4;
+        }else
+        if(Background_4.h>Background_5.h){
+            Var.actbackground = Var.background4;
             temp = 4;
-        }
-
-        batch.draw(b5, Background_5.x,Background_5.y,Background_5.w,Background_5.h);
-        if(Background_5.isPressed() == 1){
-        Var.actbackground = Var.background5;
+        }else
+        if(Background_5.h>Background_6.h){
+            Var.actbackground = Var.background5;
             temp = 5;
-        }
-
-        batch.draw(b6, Background_6.x,Background_6.y,Background_6.w,Background_6.h);
-        if(Background_6.isPressed() == 1){
-        Var.actbackground = Var.background6;
+        }else
+        if(Background_6.h>Background_7.h){
+            Var.actbackground = Var.background6;
             temp = 6;
-        }
-        batch.draw(b7, Background_7.x,Background_7.y,Background_7.w,Background_7.h);
-        if(Background_7.isPressed() == 1){
-        Var.actbackground = Var.background7;
-        temp = 7;
-        }
-        batch.draw(b8, Background_8.x,Background_8.y,Background_8.w,Background_8.h);
-        if(Background_8.isPressed() == 1){
+        }else
+        if(Background_7.h>Background_8.h){
+            Var.actbackground = Var.background4;
+            temp = 7;
+        }else
+        if(Background_8.h>Background_9.h){
             Var.actbackground = Var.background8;
             temp = 8;
-        }
-        batch.draw(b9, Background_9.x,Background_9.y,Background_9.w,Background_9.h);
-        if(Background_9.isPressed() == 1){
+        }else
+        if(Background_9.h>Background_10.h){
             Var.actbackground = Var.background9;
             temp = 9;
-        }
-        batch.draw(b10, Background_10.x,Background_10.y,Background_10.w,Background_10.h);
-        if(Background_10.isPressed() == 1){
+        }else
+        if(Background_10.h>0){
             Var.actbackground = Var.background10;
             temp = 10;
         }
+
+
+
+
+
+
+
+
+        batch.draw(b1, Background_1.x,Background_1.y,Background_1.w,Background_1.h);
+
+
+        batch.draw(b2, Background_2.x,Background_2.y,Background_2.w,Background_2.h);
+
+
+        batch.draw(b3, Background_3.x,Background_3.y,Background_3.w,Background_3.h);
+
+        batch.draw(b4, Background_4.x,Background_4.y,Background_4.w,Background_4.h);
+
+
+        batch.draw(b5, Background_5.x,Background_5.y,Background_5.w,Background_5.h);
+
+
+        batch.draw(b6, Background_6.x,Background_6.y,Background_6.w,Background_6.h);
+
+        batch.draw(b7, Background_7.x,Background_7.y,Background_7.w,Background_7.h);
+
+        batch.draw(b8, Background_8.x,Background_8.y,Background_8.w,Background_8.h);
+
+        batch.draw(b9, Background_9.x,Background_9.y,Background_9.w,Background_9.h);
+
+        batch.draw(b10, Background_10.x,Background_10.y,Background_10.w,Background_10.h);
+
+
+
+
+
+
+
 
 if(Gdx.input.isTouched() || c==0){
     c=1;
