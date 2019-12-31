@@ -100,6 +100,8 @@ int tempold;
     int effectstärkex=5;
     int effectstärkey=3;
 
+    int gemeinsameverschiebung;
+
 
     public OptionScreen(Test2 gg) {
 
@@ -523,16 +525,16 @@ if(Gdx.input.isTouched() || c==0){
         a = 1;
     }
 
-    Background_1.x=(Gdx.input.getX()-xsave)+b[1];
-    Background_2.x=(Gdx.input.getX()-xsave)+b[2];
-    Background_3.x=(Gdx.input.getX()-xsave)+b[3];
-    Background_4.x=(Gdx.input.getX()-xsave)+b[4];
-    Background_5.x=(Gdx.input.getX()-xsave)+b[5];
-    Background_6.x=(Gdx.input.getX()-xsave)+b[6];
-    Background_7.x=(Gdx.input.getX()-xsave)+b[7];
-    Background_8.x=(Gdx.input.getX()-xsave)+b[8];
-    Background_9.x=(Gdx.input.getX()-xsave)+b[9];
-    Background_10.x=(Gdx.input.getX()-xsave)+b[10];
+    Background_1.x=(Gdx.input.getX()-xsave)+b[1]-gemeinsameverschiebung;
+    Background_2.x=(Gdx.input.getX()-xsave)+b[2]-gemeinsameverschiebung;
+    Background_3.x=(Gdx.input.getX()-xsave)+b[3]-gemeinsameverschiebung;
+    Background_4.x=(Gdx.input.getX()-xsave)+b[4]-gemeinsameverschiebung;
+    Background_5.x=(Gdx.input.getX()-xsave)+b[5]-gemeinsameverschiebung;
+    Background_6.x=(Gdx.input.getX()-xsave)+b[6]-gemeinsameverschiebung;
+    Background_7.x=(Gdx.input.getX()-xsave)+b[7]-gemeinsameverschiebung;
+    Background_8.x=(Gdx.input.getX()-xsave)+b[8]-gemeinsameverschiebung;
+    Background_9.x=(Gdx.input.getX()-xsave)+b[9]-gemeinsameverschiebung;
+    Background_10.x=(Gdx.input.getX()-xsave)+b[10]-gemeinsameverschiebung;
 
 
     if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_1.x)/effectstärkex<0) {
@@ -734,6 +736,37 @@ if(tempold!=temp){
 }
 if(!Gdx.input.isTouched()){
     a=0;
+    c=0;
+    if(temp==1){
+        gemeinsameverschiebung=Background_1.x-Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2;
+    }
+    if(temp==2){
+        gemeinsameverschiebung=Background_2.x-Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2;
+    }
+    if(temp==3){
+        gemeinsameverschiebung=Background_3.x-Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2;
+    }
+    if(temp==4){
+        gemeinsameverschiebung=Background_4.x-Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2;
+    }
+    if(temp==5){
+        gemeinsameverschiebung=Background_5.x-Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2;
+    }
+    if(temp==6){
+        gemeinsameverschiebung=Background_6.x-Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2;
+    }
+    if(temp==7){
+        gemeinsameverschiebung=Background_7.x-Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2;
+    }
+    if(temp==8){
+        gemeinsameverschiebung=Background_8.x-Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2;
+    }
+    if(temp==9){
+        gemeinsameverschiebung=Background_9.x-Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2;
+    }
+    if(temp==10){
+        gemeinsameverschiebung=Background_10.x-Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2;
+    }
 }
 
 
