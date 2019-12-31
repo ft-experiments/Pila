@@ -414,7 +414,16 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         }
 
 
+        batch.end();
 
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+        Gdx.gl.glLineWidth(32);
+        shapeRenderer.setColor(1,0,0,1);
+        shapeRenderer.rect(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2,Buttonstart.h,Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+
+        shapeRenderer.end();
+
+        batch.begin();
 
 
 
