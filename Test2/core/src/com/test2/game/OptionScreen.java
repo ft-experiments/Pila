@@ -97,6 +97,8 @@ int tempold;
     int a;
     int[] b = new int[20];
 
+    int gemeinsamverschieben;
+
     int effectstärkex=5;
     int effectstärkey=3;
 
@@ -509,7 +511,7 @@ tempold=temp;
 if(Gdx.input.isTouched() || c==0){
     c=1;
     if(a==0) {
-        xsave = Gdx.input.getX();
+        xsave = Gdx.input.getX()-gemeinsamverschieben;
         b[1]=Background_1.x;
         b[2]=Background_2.x;
         b[3]=Background_3.x;
@@ -734,6 +736,88 @@ if(tempold!=temp){
 }
 if(!Gdx.input.isTouched()){
     a=0;
+    c=0;
+    gemeinsamverschieben=0;
+    if(temp==1){
+        if(Background_1.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
+            gemeinsamverschieben = 2;
+        }else{
+            gemeinsamverschieben = -2;
+        }
+
+    }
+    if(temp==2){
+        if(Background_2.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
+            gemeinsamverschieben = 2;
+        }else{
+            gemeinsamverschieben = -2;
+        }
+
+    }
+    if(temp==3){
+        if(Background_3.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
+            gemeinsamverschieben = 2;
+        }else{
+            gemeinsamverschieben = -2;
+        }
+
+    }
+    if(temp==4){
+        if(Background_4.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
+            gemeinsamverschieben = 2;
+        }else{
+            gemeinsamverschieben = -2;
+        }
+
+    }
+    if(temp==5){
+        if(Background_5.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
+            gemeinsamverschieben = 2;
+        }else{
+            gemeinsamverschieben = -2;
+        }
+
+    }
+    if(temp==6){
+        if(Background_6.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
+            gemeinsamverschieben = 2;
+        }else{
+            gemeinsamverschieben = -2;
+        }
+
+    }
+    if(temp==7){
+        if(Background_7.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
+            gemeinsamverschieben = 2;
+        }else{
+            gemeinsamverschieben = -2;
+        }
+
+    }
+    if(temp==8){
+        if(Background_8.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
+            gemeinsamverschieben = 2;
+        }else{
+            gemeinsamverschieben = -2;
+        }
+
+    }
+    if(temp==9){
+        if(Background_9.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
+            gemeinsamverschieben = 2;
+        }else{
+            gemeinsamverschieben = -2;
+        }
+
+    }
+    if(temp==10){
+        if(Background_10.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
+            gemeinsamverschieben = 2;
+        }else{
+            gemeinsamverschieben = -2;
+        }
+
+    }
 }
 
 
