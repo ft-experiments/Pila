@@ -90,7 +90,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     int switchh=(int)(Gdx.graphics.getHeight()/17.26f);
     int switchw=(int)(Gdx.graphics.getWidth()/5.4f);
 
-
+int tempold;
     int c=0;
 
     int xsave;
@@ -251,7 +251,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
 
 
     public void render(float delta) {
-
+tempold=temp;
 
 
 
@@ -417,7 +417,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         batch.end();
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        Gdx.gl.glLineWidth(32);
+        Gdx.gl.glLineWidth(20);
         shapeRenderer.setColor(1,0,0,1);
         shapeRenderer.rect(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2,Buttonstart.h,Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
 
@@ -725,7 +725,10 @@ if(Gdx.input.isTouched() || c==0){
 
 
 
-
+if(tempold!=temp){
+    System.out.println("änderung");
+    Gdx.input.vibrate(20);
+}
 
 
 }
