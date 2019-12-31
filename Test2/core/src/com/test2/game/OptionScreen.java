@@ -98,6 +98,7 @@ int tempold;
     int[] b = new int[20];
 
     int gemeinsamverschieben;
+    int federung=4;
 
     int effectstärkex=5;
     int effectstärkey=3;
@@ -454,7 +455,7 @@ tempold=temp;
             temp = 6;
         }else
         if(Background_7.h>Background_8.h){
-            Var.actbackground = Var.background4;
+            Var.actbackground = Var.background7;
             temp = 7;
         }else
         if(Background_8.h>Background_9.h){
@@ -740,81 +741,81 @@ if(!Gdx.input.isTouched()){
     gemeinsamverschieben=0;
     if(temp==1){
         if(Background_1.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_1.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_1.x)/federung;
         }else{
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_1.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_1.x)/federung;
         }
 
     }
     if(temp==2){
         if(Background_2.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_2.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_2.x)/federung;
         }else{
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_2.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_2.x)/federung;
         }
 
     }
     if(temp==3){
         if(Background_3.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_3.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_3.x)/federung;
         }else{
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_3.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_3.x)/federung;
         }
 
     }
     if(temp==4){
         if(Background_4.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_4.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_4.x)/federung;
         }else{
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_4.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_4.x)/federung;
         }
 
     }
     if(temp==5){
         if(Background_5.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_5.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_5.x)/federung;
         }else{
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_5.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_5.x)/federung;
         }
 
     }
     if(temp==6){
         if(Background_6.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_6.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_6.x)/federung;
         }else{
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_6.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_6.x)/federung;
         }
 
     }
     if(temp==7){
         if(Background_7.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_7.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_7.x)/federung;
         }else{
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_7.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_7.x)/federung;
         }
 
     }
     if(temp==8){
         if(Background_8.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_8.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_8.x)/federung;
         }else{
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_8.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_8.x)/federung;
         }
 
     }
     if(temp==9){
         if(Background_9.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_9.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_9.x)/federung;
         }else{
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_9.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_9.x)/federung;
         }
 
     }
     if(temp==10){
         if(Background_10.x<Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2) {
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_10.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_10.x)/federung;
         }else{
-            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_10.x)/4;
+            gemeinsamverschieben = ((Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2)-Background_10.x)/federung;
         }
 
     }
