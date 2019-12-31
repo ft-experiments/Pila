@@ -549,7 +549,7 @@ if(Gdx.input.isTouched()){
     if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_7.x)/effectstärkex<0) {
         Background_7.w = Gdx.graphics.getWidth()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_7.x)/effectstärkex;
     }
-    if((Gdx.graphics.getWidth()/2-Background_7.x)/effectstärkex>0) {
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_7.x)/effectstärkex>0) {
         Background_7.w = Gdx.graphics.getWidth()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_7.x)/effectstärkex;
     }
 
@@ -557,7 +557,7 @@ if(Gdx.input.isTouched()){
     if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_8.x)/effectstärkex<0) {
         Background_8.w = Gdx.graphics.getWidth()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_8.x)/effectstärkex;
     }
-    if((Gdx.graphics.getWidth()/2-Background_8.x)/effectstärkex>0) {
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_8.x)/effectstärkex>0) {
         Background_8.w = Gdx.graphics.getWidth()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_8.x)/effectstärkex;
     }
 
@@ -576,6 +576,110 @@ if(Gdx.input.isTouched()){
     if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_10.x)/effectstärkex>0) {
         Background_10.w = Gdx.graphics.getWidth()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_10.x)/effectstärkex;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_1.x)/effectstärkex<0) {
+        Background_1.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_1.x)/effectstärkex;
+    }
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_1.x)/effectstärkex>0) {
+        Background_1.h = Gdx.graphics.getHeight()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_1.x)/effectstärkex;
+    }
+
+
+
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_2.x)/effectstärkex<0) {
+        Background_2.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_2.x)/effectstärkex;
+    }
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_2.x)/effectstärkex>0) {
+        Background_2.h = Gdx.graphics.getHeight()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_2.x)/effectstärkex;
+    }
+
+
+
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_3.x)/effectstärkex<0) {
+        Background_3.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_3.x)/effectstärkex;
+    }
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_3.x)/effectstärkex>0) {
+        Background_3.h = Gdx.graphics.getHeight()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_3.x)/effectstärkex;
+    }
+
+
+
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_4.x)/effectstärkex<0) {
+        Background_4.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_4.x)/effectstärkex;
+    }
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_4.x)/effectstärkex>0) {
+        Background_4.h = Gdx.graphics.getHeight()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_4.x)/effectstärkex;
+    }
+
+
+
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_5.x)/effectstärkex<0) {
+        Background_5.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_5.x)/effectstärkex;
+    }
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_5.x)/effectstärkex>0) {
+        Background_5.h = Gdx.graphics.getHeight()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_5.x)/effectstärkex;
+    }
+
+
+
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_6.x)/effectstärkex<0) {
+        Background_6.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_6.x)/effectstärkex;
+    }
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_6.x)/effectstärkex>0) {
+        Background_6.h = Gdx.graphics.getHeight()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_6.x)/effectstärkex;
+    }
+
+
+
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_7.x)/effectstärkex<0) {
+        Background_7.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_7.x)/effectstärkex;
+    }
+    if((Gdx.graphics.getWidth()/2-Background_7.x)/effectstärkex>0) {
+        Background_7.h = Gdx.graphics.getHeight()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_7.x)/effectstärkex;
+    }
+
+
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_8.x)/effectstärkex<0) {
+        Background_8.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_8.x)/effectstärkex;
+    }
+    if((Gdx.graphics.getWidth()/2-Background_8.x)/effectstärkex>0) {
+        Background_8.h = Gdx.graphics.getHeight()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_8.x)/effectstärkex;
+    }
+
+
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_9.x)/effectstärkex<0) {
+        Background_9.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_9.x)/effectstärkex;
+    }
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_9.x)/effectstärkex>0) {
+        Background_9.h = Gdx.graphics.getWidth()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_9.x)/effectstärkex;
+    }
+
+
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_10.x)/effectstärkex<0) {
+        Background_10.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_10.x)/effectstärkex;
+    }
+    if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_10.x)/effectstärkex>0) {
+        Background_10.h = Gdx.graphics.getHeight()/7 - ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_10.x)/effectstärkex;
+    }
+
+
 
 
 
