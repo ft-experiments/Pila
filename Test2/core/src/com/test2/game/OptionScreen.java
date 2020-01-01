@@ -19,7 +19,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 public class OptionScreen extends ScreenAdapter implements Screen {
     Sound sound = Gdx.audio.newSound(Gdx.files.internal("sound/click.mp3"));
-    long id = sound.play(1.0f); // play new sound and keep handle for further manipulation
+
 
     Test2 game;
     private Stage stage;
@@ -106,6 +106,7 @@ int tempold;
     int effectstärkex=5;
     int effectstärkey=3;
 
+int v=0;
 
     public OptionScreen(Test2 gg) {
 
@@ -733,9 +734,14 @@ if(Gdx.input.isTouched() || c==0){
 
 
 if(tempold!=temp){
-    System.out.println("änderung");
-    sound.play(1);
-    Gdx.input.vibrate(20);
+
+if(Var.sound_effects) {
+    long id = sound.play(1.0f); // play new sound and keep handle for further manipulation
+}
+
+    if(Var.beiballberurungvibrieren==1) {
+        Gdx.input.vibrate(20);
+    }
 
 
 

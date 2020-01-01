@@ -59,6 +59,7 @@ public class LoadSave {
             }
 
         }
+        /*
         Var.steuerung=prefs.getInteger("steuerung");
         if(prefs.getInteger("effekts")==0){
             Var.sound_effects=false;
@@ -66,7 +67,7 @@ public class LoadSave {
         if(prefs.getInteger("effekts")==1){
             Var.sound_effects=true;
         }
-
+*/
         Var.ballstartmode=prefs.getInteger("ballstartmode");
         Var.levelbesitz=prefs.getInteger("levelbesitz");
         if(Var.levelbesitz==0){Var.levelbesitz=1;Var.beiballberurungvibrieren=1;Var.ballstartmode=1;saveall();}
@@ -76,13 +77,13 @@ public class LoadSave {
     static void saveall(){
 
         prefs.putInteger("vibrieren", Var.beiballberurungvibrieren);
-
+/*
         if(Var.showfps==true){
             bi=1;
         }
         if(Var.showfps==false){
             bi=0;
-        }
+        }*/
         prefs.putInteger("showfps", bi);
 
         prefs.putInteger("steuerung", Var.steuerung);
@@ -91,11 +92,15 @@ public class LoadSave {
 
         prefs.putInteger("levelbesitz", Var.levelbesitz);
 
+
+
         if(Var.sound_effects) {
         prefs.putInteger("effekts", 1);
         }else{
         prefs.putInteger("effekts", 0);
         }
+
+
 
         if(Var.actbackground==Var.background1) {
             prefs.putInteger("background", 1);
