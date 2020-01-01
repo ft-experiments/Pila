@@ -734,9 +734,12 @@ if(Gdx.input.isTouched() || c==0){
 
 if(tempold!=temp){
     System.out.println("änderung");
-    sound.play(1);
-    Gdx.input.vibrate(20);
-
+    if(Var.sound_effects) {
+        sound.play(1);
+    }
+    if(Var.beiballberurungvibrieren==1) {
+        Gdx.input.vibrate(20);
+    }
 
 
 
