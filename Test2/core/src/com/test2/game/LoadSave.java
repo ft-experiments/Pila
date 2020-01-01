@@ -59,6 +59,9 @@ public class LoadSave {
             }
 
         }
+
+        Var.sound_effects=prefs.getBoolean("soundeffecte");
+
         /*
         Var.steuerung=prefs.getInteger("steuerung");
         if(prefs.getInteger("effekts")==0){
@@ -77,13 +80,16 @@ public class LoadSave {
     static void saveall(){
 
         prefs.putInteger("vibrieren", Var.beiballberurungvibrieren);
-/*
+
         if(Var.showfps==true){
             bi=1;
         }
         if(Var.showfps==false){
             bi=0;
-        }*/
+        }
+
+        prefs.putBoolean("soundeffecte",Var.sound_effects);
+
         prefs.putInteger("showfps", bi);
 
         prefs.putInteger("steuerung", Var.steuerung);
@@ -93,13 +99,13 @@ public class LoadSave {
         prefs.putInteger("levelbesitz", Var.levelbesitz);
 
 
-
+/*
         if(Var.sound_effects) {
         prefs.putInteger("effekts", 1);
         }else{
         prefs.putInteger("effekts", 0);
         }
-
+*/
 
 
         if(Var.actbackground==Var.background1) {
