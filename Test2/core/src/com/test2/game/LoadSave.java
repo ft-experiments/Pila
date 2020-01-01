@@ -57,6 +57,18 @@ public class LoadSave {
                 Var.actbackground = Var.background7;
                 break;
             }
+            case 8: {
+                Var.actbackground = Var.background8;
+                break;
+            }
+            case 9: {
+                Var.actbackground = Var.background9;
+                break;
+            }
+            case 10: {
+                Var.actbackground = Var.background10;
+                break;
+            }
 
         }
 
@@ -129,6 +141,15 @@ public class LoadSave {
         }
         if(Var.actbackground==Var.background7) {
             prefs.putInteger("background", 7);
+        }
+        if(Var.actbackground==Var.background8) {
+            prefs.putInteger("background", 8);
+        }
+        if(Var.actbackground==Var.background9) {
+            prefs.putInteger("background", 9);
+        }
+        if(Var.actbackground==Var.background10) {
+            prefs.putInteger("background", 10);
         }
 
 
