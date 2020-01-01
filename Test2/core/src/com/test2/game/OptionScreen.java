@@ -57,6 +57,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     BitmapFont font;
     Texture switchon;
     Texture switchoff;
+
     touchinput.Button Levelauswahl;
     touchinput.Button Baukasten;
     touchinput.Button Buttonstart;
@@ -64,12 +65,14 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     touchinput.Switch SW;
     touchinput.Switch toggelcontrol;
     touchinput.Switch ballstartmode;
-
+    touchinput.Switch soundeffecte;
 
     touchinput.Button instant;
     touchinput.Button control;
     touchinput.Button fps;
     touchinput.Button vibrate;
+    touchinput.Button sefecte;
+
 
     //hintergrundauswahlbuttons
     touchinput.Button Background_1;
@@ -237,6 +240,8 @@ int v=0;
 
             ballstartmode = new touchinput.Switch(switchsx, switchy * 6, switchw, switchh, Var.ballstartmode);
 
+            soundeffecte = new touchinput.Switch(switchsx,switchy*7,switchw,switchh,Var.sound_effects ? 1 : 0);
+
 
 
             vibrate = new touchinput.Button(SW.x - 535, SW.y + SW.h / 2-50, 70, 70);
@@ -246,6 +251,8 @@ int v=0;
             fps = new touchinput.Button(fpsshow.x - 535, fpsshow.y + fpsshow.h / 2-50, 70 ,70);
 
             instant = new touchinput.Button(ballstartmode.x - 535, ballstartmode.y + ballstartmode.h / 2-50, 70 ,70);
+
+            sefecte = new touchinput.Button(soundeffecte.x - 535, soundeffecte.y + soundeffecte.h / 2-50, 70 ,70);
 
 
 
@@ -279,6 +286,11 @@ tempold=temp;
 
         if(instant.isPressed()==1) {
             game.aoi.toast("Wenn du das ausschaltest dann musst du immer wenn du ein Leben verloren hast das Weitermachen mit einem Doppelklick bestätigen.");
+
+        }
+
+        if(sefecte.isPressed()==1) {
+            game.aoi.toast("Hiermit kannst du die soundeffekte aktivieren und deaktivieren.");
 
         }
 
@@ -401,6 +413,19 @@ tempold=temp;
             batch.draw(switchon, ballstartmode.x, ballstartmode.y, ballstartmode.w, ballstartmode.h);
 
             Var.ballstartmode=1;
+        }
+        batch.draw( info, soundeffecte.x - 535, soundeffecte.y + soundeffecte.h / 2-50, 70, 70);
+        font.draw(batch, "soundeffekte", soundeffecte.x - 400, soundeffecte.y + soundeffecte.h / 2);
+        if(soundeffecte.isswitched() == 0){
+
+            batch.draw(switchoff, soundeffecte.x, soundeffecte.y, soundeffecte.w, soundeffecte.h);
+            Var.sound_effects=false;
+        }
+        if(soundeffecte.isswitched() == 1){
+
+            batch.draw(switchon, soundeffecte.x, soundeffecte.y, soundeffecte.w, soundeffecte.h);
+
+            Var.sound_effects=true;
         }
 
 
