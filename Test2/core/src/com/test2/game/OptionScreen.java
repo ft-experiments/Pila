@@ -5,6 +5,7 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -17,6 +18,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
 
 public class OptionScreen extends ScreenAdapter implements Screen {
+    Sound sound = Gdx.audio.newSound(Gdx.files.internal("sound/click.mp3"));
+    long id = sound.play(1.0f); // play new sound and keep handle for further manipulation
 
     Test2 game;
     private Stage stage;
@@ -242,6 +245,7 @@ int tempold;
             fps = new touchinput.Button(fpsshow.x - 535, fpsshow.y + fpsshow.h / 2-50, 70 ,70);
 
             instant = new touchinput.Button(ballstartmode.x - 535, ballstartmode.y + ballstartmode.h / 2-50, 70 ,70);
+
 
 
 
@@ -730,7 +734,15 @@ if(Gdx.input.isTouched() || c==0){
 
 if(tempold!=temp){
     System.out.println("änderung");
+    sound.play(1);
     Gdx.input.vibrate(20);
+
+
+
+
+
+
+
 }
 
 
