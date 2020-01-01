@@ -250,8 +250,8 @@ getdata = new Timer();
 
                 enddiff_y = tempselection_y_max - tempselection_y_min;
 
-                System.out.println("x: " + enddiff_x);
-                System.out.println("y: " + enddiff_y);
+                //System.out.println("x: " + enddiff_x);
+                //System.out.println("y: " + enddiff_y);
 
                 Ball_bring_out(enddiff_x, enddiff_y);
 
@@ -278,16 +278,16 @@ getdata = new Timer();
             if (x > 0.2f && x < 40) {
 
                 Ball.bx = -0.5f;
-                System.out.println("Moment");
+                //System.out.println("Moment");
 
             } else if (y > 0.2f && y < 40) {
 
                 if (Math.random() == 1) {
-                    System.out.println("y triggered 1");
+                    //System.out.println("y triggered 1");
                     Ball.bx = 0.5f;
                 } else {
                     Ball.bx = -0.5f;
-                    System.out.println("y triggered 2");
+                    //System.out.println("y triggered 2");
                 }
 
             }
@@ -766,7 +766,7 @@ static double gamestcreendelta=0;
                 if(Var.sound_effects) {
                     if (id1 == 0) {
                         id1 = start.play(0.6f);
-                        System.out.println("1");
+                       // System.out.println("1");
 
                         id4 = 0;
                     }
@@ -787,7 +787,7 @@ static double gamestcreendelta=0;
                 if(Var.sound_effects) {
                     if (id2 == 0) {
                         id2 = start.play(0.6f);
-                        System.out.println("2");
+                        //System.out.println("2");
                         id1 = 0;
                     }
                 }
@@ -805,7 +805,7 @@ static double gamestcreendelta=0;
                 if(Var.sound_effects) {
                     if (id3 == 0) {
                         id3 = start.play(0.6f);
-                        System.out.println("3");
+                        //System.out.println("3");
                         id2 = 0;
                     }
                 }
@@ -823,7 +823,7 @@ static double gamestcreendelta=0;
                 if(Var.sound_effects) {
                     if (id4 == 0) {
                         id4 = start_finish.play(0.6f);
-                        System.out.println("4");
+                        //System.out.println("4");
                         id1 = 0;
                         id2 = 0;
                         id3 = 0;
