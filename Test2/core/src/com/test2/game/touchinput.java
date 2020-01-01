@@ -87,9 +87,13 @@ public class touchinput {
                 }
             }else {
                 if(u==1 && !Gdx.input.isTouched()) {
-                    ip=1;
-                    u=0;
-            }
+                    if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {
+                        ip = 1;
+                        u = 0;
+                    }else{
+                        u=0;
+                    }
+                }
 
         }
             return ip;
