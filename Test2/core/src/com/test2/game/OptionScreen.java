@@ -33,15 +33,12 @@ public class OptionScreen extends ScreenAdapter implements Screen {
 
     SpriteBatch batch;
     Texture img;
-    Texture info;
-    Texture info1;
-    Texture info2;
-    Texture info3;
+
     Texture startge;
     Texture Touch;
     Texture Gyro;
     ShapeRenderer shapeRenderer;
-    Texture hintergrund2;
+
     BitmapFont font;
 
 
@@ -149,16 +146,12 @@ int v=0;
 
 
 
-        info = new Texture("info.png");
-        info1 = new Texture("info.png");
-        info2 = new Texture("info.png");
-        info3 = new Texture("info.png");
 
         img = new Texture("start.png");
         startge = new Texture("startge.png");
         Touch = new Texture("Touch.png");
         Gyro = new Texture("Gyro.png");
-        hintergrund2 = new Texture(Var.actbackground);
+
 
         shapeRenderer = new ShapeRenderer();
 

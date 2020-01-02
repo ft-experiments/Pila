@@ -52,6 +52,11 @@ public class AssetManagerExample  {
    public static Texture bigpause;
 
 
+   public static Texture info;
+    public static Texture info1;
+    public static Texture info2;
+    public static Texture info3;
+
     public static AssetManager manager = new AssetManager();
     public static void loader() {
 
@@ -107,6 +112,7 @@ public class AssetManagerExample  {
         manager.load("einstellungen.png",Texture.class);
         manager.load("bigpause.png",Texture.class);
 
+        manager.load("info.png", Texture.class);
 
 
        /*
@@ -161,6 +167,8 @@ public class AssetManagerExample  {
        weiter = manager.get("Weiter.png",Texture.class);
        einstellungen = manager.get("einstellungen.png",Texture.class);
        bigpause = manager.get("bigpause.png",Texture.class);
+
+       info = info1 = info2 = info3 = manager.get("info.png", Texture.class);
 
     }
 

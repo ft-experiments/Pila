@@ -921,24 +921,7 @@ if(Var.geheinpause==1) {
     public void dispose() {
         batch.dispose();
         shapeRenderer.dispose();
-        font.dispose();
-        block_l.dispose();
-        block_rot.dispose();
-        block_gruen.dispose();
-        block_blau.dispose();
-        paddelimg.dispose();
-        block_k.dispose();
-        block_kleber.dispose();
-        block_feuer.dispose();
-        paddelklebimg.dispose();
-        block_schneller.dispose();
-        block_langsamer.dispose();
-        block_2mal.dispose();
-        block_unzerstoerbar.dispose();
-        status_bar.dispose();
-        pause.dispose();
-        weiter.dispose();
-        einstellungen.dispose();
+
 
     }
 
