@@ -65,6 +65,10 @@ public class AssetManagerExample  {
 
     public static Texture neustart;
     public static Texture gameover;
+
+    public static Texture Levelbutton;
+    public static Texture Levelbuttonrot;
+
     public static AssetManager manager = new AssetManager();
     public static void loader() {
 
@@ -130,6 +134,8 @@ public class AssetManagerExample  {
         manager.load("neustart.png", Texture.class);
 
         manager.load("gameover.png", Texture.class);
+        manager.load("Levelauswahlbutton.png", Texture.class);
+        manager.load("Levelauswahlbuttonrot.png", Texture.class);
 
 
        /*
@@ -194,6 +200,8 @@ public class AssetManagerExample  {
         neustart = manager.get("neustart.png", Texture.class);
 
         gameover = manager.get("gameover.png", Texture.class);
+        Levelbutton = manager.get("Levelauswahlbutton.png", Texture.class);
+        Levelbuttonrot = manager.get("Levelauswahlbuttonrot.png", Texture.class);
 
     }
 

@@ -26,15 +26,13 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
     Texture img;
     Texture startge;
 
-    Texture switchon;
-    Texture switchoff;
     Texture Levelbutton;
     Texture buttonimage;
     Texture Levelbuttonrot;
     touchinput.Button zurueck;
     touchinput.Button newLevel;
 
-    String back;
+
     int u = 0;
 
     public EigeneLevelManageScreen() {
@@ -55,8 +53,6 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
         img = new Texture("start.png");
         startge = new Texture("startge.png");
 
-        switchon = new Texture("switchon.png");
-        switchoff = new Texture("switchoff.png");
         Levelbutton = new Texture("Levelauswahlbutton.png");
         buttonimage = new Texture("Button.png");
         Levelbuttonrot = new Texture("Levelauswahlbuttonrot.png");
