@@ -799,7 +799,7 @@ static double gamestcreendelta=0;
                 batch.draw(los,        Gdx.graphics.getWidth()/5*2.5f,Gdx.graphics.getHeight()/7*2,250,250);
                 if(Var.sound_effects) {
                     if(id4==0) {
-                        id4 = start.play(0.6f);
+                        id4 = start_finish.play(0.6f);
                         id3=0;
                     }
 
