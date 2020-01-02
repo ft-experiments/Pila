@@ -19,6 +19,10 @@ public class Test2 extends Game {
 	public boolean backpressed=false;
 	@Override
 	public void create () {
+
+
+
+
 		LoadSave.loadall();
 
 		AssetManagerExample.loader();
@@ -30,6 +34,8 @@ public class Test2 extends Game {
 
 
 		}
+
+
 		AssetManagerExample.save();
 		setScreen(new StartScreen());
 		//setScreen(new GameScreen());

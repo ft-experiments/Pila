@@ -16,8 +16,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
-import static com.test2.game.AssetManagerExample.switchoff;
-import static com.test2.game.AssetManagerExample.switchon;
+import static com.test2.game.AssetManagerExample.*;
 
 
 public class OptionScreen extends ScreenAdapter implements Screen {
@@ -31,7 +30,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     int temp = 0;
 
 
-    Texture buttonimage;
+
     SpriteBatch batch;
     Texture img;
     Texture info;
@@ -163,7 +162,7 @@ int v=0;
 
         shapeRenderer = new ShapeRenderer();
 
-        buttonimage = new Texture("Button.png");
+
 
 
         Buttonstart = new touchinput.Button((int)(Gdx.graphics.getWidth()/2-(Gdx.graphics.getWidth()/1.8f/2)),Gdx.graphics.getHeight()-Gdx.graphics.getHeight(),(int)(Gdx.graphics.getWidth()/1.8f),(int)(Gdx.graphics.getHeight()/5.753f));
