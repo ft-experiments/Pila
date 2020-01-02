@@ -38,30 +38,31 @@ int my2=0;
      void checkKolission() {
         if(v==1) {
            // System.out.println(Gdx.graphics.getHeight() - Var.KY);           Ball.y > Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4  && Ball.x > K_x && Ball.x < K_x+100 && Ball.y < Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4+50
-            if (Ball.y > K_y-Ball.r*2 && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h+Ball.r*2) {                           //Ball.y > K_y-Ball.r*2 && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h
+            if (Ball.y+ Ball.r>K_y && Ball.y<K_y+K_h && Ball.x<K_x+K_w && Ball.x+ Ball.r > K_x) {                           //Ball.y > K_y-Ball.r*2 && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h
 
 
 
 
                 if(Var.ballmode==0) {
 
-                    if(Ball.bx<0){
-                        System.out.println(Ball.bx);
+                    if (Ball.y < my) {
+                        Ball.richtungsumkehr_y();
+                        Ball.y -= Ball.by * 2;
+                    }
+                    if (Ball.y > my2) {
+                        Ball.richtungsumkehr_y();
+                        Ball.y -= Ball.by * 2;
+                    }
+                    if (Ball.x < mx) {
                         Ball.richtungsumkehr_x();
-                        Ball.x=Ball.x-20;
-                    }else
-                    if(Ball.bx>0){
-                        System.out.println(Ball.bx);
+                        Ball.x -= Ball.bx * 2;
+                    }
+                    if (Ball.x > mx2) {
                         Ball.richtungsumkehr_x();
-                        Ball.x=Ball.x+20;
+                        Ball.x -= Ball.bx * 2;
                     }
 
-                    if(Ball.by<0){
-                        Ball.richtungsumkehr_y();
-                    }
-                    if(Ball.by>0){
-                        Ball.richtungsumkehr_y();
-                    }
+
 
 
                    // Ball.bx = Ball.bx * -1;
