@@ -9,17 +9,15 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-
+import com.test2.game.AssetManagerExample.*;
 
 public class StartScreen extends ScreenAdapter {
-    Texture buttonimage;
+
     SpriteBatch batch;
     ShapeRenderer shapeRenderer;
 
-    BitmapFont font;
-    Texture switchon;
-    Texture switchoff;
-    Texture bzs;
+
+
     touchinput.Button Start;
     touchinput.Button Levelauswahl;
     touchinput.Button Buttonstart;
@@ -40,27 +38,14 @@ public class StartScreen extends ScreenAdapter {
 
 
 
-//schriftart
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 50;
-        font = generator.generateFont(parameter); // font size 12 pixels
-        generator.dispose(); // don't forget to dispose to avoid memory leaks!
-//
 
-
-
-
-
-        switchon = new Texture("switchon.png");
-        switchoff = new Texture("switchoff.png");
         shapeRenderer = new ShapeRenderer();
 
-        buttonimage = new Texture("Button.png");
-        bzs = new Texture("bzs.png");
+
+
 
         LevelBaukasten = new touchinput.Button(Gdx.graphics.getWidth() / 2 - (int) (Gdx.graphics.getWidth() / 2.7f / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 2.54), (int) (Gdx.graphics.getWidth() / 2.7f), (int) (Gdx.graphics.getHeight() / 17.76f));
-        buttonimage = new Texture("Button.png");
+
 
 
         //System.out.println(Gdx.graphics.getHeight());
@@ -119,27 +104,27 @@ public class StartScreen extends ScreenAdapter {
 
 
 
-    font.getData().setScale(0.7f);
-        font.draw(batch, "weiter spielen", Start.x+30, Start.y+(Start.h/2+25));
-        font.getData().setScale(1f);
-        batch.draw(buttonimage, Start.x,Start.y,Start.w,Start.h);
+    AssetManagerExample.font.getData().setScale(0.7f);
+        AssetManagerExample.font.draw(batch, "weiter spielen", Start.x+30, Start.y+(Start.h/2+25));
+        AssetManagerExample.font.getData().setScale(1f);
+        batch.draw(AssetManagerExample.buttonimage, Start.x,Start.y,Start.w,Start.h);
         if(Start.isPressed()==1){
             Var.createlevel=Var.levelbesitz;
             Test2.INSTANCE.setScreen(new GameScreen());
         }
 
 
-        font.getData().setScale(0.7f);
-        font.draw(batch, "Levelauswahl", Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25));
-        font.getData().setScale(1f);
-        batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
+        AssetManagerExample.font.getData().setScale(0.7f);
+        AssetManagerExample.font.draw(batch, "Levelauswahl", Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25));
+        AssetManagerExample.font.getData().setScale(1f);
+        batch.draw(AssetManagerExample.buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
         if(Levelauswahl.isPressed() == 1){
             Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
         }
 
         if(Var.EnableAlpha) {
-            font.draw(batch, "LevelBaukasten", LevelBaukasten.x + 30, LevelBaukasten.y + (LevelBaukasten.h / 2 + 25));
-            batch.draw(buttonimage, LevelBaukasten.x, LevelBaukasten.y, LevelBaukasten.w, LevelBaukasten.h);
+            AssetManagerExample.font.draw(batch, "LevelBaukasten", LevelBaukasten.x + 30, LevelBaukasten.y + (LevelBaukasten.h / 2 + 25));
+            batch.draw(AssetManagerExample.buttonimage, LevelBaukasten.x, LevelBaukasten.y, LevelBaukasten.w, LevelBaukasten.h);
             if (LevelBaukasten.isPressed() == 1) {
                 Test2.INSTANCE.setScreen(new EigeneLevelManageScreen());
             }

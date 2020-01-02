@@ -15,9 +15,7 @@ import java.awt.*;
 
 public class LevelAuswahlScreen extends ScreenAdapter {
     SpriteBatch batch;
-    BitmapFont font;
     ShapeRenderer shapeRenderer;
-
     touchinput.Button zurueck;
 
    String back;
@@ -25,13 +23,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
     public LevelAuswahlScreen(String referrer) {
         batch = new SpriteBatch();
-
-
-
         shapeRenderer = new ShapeRenderer();
-
-
-
         zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2,Gdx.graphics.getHeight()-100,220,100);
 
         back = referrer;
@@ -104,7 +96,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         }
 
         //font.getData().setScale(4);
-        font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
+        AssetManagerExample.font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
         batch.draw(AssetManagerExample.buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
         if(zurueck.isPressed() == 1){
             Var.geheinpause = 1;
@@ -132,7 +124,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
             }
 
             //font.getData().setScale(4);
-            font.draw(batch, ""+(LAB.Level) , LAB.x+LAB.w/2-30,LAB.y+LAB.h/2+30);
+            AssetManagerExample.font.draw(batch, ""+(LAB.Level) , LAB.x+LAB.w/2-30,LAB.y+LAB.h/2+30);
             //System.out.println(b);
             if(LAB.Level<=Var.levelbesitz) {
                 LAB.check();
