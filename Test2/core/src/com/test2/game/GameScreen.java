@@ -117,7 +117,7 @@ public class GameScreen extends ScreenAdapter {
         }
 
 
-        imgfeuerball =new Texture("ballfeueranimation.png");
+        imgfeuerball =new Texture("game/ballfeueranimation.png");
         final TextureRegion[][] regions = TextureRegion.split(imgfeuerball, 100,100);
         feuerball = new Sprite(regions[0][0]);
 
