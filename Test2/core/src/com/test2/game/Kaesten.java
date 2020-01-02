@@ -48,7 +48,6 @@ int my2=0;
 
                 if(Var.ballmode==0) {
 
-
                     if(Ball.bx<0){
                         Ball.richtungsumkehr_x();
                         Ball.x-= 10;
