@@ -529,16 +529,17 @@ if(Gdx.input.isTouched() || c==0){
         a = 1;
     }
 
-    Background_1.x=(Gdx.input.getX()-xsave)+b[1];
-    Background_2.x=(Gdx.input.getX()-xsave)+b[2];
-    Background_3.x=(Gdx.input.getX()-xsave)+b[3];
-    Background_4.x=(Gdx.input.getX()-xsave)+b[4];
-    Background_5.x=(Gdx.input.getX()-xsave)+b[5];
-    Background_6.x=(Gdx.input.getX()-xsave)+b[6];
-    Background_7.x=(Gdx.input.getX()-xsave)+b[7];
-    Background_8.x=(Gdx.input.getX()-xsave)+b[8];
-    Background_9.x=(Gdx.input.getX()-xsave)+b[9];
-    Background_10.x=(Gdx.input.getX()-xsave)+b[10];
+    Background_1.x= ((Gdx.input.getX()-xsave)+b[1]);
+    Background_2.x= ((Gdx.input.getX()-xsave)+b[2]);
+    Background_3.x= ((Gdx.input.getX()-xsave)+b[3]);
+    Background_4.x= ((Gdx.input.getX()-xsave)+b[4]);
+    Background_5.x= ((Gdx.input.getX()-xsave)+b[5]);
+    Background_6.x= ((Gdx.input.getX()-xsave)+b[6]);
+    Background_7.x= ((Gdx.input.getX()-xsave)+b[7]);
+    Background_8.x= ((Gdx.input.getX()-xsave)+b[8]);
+    Background_9.x= ((Gdx.input.getX()-xsave)+b[9]);
+    Background_10.x=((Gdx.input.getX()-xsave)+b[10]);
+
 
 
     if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_1.x)/effectstärkex<0) {
