@@ -70,8 +70,7 @@ public class GameScreen extends ScreenAdapter {
     float enddiff_x;
     float enddiff_y;
     Timer a;
-    Sound start;
-    Sound start_finish;
+
     long id1;
     long id2;
     long id3;
@@ -99,8 +98,8 @@ public class GameScreen extends ScreenAdapter {
 
 
         ka = new Smooth();
-        start = Gdx.audio.newSound(Gdx.files.internal("start.mp3"));
-        start_finish = Gdx.audio.newSound(Gdx.files.internal("start_last.mp3"));
+
+
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.732f),400,(int)(Gdx.graphics.getHeight()/14.8f));
@@ -213,7 +212,7 @@ getdata = new Timer();
 
         }
     }
-    },0,50);
+    },0,70);
 
     }
 

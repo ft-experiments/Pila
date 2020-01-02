@@ -72,6 +72,8 @@ public class AssetManagerExample  {
 
     public static Sound click;
 
+    public static Sound start_finish;
+
     public static AssetManager manager = new AssetManager();
     public static void loader() {
 
@@ -139,7 +141,10 @@ public class AssetManagerExample  {
         manager.load("gameover.png", Texture.class);
         manager.load("Levelauswahlbutton.png", Texture.class);
         manager.load("Levelauswahlbuttonrot.png", Texture.class);
+        manager.load("start_last.mp3", Sound.class);
         manager.load("sound/click.mp3", Sound.class);
+
+
 
        /*
         manager.load("data/myfont.fnt", BitmapFont.class);
@@ -207,6 +212,8 @@ public class AssetManagerExample  {
         Levelbuttonrot = manager.get("Levelauswahlbuttonrot.png", Texture.class);
         click = manager.get("sound/click.mp3", Sound.class);
 
+
+        start_finish = manager.get("sound/click.mp3", Sound.class);
     }
 
 
