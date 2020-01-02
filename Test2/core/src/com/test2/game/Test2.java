@@ -5,7 +5,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.kotcrab.vis.ui.widget.toast.Toast;
 
-
+import static jdk.nashorn.internal.objects.NativeMath.round;
 
 
 public class Test2 extends Game {
@@ -26,7 +26,9 @@ public class Test2 extends Game {
 
 
 		while(!AssetManagerExample.manager.update()) {
-		System.out.println("loading please wait... "+  AssetManagerExample.manager.getProgress());
+		System.out.println("loading please wait... "+  AssetManagerExample.manager.getProgress()*100+"%");
+
+
 		}
 		AssetManagerExample.save();
 		setScreen(new StartScreen());
