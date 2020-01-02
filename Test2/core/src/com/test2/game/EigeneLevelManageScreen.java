@@ -23,14 +23,10 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
     static int marked=0;
 
     SpriteBatch batch;
-
     ShapeRenderer shapeRenderer;
-
 
     touchinput.Button zurueck;
     touchinput.Button newLevel;
-
-
 
 
     public EigeneLevelManageScreen() {

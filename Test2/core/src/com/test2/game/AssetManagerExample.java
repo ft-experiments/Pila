@@ -3,6 +3,7 @@ package com.test2.game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
@@ -68,6 +69,8 @@ public class AssetManagerExample  {
 
     public static Texture Levelbutton;
     public static Texture Levelbuttonrot;
+
+    public static Sound click;
 
     public static AssetManager manager = new AssetManager();
     public static void loader() {
@@ -136,7 +139,7 @@ public class AssetManagerExample  {
         manager.load("gameover.png", Texture.class);
         manager.load("Levelauswahlbutton.png", Texture.class);
         manager.load("Levelauswahlbuttonrot.png", Texture.class);
-
+        manager.load("sound/click.mp3", Sound.class);
 
        /*
         manager.load("data/myfont.fnt", BitmapFont.class);
@@ -202,6 +205,7 @@ public class AssetManagerExample  {
         gameover = manager.get("gameover.png", Texture.class);
         Levelbutton = manager.get("Levelauswahlbutton.png", Texture.class);
         Levelbuttonrot = manager.get("Levelauswahlbuttonrot.png", Texture.class);
+        click = manager.get("sound/click.mp3", Sound.class);
 
     }
 

@@ -20,13 +20,11 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     BitmapFont font;
     ShapeRenderer shapeRenderer;
 
-    Texture switchon;
-    Texture switchoff;
     Texture buttonimage;
     Texture blockrot;
     Texture blockgruen;
     Texture blockblau;
-    Texture doppeltblock;
+
     Texture unzer;
 
     touchinput.Button rot;
@@ -59,28 +57,18 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         batch = new SpriteBatch();
 
 
-        //schriftart
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 50;
-        font = generator.generateFont(parameter); // font size 12 pixels
-        generator.dispose(); // don't forget to dispose to avoid memory leaks!
-//
-
 
 
         shapeRenderer = new ShapeRenderer();
 
 
 
-        switchon = new Texture("switchon.png");
-        switchoff = new Texture("switchoff.png");
         buttonimage = new Texture("Button.png");
 
         blockrot=new Texture("block_rot.png");
         blockgruen=new Texture("block_gruen.png");
         blockblau=new Texture("block_blau.png");
-        doppeltblock=new Texture("block_2mal.png");
+
         unzer=new Texture("block_unzerstoerbar.png");
 
 
@@ -227,7 +215,7 @@ a++;
                     batch.draw(blockblau, b.K_x, b.K_y, b.K_w, b.K_h);
                     break;
                 case 3:
-                    batch.draw(doppeltblock, b.K_x, b.K_y, b.K_w, b.K_h);
+                    batch.draw(AssetManagerExample.block_2mal, b.K_x, b.K_y, b.K_w, b.K_h);
                     break;
                 case 4:
                     batch.draw(unzer, b.K_x, b.K_y, b.K_w, b.K_h);
@@ -430,7 +418,7 @@ a++;
             if(f_select==4){
                 batch.setColor(1,1,1,1);
             }
-            batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
+            batch.draw(AssetManagerExample.block_2mal, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
             //font.getData().setScale(4);
             font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
             if(f_select==4){
@@ -606,7 +594,7 @@ a++;
 
             doppelt.x=x_pop+b.K_w/2+25;
             doppelt.y=y_pop-340+b.K_h/2;
-            batch.draw(doppeltblock, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
+            batch.draw(AssetManagerExample.block_2mal, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
             //font.getData().setScale(4);
             font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
             if(doppelt.isPressed() == 1){

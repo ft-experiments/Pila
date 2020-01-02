@@ -20,20 +20,14 @@ import static com.test2.game.AssetManagerExample.*;
 
 
 public class OptionScreen extends ScreenAdapter implements Screen {
-    Sound sound = Gdx.audio.newSound(Gdx.files.internal("sound/click.mp3"));
-
 
     Test2 game;
 
     int temp = 0;
 
-
-
     SpriteBatch batch;
 
     ShapeRenderer shapeRenderer;
-
-
 
 
     touchinput.Button Levelauswahl;
@@ -63,10 +57,6 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     touchinput.Button Background_8;
     touchinput.Button Background_9;
     touchinput.Button Background_10;
-
-
-    //
-
 
     int bb;
     int switchy=Gdx.graphics.getHeight() / 8;
@@ -155,11 +145,6 @@ int v=0;
         Background_10 = new touchinput.Button(Gdx.graphics.getWidth()/7*9,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
 
 
-        //hintergrundauswahlbuttons
-
-
-
-        //
 
 
             SW = new touchinput.Switch(switchsx, switchy * 3, switchw, switchh, Var.beiballberurungvibrieren);
@@ -601,20 +586,6 @@ if(Gdx.input.isTouched() || c==0){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_1.x)/effectstärkey<0) {
         Background_1.h = Gdx.graphics.getHeight()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_1.x)/effectstärkey;
     }
@@ -706,7 +677,7 @@ if(Gdx.input.isTouched() || c==0){
 if(tempold!=temp){
 
 if(Var.sound_effects) {
-    long id = sound.play(1.0f); // play new sound and keep handle for further manipulation
+    long id = click.play(1.0f); // play new sound and keep handle for further manipulation
 }
 
     if(Var.beiballberurungvibrieren==1) {
@@ -808,12 +779,6 @@ if(!Gdx.input.isTouched()){
 
 
 
-
-
-
-
-
-
         batch.end();
 
 
@@ -841,7 +806,5 @@ if(!Gdx.input.isTouched()){
         }
         this.dispose();
     }
-   public void toast(String text) {
 
-    }
 }

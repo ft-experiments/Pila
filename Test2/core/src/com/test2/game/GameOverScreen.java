@@ -65,7 +65,7 @@ public class GameOverScreen extends ScreenAdapter {
         if(Var.actbackground==Var.background10) {
             batch.draw(AssetManagerExample.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
-        batch.draw(gameover,Gdx.graphics.getWidth()/2-500,Gdx.graphics.getHeight()/2+200,1000,300);
+        batch.draw(AssetManagerExample.gameover,Gdx.graphics.getWidth()/2-500,Gdx.graphics.getHeight()/2+200,1000,300);
 
         //font.draw(batch, "Game Over" , Gdx.graphics.getWidth()/2-300, Gdx.graphics.getHeight()/2+200);
 
@@ -73,7 +73,7 @@ public class GameOverScreen extends ScreenAdapter {
         if(Gdx.input.getX() < Var.Button_start_Width+Var.Button_start_x && Gdx.input.getX() > Var.Button_start_x && Gdx.input.getY() < Gdx.graphics.getHeight()-Var.Button_start_y && Gdx.input.getY() > Gdx.graphics.getHeight()-Var.Button_start_y-Var.Button_start_Height)
         {
 
-            batch.draw(neustart, Var.Button_start_x, Var.Button_start_y,Var.Button_start_Width,Var.Button_start_Height);
+            batch.draw(AssetManagerExample.neustart, Var.Button_start_x, Var.Button_start_y,Var.Button_start_Width,Var.Button_start_Height);
         /*    if(Gdx.input.isButtonJustPressed(0)) {
                 Var.gamestatus=0;
                 Level.kisten.clear();

@@ -25,16 +25,10 @@ public class GameScreen extends ScreenAdapter {
     public static GameScreen INSTANCE;
 
 
-
-
     LoadSave LoadSave;
     SpriteBatch batch;
 
-
-
     ShapeRenderer shapeRenderer;
-
-
 
     touchinput.Button Levelauswahl;
     touchinput.Button Buttonstart;
@@ -50,7 +44,6 @@ public class GameScreen extends ScreenAdapter {
     int frame = 0;
     Texture imgfeuerball;
     Sprite feuerball;
-    TextureRegion[][] regions;
     float Random_x[] = new float[100];
     float Random_y[] = new float[100];
     int datacounter = 0;
@@ -83,6 +76,7 @@ public class GameScreen extends ScreenAdapter {
     long id2;
     long id3;
     long id4;
+
     //Kaesten k;
     public GameScreen() {
 
