@@ -744,12 +744,11 @@ static double gamestcreendelta=0;
                 //batch.setColor(0,0,1f,1f);
                 batch.draw(countdown1,Gdx.graphics.getWidth()/5*1,Gdx.graphics.getHeight()/7*5,250,250);
                 if(Var.sound_effects) {
-                    if (id1 == 0) {
-                        id1 = start.play(0.6f);
-                        //System.out.println("1");
+                        if(id1==0) {
+                            id1 = click.play(0.6f);
+                            id4=0;
+                        }
 
-                        id4 = 0;
-                    }
                 }
 
 
@@ -765,11 +764,11 @@ static double gamestcreendelta=0;
                 //batch.setColor(1f,0,0,1f);
                 batch.draw(countdown2, Gdx.graphics.getWidth()/5*2,Gdx.graphics.getHeight()/7*4,250,250);
                 if(Var.sound_effects) {
-                    if (id2 == 0) {
-                        id2 = start.play(0.6f);
-                        //System.out.println("2");
-                        id1 = 0;
-                    }
+                        if(id2==0) {
+                            id2 = click.play(0.6f);
+                            id1=0;
+                        }
+
                 }
 
             }
@@ -783,10 +782,9 @@ static double gamestcreendelta=0;
                 //batch.setColor(1f,0.3f,0,1f);
                 batch.draw(countdown3, Gdx.graphics.getWidth()/5*1,Gdx.graphics.getHeight()/7*3,250,250);
                 if(Var.sound_effects) {
-                    if (id3 == 0) {
-                        id3 = start.play(0.6f);
-                        //System.out.println("3");
-                        id2 = 0;
+                    if(id3==0) {
+                        id3 = click.play(0.6f);
+                        id2=0;
                     }
                 }
 
@@ -801,14 +799,11 @@ static double gamestcreendelta=0;
                 //batch.setColor(0,0.3f,0,1f);
                 batch.draw(los,        Gdx.graphics.getWidth()/5*2.5f,Gdx.graphics.getHeight()/7*2,250,250);
                 if(Var.sound_effects) {
-                    if (id4 == 0) {
-                        id4 = start_finish.play(0.6f);
-                        //System.out.println("4");
-                        id1 = 0;
-                        id2 = 0;
-                        id3 = 0;
-
+                    if(id4==0) {
+                        id4 = start.play(0.6f);
+                        id3=0;
                     }
+
                 }
 
             }
