@@ -14,6 +14,8 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import java.awt.*;
 import java.util.ArrayList;
 
+import static com.test2.game.AssetManagerExample.Levelbutton;
+
 public class EigeneLevelManageScreen extends ScreenAdapter {
 
     static ArrayList<touchinput.Button> EigeneLevelButtons = new ArrayList<touchinput.Button>();
@@ -21,41 +23,25 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
     static int marked=0;
 
     SpriteBatch batch;
-    BitmapFont font;
-    ShapeRenderer shapeRenderer;
-    Texture img;
-    Texture startge;
 
-    Texture Levelbutton;
-    Texture buttonimage;
-    Texture Levelbuttonrot;
+    ShapeRenderer shapeRenderer;
+
+
     touchinput.Button zurueck;
     touchinput.Button newLevel;
 
 
-    int u = 0;
+
 
     public EigeneLevelManageScreen() {
         batch = new SpriteBatch();
 
-        //schriftart
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 50;
-        font = generator.generateFont(parameter); // font size 12 pixels
-        generator.dispose(); // don't forget to dispose to avoid memory leaks!
-//
 
 
         shapeRenderer = new ShapeRenderer();
 
 
-        img = new Texture("start.png");
-        startge = new Texture("startge.png");
 
-        Levelbutton = new Texture("Levelauswahlbutton.png");
-        buttonimage = new Texture("Button.png");
-        Levelbuttonrot = new Texture("Levelauswahlbuttonrot.png");
         zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2-110,Gdx.graphics.getHeight()-500,220,100);
         newLevel = new touchinput.Button(0,Gdx.graphics.getHeight()-100,400,100);
 
@@ -120,8 +106,8 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
             batch.draw(AssetManagerExample.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         //font.getData().setScale(4);
-        font.draw(batch, "Edit", newLevel.x+30, newLevel.y+(newLevel.h/2+25));
-        batch.draw(buttonimage, newLevel.x,newLevel.y,newLevel.w,newLevel.h);
+        AssetManagerExample.font.draw(batch, "Edit", newLevel.x+30, newLevel.y+(newLevel.h/2+25));
+        batch.draw(AssetManagerExample.buttonimage, newLevel.x,newLevel.y,newLevel.w,newLevel.h);
         if(newLevel.isPressed() == 1){
             Test2.INSTANCE.setScreen(new LevelBaukastenScreen());
         }
@@ -136,10 +122,10 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
             if(marked==b){
                 batch.draw(Levelbutton,B.x,B.y,B.w,B.h);
             }else {
-                batch.draw(buttonimage, B.x, B.y, B.w, B.h);
+                batch.draw(AssetManagerExample.buttonimage, B.x, B.y, B.w, B.h);
             }
             //Data().setScale(4);
-            font.draw(batch, ""+(b+1),B.x+B.w/2,B.y+B.h/2);
+            AssetManagerExample.font.draw(batch, ""+(b+1),B.x+B.w/2,B.y+B.h/2);
             if(B.isPressed()==1){
                 marked=b;
                 EigeneLevelManageScreen.LoadEigenesLevel=b+1;
@@ -168,7 +154,7 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
     public void dispose() {
         super.dispose();
         batch.dispose();
-        img.dispose();
+
     }
 
     @Override
