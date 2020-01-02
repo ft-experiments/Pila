@@ -105,6 +105,7 @@ public class Var {
 
     static String actbackground = background1;
 
+    static int design_pack = 1;
 
 
 
