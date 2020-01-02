@@ -73,7 +73,7 @@ float min;
                     System.out.print(min);
                     System.out.println();
 
-
+/*
                     if(min==links){
                         Ball.richtungsumkehr_x();
                         Ball.x-= Ball.bx;
@@ -90,6 +90,21 @@ float min;
                         Ball.richtungsumkehr_y();
                         Ball.y-=Ball.by;
                     }
+                    */
+
+                    if(min==rechts || min==links){
+                            Ball.richtungsumkehr_x();
+                         Ball.x-= Ball.bx;
+                        }
+                    if(min==unten  || min==oben){
+                        Ball.richtungsumkehr_y();
+                        Ball.y-=Ball.by;
+                    }
+
+
+
+
+
                     /*
                     if(Ball.bx<0){
                         Ball.richtungsumkehr_x();
