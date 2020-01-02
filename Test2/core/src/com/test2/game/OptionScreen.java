@@ -24,22 +24,16 @@ public class OptionScreen extends ScreenAdapter implements Screen {
 
 
     Test2 game;
-    private Stage stage;
-    private Skin skin;
 
     int temp = 0;
 
 
 
     SpriteBatch batch;
-    Texture img;
 
-    Texture startge;
-    Texture Touch;
-    Texture Gyro;
     ShapeRenderer shapeRenderer;
 
-    BitmapFont font;
+
 
 
     touchinput.Button Levelauswahl;
@@ -134,23 +128,7 @@ int v=0;
 
         game=gg;
 
-        //schriftart
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 50;
-        font = generator.generateFont(parameter); // font size 12 pixels
-        generator.dispose(); // don't forget to dispose to avoid memory leaks!
 
-
-
-
-
-
-
-        img = new Texture("start.png");
-        startge = new Texture("startge.png");
-        Touch = new Texture("Touch.png");
-        Gyro = new Texture("Gyro.png");
 
 
         shapeRenderer = new ShapeRenderer();
@@ -407,7 +385,7 @@ tempold=temp;
 
 
 
-        batch.draw(img, Buttonstart.x,Buttonstart.y,Buttonstart.w,Buttonstart.h);
+        batch.draw(start, Buttonstart.x,Buttonstart.y,Buttonstart.w,Buttonstart.h);
         if(Buttonstart.isPressed() == 1){
             Test2.INSTANCE.setScreen(new GameScreen());
         }
@@ -738,9 +716,6 @@ if(Var.sound_effects) {
 
 
 
-
-
-
 }
 
 
@@ -856,7 +831,7 @@ if(!Gdx.input.isTouched()){
     @Override
     public void dispose() {
         batch.dispose();
-        img.dispose();
+
     }
 
     @Override
