@@ -42,7 +42,7 @@ public class GameScreen extends ScreenAdapter {
     Texture block_kleber;
     ShapeRenderer shapeRenderer;
     BitmapFont font;
-    Texture hintergrund;
+
     Texture block_feuer;
     Texture paddelklebimg;
     Texture block_schneller;
@@ -50,7 +50,7 @@ public class GameScreen extends ScreenAdapter {
     Texture block_2mal;
     Texture block_unzerstoerbar;
     Texture status_bar;
-    Texture hintergrund2;
+
     Texture pause;
     Texture weiter;
     Texture einstellungen;
@@ -142,7 +142,7 @@ public class GameScreen extends ScreenAdapter {
         block_2mal = new Texture("block_2mal.png");
         block_unzerstoerbar = new Texture("block_unzerstoerbar.png");
         status_bar = new Texture("statusbar.png");
-        hintergrund2 = new Texture(Var.actbackground);
+
         pause = new Texture("Pause.png");
         weiter = new Texture("Weiter.png");
         einstellungen = new Texture("einstellungen.png");
@@ -455,7 +455,41 @@ static double gamestcreendelta=0;
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         batch.begin();
-        batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());                ////////////
+
+
+        if(Var.actbackground==Var.background1) {
+            batch.draw(AssetManagerExample.b1,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+
+        if(Var.actbackground==Var.background2) {
+            batch.draw(AssetManagerExample.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background3) {
+            batch.draw(AssetManagerExample.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background4) {
+            batch.draw(AssetManagerExample.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background5) {
+            batch.draw(AssetManagerExample.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background6) {
+            batch.draw(AssetManagerExample.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background7) {
+            batch.draw(AssetManagerExample.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background8) {
+            batch.draw(AssetManagerExample.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background9) {
+            batch.draw(AssetManagerExample.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background10) {
+            batch.draw(AssetManagerExample.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+
+                        ////////////
 
 
 
@@ -951,7 +985,6 @@ if(Var.geheinpause==1) {
         block_2mal.dispose();
         block_unzerstoerbar.dispose();
         status_bar.dispose();
-        hintergrund2.dispose();
         pause.dispose();
         weiter.dispose();
         einstellungen.dispose();

@@ -20,6 +20,15 @@ public class Test2 extends Game {
 	@Override
 	public void create () {
 		LoadSave.loadall();
+
+		AssetManagerExample.loader();
+
+
+
+		while(!AssetManagerExample.manager.update()) {
+		System.out.println("loading please wait...");
+		}
+		AssetManagerExample.save();
 		setScreen(new StartScreen());
 		//setScreen(new GameScreen());
 		new DoppelKlick();

@@ -15,7 +15,7 @@ public class StartScreen extends ScreenAdapter {
     Texture buttonimage;
     SpriteBatch batch;
     ShapeRenderer shapeRenderer;
-    Texture hintergrund2;
+
     BitmapFont font;
     Texture switchon;
     Texture switchoff;
@@ -51,7 +51,7 @@ public class StartScreen extends ScreenAdapter {
 
 
 
-        hintergrund2 = new Texture(Var.actbackground);
+
         switchon = new Texture("switchon.png");
         switchoff = new Texture("switchoff.png");
         shapeRenderer = new ShapeRenderer();
@@ -84,7 +84,40 @@ public class StartScreen extends ScreenAdapter {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+
+        if(Var.actbackground==Var.background1) {
+            batch.draw(AssetManagerExample.b1,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+
+        if(Var.actbackground==Var.background2) {
+            batch.draw(AssetManagerExample.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background3) {
+            batch.draw(AssetManagerExample.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background4) {
+            batch.draw(AssetManagerExample.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background5) {
+            batch.draw(AssetManagerExample.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background6) {
+            batch.draw(AssetManagerExample.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background7) {
+            batch.draw(AssetManagerExample.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background8) {
+            batch.draw(AssetManagerExample.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background9) {
+            batch.draw(AssetManagerExample.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background10) {
+            batch.draw(AssetManagerExample.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+
+
 
     font.getData().setScale(0.7f);
         font.draw(batch, "weiter spielen", Start.x+30, Start.y+(Start.h/2+25));

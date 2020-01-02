@@ -28,20 +28,6 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     int temp = 0;
 
 
-    Texture b1;
-    Texture b2;
-    Texture b3;
-    Texture b4;
-    Texture b5;
-    Texture b6;
-    Texture b7;
-    Texture b8;
-    Texture b9;
-    Texture b10;
-
-
-
-
     Texture buttonimage;
     SpriteBatch batch;
     Texture img;
@@ -156,19 +142,6 @@ int v=0;
         parameter.size = 50;
         font = generator.generateFont(parameter); // font size 12 pixels
         generator.dispose(); // don't forget to dispose to avoid memory leaks!
-
-
-        b1 = new Texture(Var.background1);
-        b2 = new Texture(Var.background2);
-        b3 = new Texture(Var.background3);
-        b4 = new Texture(Var.background4);
-        b5 = new Texture(Var.background5);
-        b6 = new Texture(Var.background6);
-        b7 = new Texture(Var.background7);
-        b8 = new Texture(Var.background8);
-        b9 = new Texture(Var.background9);
-        b10 = new Texture(Var.background10);
-
 
 
 
@@ -308,35 +281,35 @@ tempold=temp;
 
 
         if(temp==1) {
-            batch.draw(b1, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(AssetManagerExample.b1, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
 
         if(temp==2) {
-            batch.draw(b2, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(AssetManagerExample.b2, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
         if(temp==3) {
-            batch.draw(b3, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(AssetManagerExample.b3, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
         if(temp==4) {
-            batch.draw(b4, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(AssetManagerExample.b4, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
         if(temp==5) {
-            batch.draw(b5, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(AssetManagerExample.b5, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
         if(temp==6) {
-            batch.draw(b6, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(AssetManagerExample.b6, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
         if(temp==7) {
-            batch.draw(b7, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(AssetManagerExample.b7, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
         if(temp==8) {
-            batch.draw(b8, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(AssetManagerExample.b8, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
         if(temp==9) {
-            batch.draw(b9, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(AssetManagerExample.b9, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
         if(temp==10) {
-            batch.draw(b10, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+            batch.draw(AssetManagerExample.b10, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
 
         if (Gdx.input.getAccelerometerY() > 12) {
@@ -508,29 +481,29 @@ tempold=temp;
 
 
 
-        batch.draw(b1, Background_1.x,Background_1.y,Background_1.w,Background_1.h);
+        batch.draw(AssetManagerExample.b1, Background_1.x,Background_1.y,Background_1.w,Background_1.h);
 
 
-        batch.draw(b2, Background_2.x,Background_2.y,Background_2.w,Background_2.h);
+        batch.draw(AssetManagerExample.b2, Background_2.x,Background_2.y,Background_2.w,Background_2.h);
 
 
-        batch.draw(b3, Background_3.x,Background_3.y,Background_3.w,Background_3.h);
+        batch.draw(AssetManagerExample.b3, Background_3.x,Background_3.y,Background_3.w,Background_3.h);
 
-        batch.draw(b4, Background_4.x,Background_4.y,Background_4.w,Background_4.h);
-
-
-        batch.draw(b5, Background_5.x,Background_5.y,Background_5.w,Background_5.h);
+        batch.draw(AssetManagerExample.b4, Background_4.x,Background_4.y,Background_4.w,Background_4.h);
 
 
-        batch.draw(b6, Background_6.x,Background_6.y,Background_6.w,Background_6.h);
+        batch.draw(AssetManagerExample.b5, Background_5.x,Background_5.y,Background_5.w,Background_5.h);
 
-        batch.draw(b7, Background_7.x,Background_7.y,Background_7.w,Background_7.h);
 
-        batch.draw(b8, Background_8.x,Background_8.y,Background_8.w,Background_8.h);
+        batch.draw(AssetManagerExample.b6, Background_6.x,Background_6.y,Background_6.w,Background_6.h);
 
-        batch.draw(b9, Background_9.x,Background_9.y,Background_9.w,Background_9.h);
+        batch.draw(AssetManagerExample.b7, Background_7.x,Background_7.y,Background_7.w,Background_7.h);
 
-        batch.draw(b10, Background_10.x,Background_10.y,Background_10.w,Background_10.h);
+        batch.draw(AssetManagerExample.b8, Background_8.x,Background_8.y,Background_8.w,Background_8.h);
+
+        batch.draw(AssetManagerExample.b9, Background_9.x,Background_9.y,Background_9.w,Background_9.h);
+
+        batch.draw(AssetManagerExample.b10, Background_10.x,Background_10.y,Background_10.w,Background_10.h);
 
 
 
