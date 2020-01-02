@@ -48,7 +48,6 @@ public class AssetManagerExample  {
    public static Texture status_bar;
 
    public static Texture pause;
-   public static Texture weiter;
    public static Texture einstellungen;
    public static Texture bigpause;
 
@@ -71,6 +70,8 @@ public class AssetManagerExample  {
     public static Texture Levelbuttonrot;
 
     public static Sound click;
+
+    public static Sound start_finish;
 
     public static AssetManager manager = new AssetManager();
     public static void loader() {
@@ -97,49 +98,52 @@ public class AssetManagerExample  {
         manager.load(Var.background9, Texture.class);
         manager.load(Var.background10, Texture.class);
 
-        manager.load("switchon.png", Texture.class);
-        manager.load("switchoff.png", Texture.class);
+        manager.load("option/switchon.png", Texture.class);
+        manager.load("option/switchoff.png", Texture.class);
 
-        manager.load("Button.png", Texture.class);
+        manager.load("game/Button.png", Texture.class);
 
-        manager.load("block_l.png",Texture.class);
-        manager.load("block_rot.png",Texture.class);
-        manager.load("block_gruen.png",Texture.class);
-        manager.load("block_blau.png",Texture.class);
-        manager.load("paddel.png",Texture.class);
-        manager.load("block_k.png",Texture.class);
-        manager.load("block_kleber.png",Texture.class);
+        manager.load("blocks/block_l.png",Texture.class);
+        manager.load("blocks/block_rot.png",Texture.class);
+        manager.load("blocks/block_gruen.png",Texture.class);
+        manager.load("blocks/block_blau.png",Texture.class);
+        manager.load("game/paddel.png",Texture.class);
+        manager.load("blocks/block_k.png",Texture.class);
+        manager.load("blocks/block_kleber.png",Texture.class);
 
-        manager.load("countdown1.png",Texture.class);
-        manager.load("countdown2.png",Texture.class);
-        manager.load("countdown3.png",Texture.class);
-        manager.load("los.png",Texture.class);
+        manager.load("game/countdown1.png",Texture.class);
+        manager.load("game/countdown2.png",Texture.class);
+        manager.load("game/countdown3.png",Texture.class);
+        manager.load("game/los.png",Texture.class);
 
-        manager.load("block_feuer.png",Texture.class);
-        manager.load("paddelkleb.png",Texture.class);
-        manager.load("block_schneller.png",Texture.class);
-        manager.load("block_langsamer.png",Texture.class);
-        manager.load("block_2mal.png",Texture.class);
-        manager.load("block_unzerstoerbar.png",Texture.class);
-        manager.load("statusbar.png",Texture.class);
-        manager.load("Pause.png",Texture.class);
-        manager.load("Weiter.png",Texture.class);
-        manager.load("einstellungen.png",Texture.class);
-        manager.load("bigpause.png",Texture.class);
+        manager.load("blocks/block_feuer.png",Texture.class);
+        manager.load("game/paddelkleb.png",Texture.class);
+        manager.load("blocks/block_schneller.png",Texture.class);
+        manager.load("blocks/block_langsamer.png",Texture.class);
+        manager.load("blocks/block_2mal.png",Texture.class);
+        manager.load("blocks/block_unzerstoerbar.png",Texture.class);
+        manager.load("game/statusbar.png",Texture.class);
+        manager.load("option/Pause.png",Texture.class);
 
-        manager.load("info.png", Texture.class);
+        manager.load("option/einstellungen.png",Texture.class);
+        manager.load("option/bigpause.png",Texture.class);
 
-        manager.load("start.png", Texture.class);
-        manager.load("startge.png", Texture.class);
-        manager.load("Touch.png", Texture.class);
-        manager.load("Gyro.png", Texture.class);
+        manager.load("option/info.png", Texture.class);
 
-        manager.load("neustart.png", Texture.class);
+        manager.load("game/start.png", Texture.class);
+        manager.load("game/startge.png", Texture.class);
+        manager.load("option/Touch.png", Texture.class);
+        manager.load("option/Gyro.png", Texture.class);
 
-        manager.load("gameover.png", Texture.class);
-        manager.load("Levelauswahlbutton.png", Texture.class);
-        manager.load("Levelauswahlbuttonrot.png", Texture.class);
+        manager.load("game/neustart.png", Texture.class);
+
+        manager.load("game/gameover.png", Texture.class);
+        manager.load("game/Levelauswahlbutton.png", Texture.class);
+        manager.load("game/Levelauswahlbuttonrot.png", Texture.class);
+        manager.load("sound/start_last.mp3", Sound.class);
         manager.load("sound/click.mp3", Sound.class);
+
+
 
        /*
         manager.load("data/myfont.fnt", BitmapFont.class);
@@ -163,50 +167,52 @@ public class AssetManagerExample  {
         b9 = manager.get(Var.background9, Texture.class);
         b10 = manager.get(Var.background10, Texture.class);
 
-        switchon =  manager.get("switchon.png", Texture.class);
-        switchoff = manager.get("switchoff.png", Texture.class);
+        switchon =  manager.get("option/switchon.png", Texture.class);
+        switchoff = manager.get("option/switchoff.png", Texture.class);
 
-        buttonimage = manager.get("Button.png", Texture.class);
+        buttonimage = manager.get("game/Button.png", Texture.class);
 
 
-        block_l = manager.get("block_l.png",Texture.class);
-        block_rot =  manager.get("block_rot.png",Texture.class);
-        block_gruen = manager.get("block_gruen.png",Texture.class);
-        block_blau = manager.get("block_blau.png",Texture.class);
-        paddelimg = manager.get("paddel.png",Texture.class);
-        block_k = manager.get("block_k.png",Texture.class);
-        block_kleber = manager.get("block_kleber.png",Texture.class);
+        block_l = manager.get("blocks/block_l.png",Texture.class);
+        block_rot =  manager.get("blocks/block_rot.png",Texture.class);
+        block_gruen =  manager.get("blocks/block_gruen.png",Texture.class);
+        block_blau =  manager.get("blocks/block_blau.png",Texture.class);
+        paddelimg = manager.get("game/paddel.png",Texture.class);
+        block_k = manager.get("blocks/block_k.png",Texture.class);
+        block_kleber = manager.get("blocks/block_kleber.png",Texture.class);
 
-        countdown1 = manager.get("countdown1.png",Texture.class);
-        countdown2 = manager.get("countdown2.png",Texture.class);
-        countdown3 = manager.get("countdown3.png",Texture.class);
-        los = manager.get("los.png",Texture.class);
+        countdown1 = manager.get("game/countdown1.png",Texture.class);
+        countdown2 = manager.get("game/countdown2.png",Texture.class);
+        countdown3 = manager.get("game/countdown3.png",Texture.class);
+        los = manager.get("game/los.png",Texture.class);
 
-       block_feuer = manager.get("block_feuer.png",Texture.class);
-       paddelklebimg = manager.get("paddelkleb.png",Texture.class);
-       block_schneller = manager.get("block_schneller.png",Texture.class);
-       block_langsamer = manager.get("block_langsamer.png",Texture.class);
-       block_2mal = manager.get("block_2mal.png",Texture.class);
-       block_unzerstoerbar = manager.get("block_unzerstoerbar.png",Texture.class);
-        status_bar = manager.get("statusbar.png",Texture.class);
-       pause = manager.get("Pause.png",Texture.class);
-       weiter = manager.get("Weiter.png",Texture.class);
-       einstellungen = manager.get("einstellungen.png",Texture.class);
-       bigpause = manager.get("bigpause.png",Texture.class);
+       block_feuer = manager.get("blocks/block_feuer.png",Texture.class);
+       paddelklebimg = manager.get("game/paddelkleb.png",Texture.class);
+       block_schneller = manager.get("blocks/block_schneller.png",Texture.class);
+       block_langsamer = manager.get("blocks/block_langsamer.png",Texture.class);
+       block_2mal = manager.get("blocks/block_2mal.png",Texture.class);
+       block_unzerstoerbar = manager.get("blocks/block_unzerstoerbar.png",Texture.class);
+        status_bar = manager.get("game/statusbar.png",Texture.class);
+       pause = manager.get("option/Pause.png",Texture.class);
 
-       info = info1 = info2 = info3 = manager.get("info.png", Texture.class);
+       einstellungen = manager.get("option/einstellungen.png",Texture.class);
+       bigpause = manager.get("option/bigpause.png",Texture.class);
 
-        start = manager.get("start.png",Texture.class);
-        startge = manager.get("startge.png",Texture.class);
-        Touch = manager.get("Touch.png",Texture.class);
-        Gyro = manager.get("Gyro.png",Texture.class);
-        neustart = manager.get("neustart.png", Texture.class);
+       info = info1 = info2 = info3 = manager.get("option/info.png", Texture.class);
 
-        gameover = manager.get("gameover.png", Texture.class);
-        Levelbutton = manager.get("Levelauswahlbutton.png", Texture.class);
-        Levelbuttonrot = manager.get("Levelauswahlbuttonrot.png", Texture.class);
+        start = manager.get("game/start.png",Texture.class);
+        startge = manager.get("game/startge.png",Texture.class);
+        Touch = manager.get("option/Touch.png",Texture.class);
+        Gyro = manager.get("option/Gyro.png",Texture.class);
+        neustart = manager.get("game/neustart.png", Texture.class);
+
+        gameover = manager.get("game/gameover.png", Texture.class);
+        Levelbutton = manager.get("game/Levelauswahlbutton.png", Texture.class);
+        Levelbuttonrot = manager.get("game/Levelauswahlbuttonrot.png", Texture.class);
         click = manager.get("sound/click.mp3", Sound.class);
 
+
+        start_finish = manager.get("sound/start_last.mp3", Sound.class);
     }
 
 
