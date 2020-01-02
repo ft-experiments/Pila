@@ -50,7 +50,7 @@ public class SplashScreen extends ScreenAdapter implements Screen {
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(0,1,0,1);
         shapeRenderer.rect(0,200,AssetManagerExample.manager.getProgress()*100*(Gdx.graphics.getWidth()/100),100);
-        System.out.println(AssetManagerExample.manager.getProgress());
+       // System.out.println(AssetManagerExample.manager.getProgress());
         shapeRenderer.end();
 
 
