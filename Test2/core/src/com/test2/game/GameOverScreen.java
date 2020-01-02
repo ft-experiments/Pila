@@ -11,29 +11,20 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 import java.awt.*;
 
+import static com.test2.game.AssetManagerExample.*;
+
 public class GameOverScreen extends ScreenAdapter {
     SpriteBatch batch;
-    Texture neustart;
-    Texture startge;
-    Texture Touch;
-    Texture Gyro;
-    ShapeRenderer shapeRenderer;
-    BitmapFont font;
 
-    Texture gameover;
+    ShapeRenderer shapeRenderer;
+
+
    public static boolean restartgameaftergameover = false;
 
     public GameOverScreen() {
 
         batch = new SpriteBatch();
-        font = new BitmapFont();
 
-        neustart = new Texture("neustart.png");
-        startge = new Texture("startge.png");
-        Touch = new Texture("Touch.png");
-        Gyro = new Texture("Gyro.png");
-
-        gameover = new Texture("gameover.png");
         shapeRenderer = new ShapeRenderer();
     }
 
@@ -75,7 +66,7 @@ public class GameOverScreen extends ScreenAdapter {
             batch.draw(AssetManagerExample.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         batch.draw(gameover,Gdx.graphics.getWidth()/2-500,Gdx.graphics.getHeight()/2+200,1000,300);
-        font.getData().setScale(8);
+
         //font.draw(batch, "Game Over" , Gdx.graphics.getWidth()/2-300, Gdx.graphics.getHeight()/2+200);
 
 

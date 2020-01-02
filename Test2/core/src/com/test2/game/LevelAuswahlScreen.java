@@ -17,14 +17,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
     SpriteBatch batch;
     BitmapFont font;
     ShapeRenderer shapeRenderer;
-    Texture img;
-    Texture startge;
 
-    Texture switchon;
-    Texture switchoff;
-    Texture Levelbutton;
-    Texture buttonimage;
-    Texture Levelbuttonrot;
     touchinput.Button zurueck;
 
    String back;
@@ -34,26 +27,11 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         batch = new SpriteBatch();
 
 
-        //schriftart
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 50;
-        font = generator.generateFont(parameter); // font size 12 pixels
-        generator.dispose(); // don't forget to dispose to avoid memory leaks!
-//
-
 
         shapeRenderer = new ShapeRenderer();
 
 
-        img = new Texture("start.png");
-        startge = new Texture("startge.png");
 
-        switchon = new Texture("switchon.png");
-        switchoff = new Texture("switchoff.png");
-        Levelbutton = new Texture("Levelauswahlbutton.png");
-        buttonimage = new Texture("Button.png");
-        Levelbuttonrot = new Texture("Levelauswahlbuttonrot.png");
         zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2,Gdx.graphics.getHeight()-100,220,100);
 
         back = referrer;
@@ -127,7 +105,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
         //font.getData().setScale(4);
         font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
-        batch.draw(buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
+        batch.draw(AssetManagerExample.buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
         if(zurueck.isPressed() == 1){
             Var.geheinpause = 1;
             Level.dispose();
@@ -147,10 +125,10 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         for(int b=0;b<LevelAuswahlButtons.Levelbuttons.size();b=b+1) {
             LAB = LevelAuswahlButtons.Levelbuttons.get(b);
             if(LAB.Level-1>=Var.levelbesitz) {
-                batch.draw(Levelbuttonrot, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
+                batch.draw(AssetManagerExample.Levelbuttonrot, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
             }
             if(LAB.Level-1<Var.levelbesitz){
-                batch.draw(Levelbutton, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
+                batch.draw(AssetManagerExample.Levelbutton, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
             }
 
             //font.getData().setScale(4);
@@ -176,7 +154,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
     @Override
     public void dispose() {
         batch.dispose();
-        img.dispose();
+
     }
 
     @Override

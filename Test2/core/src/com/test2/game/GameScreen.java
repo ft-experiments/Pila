@@ -16,6 +16,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
+import static com.test2.game.AssetManagerExample.*;
 import static java.lang.System.currentTimeMillis;
 
 
@@ -24,42 +25,23 @@ public class GameScreen extends ScreenAdapter {
     public static GameScreen INSTANCE;
 
 
-    Test2 game;
+
 
     LoadSave LoadSave;
     SpriteBatch batch;
-    Texture los;
-    Texture countdown1;
-    Texture countdown2;
-    Texture countdown3;
-    Texture img;
-    Texture block_l;
-    Texture block_rot;
-    Texture block_gruen;
-    Texture block_blau;
-    Texture paddelimg;
-    Texture block_k;
-    Texture block_kleber;
+
+
+
     ShapeRenderer shapeRenderer;
-    BitmapFont font;
 
-    Texture block_feuer;
-    Texture paddelklebimg;
-    Texture block_schneller;
-    Texture block_langsamer;
-    Texture block_2mal;
-    Texture block_unzerstoerbar;
-    Texture status_bar;
 
-    Texture pause;
-    Texture weiter;
-    Texture einstellungen;
+
     touchinput.Button Levelauswahl;
     touchinput.Button Buttonstart;
     touchinput.Button Weiter;
     touchinput.Button neustartbutton;
-    Texture buttonimage;
-    Texture bigpause;
+
+
     Smooth ka;
     long c= currentTimeMillis();
     int u=0;
@@ -117,41 +99,11 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-        //schriftart
-        FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("comicsans.ttf"));
-        FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
-        parameter.size = 50;
-        font = generator.generateFont(parameter); // font size 12 pixels
-        generator.dispose(); // don't forget to dispose to avoid memory leaks!
 
 
 
 
-        block_l = new Texture("block_l.png");
-        block_rot = new Texture("block_rot.png");
-        block_gruen = new Texture("block_gruen.png");
-        block_blau = new Texture("block_blau.png");
-        paddelimg = new Texture("paddel.png");
-        img = new Texture("badlogic.jpg");
-        block_k= new Texture("block_k.png");
-        block_kleber= new Texture("block_kleber.png");
-        block_feuer= new Texture("block_feuer.png");
-        paddelklebimg= new Texture("paddelkleb.png");
-        block_schneller= new Texture("block_schneller.png");
-        block_langsamer= new Texture("block_langsamer.png");
-        block_2mal = new Texture("block_2mal.png");
-        block_unzerstoerbar = new Texture("block_unzerstoerbar.png");
-        status_bar = new Texture("statusbar.png");
 
-        pause = new Texture("Pause.png");
-        weiter = new Texture("Weiter.png");
-        einstellungen = new Texture("einstellungen.png");
-        buttonimage = new Texture("Button.png");
-        bigpause = new Texture("bigpause.png");
-        countdown1 = new Texture("countdown1.png");
-        countdown2 = new Texture("countdown2.png");
-        countdown3 = new Texture("countdown3.png");
-        los = new Texture("los.png");
         ka = new Smooth();
         start = Gdx.audio.newSound(Gdx.files.internal("start.mp3"));
         start_finish = Gdx.audio.newSound(Gdx.files.internal("start_last.mp3"));
@@ -968,26 +920,8 @@ if(Var.geheinpause==1) {
     @Override
     public void dispose() {
         batch.dispose();
-        img.dispose();
         shapeRenderer.dispose();
-        font.dispose();
-        block_l.dispose();
-        block_rot.dispose();
-        block_gruen.dispose();
-        block_blau.dispose();
-        paddelimg.dispose();
-        block_k.dispose();
-        block_kleber.dispose();
-        block_feuer.dispose();
-        paddelklebimg.dispose();
-        block_schneller.dispose();
-        block_langsamer.dispose();
-        block_2mal.dispose();
-        block_unzerstoerbar.dispose();
-        status_bar.dispose();
-        pause.dispose();
-        weiter.dispose();
-        einstellungen.dispose();
+
 
     }
 
