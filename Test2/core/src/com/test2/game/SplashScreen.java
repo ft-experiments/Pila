@@ -53,10 +53,10 @@ public class SplashScreen extends ScreenAdapter implements Screen {
         shapeRenderer.end();
 batch.begin();
 if(AssetManagerExample.manager.getProgress()*100<20) {
-    font.draw(batch, "(-: Das Laden wird geladen", 100, 100);
+    font.draw(batch, "Das Laden wird geladen", 100, 100);
 }
         if(AssetManagerExample.manager.getProgress()*100>20  && AssetManagerExample.manager.getProgress()*100<50) {
-            font.draw(batch, "Das Laden lädt", 100, 100);
+            font.draw(batch, "Der Ladebalken wird heruntergeladen", 100, 100);
         }
         if(AssetManagerExample.manager.getProgress()*100>50) {
             font.draw(batch, "Wlan-Kabel-Überprüfung..", 100, 100);
