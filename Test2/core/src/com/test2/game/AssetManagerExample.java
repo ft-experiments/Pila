@@ -19,6 +19,8 @@ public class AssetManagerExample  {
     public static Texture b8;
     public static Texture b9;
     public static Texture b10;
+    public static Texture switchon;
+    public static Texture switchoff;
 
 
     public static AssetManager manager = new AssetManager();
@@ -38,7 +40,8 @@ public class AssetManagerExample  {
         manager.load(Var.background8, Texture.class);
         manager.load(Var.background9, Texture.class);
         manager.load(Var.background10, Texture.class);
-
+        manager.load("switchon.png", Texture.class);
+        manager.load("switchoff.png", Texture.class);
 
 
        /*
@@ -61,6 +64,9 @@ public class AssetManagerExample  {
         b8 = manager.get(Var.background8, Texture.class);
         b9 = manager.get(Var.background9, Texture.class);
         b10 = manager.get(Var.background10, Texture.class);
+
+        switchon =  manager.get("switchon.png", Texture.class);
+        switchoff = manager.get("switchoff.png", Texture.class);
 
     }
 

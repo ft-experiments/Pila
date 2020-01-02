@@ -25,7 +25,7 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
     ShapeRenderer shapeRenderer;
     Texture img;
     Texture startge;
-    Texture hintergrund2;
+
     Texture switchon;
     Texture switchoff;
     Texture Levelbutton;
@@ -54,7 +54,7 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
 
         img = new Texture("start.png");
         startge = new Texture("startge.png");
-        hintergrund2 = new Texture(Var.actbackground);
+
         switchon = new Texture("switchon.png");
         switchoff = new Texture("switchoff.png");
         Levelbutton = new Texture("Levelauswahlbutton.png");
@@ -93,7 +93,36 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-        batch.draw(hintergrund2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        if(Var.actbackground==Var.background1) {
+        }
+
+        if(Var.actbackground==Var.background2) {
+            batch.draw(AssetManagerExample.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background3) {
+            batch.draw(AssetManagerExample.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background4) {
+            batch.draw(AssetManagerExample.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background5) {
+            batch.draw(AssetManagerExample.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background6) {
+            batch.draw(AssetManagerExample.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background7) {
+            batch.draw(AssetManagerExample.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background8) {
+            batch.draw(AssetManagerExample.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background9) {
+            batch.draw(AssetManagerExample.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
+        if(Var.actbackground==Var.background10) {
+            batch.draw(AssetManagerExample.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+        }
         //font.getData().setScale(4);
         font.draw(batch, "Edit", newLevel.x+30, newLevel.y+(newLevel.h/2+25));
         batch.draw(buttonimage, newLevel.x,newLevel.y,newLevel.w,newLevel.h);

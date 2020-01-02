@@ -16,6 +16,9 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
+import static com.test2.game.AssetManagerExample.switchoff;
+import static com.test2.game.AssetManagerExample.switchon;
+
 
 public class OptionScreen extends ScreenAdapter implements Screen {
     Sound sound = Gdx.audio.newSound(Gdx.files.internal("sound/click.mp3"));
@@ -41,8 +44,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     ShapeRenderer shapeRenderer;
     Texture hintergrund2;
     BitmapFont font;
-    Texture switchon;
-    Texture switchoff;
+
 
     touchinput.Button Levelauswahl;
     touchinput.Button Baukasten;
@@ -158,8 +160,7 @@ int v=0;
         Touch = new Texture("Touch.png");
         Gyro = new Texture("Gyro.png");
         hintergrund2 = new Texture(Var.actbackground);
-        switchon = new Texture("switchon.png");
-        switchoff = new Texture("switchoff.png");
+
         shapeRenderer = new ShapeRenderer();
 
         buttonimage = new Texture("Button.png");

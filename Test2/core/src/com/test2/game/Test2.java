@@ -26,7 +26,7 @@ public class Test2 extends Game {
 
 
 		while(!AssetManagerExample.manager.update()) {
-		System.out.println("loading please wait...");
+		System.out.println("loading please wait... "+  AssetManagerExample.manager.getProgress());
 		}
 		AssetManagerExample.save();
 		setScreen(new StartScreen());
