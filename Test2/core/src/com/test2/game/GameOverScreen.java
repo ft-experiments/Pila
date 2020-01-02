@@ -107,7 +107,7 @@ public class GameOverScreen extends ScreenAdapter {
     @Override
     public void dispose() {
         batch.dispose();
-        neustart.dispose();
+
     }
 
     @Override
