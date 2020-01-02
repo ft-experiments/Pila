@@ -25,7 +25,7 @@ public class Test2 extends Game {
 
 		LoadSave.loadall();
 
-
+		AssetManagerExample.loader();
 
 		setScreen(new SplashScreen());
 
