@@ -15,9 +15,7 @@ import java.awt.*;
 
 public class LevelAuswahlScreen extends ScreenAdapter {
     SpriteBatch batch;
-    BitmapFont font;
     ShapeRenderer shapeRenderer;
-
     touchinput.Button zurueck;
 
    String back;
@@ -25,13 +23,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
     public LevelAuswahlScreen(String referrer) {
         batch = new SpriteBatch();
-
-
-
         shapeRenderer = new ShapeRenderer();
-
-
-
         zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2,Gdx.graphics.getHeight()-100,220,100);
 
         back = referrer;
