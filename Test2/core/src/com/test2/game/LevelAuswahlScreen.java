@@ -104,7 +104,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         }
 
         //font.getData().setScale(4);
-        font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
+        AssetManagerExample.font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
         batch.draw(AssetManagerExample.buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
         if(zurueck.isPressed() == 1){
             Var.geheinpause = 1;
@@ -132,7 +132,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
             }
 
             //font.getData().setScale(4);
-            font.draw(batch, ""+(LAB.Level) , LAB.x+LAB.w/2-30,LAB.y+LAB.h/2+30);
+            AssetManagerExample.font.draw(batch, ""+(LAB.Level) , LAB.x+LAB.w/2-30,LAB.y+LAB.h/2+30);
             //System.out.println(b);
             if(LAB.Level<=Var.levelbesitz) {
                 LAB.check();
