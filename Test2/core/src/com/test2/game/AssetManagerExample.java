@@ -63,6 +63,8 @@ public class AssetManagerExample  {
     public static Texture Touch;
     public static Texture Gyro;
 
+    public static Texture neustart;
+    public static Texture gameover;
     public static AssetManager manager = new AssetManager();
     public static void loader() {
 
@@ -125,6 +127,10 @@ public class AssetManagerExample  {
         manager.load("Touch.png", Texture.class);
         manager.load("Gyro.png", Texture.class);
 
+        manager.load("neustart.png", Texture.class);
+
+        manager.load("gameover.png", Texture.class);
+
 
        /*
         manager.load("data/myfont.fnt", BitmapFont.class);
@@ -185,6 +191,9 @@ public class AssetManagerExample  {
         startge = manager.get("startge.png",Texture.class);
         Touch = manager.get("Touch.png",Texture.class);
         Gyro = manager.get("Gyro.png",Texture.class);
+        neustart = manager.get("neustart.png", Texture.class);
+
+        gameover = manager.get("gameover.png", Texture.class);
 
     }
 
