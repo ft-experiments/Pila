@@ -16,8 +16,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 
-import static com.test2.game.AssetManagerExample.switchoff;
-import static com.test2.game.AssetManagerExample.switchon;
+import static com.test2.game.AssetManagerExample.*;
 
 
 public class SplashScreen extends ScreenAdapter implements Screen {
@@ -52,7 +51,17 @@ public class SplashScreen extends ScreenAdapter implements Screen {
         shapeRenderer.rect(0,200,AssetManagerExample.manager.getProgress()*100*(Gdx.graphics.getWidth()/100),100);
        // System.out.println(AssetManagerExample.manager.getProgress());
         shapeRenderer.end();
-
+batch.begin();
+if(AssetManagerExample.manager.getProgress()*100<20) {
+    font.draw(batch, "(-: Das Laden wird geladen", 100, 100);
+}
+        if(AssetManagerExample.manager.getProgress()*100>20  && AssetManagerExample.manager.getProgress()*100<50) {
+            font.draw(batch, "Das Laden lädt", 100, 100);
+        }
+        if(AssetManagerExample.manager.getProgress()*100>50) {
+            font.draw(batch, "Wlan-Kabel-Überprüfung..", 100, 100);
+        }
+batch.end();
 
 
 
