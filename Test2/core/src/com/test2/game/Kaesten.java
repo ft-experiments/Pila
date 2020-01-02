@@ -19,6 +19,13 @@ int my=0;
 int mx2=0;
 int my2=0;
 
+float rechts;
+float links;
+float oben;
+float unten;
+
+float min;
+
 
 
     Kaesten(int _kx, int _ky, int _kw, int _kh,int _art) {
@@ -48,16 +55,52 @@ int my2=0;
 
                 if(Var.ballmode==0) {
 
+                    rechts=K_x+K_w-Ball.x;
+                    links=(Ball.x+Ball.r  - K_x);
+                    oben=K_y+K_h-Ball.y;
+                    unten=(Ball.y+Ball.r)-K_y;
+
+                    min = Math.min(Math.min(rechts,links),Math.min(oben,unten));
+
+                    System.out.println();
+                    System.out.print("         rechts: ");
+                    System.out.print(rechts);
+                    System.out.print("  links: ");
+                    System.out.print(links);
+                    System.out.print("  oben: ");
+                    System.out.print(oben);
+                    System.out.print("    min: ");
+                    System.out.print(min);
+                    System.out.println();
+
+
+                    if(min==links){
+                        Ball.richtungsumkehr_x();
+                        Ball.x-= Ball.bx;
+                    }
+                    if(min==rechts){
+                        Ball.richtungsumkehr_x();
+                        Ball.x-= Ball.bx;
+                    }
+                    if(min==oben){
+                        Ball.richtungsumkehr_y();
+                        Ball.y-=Ball.by;
+                    }
+                    if(min==unten){
+                        Ball.richtungsumkehr_y();
+                        Ball.y-=Ball.by;
+                    }
+                    /*
                     if(Ball.bx<0){
                         Ball.richtungsumkehr_x();
-                        Ball.x-= 10;
+                        Ball.x-= Ball.bx;
 
                     }else
                     if(Ball.bx>0){
                         Ball.richtungsumkehr_x();
-                        Ball.x+= 10;
+                        Ball.x-= Ball.bx;
 
-                    }
+                    }*/
 
 
 
