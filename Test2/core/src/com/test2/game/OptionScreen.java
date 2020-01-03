@@ -886,26 +886,30 @@ if(!Gdx.input.isTouched()){
         pack2.h=Gdx.graphics.getHeight()/2;
 
 
+if(Background_1.y>Gdx.graphics.getHeight()) {
+
+    batch.draw(buttonimage, pack1.x, pack1.y, pack1.w, pack1.h);
+    batch.draw(buttonimage, pack2.x, pack2.y, pack2.w, pack2.h);
+    batch.draw(buttonimage, pack3.x, pack3.y, pack3.w, pack3.h);
+    batch.draw(buttonimage, pack4.x, pack4.y, pack4.w, pack4.h);
+    batch.draw(buttonimage, pack5.x, pack5.y, pack5.w, pack5.h);
 
 
-        batch.draw(buttonimage,pack1.x,pack1.y,pack1.w,pack1.h);
-        batch.draw(buttonimage,pack2.x,pack2.y,pack2.w,pack2.h);
-        batch.draw(buttonimage,pack3.x,pack3.y,pack3.w,pack3.h);
-        batch.draw(buttonimage,pack4.x,pack4.y,pack4.w,pack4.h);
-        batch.draw(buttonimage,pack5.x,pack5.y,pack5.w,pack5.h);
+    if(pack1.isPressed()==1){
+        Var.newpack = true;
+        Var.gotopack = "default";
+        Test2.INSTANCE.setScreen(new SplashScreen());
+    }
+    if(pack2.isPressed()==1){
+        Var.newpack = true;
+        Var.gotopack = "pack2";
+        Test2.INSTANCE.setScreen(new SplashScreen());
+    }
+
+}
 
 
 
-        if(pack1.isPressed()==1){
-            Var.newpack = true;
-            Var.gotopack = "default";
-            Test2.INSTANCE.setScreen(new SplashScreen());
-        }
-        if(pack2.isPressed()==1){
-            Var.newpack = true;
-            Var.gotopack = "pack2";
-            Test2.INSTANCE.setScreen(new SplashScreen());
-        }
 
 
 
