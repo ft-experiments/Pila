@@ -22,6 +22,13 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     ShapeRenderer shapeRenderer;
 
 
+    touchinput.Button pack1;
+    touchinput.Button pack2;
+    touchinput.Button pack3;
+    touchinput.Button pack4;
+    touchinput.Button pack5;
+
+
     touchinput.Button Levelauswahl;
     touchinput.Button Baukasten;
     touchinput.Button Buttonstart;
@@ -151,6 +158,16 @@ int v=0;
 
 
 
+            pack1=new touchinput.Button(0,-Gdx.graphics.getHeight()/2,0,0);
+            pack2=new touchinput.Button(0,-Gdx.graphics.getHeight()/2,0,0);
+            pack3=new touchinput.Button(0,0,0,0);
+            pack4=new touchinput.Button(0,0,0,0);
+            pack5=new touchinput.Button(0,0,0,0);
+
+
+
+
+
 
         if(Var.showfps==true) {
             bb=1;
@@ -219,6 +236,12 @@ int v=0;
 
     public void render(float delta) {
 tempold=temp;
+
+
+
+
+
+
 
 
 
@@ -512,6 +535,8 @@ if(Gdx.input.isTouched() || c==0){
         d[13]=Background_8.y;
         d[14]=Background_9.y;
         d[15]=Background_10.y;
+        d[16]=pack1.y;
+        d[17]=pack2.y;
 
 
 
@@ -561,6 +586,8 @@ if(Gdx.input.isTouched() || c==0){
     Background_8.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[13]);
     Background_9.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[14]);
     Background_10.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[15]);
+    pack1.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[16]);
+    pack2.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[17]);
 
 
 
@@ -845,6 +872,27 @@ if(!Gdx.input.isTouched()){
 
     }
 }
+
+
+
+
+        pack1.x=0;
+        pack2.x=Gdx.graphics.getWidth()/2;
+
+        pack1.w=Gdx.graphics.getWidth()/2;
+        pack2.w=Gdx.graphics.getWidth()/2;
+
+        pack1.h=Gdx.graphics.getHeight()/2;
+        pack2.h=Gdx.graphics.getHeight()/2;
+
+
+
+
+        batch.draw(buttonimage,pack1.x,pack1.y,pack1.w,pack1.h);
+        batch.draw(buttonimage,pack2.x,pack2.y,pack2.w,pack2.h);
+        batch.draw(buttonimage,pack3.x,pack3.y,pack3.w,pack3.h);
+        batch.draw(buttonimage,pack4.x,pack4.y,pack4.w,pack4.h);
+        batch.draw(buttonimage,pack5.x,pack5.y,pack5.w,pack5.h);
 
 
 
