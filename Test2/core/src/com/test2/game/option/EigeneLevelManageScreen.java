@@ -8,7 +8,7 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.test2.game.start.AssetManageLoader;
 import com.test2.game.Test2;
 import com.test2.game.Var;
-import com.test2.game.library.touchinput;
+import com.test2.game.library.*;
 
 import java.util.ArrayList;
 
@@ -16,15 +16,15 @@ import static com.test2.game.start.AssetManageLoader.Levelbutton;
 
 public class EigeneLevelManageScreen extends ScreenAdapter {
 
-    static ArrayList<com.test2.game.library.touchinput.Button> EigeneLevelButtons = new ArrayList<com.test2.game.library.touchinput.Button>();
+    static ArrayList<touchinput.Button> EigeneLevelButtons = new ArrayList<touchinput.Button>();
     static int LoadEigenesLevel=0;
     static int marked=0;
 
     SpriteBatch batch;
     ShapeRenderer shapeRenderer;
 
-    com.test2.game.library.touchinput.Button zurueck;
-    com.test2.game.library.touchinput.Button newLevel;
+    touchinput.Button zurueck;
+    touchinput.Button newLevel;
 
 
     public EigeneLevelManageScreen() {
@@ -36,8 +36,8 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
 
 
 
-        zurueck = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/2-110,Gdx.graphics.getHeight()-500,220,100);
-        newLevel = new com.test2.game.library.touchinput.Button(0,Gdx.graphics.getHeight()-100,400,100);
+        zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2-110,Gdx.graphics.getHeight()-500,220,100);
+        newLevel = new touchinput.Button(0,Gdx.graphics.getHeight()-100,400,100);
 
         create();
     }
@@ -49,8 +49,8 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
         for(int j=0;j<fh;j=j+1) {
             for (int i = 0; i < fw; i = i + 1) {
                 le=le+1;
-                com.test2.game.library.touchinput.Button B;
-                B = new com.test2.game.library.touchinput.Button(i * Gdx.graphics.getWidth() / fw,j* Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw) ;
+                touchinput.Button B;
+                B = new touchinput.Button(i * Gdx.graphics.getWidth() / fw,j* Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw) ;
                 //LevelAuswahlButtons.Levelbuttons.add(LAB,i);
                 EigeneLevelManageScreen.EigeneLevelButtons.add(i,B);
             }

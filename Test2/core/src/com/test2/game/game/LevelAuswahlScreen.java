@@ -8,12 +8,13 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.test2.game.*;
 import com.test2.game.library.Level;
 import com.test2.game.library.LevelAuswahlButtons;
+import com.test2.game.library.touchinput;
 import com.test2.game.start.StartScreen;
 
 public class LevelAuswahlScreen extends ScreenAdapter {
     SpriteBatch batch;
     ShapeRenderer shapeRenderer;
-    com.test2.game.library.touchinput.Button zurueck;
+    touchinput.Button zurueck;
 
    String back;
     int u = 0;
@@ -21,7 +22,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
     public LevelAuswahlScreen(String referrer) {
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
-        zurueck = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/2,Gdx.graphics.getHeight()-100,220,100);
+        zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2,Gdx.graphics.getHeight()-100,220,100);
 
         back = referrer;
         create();
@@ -37,10 +38,10 @@ public class LevelAuswahlScreen extends ScreenAdapter {
             for (int i = 0; i < fw; i = i + 1) {
 
 
-                com.test2.game.library.LevelAuswahlButtons LAB;
-                LAB = new com.test2.game.library.LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() /fw, j* Gdx.graphics.getWidth() / (fh-2), Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, le);
+                LevelAuswahlButtons LAB;
+                LAB = new LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() /fw, j* Gdx.graphics.getWidth() / (fh-2), Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, le);
                 //LevelAuswahlButtons.Levelbuttons.add(LAB,i);
-                com.test2.game.library.LevelAuswahlButtons.Levelbuttons.add(LAB);
+                LevelAuswahlButtons.Levelbuttons.add(LAB);
                 //System.out.println(i);
                 le=le+1;
             }
@@ -110,8 +111,8 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
         }
 
-        com.test2.game.library.LevelAuswahlButtons LAB;
-        for(int b = 0; b< com.test2.game.library.LevelAuswahlButtons.Levelbuttons.size(); b=b+1) {
+        LevelAuswahlButtons LAB;
+        for(int b = 0; b< LevelAuswahlButtons.Levelbuttons.size(); b=b+1) {
             LAB = LevelAuswahlButtons.Levelbuttons.get(b);
             if(LAB.Level-1>=Var.levelbesitz) {
                 batch.draw(com.test2.game.start.AssetManageLoader.Levelbuttonrot, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);

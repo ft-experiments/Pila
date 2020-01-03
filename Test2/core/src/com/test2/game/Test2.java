@@ -32,13 +32,6 @@ public AndroidInterfaces aoi;
 
 
 
-
-		
-
-
-		
-		
-
 		//setScreen(new GameScreen());
 		new DoppelKlick();
 	}
