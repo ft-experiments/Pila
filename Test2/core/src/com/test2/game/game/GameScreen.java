@@ -74,23 +74,11 @@ public class GameScreen extends ScreenAdapter {
     //Kaesten k;
     public GameScreen() {
 
-
-
-
-
         INSTANCE = this;
         if(Var.EnableAndroidSave==true) {
             LoadSave = new LoadSave();
         }
         batch = new SpriteBatch();
-
-
-
-
-
-
-
-
 
         ka = new Smooth();
 
@@ -595,7 +583,6 @@ public static double gamestcreendelta=0;
 
 
 
-
             if(k.v==1 && k.K_art!=4 && k.K_art!=5){
                     b_zahl += 1;
             }
@@ -633,10 +620,6 @@ public static double gamestcreendelta=0;
 
 
         }
-
-
-
-
 
         if(b_zahl == 0){        //////Wenn Keine SpielBlöcke mehr da sind gehts ein Level hoch///////////////////////
             Level.Levelup();
@@ -807,8 +790,6 @@ public static double gamestcreendelta=0;
         batch.end();
 /////////////////////////DAS//PAUSEPOPUP//ENDED//HIER//////////////////////////////
 
-
-
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
 
         shapeRenderer.setColor(1,1,0,0f);
@@ -851,10 +832,6 @@ public static double gamestcreendelta=0;
                 Ablauf.klebablaufsoll=1000;
             }
         }
-
-
-
-
 
         shapeRenderer.end();
         batch.begin();

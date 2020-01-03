@@ -48,10 +48,6 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         }
     }
 
-
-
-
-
     @Override
     public void render(float delta) {
         Var.ingame = true;
@@ -130,9 +126,6 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         }
 
         batch.end();
-
-
-
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         //shapeRenderer.setColor(1,0,0,1);

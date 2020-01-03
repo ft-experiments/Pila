@@ -1,5 +1,4 @@
 package com.test2.game.start;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 
@@ -167,8 +166,6 @@ public class AssetManageLoader {
         }catch (Exception e) {
             System.out.println("Datein konnten nicht gefunden werden");
         }
-
-
     }
 
     public static void save() {
@@ -239,7 +236,10 @@ public class AssetManageLoader {
             System.out.println("Auf die geladenen Dateien konnte nicht zugegriffen werden");
         }
 
-        
+
+
+
+
 
 
     }

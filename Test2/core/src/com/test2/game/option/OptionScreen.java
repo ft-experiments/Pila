@@ -129,11 +129,7 @@ int v=0;
 
 
 
-
         shapeRenderer = new ShapeRenderer();
-
-
-
 
         Buttonstart = new touchinput.Button((int)(Gdx.graphics.getWidth()/2-(Gdx.graphics.getWidth()/1.8f/2)),Gdx.graphics.getHeight()-Gdx.graphics.getHeight(),(int)(Gdx.graphics.getWidth()/1.8f),(int)(Gdx.graphics.getHeight()/5.753f));
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,70);
@@ -167,10 +163,6 @@ int v=0;
             pack3=new touchinput.Button(0,0,0,0);
             pack4=new touchinput.Button(0,0,0,0);
             pack5=new touchinput.Button(0,0,0,0);
-
-
-
-
 
 
         if(Var.showfps==true) {
@@ -208,44 +200,8 @@ int v=0;
     }
 
 
-
-
-
-
-    void scrolly(int scrolly){
-        SW.x=SW.x+scrolly;
-        fpsshow.x=fpsshow.x+scrolly;
-        toggelcontrol.x=toggelcontrol.x+scrolly;
-        ballstartmode.x=ballstartmode.x+scrolly;
-        soundeffecte.x=soundeffecte.x+scrolly;
-
-        Background_1.y=Background_1.y+scrolly;
-        Background_2.y=Background_2.y+scrolly;
-        Background_3.y=Background_3.y+scrolly;
-        Background_4.y=Background_4.y+scrolly;
-        Background_5.y=Background_5.y+scrolly;
-        Background_6.y=Background_6.y+scrolly;
-        Background_7.y=Background_7.y+scrolly;
-        Background_8.y=Background_8.y+scrolly;
-        Background_9.y=Background_9.y+scrolly;
-        Background_10.y=Background_10.y+scrolly;
-    }
-
-
-
-
-
-
-
-
     public void render(float delta) {
 tempold=temp;
-
-
-
-
-
-
 
 
 
@@ -283,8 +239,6 @@ tempold=temp;
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-
-
 
         if(temp==1) {
             batch.draw(AssetManageLoader.b1, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
@@ -363,7 +317,6 @@ tempold=temp;
 
 
 
-
         batch.draw( info2, toggelcontrol.x - 535, toggelcontrol.y + toggelcontrol.h / 2-50, 70 ,70);
         if (toggelcontrol.isswitched() == 0) {
             font.draw(batch, "Touch-Steuerung", toggelcontrol.x - 450, toggelcontrol.y + toggelcontrol.h / 2);
@@ -437,8 +390,6 @@ tempold=temp;
 
         batch.begin();
 
-
-
         if(Background_1.h>Background_2.h){
             Var.actbackground = Var.background1;
             temp = 1;
@@ -481,12 +432,6 @@ tempold=temp;
         }
 
 
-
-
-
-
-
-
         batch.draw(AssetManageLoader.b1, Background_1.x,Background_1.y,Background_1.w,Background_1.h);
 
 
@@ -510,11 +455,6 @@ tempold=temp;
         batch.draw(AssetManageLoader.b9, Background_9.x,Background_9.y,Background_9.w,Background_9.h);
 
         batch.draw(AssetManageLoader.b10, Background_10.x,Background_10.y,Background_10.w,Background_10.h);
-
-
-
-
-
 
 
 
@@ -558,8 +498,6 @@ if(Gdx.input.isTouched() || c==0){
         a = 1;
     }
 
-
-
         Background_1.x = ((Gdx.input.getX() - xsave) + b[1]);
         Background_2.x = ((Gdx.input.getX() - xsave) + b[2]);
         Background_3.x = ((Gdx.input.getX() - xsave) + b[3]);
@@ -592,10 +530,6 @@ if(Gdx.input.isTouched() || c==0){
     Background_10.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[15]);
     pack1.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[16]);
     pack2.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[17]);
-
-
-
-
 
 
     if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_1.x)/effectstärkex<0) {
@@ -784,11 +718,7 @@ if(Var.sound_effects) {
         Gdx.input.vibrate(20);
     }
 
-
-
-
 }
-
 
 }
 if(!Gdx.input.isTouched()){
@@ -878,8 +808,6 @@ if(!Gdx.input.isTouched()){
 }
 
 
-
-
         pack1.x=0;
         pack2.x=Gdx.graphics.getWidth()/2;
 
@@ -911,36 +839,14 @@ if(pack1.y>Buttonstart.h) {
     }
 
 }
-
-
-
-
-
-
-
         batch.end();
-
-
-
-
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(1,0,0,1);
 
 
         shapeRenderer.end();
 
-
-
-
-
-
-
-
-
     }
-
-
-
 
     @Override
     public void dispose() {
@@ -955,5 +861,6 @@ if(pack1.y>Buttonstart.h) {
         }
         this.dispose();
     }
+
 
 }

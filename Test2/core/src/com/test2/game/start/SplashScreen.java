@@ -47,8 +47,6 @@ public class SplashScreen extends ScreenAdapter implements Screen {
 
 
 
-
-
     public void render(float delta) {
 
 
@@ -71,7 +69,6 @@ if(temp==0) {
         font.draw(batch, "Wlan-Kabel-Überprüfung..", 25, 100);
     }
     batch.end();
-
 
     if (AssetManageLoader.manager.update()) {
         AssetManageLoader.save();
@@ -100,21 +97,10 @@ if(temp==0) {
 
 
 
-    }
 
-    @Override
+    }
     public void dispose() {
         batch.dispose();
     }
-
-    @Override
-    public void hide() {
-        if(Var.EnableAndroidSave==true) {
-            LoadSave.saveall();
-        }
-        this.dispose();
-    }
-    public void toast(String text) {
-
-    }
+    public void hide() { this.dispose();}
 }
