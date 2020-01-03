@@ -1,10 +1,9 @@
 package com.test2.game;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.*;
 
+import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
@@ -251,7 +250,7 @@ tempold=temp;
             Gdx.app.exit();
         }
         /*if(Gdx.input.isTouched()) {
-           
+
         }*/
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -856,13 +855,22 @@ if(!Gdx.input.isTouched()){
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
         shapeRenderer.setColor(1,0,0,1);
-        
+
 
         shapeRenderer.end();
 
 
 
+
+
+
+
+
+
     }
+
+
+
 
     @Override
     public void dispose() {
