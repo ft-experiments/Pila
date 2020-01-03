@@ -6,6 +6,7 @@ import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 
 
@@ -73,6 +74,9 @@ public class AssetManageLoader {
 
     public static Sound start_finish;
 
+    public static Texture imgfeuerball;
+    
+
     public static AssetManager manager = new AssetManager();
     public static void loader() {
 
@@ -88,14 +92,18 @@ public class AssetManageLoader {
             Var.background10=Var.actpack + "/hintergrund/hintergrund10.jpg";
 
 
-        
+        try {
             //schriftart
             FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal(Var.actpack + "/comicsans.ttf"));
             FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
             parameter.size = 50;
             font = generator.generateFont(parameter); // font size 12 pixels
             generator.dispose(); // don't forget to dispose to avoid memory leaks!
+        } catch (Exception e) {
+            System.out.println("Fehler beim Laden der Schrift");
+        }
 
+        try {
 
             manager.load(Var.background1, Texture.class);
             manager.load(Var.background2, Texture.class);
@@ -153,13 +161,18 @@ public class AssetManageLoader {
             manager.load(Var.actpack + "/sound/start_last.mp3", Sound.class);
             manager.load(Var.actpack + "/sound/click.mp3", Sound.class);
 
+            manager.load(Var.actpack + "/game/ballfeueranimation.png", Texture.class);
+
+        }catch (Exception e) {
+            System.out.println("Datein konnten nicht gefunden werden");
+        }
 
 
     }
 
     public static void save() {
 
-        
+        try {
 
             b1 = manager.get(Var.background1, Texture.class);
             b2 = manager.get(Var.background2, Texture.class);
@@ -218,9 +231,12 @@ public class AssetManageLoader {
 
 
             start_finish = manager.get(Var.actpack + "/sound/start_last.mp3", Sound.class);
-        
+            imgfeuerball = manager.get(Var.actpack + "/game/ballfeueranimation.png", Texture.class);
 
 
+        }catch(Exception e) {
+            System.out.println("Auf die geladenen Dateien konnte nicht zugegriffen werden");
+        }
 
         
 
@@ -231,64 +247,67 @@ public class AssetManageLoader {
     public static void unload() {
 
 
+        try {
 
+            manager.unload(Var.background1);
+            manager.unload(Var.background2);
+            manager.unload(Var.background3);
+            manager.unload(Var.background4);
+            manager.unload(Var.background5);
+            manager.unload(Var.background6);
+            manager.unload(Var.background7);
+            manager.unload(Var.background8);
+            manager.unload(Var.background9);
+            manager.unload(Var.background10);
 
-        manager.unload(Var.background1);
-        manager.unload(Var.background2);
-        manager.unload(Var.background3);
-        manager.unload(Var.background4);
-        manager.unload(Var.background5);
-        manager.unload(Var.background6);
-        manager.unload(Var.background7);
-        manager.unload(Var.background8);
-        manager.unload(Var.background9);
-        manager.unload(Var.background10);
+            manager.unload(Var.actpack + "/option/switchon.png");
+            manager.unload(Var.actpack + "/option/switchoff.png");
 
-        manager.unload(Var.actpack + "/option/switchon.png");
-        manager.unload(Var.actpack + "/option/switchoff.png");
+            manager.unload(Var.actpack + "/game/Button.png");
 
-        manager.unload(Var.actpack + "/game/Button.png");
+            manager.unload(Var.actpack + "/blocks/block_l.png");
+            manager.unload(Var.actpack + "/blocks/block_rot.png");
+            manager.unload(Var.actpack + "/blocks/block_gruen.png");
+            manager.unload(Var.actpack + "/blocks/block_blau.png");
+            manager.unload(Var.actpack + "/game/paddel.png");
+            manager.unload(Var.actpack + "/blocks/block_k.png");
+            manager.unload(Var.actpack + "/blocks/block_kleber.png");
 
-        manager.unload(Var.actpack + "/blocks/block_l.png");
-        manager.unload(Var.actpack + "/blocks/block_rot.png");
-        manager.unload(Var.actpack + "/blocks/block_gruen.png");
-        manager.unload(Var.actpack + "/blocks/block_blau.png");
-        manager.unload(Var.actpack + "/game/paddel.png");
-        manager.unload(Var.actpack + "/blocks/block_k.png");
-        manager.unload(Var.actpack + "/blocks/block_kleber.png");
+            manager.unload(Var.actpack + "/game/countdown1.png");
+            manager.unload(Var.actpack + "/game/countdown2.png");
+            manager.unload(Var.actpack + "/game/countdown3.png");
+            manager.unload(Var.actpack + "/game/los.png");
 
-        manager.unload(Var.actpack + "/game/countdown1.png");
-        manager.unload(Var.actpack + "/game/countdown2.png");
-        manager.unload(Var.actpack + "/game/countdown3.png");
-        manager.unload(Var.actpack + "/game/los.png");
+            manager.unload(Var.actpack + "/blocks/block_feuer.png");
+            manager.unload(Var.actpack + "/game/paddelkleb.png");
+            manager.unload(Var.actpack + "/blocks/block_schneller.png");
+            manager.unload(Var.actpack + "/blocks/block_langsamer.png");
+            manager.unload(Var.actpack + "/blocks/block_2mal.png");
+            manager.unload(Var.actpack + "/blocks/block_unzerstoerbar.png");
+            manager.unload(Var.actpack + "/game/statusbar.png");
+            manager.unload(Var.actpack + "/option/Pause.png");
 
-        manager.unload(Var.actpack + "/blocks/block_feuer.png");
-        manager.unload(Var.actpack + "/game/paddelkleb.png");
-        manager.unload(Var.actpack + "/blocks/block_schneller.png");
-        manager.unload(Var.actpack + "/blocks/block_langsamer.png");
-        manager.unload(Var.actpack + "/blocks/block_2mal.png");
-        manager.unload(Var.actpack + "/blocks/block_unzerstoerbar.png");
-        manager.unload(Var.actpack + "/game/statusbar.png");
-        manager.unload(Var.actpack + "/option/Pause.png");
+            manager.unload(Var.actpack + "/option/einstellungen.png");
+            manager.unload(Var.actpack + "/option/bigpause.png");
 
-        manager.unload(Var.actpack + "/option/einstellungen.png");
-        manager.unload(Var.actpack + "/option/bigpause.png");
+            manager.unload(Var.actpack + "/option/info.png");
 
-        manager.unload(Var.actpack + "/option/info.png");
+            manager.unload(Var.actpack + "/game/start.png");
+            manager.unload(Var.actpack + "/game/startge.png");
+            manager.unload(Var.actpack + "/option/Touch.png");
+            manager.unload(Var.actpack + "/option/Gyro.png");
 
-        manager.unload(Var.actpack + "/game/start.png");
-        manager.unload(Var.actpack + "/game/startge.png");
-        manager.unload(Var.actpack + "/option/Touch.png");
-        manager.unload(Var.actpack + "/option/Gyro.png");
+            manager.unload(Var.actpack + "/game/neustart.png");
 
-        manager.unload(Var.actpack + "/game/neustart.png");
-
-        manager.unload(Var.actpack + "/game/gameover.png");
-        manager.unload(Var.actpack + "/game/Levelauswahlbutton.png");
-        manager.unload(Var.actpack + "/game/Levelauswahlbuttonrot.png");
-        manager.unload(Var.actpack + "/sound/start_last.mp3");
-        manager.unload(Var.actpack + "/sound/click.mp3");
-
+            manager.unload(Var.actpack + "/game/gameover.png");
+            manager.unload(Var.actpack + "/game/Levelauswahlbutton.png");
+            manager.unload(Var.actpack + "/game/Levelauswahlbuttonrot.png");
+            manager.unload(Var.actpack + "/sound/start_last.mp3");
+            manager.unload(Var.actpack + "/sound/click.mp3");
+            manager.unload(Var.actpack + "/game/ballfeueranimation.png");
+        }catch(Exception e) {
+            System.out.println("Die Assets wurden nie geladen");
+        }
 
 
     }

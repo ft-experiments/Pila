@@ -29,15 +29,14 @@ public class GameScreen extends ScreenAdapter {
     touchinput.Button Weiter;
     touchinput.Button neustartbutton;
 
-
+    Sprite feuerball;
     Smooth ka;
     long c= currentTimeMillis();
     int u=0;
     int countdown=0;
     static int gamestatuspausesave= -1;
     int frame = 0;
-    Texture imgfeuerball;
-    Sprite feuerball;
+
     float Random_x[] = new float[100];
     float Random_y[] = new float[100];
     int datacounter = 0;
@@ -111,7 +110,7 @@ public class GameScreen extends ScreenAdapter {
         }
 
 
-        imgfeuerball =new Texture("default/game/ballfeueranimation.png");
+
         final TextureRegion[][] regions = TextureRegion.split(imgfeuerball, 100,100);
         feuerball = new Sprite(regions[0][0]);
 
