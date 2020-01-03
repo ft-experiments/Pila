@@ -503,7 +503,7 @@ if(Gdx.input.isTouched() || c==0){
     c=1;
     if(a==0) {
 
-        ysave=Gdx.input.getY();
+        ysave=Gdx.graphics.getHeight()-Gdx.input.getY();
 
         d[1]=SW.y;
         d[2]=fpsshow.y;
@@ -537,36 +537,39 @@ if(Gdx.input.isTouched() || c==0){
         a = 1;
     }
 
-    Background_1.x= ((Gdx.input.getX()-xsave)+b[1]);
-    Background_2.x= ((Gdx.input.getX()-xsave)+b[2]);
-    Background_3.x= ((Gdx.input.getX()-xsave)+b[3]);
-    Background_4.x= ((Gdx.input.getX()-xsave)+b[4]);
-    Background_5.x= ((Gdx.input.getX()-xsave)+b[5]);
-    Background_6.x= ((Gdx.input.getX()-xsave)+b[6]);
-    Background_7.x= ((Gdx.input.getX()-xsave)+b[7]);
-    Background_8.x= ((Gdx.input.getX()-xsave)+b[8]);
-    Background_9.x= ((Gdx.input.getX()-xsave)+b[9]);
-    Background_10.x=((Gdx.input.getX()-xsave)+b[10]);
+
+
+        Background_1.x = ((Gdx.input.getX() - xsave) + b[1]);
+        Background_2.x = ((Gdx.input.getX() - xsave) + b[2]);
+        Background_3.x = ((Gdx.input.getX() - xsave) + b[3]);
+        Background_4.x = ((Gdx.input.getX() - xsave) + b[4]);
+        Background_5.x = ((Gdx.input.getX() - xsave) + b[5]);
+        Background_6.x = ((Gdx.input.getX() - xsave) + b[6]);
+        Background_7.x = ((Gdx.input.getX() - xsave) + b[7]);
+        Background_8.x = ((Gdx.input.getX() - xsave) + b[8]);
+        Background_9.x = ((Gdx.input.getX() - xsave) + b[9]);
+        Background_10.x = ((Gdx.input.getX() - xsave) + b[10]);
 
 
 
-if(Gdx.input.getX()<100) {
-    SW.y = ((Gdx.input.getY() - ysave) + d[1]);
-    fpsshow.y = ((Gdx.input.getY() - ysave) + d[2]);
-    toggelcontrol.y = ((Gdx.input.getY() - ysave) + d[3]);
-    ballstartmode.y = ((Gdx.input.getY() - ysave) + d[4]);
-    soundeffecte.y = ((Gdx.input.getY() - ysave) + d[5]);
-    Background_1.y = ((Gdx.input.getY() - ysave) + d[6]);
-    Background_2.y = ((Gdx.input.getY() - ysave) + d[7]);
-    Background_3.y = ((Gdx.input.getY() - ysave) + d[8]);
-    Background_4.y = ((Gdx.input.getY() - ysave) + d[9]);
-    Background_5.y = ((Gdx.input.getY() - ysave) + d[10]);
-    Background_6.y = ((Gdx.input.getY() - ysave) + d[11]);
-    Background_7.y = ((Gdx.input.getY() - ysave) + d[12]);
-    Background_8.y = ((Gdx.input.getY() - ysave) + d[13]);
-    Background_9.y = ((Gdx.input.getY() - ysave) + d[14]);
-    Background_10.y = ((Gdx.input.getY() - ysave) + d[15]);
-}
+
+
+    SW.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[1]);
+    fpsshow.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[2]);
+    toggelcontrol.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[3]);
+    ballstartmode.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[4]);
+    soundeffecte.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[5]);
+    Background_1.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[6]);
+    Background_2.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[7]);
+    Background_3.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[8]);
+    Background_4.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[9]);
+    Background_5.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[10]);
+    Background_6.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[11]);
+    Background_7.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[12]);
+    Background_8.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[13]);
+    Background_9.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[14]);
+    Background_10.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[15]);
+
 
 
 
