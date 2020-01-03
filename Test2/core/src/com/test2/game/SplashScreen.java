@@ -74,7 +74,7 @@ public class SplashScreen extends ScreenAdapter implements Screen {
             Var.newpack = false;
 
 
-            Test2.INSTANCE.setScreen(new OptionScreen());
+            Test2.INSTANCE.setScreen(new OptionScreen(Test2.INSTANCE));
 
         }
         Test2.INSTANCE.setScreen(new StartScreen());
