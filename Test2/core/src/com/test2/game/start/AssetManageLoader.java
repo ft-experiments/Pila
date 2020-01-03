@@ -81,16 +81,16 @@ public class AssetManageLoader {
     public static AssetManager manager = new AssetManager();
     public static void loader() {
 
-            Var.background1=Var.actpack + "/hintergrund/hintergrund1.jpg";
-            Var.background2=Var.actpack + "/hintergrund/hintergrund2.jpg";
-            Var.background3=Var.actpack + "/hintergrund/hintergrund3.jpg";
-            Var.background4=Var.actpack + "/hintergrund/hintergrund4.jpg";
-            Var.background5=Var.actpack + "/hintergrund/hintergrund5.jpg";
-            Var.background6=Var.actpack + "/hintergrund/hintergrund6.jpg";
-            Var.background7=Var.actpack + "/hintergrund/hintergrund7.jpg";
-            Var.background8=Var.actpack + "/hintergrund/hintergrund8.jpg";
-            Var.background9=Var.actpack + "/hintergrund/hintergrund9.jpg";
-            Var.background10=Var.actpack + "/hintergrund/hintergrund10.jpg";
+            Var.background1="hintergrund/hintergrund1.jpg";
+            Var.background2="hintergrund/hintergrund2.jpg";
+            Var.background3="hintergrund/hintergrund3.jpg";
+            Var.background4="hintergrund/hintergrund4.jpg";
+            Var.background5="hintergrund/hintergrund5.jpg";
+            Var.background6="hintergrund/hintergrund6.jpg";
+            Var.background7="hintergrund/hintergrund7.jpg";
+            Var.background8="hintergrund/hintergrund8.jpg";
+            Var.background9="hintergrund/hintergrund9.jpg";
+            Var.background10="hintergrund/hintergrund10.jpg";
 
 
         try {
