@@ -14,7 +14,7 @@ import static com.test2.game.AssetManageLoader.*;
 public class SplashScreen extends ScreenAdapter implements Screen {
 
     SpriteBatch batch;
-
+    private int temp = 0;
     ShapeRenderer shapeRenderer;
 
 
@@ -27,11 +27,16 @@ public class SplashScreen extends ScreenAdapter implements Screen {
         if(!Var.newpack) {
             AssetManageLoader.loader();
         }else {
-            AssetManageLoader.unload();
 
-                Var.actpack = Var.gotopack;
-                manager.clear();
-                AssetManageLoader.loader();
+
+                if(Var.actpack!=Var.gotopack) {
+                    AssetManageLoader.unload();
+                    Var.actpack = Var.gotopack;
+                    manager.clear();
+                    AssetManageLoader.loader();
+                }else{
+                    temp=1;
+                }
 
         }
     }
@@ -45,7 +50,7 @@ public class SplashScreen extends ScreenAdapter implements Screen {
 
     Gdx.gl.glClearColor(0, 0, 0, 1);
     Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
+if(temp==0) {
     shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
     shapeRenderer.setColor(0, 1, 0, 1);
     shapeRenderer.rect(0, 200, AssetManageLoader.manager.getProgress() * 100 * (Gdx.graphics.getWidth() / 100), 100);
@@ -66,7 +71,7 @@ public class SplashScreen extends ScreenAdapter implements Screen {
 
     if (AssetManageLoader.manager.update()) {
         AssetManageLoader.save();
-        Var.gotopack ="";
+        Var.gotopack = "";
 
         if (Var.newpack) {
 
@@ -80,6 +85,11 @@ public class SplashScreen extends ScreenAdapter implements Screen {
         Test2.INSTANCE.setScreen(new StartScreen());
 
     }
+
+}else{
+    temp = 0;
+    Test2.INSTANCE.setScreen(new OptionScreen(Test2.INSTANCE));
+}
 
 
 
