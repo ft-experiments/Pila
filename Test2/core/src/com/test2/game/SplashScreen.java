@@ -32,8 +32,16 @@ public class SplashScreen extends ScreenAdapter implements Screen {
 
         shapeRenderer = new ShapeRenderer();
 
+        if(!Var.newpack) {
+            AssetManagerExample.loader();
+        }else {
+            AssetManagerExample.unload();
 
+                Var.actpack = Var.gotopack;
+                manager.clear();
+                AssetManagerExample.loader();
 
+        }
     }
 
 
@@ -43,33 +51,36 @@ public class SplashScreen extends ScreenAdapter implements Screen {
     public void render(float delta) {
 
 
-        Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+    Gdx.gl.glClearColor(0, 0, 0, 1);
+    Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
-        shapeRenderer.setColor(0,1,0,1);
-        shapeRenderer.rect(0,200,AssetManagerExample.manager.getProgress()*100*(Gdx.graphics.getWidth()/100),100);
-       // System.out.println(AssetManagerExample.manager.getProgress());
-        shapeRenderer.end();
-batch.begin();
-if(AssetManagerExample.manager.getProgress()*100<20) {
-    font.draw(batch, "Das Laden wird geladen", 100, 100);
-}
-        if(AssetManagerExample.manager.getProgress()*100>20  && AssetManagerExample.manager.getProgress()*100<50) {
-            font.draw(batch, "Der Ladebalken wird heruntergeladen", 100, 100);
-        }
-        if(AssetManagerExample.manager.getProgress()*100>50) {
-            font.draw(batch, "Wlan-Kabel-Überprüfung..", 100, 100);
-        }
-batch.end();
+    shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
+    shapeRenderer.setColor(0, 1, 0, 1);
+    shapeRenderer.rect(0, 200, AssetManagerExample.manager.getProgress() * 100 * (Gdx.graphics.getWidth() / 100), 100);
+    // System.out.println(AssetManagerExample.manager.getProgress());
+    shapeRenderer.end();
+    batch.begin();
+    if (AssetManagerExample.manager.getProgress() * 100 < 20) {
+        font.draw(batch, "Das Laden wird geladen", 100, 100);
+    }
+    if (AssetManagerExample.manager.getProgress() * 100 > 20 && AssetManagerExample.manager.getProgress() * 100 < 50) {
+        font.draw(batch, "Der Ladebalken wird heruntergeladen", 100, 100);
+    }
+    if (AssetManagerExample.manager.getProgress() * 100 > 50) {
+        font.draw(batch, "Wlan-Kabel-Überprüfung..", 100, 100);
+    }
+    batch.end();
+
+
+    if (AssetManagerExample.manager.update()) {
+        AssetManagerExample.save();
+        Test2.INSTANCE.setScreen(new StartScreen());
+
+    }
 
 
 
-if(AssetManagerExample.manager.update()) {
-    AssetManagerExample.save();
-    Test2.INSTANCE.setScreen(new StartScreen());
 
-}
 
 
     }

@@ -102,7 +102,8 @@ public class Var {
 
     static String actbackground = background1;
 
-    static String actpack = "pack2";
+    static String actpack = "default";
+    static String gotopack = "";
 
     static boolean newpack = false;
 
