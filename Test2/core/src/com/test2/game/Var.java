@@ -107,6 +107,8 @@ public class Var {
 
     static int design_pack = 2;
 
+    static String actpack = "default";
+
 
 
 
