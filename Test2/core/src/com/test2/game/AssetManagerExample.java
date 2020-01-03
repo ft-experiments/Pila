@@ -75,6 +75,34 @@ public class AssetManagerExample  {
 
     public static AssetManager manager = new AssetManager();
     public static void loader() {
+        if(Var.design_pack==1){
+            Var.background1="default/hintergrund/hintergrund1.jpg";
+            Var.background2="default/hintergrund/hintergrund2.jpg";
+            Var.background3="default/hintergrund/hintergrund3.jpg";
+            Var.background4="default/hintergrund/hintergrund4.jpg";
+            Var.background5="default/hintergrund/hintergrund5.jpg";
+            Var.background6="default/hintergrund/hintergrund6.jpg";
+            Var.background7="default/hintergrund/hintergrund7.jpg";
+            Var.background8="default/hintergrund/hintergrund8.jpg";
+            Var.background9="default/hintergrund/hintergrund9.jpg";
+            Var.background10="default/hintergrund/hintergrund10.jpg";
+
+        }
+
+        if(Var.design_pack==2){
+            Var.background1="pack2/hintergrund/hintergrund1.png";
+            Var.background2="pack2/hintergrund/hintergrund2.png";
+            Var.background3="pack2/hintergrund/hintergrund3.png";
+            Var.background4="pack2/hintergrund/hintergrund4.png";
+            Var.background5="pack2/hintergrund/hintergrund5.jpg";
+            Var.background6="pack2/hintergrund/hintergrund6.jpg";
+            Var.background7="pack2/hintergrund/hintergrund7.jpg";
+            Var.background8="pack2/hintergrund/hintergrund8.jpg";
+            Var.background9="default/hintergrund/hintergrund9.jpg";
+            Var.background10="pack2/hintergrund/hintergrund10.jpg";
+
+        }
+
 
 
         if(Var.design_pack==1) {

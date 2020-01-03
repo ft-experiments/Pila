@@ -92,16 +92,16 @@ public class Var {
     static boolean sound_music = true;  //Zum deaktivieren der Musik
 
 
-    static  String background1 = "hintergrund/hintergrund1.jpg";
-    static  String background2 = "hintergrund/hintergrund2.jpg";
-    static  String background3 = "hintergrund/hintergrund3.jpg";
-    static  String background4 = "hintergrund/hintergrund4.jpg";
-    static  String background5 = "hintergrund/hintergrund5.jpg";
-    static  String background6 = "hintergrund/hintergrund6.jpg";
-    static  String background7 = "hintergrund/hintergrund7.jpg";
-    static  String background8 = "hintergrund/hintergrund8.jpg";
-    static  String background9 = "hintergrund/hintergrund9.jpg";
-    static  String background10 = "hintergrund/hintergrund10.jpg";
+    static  String background1 = "";
+    static  String background2 = "";
+    static  String background3 = "";
+    static  String background4 = "";
+    static  String background5 = "";
+    static  String background6 = "";
+    static  String background7 = "";
+    static  String background8 = "";
+    static  String background9 = "";
+    static  String background10 = "";
 
     static String actbackground = background1;
 
