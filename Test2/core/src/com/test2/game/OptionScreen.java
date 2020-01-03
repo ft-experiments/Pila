@@ -70,12 +70,18 @@ int tempold;
     int xsave;
     int a;
     int[] b = new int[20];
+    int[] d=new int[20];
 
     int gemeinsamverschieben;
     int federung=4;
 
     int effectstärkex=5;
     int effectstärkey=3;
+
+    int ysave;
+    int ys;
+
+
 
 int v=0;
 
@@ -186,9 +192,34 @@ int v=0;
 
 
 
-
-
     }
+
+
+
+
+
+
+    void scrolly(int scrolly){
+        SW.x=SW.x+scrolly;
+        fpsshow.x=fpsshow.x+scrolly;
+        toggelcontrol.x=toggelcontrol.x+scrolly;
+        ballstartmode.x=ballstartmode.x+scrolly;
+        soundeffecte.x=soundeffecte.x+scrolly;
+
+        Background_1.y=Background_1.y+scrolly;
+        Background_2.y=Background_2.y+scrolly;
+        Background_3.y=Background_3.y+scrolly;
+        Background_4.y=Background_4.y+scrolly;
+        Background_5.y=Background_5.y+scrolly;
+        Background_6.y=Background_6.y+scrolly;
+        Background_7.y=Background_7.y+scrolly;
+        Background_8.y=Background_8.y+scrolly;
+        Background_9.y=Background_9.y+scrolly;
+        Background_10.y=Background_10.y+scrolly;
+    }
+
+
+
 
 
 
@@ -381,7 +412,7 @@ tempold=temp;
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         Gdx.gl.glLineWidth(20);
         shapeRenderer.setColor(1,0,0,1);
-        shapeRenderer.rect(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2,Buttonstart.h,Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        shapeRenderer.rect(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7/2,Background_1.y,Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
 
         shapeRenderer.end();
 
@@ -471,6 +502,27 @@ tempold=temp;
 if(Gdx.input.isTouched() || c==0){
     c=1;
     if(a==0) {
+
+        ysave=Gdx.input.getY();
+
+        d[1]=SW.y;
+        d[2]=fpsshow.y;
+        d[3]=toggelcontrol.y;
+        d[4]=ballstartmode.y;
+        d[5]=soundeffecte.y;
+        d[6]=Background_1.y;
+        d[7]=Background_2.y;
+        d[8]=Background_3.y;
+        d[9]=Background_4.y;
+        d[10]=Background_5.y;
+        d[11]=Background_6.y;
+        d[12]=Background_7.y;
+        d[13]=Background_8.y;
+        d[14]=Background_9.y;
+        d[15]=Background_10.y;
+
+
+
         xsave = Gdx.input.getX()-gemeinsamverschieben;
         b[1]=Background_1.x;
         b[2]=Background_2.x;
@@ -495,6 +547,28 @@ if(Gdx.input.isTouched() || c==0){
     Background_8.x= ((Gdx.input.getX()-xsave)+b[8]);
     Background_9.x= ((Gdx.input.getX()-xsave)+b[9]);
     Background_10.x=((Gdx.input.getX()-xsave)+b[10]);
+
+
+
+
+    SW.y=((Gdx.input.getY()-ysave)+d[1]);
+    fpsshow.y=((Gdx.input.getY()-ysave)+d[2]);
+    toggelcontrol.y=((Gdx.input.getY()-ysave)+d[3]);
+    ballstartmode.y=((Gdx.input.getY()-ysave)+d[4]);
+    soundeffecte.y=((Gdx.input.getY()-ysave)+d[5]);
+    Background_1.y=((Gdx.input.getY()-ysave)+d[6]);
+    Background_2.y=((Gdx.input.getY()-ysave)+d[7]);
+    Background_3.y=((Gdx.input.getY()-ysave)+d[8]);
+    Background_4.y=((Gdx.input.getY()-ysave)+d[9]);
+    Background_5.y=((Gdx.input.getY()-ysave)+d[10]);
+    Background_6.y=((Gdx.input.getY()-ysave)+d[11]);
+    Background_7.y=((Gdx.input.getY()-ysave)+d[12]);
+    Background_8.y=((Gdx.input.getY()-ysave)+d[13]);
+    Background_9.y=((Gdx.input.getY()-ysave)+d[14]);
+    Background_10.y=((Gdx.input.getY()-ysave)+d[15]);
+
+
+
 
 
 
@@ -789,6 +863,7 @@ if(!Gdx.input.isTouched()){
         
 
         shapeRenderer.end();
+
 
 
     }
