@@ -1,17 +1,10 @@
 package com.test2.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.assets.loaders.BitmapFontLoader;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
-
-import java.awt.*;
 
 public class LevelAuswahlScreen extends ScreenAdapter {
     SpriteBatch batch;
@@ -64,40 +57,40 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         batch.begin();
 
         if(Var.actbackground==Var.background1) {
-            batch.draw(AssetManagerExample.b1,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b1,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
 
         if(Var.actbackground==Var.background2) {
-            batch.draw(AssetManagerExample.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background3) {
-            batch.draw(AssetManagerExample.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background4) {
-            batch.draw(AssetManagerExample.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background5) {
-            batch.draw(AssetManagerExample.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background6) {
-            batch.draw(AssetManagerExample.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background7) {
-            batch.draw(AssetManagerExample.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background8) {
-            batch.draw(AssetManagerExample.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background9) {
-            batch.draw(AssetManagerExample.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background10) {
-            batch.draw(AssetManagerExample.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
 
         //font.getData().setScale(4);
-        AssetManagerExample.font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
-        batch.draw(AssetManagerExample.buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
+        AssetManageLoader.font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
+        batch.draw(AssetManageLoader.buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
         if(zurueck.isPressed() == 1){
             Var.geheinpause = 1;
             Level.dispose();
@@ -117,14 +110,14 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         for(int b=0;b<LevelAuswahlButtons.Levelbuttons.size();b=b+1) {
             LAB = LevelAuswahlButtons.Levelbuttons.get(b);
             if(LAB.Level-1>=Var.levelbesitz) {
-                batch.draw(AssetManagerExample.Levelbuttonrot, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
+                batch.draw(AssetManageLoader.Levelbuttonrot, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
             }
             if(LAB.Level-1<Var.levelbesitz){
-                batch.draw(AssetManagerExample.Levelbutton, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
+                batch.draw(AssetManageLoader.Levelbutton, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
             }
 
             //font.getData().setScale(4);
-            AssetManagerExample.font.draw(batch, ""+(LAB.Level) , LAB.x+LAB.w/2-30,LAB.y+LAB.h/2+30);
+            AssetManageLoader.font.draw(batch, ""+(LAB.Level) , LAB.x+LAB.w/2-30,LAB.y+LAB.h/2+30);
             //System.out.println(b);
             if(LAB.Level<=Var.levelbesitz) {
                 LAB.check();

@@ -1,20 +1,14 @@
 package com.test2.game;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.assets.loaders.BitmapFontLoader;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
-import java.awt.*;
 import java.util.ArrayList;
 
-import static com.test2.game.AssetManagerExample.Levelbutton;
+import static com.test2.game.AssetManageLoader.Levelbutton;
 
 public class EigeneLevelManageScreen extends ScreenAdapter {
 
@@ -75,35 +69,35 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
         }
 
         if(Var.actbackground==Var.background2) {
-            batch.draw(AssetManagerExample.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background3) {
-            batch.draw(AssetManagerExample.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background4) {
-            batch.draw(AssetManagerExample.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background5) {
-            batch.draw(AssetManagerExample.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background6) {
-            batch.draw(AssetManagerExample.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background7) {
-            batch.draw(AssetManagerExample.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background8) {
-            batch.draw(AssetManagerExample.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background9) {
-            batch.draw(AssetManagerExample.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background10) {
-            batch.draw(AssetManagerExample.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         //font.getData().setScale(4);
-        AssetManagerExample.font.draw(batch, "Edit", newLevel.x+30, newLevel.y+(newLevel.h/2+25));
-        batch.draw(AssetManagerExample.buttonimage, newLevel.x,newLevel.y,newLevel.w,newLevel.h);
+        AssetManageLoader.font.draw(batch, "Edit", newLevel.x+30, newLevel.y+(newLevel.h/2+25));
+        batch.draw(AssetManageLoader.buttonimage, newLevel.x,newLevel.y,newLevel.w,newLevel.h);
         if(newLevel.isPressed() == 1){
             Test2.INSTANCE.setScreen(new LevelBaukastenScreen());
         }
@@ -118,10 +112,10 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
             if(marked==b){
                 batch.draw(Levelbutton,B.x,B.y,B.w,B.h);
             }else {
-                batch.draw(AssetManagerExample.buttonimage, B.x, B.y, B.w, B.h);
+                batch.draw(AssetManageLoader.buttonimage, B.x, B.y, B.w, B.h);
             }
             //Data().setScale(4);
-            AssetManagerExample.font.draw(batch, ""+(b+1),B.x+B.w/2,B.y+B.h/2);
+            AssetManageLoader.font.draw(batch, ""+(b+1),B.x+B.w/2,B.y+B.h/2);
             if(B.isPressed()==1){
                 marked=b;
                 EigeneLevelManageScreen.LoadEigenesLevel=b+1;

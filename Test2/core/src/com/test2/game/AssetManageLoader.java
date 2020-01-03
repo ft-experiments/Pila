@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 
 
-public class AssetManagerExample  {
+public class AssetManageLoader {
     public static BitmapFont font;
 
     public static Texture b1;

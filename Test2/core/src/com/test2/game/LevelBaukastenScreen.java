@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 
@@ -166,35 +165,35 @@ a++;
 
         batch.begin();
         if(Var.actbackground==Var.background1) {
-            batch.draw(AssetManagerExample.b1,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b1,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
 
         if(Var.actbackground==Var.background2) {
-            batch.draw(AssetManagerExample.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background3) {
-            batch.draw(AssetManagerExample.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background4) {
-            batch.draw(AssetManagerExample.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background5) {
-            batch.draw(AssetManagerExample.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background6) {
-            batch.draw(AssetManagerExample.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background7) {
-            batch.draw(AssetManagerExample.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background8) {
-            batch.draw(AssetManagerExample.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background9) {
-            batch.draw(AssetManagerExample.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background10) {
-            batch.draw(AssetManagerExample.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(AssetManageLoader.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         batch.end();
 
@@ -215,7 +214,7 @@ a++;
                     batch.draw(blockblau, b.K_x, b.K_y, b.K_w, b.K_h);
                     break;
                 case 3:
-                    batch.draw(AssetManagerExample.block_2mal, b.K_x, b.K_y, b.K_w, b.K_h);
+                    batch.draw(AssetManageLoader.block_2mal, b.K_x, b.K_y, b.K_w, b.K_h);
                     break;
                 case 4:
                     batch.draw(unzer, b.K_x, b.K_y, b.K_w, b.K_h);
@@ -418,7 +417,7 @@ a++;
             if(f_select==4){
                 batch.setColor(1,1,1,1);
             }
-            batch.draw(AssetManagerExample.block_2mal, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
+            batch.draw(AssetManageLoader.block_2mal, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
             //font.getData().setScale(4);
             font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
             if(f_select==4){
@@ -594,7 +593,7 @@ a++;
 
             doppelt.x=x_pop+b.K_w/2+25;
             doppelt.y=y_pop-340+b.K_h/2;
-            batch.draw(AssetManagerExample.block_2mal, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
+            batch.draw(AssetManageLoader.block_2mal, doppelt.x,doppelt.y,doppelt.w,doppelt.h);
             //font.getData().setScale(4);
             font.draw(batch, "dop", doppelt.x+30, doppelt.y+(doppelt.h/2+25));
             if(doppelt.isPressed() == 1){
