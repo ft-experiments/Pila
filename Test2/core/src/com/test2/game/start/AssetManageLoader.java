@@ -13,6 +13,9 @@ import com.test2.game.Var;
 public class AssetManageLoader {
     public static BitmapFont font;
 
+
+
+
     public static Texture b1;
     public static Texture b2;
     public static Texture b3;
@@ -117,6 +120,8 @@ public class AssetManageLoader {
             manager.load(Var.background9, Texture.class);
             manager.load(Var.background10, Texture.class);
 
+
+
             manager.load(Var.actpack + "/option/switchon.png", Texture.class);
             manager.load(Var.actpack + "/option/switchoff.png", Texture.class);
 
@@ -184,6 +189,10 @@ public class AssetManageLoader {
             b8 = manager.get(Var.background8, Texture.class);
             b9 = manager.get(Var.background9, Texture.class);
             b10 = manager.get(Var.background10, Texture.class);
+
+
+
+
 
             switchon = manager.get(Var.actpack + "/option/switchon.png", Texture.class);
             switchoff = manager.get(Var.actpack + "/option/switchoff.png", Texture.class);
@@ -263,6 +272,8 @@ public class AssetManageLoader {
             manager.unload(Var.background8);
             manager.unload(Var.background9);
             manager.unload(Var.background10);
+
+
 
             manager.unload(Var.actpack + "/option/switchon.png");
             manager.unload(Var.actpack + "/option/switchoff.png");
