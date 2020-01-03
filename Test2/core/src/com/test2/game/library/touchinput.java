@@ -81,8 +81,6 @@ public class touchinput {
 
        public int isPressed(){
             int ip=0;
-            System.out.println(a);
-            System.out.println(Gdx.input.getY());
             if(Gdx.input.isTouched()) {
                 if(u==0) {
                     if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {

@@ -498,6 +498,12 @@ if(Gdx.input.isTouched() || c==0){
         a = 1;
     }
 
+    System.out.print(Background_1.y);
+    System.out.print("    ");
+    System.out.print(Gdx.input.getY());
+    System.out.println();
+    if(Gdx.graphics.getHeight()-Gdx.input.getY()>Background_1.y  && Gdx.graphics.getHeight()-Gdx.input.getY()<Background_1.y+Gdx.graphics.getHeight()/7) {
+
         Background_1.x = ((Gdx.input.getX() - xsave) + b[1]);
         Background_2.x = ((Gdx.input.getX() - xsave) + b[2]);
         Background_3.x = ((Gdx.input.getX() - xsave) + b[3]);
@@ -509,7 +515,7 @@ if(Gdx.input.isTouched() || c==0){
         Background_9.x = ((Gdx.input.getX() - xsave) + b[9]);
         Background_10.x = ((Gdx.input.getX() - xsave) + b[10]);
 
-
+    }
 
 
 
