@@ -1,4 +1,4 @@
-package com.test2.game;
+package com.test2.game.library;
 
 import java.util.Timer;
 import java.util.TimerTask;

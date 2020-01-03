@@ -1,10 +1,17 @@
-package com.test2.game;
+package com.test2.game.start;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.test2.game.Test2;
+import com.test2.game.Var;
+import com.test2.game.game.GameScreen;
+import com.test2.game.game.LevelAuswahlScreen;
+import com.test2.game.library.LoadSave;
+import com.test2.game.library.touchinput;
+import com.test2.game.option.EigeneLevelManageScreen;
 
 public class StartScreen extends ScreenAdapter {
 
@@ -13,13 +20,13 @@ public class StartScreen extends ScreenAdapter {
 
 
 
-    touchinput.Button Start;
-    touchinput.Button Levelauswahl;
-    touchinput.Button Buttonstart;
-    touchinput.Button LevelBaukasten;
+    com.test2.game.library.touchinput.Button Start;
+    com.test2.game.library.touchinput.Button Levelauswahl;
+    com.test2.game.library.touchinput.Button Buttonstart;
+    com.test2.game.library.touchinput.Button LevelBaukasten;
 
 
-    LoadSave LoadSavee;
+    com.test2.game.library.LoadSave LoadSavee;
 
 
 
@@ -39,13 +46,13 @@ public class StartScreen extends ScreenAdapter {
 
 
 
-        LevelBaukasten = new touchinput.Button(Gdx.graphics.getWidth() / 2 - (int) (Gdx.graphics.getWidth() / 2.7f / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 2.54), (int) (Gdx.graphics.getWidth() / 2.7f), (int) (Gdx.graphics.getHeight() / 17.76f));
+        LevelBaukasten = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth() / 2 - (int) (Gdx.graphics.getWidth() / 2.7f / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 2.54), (int) (Gdx.graphics.getWidth() / 2.7f), (int) (Gdx.graphics.getHeight() / 17.76f));
 
 
 
         //System.out.println(Gdx.graphics.getHeight());
         //Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,(int)(Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/3.55f),600,300);
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth() / 2 - (int) (Gdx.graphics.getWidth() / 2.7f / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 3.0f), (int) (Gdx.graphics.getWidth() / 2.7f), (int) (Gdx.graphics.getHeight() / 17.76f));
+        Levelauswahl = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth() / 2 - (int) (Gdx.graphics.getWidth() / 2.7f / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 3.0f), (int) (Gdx.graphics.getWidth() / 2.7f), (int) (Gdx.graphics.getHeight() / 17.76f));
         Start = new touchinput.Button((int) (Gdx.graphics.getWidth() / 2 - Gdx.graphics.getWidth() / 2.16 / 2), (int) (Gdx.graphics.getHeight() - Gdx.graphics.getHeight() / 3.9f), (int) (Gdx.graphics.getWidth() / 2.16), (int) (Gdx.graphics.getHeight() / 17.76f));
 
 

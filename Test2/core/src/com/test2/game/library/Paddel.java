@@ -1,6 +1,8 @@
-package com.test2.game;
+package com.test2.game.library;
 
 import com.badlogic.gdx.Gdx;
+import com.test2.game.Var;
+import com.test2.game.game.GameScreen;
 
 public class Paddel {
 

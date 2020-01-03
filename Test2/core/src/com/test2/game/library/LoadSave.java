@@ -1,11 +1,8 @@
-package com.test2.game;
+package com.test2.game.library;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
-import com.badlogic.gdx.files.FileHandle;
-
-import javax.naming.Context;
-import java.io.File;
-import java.util.ArrayList;
+import com.test2.game.option.LevelBaukastenScreen;
+import com.test2.game.Var;
 
 public class LoadSave {
 
@@ -17,7 +14,7 @@ public class LoadSave {
 
     }
 
-    static void loadall(){
+    public static void loadall(){
 
         Var.beiballberurungvibrieren = prefs.getInteger("vibrieren");
        // Var.showfps= prefs.getInteger("showfps");
@@ -89,7 +86,7 @@ public class LoadSave {
     }
 
 
-    static void saveall(){
+   public static void saveall(){
 
         prefs.putInteger("vibrieren", Var.beiballberurungvibrieren);
 

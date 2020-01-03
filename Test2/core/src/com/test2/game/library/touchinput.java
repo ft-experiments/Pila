@@ -1,4 +1,4 @@
-package com.test2.game;
+package com.test2.game.library;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
@@ -7,12 +7,12 @@ import java.util.ArrayList;
 
 public class touchinput {
     public static class Switch {
-        int y;
-        int x;
-        int w;
-        int h;
-        int status=0;
-        int u;
+       public int y;
+       public int x;
+       public int w;
+       public int h;
+       public int status=0;
+       public int u;
 
 
 
@@ -20,7 +20,7 @@ public class touchinput {
 
 
 
-        Switch(int _x,int _y, int _w, int _h, int _status) {
+        public Switch(int _x, int _y, int _w, int _h, int _status) {
             x=_x;
             y=_y;
             w=_w;
@@ -32,7 +32,7 @@ public class touchinput {
 
 
 
-        int isswitched() {
+       public int isswitched() {
             if(Gdx.input.isTouched()) {
                 if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {
 
@@ -66,20 +66,20 @@ public class touchinput {
 
 
     public static class Button {
-        int x;
-        int y;
-        int w;
-        int h;
-        int u;
-        int a;
-        Button(int _x,int _y, int _w, int _h){
+       public int x;
+       public int y;
+       public int w;
+       public int h;
+       public int u;
+       public int a;
+       public Button(int _x,int _y, int _w, int _h){
             x=_x;
             y=_y;
             w=_w;
             h=_h;
         }
 
-        int isPressed(){
+       public int isPressed(){
             int ip=0;
             System.out.println(a);
             System.out.println(Gdx.input.getY());

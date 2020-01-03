@@ -1,19 +1,21 @@
-package com.test2.game;
+package com.test2.game.library;
 
 
+
+import com.test2.game.Var;
 
 import java.util.Timer;
 import java.util.TimerTask;
 
 public class Ablauf {
-    static Timer ablauf;
-    static Timer ablauf2;
-    static int feuerballablauf=1000; //promille
-    static int feuerballablaufsoll= 1000;
-    static int klebablauf=1000;
-    static int klebablaufsoll=1000;
-    static TimerTask test;
-    static TimerTask test2;
+   public static Timer ablauf;
+   public static Timer ablauf2;
+   public static int feuerballablauf=1000; //promille
+   public static int feuerballablaufsoll= 1000;
+   public static int klebablauf=1000;
+   public static int klebablaufsoll=1000;
+   public static TimerTask test;
+   public static TimerTask test2;
 
 
     int smooth;
@@ -38,7 +40,7 @@ public class Ablauf {
 
 
 
-    static void feuerballzuruck(){
+    public static void feuerballzuruck(){
 
         ablauf2 = new Timer();
 
@@ -59,7 +61,7 @@ public class Ablauf {
         },0, 5);
     }
 
-    static void klebzuruck(){
+    public static void klebzuruck(){
         klebablauf=1000;
     }
 }

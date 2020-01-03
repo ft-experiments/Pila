@@ -1,4 +1,4 @@
-package com.test2.game;
+package com.test2.game.option;
 
 import com.badlogic.gdx.Gdx;
 
@@ -10,6 +10,14 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.test2.game.start.AssetManageLoader;
+import com.test2.game.Test2;
+import com.test2.game.Var;
+import com.test2.game.game.GameScreen;
+import com.test2.game.library.Level;
+import com.test2.game.library.LevelBauBlock;
+import com.test2.game.library.LoadSave;
+import com.test2.game.library.touchinput;
 
 
 import java.util.ArrayList;
@@ -26,17 +34,17 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
     Texture unzer;
 
-    touchinput.Button rot;
-    touchinput.Button gruen;
-    touchinput.Button blau;
-    touchinput.Button doppelt;
-    touchinput.Button unzers;
-    touchinput.Button leer;
-    touchinput.Button wpopup;
+    com.test2.game.library.touchinput.Button rot;
+    com.test2.game.library.touchinput.Button gruen;
+    com.test2.game.library.touchinput.Button blau;
+    com.test2.game.library.touchinput.Button doppelt;
+    com.test2.game.library.touchinput.Button unzers;
+    com.test2.game.library.touchinput.Button leer;
+    com.test2.game.library.touchinput.Button wpopup;
 
-    touchinput.Button zuruck;
-    touchinput.Button speichern;
-    touchinput.Button neu;
+    com.test2.game.library.touchinput.Button zuruck;
+    com.test2.game.library.touchinput.Button speichern;
+    com.test2.game.library.touchinput.Button neu;
 
     int popup=0;
 
@@ -48,9 +56,9 @@ public class LevelBaukastenScreen extends ScreenAdapter {
     static int w=0;
     static int h=0;
 
-    static int[] LevelBa = new int[140];
+   public static int[] LevelBa = new int[140];
 
-    static ArrayList<LevelBauBlock> blocks = new ArrayList<LevelBauBlock>();
+    static ArrayList<com.test2.game.library.LevelBauBlock> blocks = new ArrayList<com.test2.game.library.LevelBauBlock>();
 
     public LevelBaukastenScreen() {
         batch = new SpriteBatch();
@@ -73,18 +81,18 @@ public class LevelBaukastenScreen extends ScreenAdapter {
 
 
 
-        rot=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
-        gruen=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
-        blau=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
-        doppelt=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
-        unzers=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
-        leer=new touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
-        wpopup=new touchinput.Button(0,0,200,525);
+        rot=new com.test2.game.library.touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        gruen=new com.test2.game.library.touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        blau=new com.test2.game.library.touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        doppelt=new com.test2.game.library.touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        unzers=new com.test2.game.library.touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        leer=new com.test2.game.library.touchinput.Button(0,0,(int)(Gdx.graphics.getWidth()/2)/3,Gdx.graphics.getWidth()/10);
+        wpopup=new com.test2.game.library.touchinput.Button(0,0,200,525);
 
 
 
-        zuruck = new touchinput.Button(0,0,Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10);
-        speichern = new touchinput.Button(0,Gdx.graphics.getWidth()/10,Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10);
+        zuruck = new com.test2.game.library.touchinput.Button(0,0,Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10);
+        speichern = new com.test2.game.library.touchinput.Button(0,Gdx.graphics.getWidth()/10,Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10);
         neu = new touchinput.Button(Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10,Gdx.graphics.getWidth()/4,Gdx.graphics.getWidth()/10);
 
 
@@ -97,7 +105,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
         }
         if(EigeneLevelManageScreen.LoadEigenesLevel!=0) {
             if(Var.EnableAndroidSave==true) {
-                LoadSave.getArrayPrefs("EigeneLevel" + EigeneLevelManageScreen.LoadEigenesLevel);
+                com.test2.game.library.LoadSave.getArrayPrefs("EigeneLevel" + EigeneLevelManageScreen.LoadEigenesLevel);
             }
         }
 
@@ -119,7 +127,7 @@ public class LevelBaukastenScreen extends ScreenAdapter {
             while (x < w) {
                 wo = wo + 1;
 
-                        blocks.add(new LevelBauBlock(x * Gdx.graphics.getWidth() / w, Gdx.graphics.getHeight() - y * 50 - ao, Gdx.graphics.getWidth() / w, 50, 5));
+                        blocks.add(new com.test2.game.library.LevelBauBlock(x * Gdx.graphics.getWidth() / w, Gdx.graphics.getHeight() - y * 50 - ao, Gdx.graphics.getWidth() / w, 50, 5));
 
                 x = x + 1;
             }
@@ -200,7 +208,7 @@ a++;
 
 
         for(int i=0;i<blocks.size();i=i+1) {
-            LevelBauBlock b;
+            com.test2.game.library.LevelBauBlock b;
             b = blocks.get(i);
             batch.begin();
             switch(b.K_art) {
@@ -282,7 +290,7 @@ a++;
 
 
         for(int i=0;i<blocks.size();i=i+1) {
-            LevelBauBlock b;
+            com.test2.game.library.LevelBauBlock b;
             b = blocks.get(i);
             popup();
 
@@ -310,7 +318,7 @@ a++;
     void ModeButtons(){
 
         for(int i=0;i<blocks.size();i=i+1) {
-            LevelBauBlock b;
+            com.test2.game.library.LevelBauBlock b;
             b = blocks.get(i);
             if(b.check()==1){
                 b.marked=1;
@@ -347,7 +355,7 @@ a++;
             if(rot.isPressed() == 1){
                 f_select=1;
                 for(int a=0;a<blocks.size();a=a+1) {
-                    LevelBauBlock bb;
+                    com.test2.game.library.LevelBauBlock bb;
                     bb = blocks.get(a);
                     if(bb.marked==1){
                         bb.K_art=0;
@@ -376,7 +384,7 @@ a++;
             if(gruen.isPressed() == 1){
                 f_select=2;
                 for(int a=0;a<blocks.size();a=a+1) {
-                    LevelBauBlock bb;
+                    com.test2.game.library.LevelBauBlock bb;
                     bb = blocks.get(a);
                     if(bb.marked==1){
                         bb.K_art=1;
@@ -400,7 +408,7 @@ a++;
             if(blau.isPressed() == 1){
                 f_select=3;
                 for(int a=0;a<blocks.size();a=a+1) {
-                    LevelBauBlock bb;
+                    com.test2.game.library.LevelBauBlock bb;
                     bb = blocks.get(a);
                     if(bb.marked==1){
                         bb.K_art=2;
@@ -426,7 +434,7 @@ a++;
             if(doppelt.isPressed() == 1){
                 f_select=4;
                 for(int a=0;a<blocks.size();a=a+1) {
-                    LevelBauBlock bb;
+                    com.test2.game.library.LevelBauBlock bb;
                     bb = blocks.get(a);
                     if(bb.marked==1){
                         bb.K_art=3;
@@ -450,7 +458,7 @@ a++;
             if(unzers.isPressed() == 1){
                 f_select=5;
                 for(int a=0;a<blocks.size();a=a+1) {
-                    LevelBauBlock bb;
+                    com.test2.game.library.LevelBauBlock bb;
                     bb = blocks.get(a);
                     if(bb.marked==1){
                         bb.K_art=4;
@@ -474,7 +482,7 @@ a++;
             if(leer.isPressed() == 1){
                 f_select=6;
                 for(int a=0;a<blocks.size();a=a+1) {
-                    LevelBauBlock bb;
+                    com.test2.game.library.LevelBauBlock bb;
                     bb = blocks.get(a);
                     if(bb.marked==1){
                         bb.K_art=5;

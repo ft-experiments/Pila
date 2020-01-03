@@ -1,4 +1,4 @@
-package com.test2.game;
+package com.test2.game.start;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -7,8 +7,12 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.test2.game.Test2;
+import com.test2.game.Var;
+import com.test2.game.library.LoadSave;
+import com.test2.game.option.OptionScreen;
 
-import static com.test2.game.AssetManageLoader.*;
+import static com.test2.game.start.AssetManageLoader.*;
 
 
 public class SplashScreen extends ScreenAdapter implements Screen {
@@ -79,7 +83,7 @@ if(temp==0) {
             Var.newpack = false;
 
 
-            Test2.INSTANCE.setScreen(new OptionScreen(Test2.INSTANCE));
+            Test2.INSTANCE.setScreen(new com.test2.game.option.OptionScreen(Test2.INSTANCE));
 
         }
         Test2.INSTANCE.setScreen(new StartScreen());

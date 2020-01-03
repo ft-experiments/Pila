@@ -1,4 +1,4 @@
-package com.test2.game;
+package com.test2.game.library;
 
 public class Button {
     int x=0,y=0,width=0,height=0;

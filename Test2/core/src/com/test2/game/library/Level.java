@@ -1,14 +1,16 @@
-package com.test2.game;
+package com.test2.game.library;
 
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.test2.game.option.LevelBaukastenScreen;
+import com.test2.game.Var;
+import com.test2.game.game.GameOverScreen;
 
 import java.util.ArrayList;
 
 public class Level {
 int L;
-    static int Le=0;
-static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
+   public static int Le=0;
+public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<com.test2.game.library.Kaesten>();
 
     static int[] Leveldebug = {
             10,20,0,0, //TODO DEBUG !!!Nachdem alle Level da sind löschen!!!
@@ -913,7 +915,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
                 wo = wo + 1;
                 if (l[wo + 3] != 5) {
                     if (l[3] == 0){
-                        Level.kisten.add(new Kaesten(x * Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight() - y * 50 - l[2], Gdx.graphics.getWidth() / l[0], 50, l[wo + 3]));
+                        Level.kisten.add(new com.test2.game.library.Kaesten(x * Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight() - y * 50 - l[2], Gdx.graphics.getWidth() / l[0], 50, l[wo + 3]));
                 } else {
                     Level.kisten.add(new Kaesten(x * Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight() - y * 50 - l[2], l[wo+3+(l[0]*l[1])], 50, l[wo + 3]));
                 }
@@ -925,7 +927,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
     }
 
 
-    static void LevelCreate(int l){
+   public static void LevelCreate(int l){
         int i;
         int j;
         float a;
@@ -1439,7 +1441,7 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
 
 
 
-    static void Levelup() {
+    public static void Levelup() {
         Level.dispose();
         Level.LevelCreate(Le+1);
         Var.kleben=0;
@@ -1449,14 +1451,14 @@ static ArrayList<Kaesten> kisten = new ArrayList<Kaesten>();
         GameOverScreen.restartgameaftergameover = true; //Für Reset der Blöcke damit keine Fehler enstehen vgl. Gamescreen -> restartgameaftergameover
     }
 
-    static void dispose(){
+   public static void dispose(){
         Level.kisten.clear();
         FallKasten.Fallkasten.clear();
         Ball.dispose();
         Var.gamestatus=0;
     }
 
-    static void reset(){
+   public static void reset(){
 
         Level.dispose();
         Level.LevelCreate(Level.Le);

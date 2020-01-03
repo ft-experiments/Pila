@@ -1,17 +1,18 @@
-package com.test2.game;
+package com.test2.game.library;
 
 import com.badlogic.gdx.Gdx;
+import com.test2.game.Var;
 
 public class Ball {
-    static float x,y;
-    static int r;
-    static float bx;
-    static float by;
-    static float gravity;
-    static float resistance;
+   public static float x,y;
+   public static int r;
+   public static float bx;
+   public static float by;
+   public static float gravity;
+   public static float resistance;
 
 
-    Ball(int _x, int _y, int _r, float _bx, float _by,float _g, float _res) {
+    public Ball(int _x, int _y, int _r, float _bx, float _by, float _g, float _res) {
         x=_x;
         y=_y;
         r=_r;
@@ -27,7 +28,7 @@ public class Ball {
 
 
 
-    static void update() {
+    public static void update() {
         by=by+gravity;
         by=by*resistance;
         bx=bx*resistance;
@@ -85,7 +86,7 @@ public class Ball {
 
 
 
-    static void dispose(){
+    public static void dispose(){
         x=0;
         y =0;
         r=0;

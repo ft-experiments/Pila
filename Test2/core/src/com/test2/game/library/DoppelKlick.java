@@ -1,6 +1,7 @@
-package com.test2.game;
+package com.test2.game.library;
 
 import com.badlogic.gdx.Gdx;
+import com.test2.game.Var;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -22,7 +23,7 @@ public class DoppelKlick {
 
     }
 
-    static int DoppelKlick(){
+    public static int DoppelKlick(){
         if(T==2 && Gdx.input.isTouched()){
             T=3;
             Var.starten=1;

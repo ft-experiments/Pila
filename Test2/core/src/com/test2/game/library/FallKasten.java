@@ -1,20 +1,18 @@
-package com.test2.game;
+package com.test2.game.library;
 
-import com.badlogic.gdx.Gdx;
+import com.test2.game.Var;
 
-import java.nio.file.FileAlreadyExistsException;
 import java.util.ArrayList;
 import java.util.Timer;
-import java.util.TimerTask;
 
 public class FallKasten {
     static Timer e;
 
-    static ArrayList<FallKasten> Fallkasten = new ArrayList<FallKasten>();
-    static float de;
-    int x = 0;
-    int y = 0;
-    int art = 0;
+   public static ArrayList<FallKasten> Fallkasten = new ArrayList<FallKasten>();
+   public static float de;
+   public int x = 0;
+   public int y = 0;
+   public int art = 0;
 
 
 
@@ -31,7 +29,7 @@ public class FallKasten {
 
     }
 
-    void update() {
+    public void update() {
 
         y -= 200 * de;
 
@@ -40,14 +38,14 @@ public class FallKasten {
 
     }
 
-    int check() {
+    public int check() {
         int k = 0;
 
 
 
 
 
-        if (y>Var.r_y-50&&y < Var.r_y && x > Var.r_x-100 && x < Var.r_x + Var.r_l) {
+        if (y> Var.r_y-50&&y < Var.r_y && x > Var.r_x-100 && x < Var.r_x + Var.r_l) {
 
             k = 1;
 
@@ -67,7 +65,7 @@ public class FallKasten {
         return k;
     }
 
-    static void zuruecksetzen() {
+    public static void zuruecksetzen() {
         Var.r_l = 200;
         Var.ballmode = 0;
         Var.kleben = 0;

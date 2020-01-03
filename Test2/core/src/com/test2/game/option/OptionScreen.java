@@ -1,14 +1,18 @@
-package com.test2.game;
+package com.test2.game.option;
 
 import com.badlogic.gdx.*;
 
-import com.badlogic.gdx.audio.Sound;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.test2.game.start.AssetManageLoader;
+import com.test2.game.start.SplashScreen;
+import com.test2.game.Test2;
+import com.test2.game.Var;
+import com.test2.game.game.GameScreen;
+import com.test2.game.library.*;
 
-import static com.test2.game.AssetManageLoader.*;
+import static com.test2.game.start.AssetManageLoader.*;
 
 
 public class OptionScreen extends ScreenAdapter implements Screen {
@@ -22,40 +26,40 @@ public class OptionScreen extends ScreenAdapter implements Screen {
     ShapeRenderer shapeRenderer;
 
 
-    touchinput.Button pack1;
-    touchinput.Button pack2;
-    touchinput.Button pack3;
-    touchinput.Button pack4;
-    touchinput.Button pack5;
+    com.test2.game.library.touchinput.Button pack1;
+    com.test2.game.library.touchinput.Button pack2;
+    com.test2.game.library.touchinput.Button pack3;
+    com.test2.game.library.touchinput.Button pack4;
+    com.test2.game.library.touchinput.Button pack5;
 
 
-    touchinput.Button Levelauswahl;
-    touchinput.Button Baukasten;
-    touchinput.Button Buttonstart;
-    touchinput.Switch fpsshow;
-    touchinput.Switch SW;
-    touchinput.Switch toggelcontrol;
-    touchinput.Switch ballstartmode;
-    touchinput.Switch soundeffecte;
+    com.test2.game.library.touchinput.Button Levelauswahl;
+    com.test2.game.library.touchinput.Button Baukasten;
+    com.test2.game.library.touchinput.Button Buttonstart;
+    com.test2.game.library.touchinput.Switch fpsshow;
+    com.test2.game.library.touchinput.Switch SW;
+    com.test2.game.library.touchinput.Switch toggelcontrol;
+    com.test2.game.library.touchinput.Switch ballstartmode;
+    com.test2.game.library.touchinput.Switch soundeffecte;
 
-    touchinput.Button instant;
-    touchinput.Button control;
-    touchinput.Button fps;
-    touchinput.Button vibrate;
-    touchinput.Button sefecte;
+    com.test2.game.library.touchinput.Button instant;
+    com.test2.game.library.touchinput.Button control;
+    com.test2.game.library.touchinput.Button fps;
+    com.test2.game.library.touchinput.Button vibrate;
+    com.test2.game.library.touchinput.Button sefecte;
 
 
     //hintergrundauswahlbuttons
-    touchinput.Button Background_1;
-    touchinput.Button Background_2;
-    touchinput.Button Background_3;
-    touchinput.Button Background_4;
-    touchinput.Button Background_5;
-    touchinput.Button Background_6;
-    touchinput.Button Background_7;
-    touchinput.Button Background_8;
-    touchinput.Button Background_9;
-    touchinput.Button Background_10;
+    com.test2.game.library.touchinput.Button Background_1;
+    com.test2.game.library.touchinput.Button Background_2;
+    com.test2.game.library.touchinput.Button Background_3;
+    com.test2.game.library.touchinput.Button Background_4;
+    com.test2.game.library.touchinput.Button Background_5;
+    com.test2.game.library.touchinput.Button Background_6;
+    com.test2.game.library.touchinput.Button Background_7;
+    com.test2.game.library.touchinput.Button Background_8;
+    com.test2.game.library.touchinput.Button Background_9;
+    com.test2.game.library.touchinput.Button Background_10;
 
     int bb;
     int switchy=Gdx.graphics.getHeight() / 8;
@@ -131,38 +135,38 @@ int v=0;
 
 
 
-        Buttonstart = new touchinput.Button((int)(Gdx.graphics.getWidth()/2-(Gdx.graphics.getWidth()/1.8f/2)),Gdx.graphics.getHeight()-Gdx.graphics.getHeight(),(int)(Gdx.graphics.getWidth()/1.8f),(int)(Gdx.graphics.getHeight()/5.753f));
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,70);
-        Baukasten = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight() / 8 * 2,(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.26f));
+        Buttonstart = new com.test2.game.library.touchinput.Button((int)(Gdx.graphics.getWidth()/2-(Gdx.graphics.getWidth()/1.8f/2)),Gdx.graphics.getHeight()-Gdx.graphics.getHeight(),(int)(Gdx.graphics.getWidth()/1.8f),(int)(Gdx.graphics.getHeight()/5.753f));
+        Levelauswahl = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-600,400,70);
+        Baukasten = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight() / 8 * 2,(int)(Gdx.graphics.getWidth()/2.7f),(int)(Gdx.graphics.getHeight()/17.26f));
 
 
 
-        Background_1 = new touchinput.Button(0,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
-        Background_2 = new touchinput.Button(Gdx.graphics.getWidth()/7,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
-        Background_3 = new touchinput.Button(Gdx.graphics.getWidth()/7*2,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
-        Background_4 = new touchinput.Button(Gdx.graphics.getWidth()/7*3,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
-        Background_5 = new touchinput.Button(Gdx.graphics.getWidth()/7*4,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
-        Background_6 = new touchinput.Button(Gdx.graphics.getWidth()/7*5,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_1 = new com.test2.game.library.touchinput.Button(0,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_2 = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/7,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_3 = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/7*2,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_4 = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/7*3,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_5 = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/7*4,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_6 = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/7*5,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
         Background_7 = new touchinput.Button(Gdx.graphics.getWidth()/7*6,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
 
-        Background_8 = new touchinput.Button(Gdx.graphics.getWidth()/7*7,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
-        Background_9 = new touchinput.Button(Gdx.graphics.getWidth()/7*8,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
-        Background_10 = new touchinput.Button(Gdx.graphics.getWidth()/7*9,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_8 = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/7*7,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_9 = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/7*8,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
+        Background_10 = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/7*9,(int)(Gdx.graphics.getHeight()/5.753f),Gdx.graphics.getWidth()/7,Gdx.graphics.getHeight()/7);
 
 
 
 
-            SW = new touchinput.Switch(switchsx, switchy * 3, switchw, switchh, Var.beiballberurungvibrieren);
+            SW = new com.test2.game.library.touchinput.Switch(switchsx, switchy * 3, switchw, switchh, Var.beiballberurungvibrieren);
 
 
 
 
 
-            pack1=new touchinput.Button(0,-Gdx.graphics.getHeight()/2,0,0);
-            pack2=new touchinput.Button(0,-Gdx.graphics.getHeight()/2,0,0);
-            pack3=new touchinput.Button(0,0,0,0);
-            pack4=new touchinput.Button(0,0,0,0);
-            pack5=new touchinput.Button(0,0,0,0);
+            pack1=new com.test2.game.library.touchinput.Button(0,-Gdx.graphics.getHeight()/2,0,0);
+            pack2=new com.test2.game.library.touchinput.Button(0,-Gdx.graphics.getHeight()/2,0,0);
+            pack3=new com.test2.game.library.touchinput.Button(0,0,0,0);
+            pack4=new com.test2.game.library.touchinput.Button(0,0,0,0);
+            pack5=new com.test2.game.library.touchinput.Button(0,0,0,0);
 
 
 
@@ -176,25 +180,25 @@ int v=0;
             bb=0;
         }
 
-            SW = new touchinput.Switch(switchsx, switchy * 3, switchw, switchh, Var.beiballberurungvibrieren);
+            SW = new com.test2.game.library.touchinput.Switch(switchsx, switchy * 3, switchw, switchh, Var.beiballberurungvibrieren);
 
-            fpsshow = new touchinput.Switch(switchsx, switchy * 4, switchw, switchh, bb);
+            fpsshow = new com.test2.game.library.touchinput.Switch(switchsx, switchy * 4, switchw, switchh, bb);
 
-            toggelcontrol = new touchinput.Switch(switchsx, switchy * 5, switchw, switchh, Var.steuerung);
+            toggelcontrol = new com.test2.game.library.touchinput.Switch(switchsx, switchy * 5, switchw, switchh, Var.steuerung);
 
-            ballstartmode = new touchinput.Switch(switchsx, switchy * 6, switchw, switchh, Var.ballstartmode);
+            ballstartmode = new com.test2.game.library.touchinput.Switch(switchsx, switchy * 6, switchw, switchh, Var.ballstartmode);
 
-            soundeffecte = new touchinput.Switch(switchsx,switchy*7,switchw,switchh,Var.sound_effects ? 1 : 0);
+            soundeffecte = new com.test2.game.library.touchinput.Switch(switchsx,switchy*7,switchw,switchh,Var.sound_effects ? 1 : 0);
 
 
 
-            vibrate = new touchinput.Button(SW.x - 535, SW.y + SW.h / 2-50, 70, 70);
+            vibrate = new com.test2.game.library.touchinput.Button(SW.x - 535, SW.y + SW.h / 2-50, 70, 70);
 
-            control = new touchinput.Button(toggelcontrol.x - 535, toggelcontrol.y + toggelcontrol.h / 2-50, 70 ,70);
+            control = new com.test2.game.library.touchinput.Button(toggelcontrol.x - 535, toggelcontrol.y + toggelcontrol.h / 2-50, 70 ,70);
 
-            fps = new touchinput.Button(fpsshow.x - 535, fpsshow.y + fpsshow.h / 2-50, 70 ,70);
+            fps = new com.test2.game.library.touchinput.Button(fpsshow.x - 535, fpsshow.y + fpsshow.h / 2-50, 70 ,70);
 
-            instant = new touchinput.Button(ballstartmode.x - 535, ballstartmode.y + ballstartmode.h / 2-50, 70 ,70);
+            instant = new com.test2.game.library.touchinput.Button(ballstartmode.x - 535, ballstartmode.y + ballstartmode.h / 2-50, 70 ,70);
 
             sefecte = new touchinput.Button(soundeffecte.x - 535, soundeffecte.y + soundeffecte.h / 2-50, 70 ,70);
 

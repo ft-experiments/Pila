@@ -1,44 +1,58 @@
-package com.test2.game;
+package com.test2.game.option;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.test2.game.start.AssetManageLoader;
+import com.test2.game.Test2;
+import com.test2.game.Var;
+import com.test2.game.library.touchinput;
 
-public class LevelAuswahlScreen extends ScreenAdapter {
+import java.util.ArrayList;
+
+import static com.test2.game.start.AssetManageLoader.Levelbutton;
+
+public class EigeneLevelManageScreen extends ScreenAdapter {
+
+    static ArrayList<com.test2.game.library.touchinput.Button> EigeneLevelButtons = new ArrayList<com.test2.game.library.touchinput.Button>();
+    static int LoadEigenesLevel=0;
+    static int marked=0;
+
     SpriteBatch batch;
     ShapeRenderer shapeRenderer;
-    touchinput.Button zurueck;
 
-   String back;
-    int u = 0;
+    com.test2.game.library.touchinput.Button zurueck;
+    com.test2.game.library.touchinput.Button newLevel;
 
-    public LevelAuswahlScreen(String referrer) {
+
+    public EigeneLevelManageScreen() {
         batch = new SpriteBatch();
-        shapeRenderer = new ShapeRenderer();
-        zurueck = new touchinput.Button(Gdx.graphics.getWidth()/2,Gdx.graphics.getHeight()-100,220,100);
 
-        back = referrer;
+
+
+        shapeRenderer = new ShapeRenderer();
+
+
+
+        zurueck = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/2-110,Gdx.graphics.getHeight()-500,220,100);
+        newLevel = new com.test2.game.library.touchinput.Button(0,Gdx.graphics.getHeight()-100,400,100);
+
         create();
     }
-
-    int fw=8; //NICHT ÄNDERN
-    int fh=10;  //NICHT ÄNDERN
-
+    int fw=5;
+    int fh=5;
 
     void create() {
-        int le=1;
-        for(int j=fh-1;j>-1;j=j-1) {
+        int le=0;
+        for(int j=0;j<fh;j=j+1) {
             for (int i = 0; i < fw; i = i + 1) {
-
-
-                LevelAuswahlButtons LAB;
-                LAB = new LevelAuswahlButtons(i, i * Gdx.graphics.getWidth() /fw, j* Gdx.graphics.getWidth() / (fh-2), Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, le);
-                //LevelAuswahlButtons.Levelbuttons.add(LAB,i);
-                LevelAuswahlButtons.Levelbuttons.add(LAB);
-                //System.out.println(i);
                 le=le+1;
+                com.test2.game.library.touchinput.Button B;
+                B = new com.test2.game.library.touchinput.Button(i * Gdx.graphics.getWidth() / fw,j* Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw, Gdx.graphics.getWidth() / fw) ;
+                //LevelAuswahlButtons.Levelbuttons.add(LAB,i);
+                EigeneLevelManageScreen.EigeneLevelButtons.add(i,B);
             }
         }
     }
@@ -49,15 +63,13 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
     @Override
     public void render(float delta) {
-        Var.ingame = true;
+        int b=0;
 
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         batch.begin();
-
         if(Var.actbackground==Var.background1) {
-            batch.draw(AssetManageLoader.b1,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
 
         if(Var.actbackground==Var.background2) {
@@ -87,42 +99,38 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         if(Var.actbackground==Var.background10) {
             batch.draw(AssetManageLoader.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
-
         //font.getData().setScale(4);
-        AssetManageLoader.font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
-        batch.draw(AssetManageLoader.buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
-        if(zurueck.isPressed() == 1){
-            Var.geheinpause = 1;
-            Level.dispose();
-            if(back=="game") {
-
-                Test2.INSTANCE.setScreen(new GameScreen());
-
-            }
-
-            if(back=="start") {
-                Test2.INSTANCE.setScreen(new StartScreen());
-            }
-
+        AssetManageLoader.font.draw(batch, "Edit", newLevel.x+30, newLevel.y+(newLevel.h/2+25));
+        batch.draw(AssetManageLoader.buttonimage, newLevel.x,newLevel.y,newLevel.w,newLevel.h);
+        if(newLevel.isPressed() == 1){
+            Test2.INSTANCE.setScreen(new LevelBaukastenScreen());
         }
 
-        LevelAuswahlButtons LAB;
-        for(int b=0;b<LevelAuswahlButtons.Levelbuttons.size();b=b+1) {
-            LAB = LevelAuswahlButtons.Levelbuttons.get(b);
-            if(LAB.Level-1>=Var.levelbesitz) {
-                batch.draw(AssetManageLoader.Levelbuttonrot, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
-            }
-            if(LAB.Level-1<Var.levelbesitz){
-                batch.draw(AssetManageLoader.Levelbutton, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
-            }
 
-            //font.getData().setScale(4);
-            AssetManageLoader.font.draw(batch, ""+(LAB.Level) , LAB.x+LAB.w/2-30,LAB.y+LAB.h/2+30);
-            //System.out.println(b);
-            if(LAB.Level<=Var.levelbesitz) {
-                LAB.check();
+
+
+        touchinput.Button B;
+        b=0;
+        while(b<EigeneLevelButtons.size()) {
+            B = EigeneLevelButtons.get(b);
+            if(marked==b){
+                batch.draw(Levelbutton,B.x,B.y,B.w,B.h);
+            }else {
+                batch.draw(AssetManageLoader.buttonimage, B.x, B.y, B.w, B.h);
             }
+            //Data().setScale(4);
+            AssetManageLoader.font.draw(batch, ""+(b+1),B.x+B.w/2,B.y+B.h/2);
+            if(B.isPressed()==1){
+                marked=b;
+                EigeneLevelManageScreen.LoadEigenesLevel=b+1;
+                b=0;
+              //  Test2.INSTANCE.setScreen(new LevelBaukastenScreen());
+            }
+            b=b+1;
         }
+
+
+
 
         batch.end();
 
@@ -138,6 +146,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
 
     @Override
     public void dispose() {
+        super.dispose();
         batch.dispose();
 
     }

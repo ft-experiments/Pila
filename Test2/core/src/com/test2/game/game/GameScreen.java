@@ -1,16 +1,20 @@
-package com.test2.game;
+package com.test2.game.game;
 import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.*;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.test2.game.*;
+import com.test2.game.library.Ablauf;
+import com.test2.game.library.LevelAuswahlButtons;
+import com.test2.game.option.OptionScreen;
+import com.test2.game.start.AssetManageLoader;
 
 
 import java.util.Timer;
 import java.util.TimerTask;
 
-import static com.test2.game.AssetManageLoader.*;
+import static com.test2.game.start.AssetManageLoader.*;
 import static java.lang.System.currentTimeMillis;
 
 
@@ -19,18 +23,18 @@ public class GameScreen extends ScreenAdapter {
     public static GameScreen INSTANCE;
 
 
-    LoadSave LoadSave;
+    com.test2.game.library.LoadSave LoadSave;
     SpriteBatch batch;
 
     ShapeRenderer shapeRenderer;
 
-    touchinput.Button Levelauswahl;
-    touchinput.Button Buttonstart;
-    touchinput.Button Weiter;
-    touchinput.Button neustartbutton;
+    com.test2.game.library.touchinput.Button Levelauswahl;
+    com.test2.game.library.touchinput.Button Buttonstart;
+    com.test2.game.library.touchinput.Button Weiter;
+    com.test2.game.library.touchinput.Button neustartbutton;
 
     Sprite feuerball;
-    Smooth ka;
+    com.test2.game.library.Smooth ka;
     long c= currentTimeMillis();
     int u=0;
     int countdown=0;
@@ -78,7 +82,7 @@ public class GameScreen extends ScreenAdapter {
 
         INSTANCE = this;
         if(Var.EnableAndroidSave==true) {
-            LoadSave = new LoadSave();
+            LoadSave = new com.test2.game.library.LoadSave();
         }
         batch = new SpriteBatch();
 
@@ -90,23 +94,23 @@ public class GameScreen extends ScreenAdapter {
 
 
 
-        ka = new Smooth();
+        ka = new com.test2.game.library.Smooth();
 
 
 
-        Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.732f),400,(int)(Gdx.graphics.getHeight()/14.8f));
-        neustartbutton = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.089f),400,(int)(Gdx.graphics.getHeight()/14.8));
-        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-(int)(Gdx.graphics.getHeight()/5.92),200,200);
+        Buttonstart = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
+        Levelauswahl = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.732f),400,(int)(Gdx.graphics.getHeight()/14.8f));
+        neustartbutton = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.089f),400,(int)(Gdx.graphics.getHeight()/14.8));
+        Weiter = new com.test2.game.library.touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-(int)(Gdx.graphics.getHeight()/5.92),200,200);
 
 
-        new Ablauf();
+        new com.test2.game.library.Ablauf();
 
         shapeRenderer = new ShapeRenderer();
 
 
         if(Var.gamestatus==0) {
-            Level.LevelCreate(Var.createlevel);
+            com.test2.game.library.Level.LevelCreate(Var.createlevel);
         }
 
 
@@ -138,8 +142,8 @@ getdata = new Timer();
     public void run() {
         if(datacounter<40) {
 
-            Random_x[datacounter] = Ball.x;
-            Random_y[datacounter] = Ball.y;
+            Random_x[datacounter] = com.test2.game.library.Ball.x;
+            Random_y[datacounter] = com.test2.game.library.Ball.y;
             datacounter++;
 
 
@@ -215,16 +219,16 @@ getdata = new Timer();
 
             if (x > 0.2f && x < 40) {
 
-                Ball.bx = -0.5f;
+                com.test2.game.library.Ball.bx = -0.5f;
                 //System.out.println("Moment");
 
             } else if (y > 0.2f && y < 40) {
 
                 if (Math.random() == 1) {
                     //System.out.println("y triggered 1");
-                    Ball.bx = 0.5f;
+                    com.test2.game.library.Ball.bx = 0.5f;
                 } else {
-                    Ball.bx = -0.5f;
+                    com.test2.game.library.Ball.bx = -0.5f;
                     //System.out.println("y triggered 2");
                 }
 
@@ -254,25 +258,25 @@ public static float findmax(float [] array) {
 
 
     void klebt(){
-        float bys=Ball.by;
+        float bys= com.test2.game.library.Ball.by;
 
 
 
-        Ball.y=Var.r_y+40;
-        Ball.x=Var.r_x+Var.ballklebposition;
+        com.test2.game.library.Ball.y=Var.r_y+40;
+        com.test2.game.library.Ball.x=Var.r_x+Var.ballklebposition;
         Var.ballupdate=false;
 
-        if(DoppelKlick.DoppelKlick()==1) {
-            Ball.bx=0;
-            Ball.by=-bys;
+        if(com.test2.game.library.DoppelKlick.DoppelKlick()==1) {
+            com.test2.game.library.Ball.bx=0;
+            com.test2.game.library.Ball.by=-bys;
             Var.klebt=false;
             Var.ballupdate=true;
-            Ablauf.klebablauf-=100;
+            com.test2.game.library.Ablauf.klebablauf-=100;
 
         }
     }
 
-static double gamestcreendelta=0;
+public static double gamestcreendelta=0;
     @Override
     public void render(float delta) {
 
@@ -282,12 +286,12 @@ static double gamestcreendelta=0;
 
         if(GameOverScreen.restartgameaftergameover) {
             try {
-                Ablauf.ablauf.cancel();
+                com.test2.game.library.Ablauf.ablauf.cancel();
 
             }catch(Exception e) {}
 
             try {
-                Ablauf.ablauf.schedule(Ablauf.test, 50);
+                com.test2.game.library.Ablauf.ablauf.schedule(com.test2.game.library.Ablauf.test, 50);
 
             }catch(Exception e) {}
 
@@ -295,31 +299,31 @@ static double gamestcreendelta=0;
 
 
             try {
-                Ablauf.ablauf2.cancel();
+                com.test2.game.library.Ablauf.ablauf2.cancel();
 
             }catch(Exception e) {}
 
             try {
-                Ablauf.ablauf2.schedule(Ablauf.test2, 5);
+                com.test2.game.library.Ablauf.ablauf2.schedule(com.test2.game.library.Ablauf.test2, 5);
 
             }catch(Exception e) {}
 
 
-            Ablauf.feuerballablauf=1000;
-            Ablauf.feuerballablaufsoll=1000;
+            com.test2.game.library.Ablauf.feuerballablauf=1000;
+            com.test2.game.library.Ablauf.feuerballablaufsoll=1000;
 
             Var.gamestatus = 1;
             Var.kleben = 0;
             Var.ballmode = 0;
 
 
-           Ablauf.klebablauf=1000;
-           Ablauf.klebablaufsoll=1000;
+           com.test2.game.library.Ablauf.klebablauf=1000;
+           com.test2.game.library.Ablauf.klebablaufsoll=1000;
 
 
-            Level.dispose();                //Level array clearen
-            Level.LevelCreate(Level.Le);   //Das Level neu ins Levelarray schreiben
-            FallKasten.Fallkasten.clear();//////Die Fallkästen Löschen
+            com.test2.game.library.Level.dispose();                //Level array clearen
+            com.test2.game.library.Level.LevelCreate(com.test2.game.library.Level.Le);   //Das Level neu ins Levelarray schreiben
+            com.test2.game.library.FallKasten.Fallkasten.clear();//////Die Fallkästen Löschen
             GameOverScreen.restartgameaftergameover = false;
         }
 
@@ -331,9 +335,9 @@ static double gamestcreendelta=0;
         Var.ingame = true;
 
 
-        if(LevelAuswahlButtons.newlevel==1) {
-            Level.dispose();
-            Level.LevelCreate(Var.createlevel);
+        if(com.test2.game.library.LevelAuswahlButtons.newlevel==1) {
+            com.test2.game.library.Level.dispose();
+            com.test2.game.library.Level.LevelCreate(Var.createlevel);
             LevelAuswahlButtons.newlevel=0;
         }
 
@@ -342,19 +346,19 @@ static double gamestcreendelta=0;
             klebt();
         }
 
-        FallKasten.de = delta;
+        com.test2.game.library.FallKasten.de = delta;
 
         if (Var.gamestatus == 0) {    //Ball erstellen
             if(Var.ballstartmode==0) {
-                 if (DoppelKlick.DoppelKlick() == 1 || Gdx.input.getAccelerometerY()>10) {
+                 if (com.test2.game.library.DoppelKlick.DoppelKlick() == 1 || Gdx.input.getAccelerometerY()>10) {
 
-                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
+                new com.test2.game.library.Ball((int) (Var.r_x + Var.r_l / 2) - com.test2.game.library.Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
                 Var.gamestatus = 1;
 
 
                  }
             }else if(Var.ballstartmode==1){
-                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
+                new com.test2.game.library.Ball((int) (Var.r_x + Var.r_l / 2) - com.test2.game.library.Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
                 Var.gamestatus = 1;
             }
 
@@ -365,24 +369,24 @@ static double gamestcreendelta=0;
 
 
         if (Var.gamestatus != 3){                  //nur steuerbar wenn keine pause
-            Paddel.steuerung(Var.steuerung);
+            com.test2.game.library.Paddel.steuerung(Var.steuerung);
 
     }
-            Paddel.ballcollision();
-        if(Ball.y < Var.r_y && Var.p==0){   //wenn ball verloren
-            FallKasten.zuruecksetzen();
+            com.test2.game.library.Paddel.ballcollision();
+        if(com.test2.game.library.Ball.y < Var.r_y && Var.p==0){   //wenn ball verloren
+            com.test2.game.library.FallKasten.zuruecksetzen();
             Var.leben -= 1;
             Var.p=1;
 
             Var.gamestatus = 0;
 
-            Ball.dispose();
+            com.test2.game.library.Ball.dispose();
         }
 
 
 
 
-        if(Ball.y > Var.r_y){
+        if(com.test2.game.library.Ball.y > Var.r_y){
             Var.p=0;
         }
 
@@ -396,32 +400,32 @@ static double gamestcreendelta=0;
 
 
         if(Var.actbackground==Var.background1) {
-            batch.draw(AssetManageLoader.b1,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(com.test2.game.start.AssetManageLoader.b1,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
 
         if(Var.actbackground==Var.background2) {
-            batch.draw(AssetManageLoader.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(com.test2.game.start.AssetManageLoader.b2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background3) {
-            batch.draw(AssetManageLoader.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(com.test2.game.start.AssetManageLoader.b3,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background4) {
-            batch.draw(AssetManageLoader.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(com.test2.game.start.AssetManageLoader.b4,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background5) {
-            batch.draw(AssetManageLoader.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(com.test2.game.start.AssetManageLoader.b5,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background6) {
-            batch.draw(AssetManageLoader.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(com.test2.game.start.AssetManageLoader.b6,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background7) {
-            batch.draw(AssetManageLoader.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(com.test2.game.start.AssetManageLoader.b7,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background8) {
-            batch.draw(AssetManageLoader.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(com.test2.game.start.AssetManageLoader.b8,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background9) {
-            batch.draw(AssetManageLoader.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+            batch.draw(com.test2.game.start.AssetManageLoader.b9,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
         if(Var.actbackground==Var.background10) {
             batch.draw(AssetManageLoader.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
@@ -432,18 +436,18 @@ static double gamestcreendelta=0;
 
 
         if(Var.ballmode==1) {
-            batch.setColor(Ablauf.feuerballablauf/100f,Ablauf.feuerballablauf/100f,Ablauf.feuerballablauf/100f,1);  //Die animation des feuerballs wird immer dunkler
-            batch.draw(feuerball, Ball.x, Ball.y, 30, 30); //Der Feuerball wird gedrawd
+            batch.setColor(com.test2.game.library.Ablauf.feuerballablauf/100f, com.test2.game.library.Ablauf.feuerballablauf/100f, com.test2.game.library.Ablauf.feuerballablauf/100f,1);  //Die animation des feuerballs wird immer dunkler
+            batch.draw(feuerball, com.test2.game.library.Ball.x, com.test2.game.library.Ball.y, 30, 30); //Der Feuerball wird gedrawd
             batch.setColor(1,1,1,1);
         }
 
 
 
         int zaeler = 0;
-        for(int i=0;i<FallKasten.Fallkasten.size();i=i+1) {//Hier wird abgecheckt ob man einen Fallkasten eingesammelt hat und wenn, dann wird das entsprechende gestartet
+        for(int i = 0; i< com.test2.game.library.FallKasten.Fallkasten.size(); i=i+1) {//Hier wird abgecheckt ob man einen Fallkasten eingesammelt hat und wenn, dann wird das entsprechende gestartet
             Var.i=i;
-            FallKasten FK;
-            FK =FallKasten.Fallkasten.get(i);
+            com.test2.game.library.FallKasten FK;
+            FK = com.test2.game.library.FallKasten.Fallkasten.get(i);
             if(Var.gamestatus==1) {
                 FK.update();
             }
@@ -462,18 +466,18 @@ static double gamestcreendelta=0;
                         break;
                     case 3:        //Der feuerball wird gestartet
                         Var.ballmode = 1;
-                        Ablauf.feuerballablauf=1000;
-                        Ablauf.feuerballzuruck();
+                        com.test2.game.library.Ablauf.feuerballablauf=1000;
+                        com.test2.game.library.Ablauf.feuerballzuruck();
                         break;
                     case 4:         //Das Klebepaddel wird gestartet
                         Var.kleben=1;
-                        Ablauf.klebzuruck();
+                        com.test2.game.library.Ablauf.klebzuruck();
                         break;
                     case 5:         //Der Ball wird schneller
-                        Ball.by += Ball.by/8;
+                        com.test2.game.library.Ball.by += com.test2.game.library.Ball.by/8;
                         break;
                     case 6:         //Der Ball wird langsamer
-                        Ball.by -= Ball.by/8;
+                        com.test2.game.library.Ball.by -= com.test2.game.library.Ball.by/8;
                         break;
                 }
                 FK.art=0;
@@ -528,7 +532,7 @@ static double gamestcreendelta=0;
         batch.setColor(1,1,1,1f);
         //font.getData().setScale(Gdx.graphics.getHeight()/426,Gdx.graphics.getHeight()/426);
         font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-(Gdx.graphics.getHeight()/426)*62, Gdx.graphics.getHeight()-5);
-        font.draw(batch, "Level:" + Level.Le + " ", Gdx.graphics.getWidth()/24*7, Gdx.graphics.getHeight()-5);
+        font.draw(batch, "Level:" + com.test2.game.library.Level.Le + " ", Gdx.graphics.getWidth()/24*7, Gdx.graphics.getHeight()-5);
         //font.getData().setScale(3);
 
         /////Pause//Button///////////
@@ -586,9 +590,9 @@ static double gamestcreendelta=0;
 
 
         int b_zahl=0;
-        for(int i=0;i<Level.kisten.size();i=i+1) {    ////////////////DIE//SPIEL//BLÖCKE//WERDEN//GEDRAWD//////////
-            Kaesten k;
-            k = Level.kisten.get(i);
+        for(int i = 0; i< com.test2.game.library.Level.kisten.size(); i=i+1) {    ////////////////DIE//SPIEL//BLÖCKE//WERDEN//GEDRAWD//////////
+            com.test2.game.library.Kaesten k;
+            k = com.test2.game.library.Level.kisten.get(i);
 
 
 
@@ -637,7 +641,8 @@ static double gamestcreendelta=0;
 
 
         if(b_zahl == 0){        //////Wenn Keine SpielBlöcke mehr da sind gehts ein Level hoch///////////////////////
-            Level.Levelup();
+            com.test2.game.library.Level.Levelup();
+
         }
 
 
@@ -682,9 +687,9 @@ static double gamestcreendelta=0;
             font.draw(batch, "neustart" , neustartbutton.x+30, neustartbutton.y+neustartbutton.h/2+25);
             batch.draw(buttonimage, neustartbutton.x,neustartbutton.y,neustartbutton.w,neustartbutton.h);
             if(neustartbutton.isPressed()==1){/////wenn der Button gedrückt wird wird das Level Neugestartet
-                Level.dispose();                //Level array clearen
-                Level.LevelCreate(Level.Le);   //Das Level neu ins Levelarray schreiben
-                FallKasten.Fallkasten.clear();//////Die Fallkästen Löschen
+                com.test2.game.library.Level.dispose();                //Level array clearen
+                com.test2.game.library.Level.LevelCreate(com.test2.game.library.Level.Le);   //Das Level neu ins Levelarray schreiben
+                com.test2.game.library.FallKasten.Fallkasten.clear();//////Die Fallkästen Löschen
                 Var.gamestatus = 1;
                 Var.kleben = 0;
                 Var.ballmode = 0;
@@ -730,7 +735,7 @@ static double gamestcreendelta=0;
                 batch.end();
                 shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
                 shapeRenderer.setColor(1, 1, 0, 0);
-                shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                shapeRenderer.ellipse(com.test2.game.library.Ball.x, com.test2.game.library.Ball.y, com.test2.game.library.Ball.r * 2, com.test2.game.library.Ball.r * 2);
                 shapeRenderer.end();
                 batch.begin();
                 //batch.setColor(0,0,1f,1f);
@@ -750,7 +755,7 @@ static double gamestcreendelta=0;
                 batch.end();
                 shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
                 shapeRenderer.setColor(1, 1, 0, 0);
-                shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                shapeRenderer.ellipse(com.test2.game.library.Ball.x, com.test2.game.library.Ball.y, com.test2.game.library.Ball.r * 2, com.test2.game.library.Ball.r * 2);
                 shapeRenderer.end();
                 batch.begin();
                 //batch.setColor(1f,0,0,1f);
@@ -768,7 +773,7 @@ static double gamestcreendelta=0;
                 batch.end();
                 shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
                 shapeRenderer.setColor(1, 1, 0, 0);
-                shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                shapeRenderer.ellipse(com.test2.game.library.Ball.x, com.test2.game.library.Ball.y, com.test2.game.library.Ball.r * 2, com.test2.game.library.Ball.r * 2);
                 shapeRenderer.end();
                 batch.begin();
                 //batch.setColor(1f,0.3f,0,1f);
@@ -785,7 +790,7 @@ static double gamestcreendelta=0;
                 batch.end();
                 shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
                 shapeRenderer.setColor(1, 1, 0, 0);
-                shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);
+                shapeRenderer.ellipse(com.test2.game.library.Ball.x, com.test2.game.library.Ball.y, com.test2.game.library.Ball.r * 2, com.test2.game.library.Ball.r * 2);
                 shapeRenderer.end();
                 batch.begin();
                 //batch.setColor(0,0.3f,0,1f);
@@ -814,13 +819,13 @@ static double gamestcreendelta=0;
         //shapeRenderer.rect(Var.r_x,20,Var.r_l,20);
         if (Var.ballupdate == true) {
             if (Var.gamestatus == 1) {
-                Ball.update();
+                com.test2.game.library.Ball.update();
             }
         }
 
         if (Var.ballmode==0){
                     shapeRenderer.setColor(1, 1, 0, 0);
-                    shapeRenderer.ellipse(Ball.x, Ball.y, Ball.r * 2, Ball.r * 2);          ////Normale Ball wird gedrawd
+                    shapeRenderer.ellipse(com.test2.game.library.Ball.x, com.test2.game.library.Ball.y, com.test2.game.library.Ball.r * 2, com.test2.game.library.Ball.r * 2);          ////Normale Ball wird gedrawd
 
         }
         if (Var.gamestatus == 0) {
@@ -834,18 +839,18 @@ static double gamestcreendelta=0;
     //ablauf der objekte
         if(Var.ballmode==1){
             shapeRenderer.setColor(1, 0, 0, 0);
-            shapeRenderer.rect(0,Gdx.graphics.getHeight()-25,Ablauf.feuerballablauf/5,25);
-            if(Ablauf.feuerballablauf<=0){
+            shapeRenderer.rect(0,Gdx.graphics.getHeight()-25, com.test2.game.library.Ablauf.feuerballablauf/5,25);
+            if(com.test2.game.library.Ablauf.feuerballablauf<=0){
                 Var.ballmode=0;
             }
         }
 
         if(Var.kleben==1){
             shapeRenderer.setColor(0, 1, 0, 0);
-            shapeRenderer.rect(0,Gdx.graphics.getHeight()-50,Ablauf.klebablaufsoll/5,25);
-            if(Ablauf.klebablaufsoll<=0){
+            shapeRenderer.rect(0,Gdx.graphics.getHeight()-50, com.test2.game.library.Ablauf.klebablaufsoll/5,25);
+            if(com.test2.game.library.Ablauf.klebablaufsoll<=0){
                 Var.kleben=0;
-                Ablauf.klebablaufsoll=1000;
+                com.test2.game.library.Ablauf.klebablaufsoll=1000;
             }
         }
 
@@ -857,12 +862,12 @@ static double gamestcreendelta=0;
         batch.begin();
         if(Var.ballmode==1) {
             font.getData().setScale(0.5f);
-            font.draw(batch, ""+Ablauf.feuerballablauf/10+"%", 50, Gdx.graphics.getHeight()-3);  //Die Feuerball ablaufanzeige wird gedrawd
+            font.draw(batch, ""+ com.test2.game.library.Ablauf.feuerballablauf/10+"%", 50, Gdx.graphics.getHeight()-3);  //Die Feuerball ablaufanzeige wird gedrawd
             font.getData().setScale(1f);
         }
         if(Var.kleben==1){
             font.getData().setScale(0.5f);
-            font.draw(batch, ""+Ablauf.klebablaufsoll/10+"%", 50, Gdx.graphics.getHeight()-3-25);   //Die Klebepaddel ablaufanzeige wird gerawd
+            font.draw(batch, ""+ Ablauf.klebablaufsoll/10+"%", 50, Gdx.graphics.getHeight()-3-25);   //Die Klebepaddel ablaufanzeige wird gerawd
             font.getData().setScale(1f);
         }
         batch.end();

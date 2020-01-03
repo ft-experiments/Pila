@@ -1,23 +1,27 @@
-package com.test2.game;
+package com.test2.game.library;
 
 import com.badlogic.gdx.Gdx;
+import com.test2.game.Test2;
+import com.test2.game.Var;
+import com.test2.game.game.GameOverScreen;
+import com.test2.game.game.GameScreen;
 
 import java.util.ArrayList;
 
 public class LevelAuswahlButtons {
-int Level;
-int x;
-int y;
-int w;
-int h;
-static int newlevel=0;
+public int Level;
+public int x;
+public int y;
+public int w;
+public int h;
+public static int newlevel=0;
 
 
-    static ArrayList<LevelAuswahlButtons> Levelbuttons = new ArrayList<LevelAuswahlButtons>();
+   public static ArrayList<LevelAuswahlButtons> Levelbuttons = new ArrayList<LevelAuswahlButtons>();
 
 
 
-    LevelAuswahlButtons(int _Level,int _x,int _y,int _w,int _h, int _l) {
+   public LevelAuswahlButtons(int _Level,int _x,int _y,int _w,int _h, int _l) {
         Level=_Level;
         x=_x;
         y=_y;
@@ -31,7 +35,7 @@ static int newlevel=0;
 
 
 
-    void check() {
+   public void check() {
         if(Gdx.input.isTouched()) {
             if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {
                 newlevel=1;
