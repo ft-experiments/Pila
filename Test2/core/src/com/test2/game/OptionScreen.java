@@ -886,7 +886,7 @@ if(!Gdx.input.isTouched()){
         pack2.h=Gdx.graphics.getHeight()/2;
 
 
-if(Background_1.y>Gdx.graphics.getHeight()) {
+if(pack1.y>Buttonstart.h) {
 
     batch.draw(buttonimage, pack1.x, pack1.y, pack1.w, pack1.h);
     batch.draw(buttonimage, pack2.x, pack2.y, pack2.w, pack2.h);
