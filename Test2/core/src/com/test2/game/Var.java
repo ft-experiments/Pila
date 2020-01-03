@@ -2,10 +2,7 @@ package com.test2.game;
 
 import com.badlogic.gdx.Gdx;
 
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
+
 
 public class Var {
     static int geheinpause=0;
@@ -104,8 +101,6 @@ public class Var {
     static  String background10 = "";
 
     static String actbackground = background1;
-
-    static int design_pack = 2;
 
     static String actpack = "default";
 
