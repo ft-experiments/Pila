@@ -71,6 +71,7 @@ public class touchinput {
         int w;
         int h;
         int u;
+        int a;
         Button(int _x,int _y, int _w, int _h){
             x=_x;
             y=_y;
@@ -80,14 +81,21 @@ public class touchinput {
 
         int isPressed(){
             int ip=0;
-
+            System.out.println(a);
+            System.out.println(Gdx.input.getY());
             if(Gdx.input.isTouched()) {
-                if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {
-                    u = 1;
+                if(u==0) {
+                    if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {
+                        u = 1;
+
+                            a = Gdx.input.getY();
+                        
+                    }
                 }
             }else {
                 if(u==1 && !Gdx.input.isTouched()) {
-                    if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {
+                    if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h     &&     Gdx.input.getY()==a) {
+
                         ip = 1;
                         u = 0;
                     }else{
