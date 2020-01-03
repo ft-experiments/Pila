@@ -896,6 +896,20 @@ if(!Gdx.input.isTouched()){
 
 
 
+        if(pack1.isPressed()==1){
+            Var.newpack = true;
+            Var.gotopack = "default";
+            Test2.INSTANCE.setScreen(new SplashScreen());
+        }
+        if(pack2.isPressed()==1){
+            Var.newpack = true;
+            Var.gotopack = "pack2";
+            Test2.INSTANCE.setScreen(new SplashScreen());
+        }
+
+
+
+
         batch.end();
 
 
