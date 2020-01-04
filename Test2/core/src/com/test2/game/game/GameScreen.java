@@ -421,12 +421,12 @@ public static double gamestcreendelta=0;
                 switch (FK.art) {
                     case 1:        //paddel wird größer
                         if(Var.r_l < 400) {
-                            Var.r_l += 30;
+                            Var.r_l += Gdx.graphics.getWidth()/3.5f/10;
                         }
                         break;
                     case 2:       //paddel wird kleiner
                         if(Var.r_l > 100) {
-                            Var.r_l -= 30;
+                            Var.r_l -= Gdx.graphics.getWidth()/3.5f/10;
                         }
                         break;
                     case 3:        //Der feuerball wird gestartet
