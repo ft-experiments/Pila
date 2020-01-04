@@ -12,7 +12,7 @@ public class DesktopLauncher {
 		Lwjgl3ApplicationConfiguration config = new Lwjgl3ApplicationConfiguration();
 		config.setTitle("Akandoid");
 		config.useVsync(true);
-		config.setWindowIcon("badlogic.jpg");
+		config.setWindowIcon("pack/default/option/switchon.png");
 		config.setWindowPosition(0,0);
 		config.setWindowedMode(720,1280);
 		//config.setFullscreenMode(Lwjgl3ApplicationConfiguration.getDisplayMode());    //fullscreen

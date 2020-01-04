@@ -16,6 +16,10 @@ public AndroidInterfaces aoi;
 		aoi=maoi;
 		INSTANCE = this;
 	}
+
+	public Test2() {
+		INSTANCE = this;
+	}
 	public boolean backpressed=false;
 	@Override
 	public void create () {
