@@ -15,7 +15,7 @@ public class JSONReader {
    static public boolean[] reader() {
 
 
-             FileHandle handle = Gdx.files.internal(Var.actpack + "/pack.json");
+             FileHandle handle = Gdx.files.internal("pack/"+Var.actpack + "/pack.json");
 
         boolean array[];
 
