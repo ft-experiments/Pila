@@ -483,10 +483,10 @@ public static double gamestcreendelta=0;
 
 
         if(Var.kleben==0) {   //DAs paddel wird gedrawd je nach mod
-            batch.draw(paddelimg, Var.r_x, Var.r_y, Var.r_l, 30);
+            batch.draw(paddelimg, Var.r_x, Var.r_y, Var.r_l, Gdx.graphics.getHeight()/38.3333f);
         }
         if(Var.kleben==1)   {
-            batch.draw(paddelklebimg, Var.r_x, Var.r_y, Var.r_l, 30);
+            batch.draw(paddelklebimg, Var.r_x, Var.r_y, Var.r_l, Gdx.graphics.getHeight()/38.3333f);
         }
 
         ////////////////////////////STATUS//BAR/////////////////////////////
