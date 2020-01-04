@@ -92,7 +92,7 @@ public class GameScreen extends ScreenAdapter {
         Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-(int)(Gdx.graphics.getHeight()/5.92),200,200);
 
 
-        new Ablauf();
+
 
         shapeRenderer = new ShapeRenderer();
 
@@ -266,6 +266,7 @@ public static float findmax(float [] array) {
 
 public static double gamestcreendelta=0;
     @Override
+
     public void render(float delta) {
 
 
@@ -273,30 +274,6 @@ public static double gamestcreendelta=0;
 
 
         if(GameOverScreen.restartgameaftergameover) {             //wird ausgeführt wenn er von einem anderem screen zurück kommt
-            try {
-
-
-            }catch(Exception e) {}
-
-            try {
-
-
-            }catch(Exception e) {}
-
-
-
-
-            try {
-
-
-            }catch(Exception e) {}
-
-            try {
-
-
-            }catch(Exception e) {}
-
-
 
 
             Var.gamestatus = 1;
