@@ -51,9 +51,9 @@ public class Ball {
         }
         if (x>Gdx.graphics.getWidth()-2*r) {
 
-                x = Gdx.graphics.getWidth()-30;
-                richtungsumkehr_x();
 
+                richtungsumkehr_x();
+            x = Gdx.graphics.getWidth()-Gdx.graphics.getWidth()/18;
 
             if(Var.beiballberurungvibrieren==1) {
                 Gdx.input.vibrate(50);
