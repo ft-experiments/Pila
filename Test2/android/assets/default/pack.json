@@ -1,6 +1,7 @@
 {
-   "packinfo": {
+   "pack": {
          "pageName": "default",
+         "version": "1.0",
          "b1": "true",
          "b2": "true",
          "b3": "true",

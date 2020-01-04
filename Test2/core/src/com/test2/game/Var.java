@@ -108,5 +108,5 @@ public class Var {
    public static boolean newpack = false;
 
 
-
+   public static String jsonversion ="1.0";
 }
