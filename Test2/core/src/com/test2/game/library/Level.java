@@ -907,6 +907,8 @@ public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<c
     static int x=0;
     static int y=0;
     static int wo=0;
+    int kastenx;
+    int kasteny;
     static void levelcreater(int[] l) {
         y = 0;
         while (y < l[1]) {
@@ -932,6 +934,7 @@ public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<c
         int j;
         float a;
         float b;
+
 
 
         switch (l){
