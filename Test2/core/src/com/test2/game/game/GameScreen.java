@@ -402,7 +402,7 @@ public static double gamestcreendelta=0;
 
         if(Var.ballmode==1) { //feuerball zeichnen
             batch.setColor(Ablauf.feuerballablauf/100f, Ablauf.feuerballablauf/100f, Ablauf.feuerballablauf/100f,1);  //Die animation des feuerballs wird immer dunkler
-            batch.draw(feuerball, Ball.x, Ball.y, 30, 30); //Der Feuerball wird gedrawd
+            batch.draw(feuerball, Ball.x, Ball.y, Ball.r * 2, Ball.r * 2); //Der Feuerball wird gedrawd
             batch.setColor(1,1,1,1);
         }
 
