@@ -816,12 +816,12 @@ public static double gamestcreendelta=0;
         batch.begin();
         if(Var.ballmode==1) {
             font.getData().setScale(0.5f);
-            font.draw(batch, ""+ Ablauf.feuerballablauf/10+"%", 50, Gdx.graphics.getHeight()-3);  //Die Feuerball ablaufanzeige wird gedrawd
+            font.draw(batch, ""+ Ablauf.feuerballablauf/10+"%", 50, Gdx.graphics.getHeight());  //Die Feuerball ablaufanzeige wird gedrawd
             font.getData().setScale(1f);
         }
         if(Var.kleben==1){
             font.getData().setScale(0.5f);
-            font.draw(batch, ""+ Ablauf.klebablaufsoll/10+"%", 50, Gdx.graphics.getHeight()-3-25);   //Die Klebepaddel ablaufanzeige wird gerawd
+            font.draw(batch, ""+ Ablauf.klebablaufsoll/10+"%", 50, Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/25/2);   //Die Klebepaddel ablaufanzeige wird gerawd
             font.getData().setScale(1f);
         }
         batch.end();
