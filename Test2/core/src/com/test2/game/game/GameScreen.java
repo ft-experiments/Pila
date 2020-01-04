@@ -75,9 +75,11 @@ public class GameScreen extends ScreenAdapter {
     public GameScreen() {
 
         INSTANCE = this;
-        if(Var.EnableAndroidSave==true) {
-            LoadSave = new LoadSave();
-        }
+
+
+
+            LoadSave = new LoadSave();    //spieldaten loader
+
         batch = new SpriteBatch();
 
         ka = new Smooth();
@@ -100,7 +102,7 @@ public class GameScreen extends ScreenAdapter {
         }
 
 
-
+ /////////////////////////////////BAll bring out//////////////////////////
         final TextureRegion[][] regions = TextureRegion.split(imgfeuerball, 100,100);
         feuerball = new Sprite(regions[0][0]);
 
@@ -240,7 +242,7 @@ public static float findmax(float [] array) {
         return max;
 }
 
-
+//////////////////////////////Ball bring out end////////////////////////////
 
 
     void klebt(){
@@ -270,7 +272,7 @@ public static double gamestcreendelta=0;
 
 
 
-        if(GameOverScreen.restartgameaftergameover) {
+        if(GameOverScreen.restartgameaftergameover) {             //wird ausgeführt wenn er von einem anderem screen zurück kommt
             try {
                 Ablauf.ablauf.cancel();
 
@@ -321,7 +323,7 @@ public static double gamestcreendelta=0;
         Var.ingame = true;
 
 
-        if(LevelAuswahlButtons.newlevel==1) {
+        if(LevelAuswahlButtons.newlevel==1) { //wird bei einem neuen level ausgeführt
             Level.dispose();
             Level.LevelCreate(Var.createlevel);
             LevelAuswahlButtons.newlevel=0;
@@ -333,7 +335,7 @@ public static double gamestcreendelta=0;
         }
 
         FallKasten.de = delta;
-
+//System.out.println(Var.gamestatus);
         if (Var.gamestatus == 0) {    //Ball erstellen
             if(Var.ballstartmode==0) {
                  if (DoppelKlick.DoppelKlick() == 1 || Gdx.input.getAccelerometerY()>10) {
@@ -359,6 +361,7 @@ public static double gamestcreendelta=0;
 
     }
             Paddel.ballcollision();
+
         if(Ball.y < Var.r_y && Var.p==0){   //wenn ball verloren
             FallKasten.zuruecksetzen();
             Var.leben -= 1;
@@ -421,7 +424,7 @@ public static double gamestcreendelta=0;
 
 
 
-        if(Var.ballmode==1) {
+        if(Var.ballmode==1) { //feuerball zeichnen
             batch.setColor(Ablauf.feuerballablauf/100f, Ablauf.feuerballablauf/100f, Ablauf.feuerballablauf/100f,1);  //Die animation des feuerballs wird immer dunkler
             batch.draw(feuerball, Ball.x, Ball.y, 30, 30); //Der Feuerball wird gedrawd
             batch.setColor(1,1,1,1);
@@ -503,7 +506,7 @@ public static double gamestcreendelta=0;
         Var.existfallbox=zaeler;
 
 
-        if(Var.kleben==0) {
+        if(Var.kleben==0) {   //DAs paddel wird gedrawd je nach mod
             batch.draw(paddelimg, Var.r_x, Var.r_y, Var.r_l, 30);
         }
         if(Var.kleben==1)   {
