@@ -87,7 +87,7 @@ public class AssetManageLoader {
 
         try {
             //schriftart
-            FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal(Var.actpack + "/comicsans.ttf"));
+            FreeTypeFontGenerator generator = new FreeTypeFontGenerator(Gdx.files.internal("pack/" + Var.actpack + "/comicsans.ttf"));
             FreeTypeFontGenerator.FreeTypeFontParameter parameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
             parameter.size = 50;
             font = generator.generateFont(parameter); // font size 12 pixels
@@ -111,53 +111,53 @@ public class AssetManageLoader {
 
 
 
-            manager.load(Var.actpack + "/option/switchon.png", Texture.class);
-            manager.load(Var.actpack + "/option/switchoff.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/option/switchon.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/option/switchoff.png", Texture.class);
 
-            manager.load(Var.actpack + "/game/Button.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/Button.png", Texture.class);
 
-            manager.load(Var.actpack + "/blocks/block_l.png", Texture.class);
-            manager.load(Var.actpack + "/blocks/block_rot.png", Texture.class);
-            manager.load(Var.actpack + "/blocks/block_gruen.png", Texture.class);
-            manager.load(Var.actpack + "/blocks/block_blau.png", Texture.class);
-            manager.load(Var.actpack + "/game/paddel.png", Texture.class);
-            manager.load(Var.actpack + "/blocks/block_k.png", Texture.class);
-            manager.load(Var.actpack + "/blocks/block_kleber.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_l.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_rot.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_gruen.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_blau.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/paddel.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_k.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_kleber.png", Texture.class);
 
-            manager.load(Var.actpack + "/game/countdown1.png", Texture.class);
-            manager.load(Var.actpack + "/game/countdown2.png", Texture.class);
-            manager.load(Var.actpack + "/game/countdown3.png", Texture.class);
-            manager.load(Var.actpack + "/game/los.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/countdown1.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/countdown2.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/countdown3.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/los.png", Texture.class);
 
-            manager.load(Var.actpack + "/blocks/block_feuer.png", Texture.class);
-            manager.load(Var.actpack + "/game/paddelkleb.png", Texture.class);
-            manager.load(Var.actpack + "/blocks/block_schneller.png", Texture.class);
-            manager.load(Var.actpack + "/blocks/block_langsamer.png", Texture.class);
-            manager.load(Var.actpack + "/blocks/block_2mal.png", Texture.class);
-            manager.load(Var.actpack + "/blocks/block_unzerstoerbar.png", Texture.class);
-            manager.load(Var.actpack + "/game/statusbar.png", Texture.class);
-            manager.load(Var.actpack + "/option/Pause.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_feuer.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/paddelkleb.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_schneller.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_langsamer.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_2mal.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_unzerstoerbar.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/statusbar.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/option/Pause.png", Texture.class);
 
-            manager.load(Var.actpack + "/option/einstellungen.png", Texture.class);
-            manager.load(Var.actpack + "/option/bigpause.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/option/einstellungen.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/option/bigpause.png", Texture.class);
 
-            manager.load(Var.actpack + "/option/info.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/option/info.png", Texture.class);
 
-            manager.load(Var.actpack + "/game/start.png", Texture.class);
-            manager.load(Var.actpack + "/game/startge.png", Texture.class);
-            manager.load(Var.actpack + "/option/Touch.png", Texture.class);
-            manager.load(Var.actpack + "/option/Gyro.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/start.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/startge.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/option/Touch.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/option/Gyro.png", Texture.class);
 
-            manager.load(Var.actpack + "/game/neustart.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/neustart.png", Texture.class);
 
-            manager.load(Var.actpack + "/game/gameover.png", Texture.class);
-            manager.load(Var.actpack + "/game/Levelauswahlbutton.png", Texture.class);
-            manager.load(Var.actpack + "/game/Levelauswahlbuttonrot.png", Texture.class);
-            manager.load(Var.actpack + "/sound/start_last.mp3", Sound.class);
-            manager.load(Var.actpack + "/sound/click.mp3", Sound.class);
+            manager.load("pack/" + Var.actpack + "/game/gameover.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/Levelauswahlbutton.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/Levelauswahlbuttonrot.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/sound/start_last.mp3", Sound.class);
+            manager.load("pack/" + Var.actpack + "/sound/click.mp3", Sound.class);
 
-            manager.load(Var.actpack + "/game/ballfeueranimation.png", Texture.class);
-            manager.load(Var.actpack + "/option/move.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/game/ballfeueranimation.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/option/move.png", Texture.class);
 
         }catch (Exception e) {
             System.out.println("Datein konnten nicht gefunden werden");
@@ -183,54 +183,54 @@ public class AssetManageLoader {
 
 
 
-            switchon = manager.get(Var.actpack + "/option/switchon.png", Texture.class);
-            switchoff = manager.get(Var.actpack + "/option/switchoff.png", Texture.class);
+            switchon = manager.get("pack/" + Var.actpack + "/option/switchon.png", Texture.class);
+            switchoff = manager.get("pack/" + Var.actpack + "/option/switchoff.png", Texture.class);
 
-            buttonimage = manager.get(Var.actpack + "/game/Button.png", Texture.class);
-
-
-            block_l = manager.get(Var.actpack + "/blocks/block_l.png", Texture.class);
-            block_rot = manager.get(Var.actpack + "/blocks/block_rot.png", Texture.class);
-            block_gruen = manager.get(Var.actpack + "/blocks/block_gruen.png", Texture.class);
-            block_blau = manager.get(Var.actpack + "/blocks/block_blau.png", Texture.class);
-            paddelimg = manager.get(Var.actpack + "/game/paddel.png", Texture.class);
-            block_k = manager.get(Var.actpack + "/blocks/block_k.png", Texture.class);
-            block_kleber = manager.get(Var.actpack + "/blocks/block_kleber.png", Texture.class);
-
-            countdown1 = manager.get(Var.actpack + "/game/countdown1.png", Texture.class);
-            countdown2 = manager.get(Var.actpack + "/game/countdown2.png", Texture.class);
-            countdown3 = manager.get(Var.actpack + "/game/countdown3.png", Texture.class);
-            los = manager.get(Var.actpack + "/game/los.png", Texture.class);
-
-            block_feuer = manager.get(Var.actpack + "/blocks/block_feuer.png", Texture.class);
-            paddelklebimg = manager.get(Var.actpack + "/game/paddelkleb.png", Texture.class);
-            block_schneller = manager.get(Var.actpack + "/blocks/block_schneller.png", Texture.class);
-            block_langsamer = manager.get(Var.actpack + "/blocks/block_langsamer.png", Texture.class);
-            block_2mal = manager.get(Var.actpack + "/blocks/block_2mal.png", Texture.class);
-            block_unzerstoerbar = manager.get(Var.actpack + "/blocks/block_unzerstoerbar.png", Texture.class);
-            status_bar = manager.get(Var.actpack + "/game/statusbar.png", Texture.class);
-            pause = manager.get(Var.actpack + "/option/Pause.png", Texture.class);
-
-            einstellungen = manager.get(Var.actpack + "/option/einstellungen.png", Texture.class);
-            bigpause = manager.get(Var.actpack + "/option/bigpause.png", Texture.class);
-
-            info = info1 = info2 = info3 = manager.get(Var.actpack + "/option/info.png", Texture.class);
-
-            start = manager.get(Var.actpack + "/game/start.png", Texture.class);
-            startge = manager.get(Var.actpack + "/game/startge.png", Texture.class);
-            Touch = manager.get(Var.actpack + "/option/Touch.png", Texture.class);
-            Gyro = manager.get(Var.actpack + "/option/Gyro.png", Texture.class);
-            neustart = manager.get(Var.actpack + "/game/neustart.png", Texture.class);
-
-            gameover = manager.get(Var.actpack + "/game/gameover.png", Texture.class);
-            Levelbutton = manager.get(Var.actpack + "/game/Levelauswahlbutton.png", Texture.class);
-            Levelbuttonrot = manager.get(Var.actpack + "/game/Levelauswahlbuttonrot.png", Texture.class);
-            click = manager.get(Var.actpack + "/sound/click.mp3", Sound.class);
+            buttonimage = manager.get("pack/" + Var.actpack + "/game/Button.png", Texture.class);
 
 
-            start_finish = manager.get(Var.actpack + "/sound/start_last.mp3", Sound.class);
-            imgfeuerball = manager.get(Var.actpack + "/game/ballfeueranimation.png", Texture.class);
-            move = manager.get(Var.actpack + "/option/move.png", Texture.class);
+            block_l = manager.get("pack/" + Var.actpack + "/blocks/block_l.png", Texture.class);
+            block_rot = manager.get("pack/" + Var.actpack + "/blocks/block_rot.png", Texture.class);
+            block_gruen = manager.get("pack/" + Var.actpack + "/blocks/block_gruen.png", Texture.class);
+            block_blau = manager.get("pack/" + Var.actpack + "/blocks/block_blau.png", Texture.class);
+            paddelimg = manager.get("pack/" + Var.actpack + "/game/paddel.png", Texture.class);
+            block_k = manager.get("pack/" + Var.actpack + "/blocks/block_k.png", Texture.class);
+            block_kleber = manager.get("pack/" + Var.actpack + "/blocks/block_kleber.png", Texture.class);
+
+            countdown1 = manager.get("pack/" + Var.actpack + "/game/countdown1.png", Texture.class);
+            countdown2 = manager.get("pack/" + Var.actpack + "/game/countdown2.png", Texture.class);
+            countdown3 = manager.get("pack/" + Var.actpack + "/game/countdown3.png", Texture.class);
+            los = manager.get("pack/" + Var.actpack + "/game/los.png", Texture.class);
+
+            block_feuer = manager.get("pack/" + Var.actpack + "/blocks/block_feuer.png", Texture.class);
+            paddelklebimg = manager.get("pack/" + Var.actpack + "/game/paddelkleb.png", Texture.class);
+            block_schneller = manager.get("pack/" + Var.actpack + "/blocks/block_schneller.png", Texture.class);
+            block_langsamer = manager.get("pack/" + Var.actpack + "/blocks/block_langsamer.png", Texture.class);
+            block_2mal = manager.get("pack/" + Var.actpack + "/blocks/block_2mal.png", Texture.class);
+            block_unzerstoerbar = manager.get("pack/" + Var.actpack + "/blocks/block_unzerstoerbar.png", Texture.class);
+            status_bar = manager.get("pack/" + Var.actpack + "/game/statusbar.png", Texture.class);
+            pause = manager.get("pack/" + Var.actpack + "/option/Pause.png", Texture.class);
+
+            einstellungen = manager.get("pack/" + Var.actpack + "/option/einstellungen.png", Texture.class);
+            bigpause = manager.get("pack/" + Var.actpack + "/option/bigpause.png", Texture.class);
+
+            info = info1 = info2 = info3 = manager.get("pack/" + Var.actpack + "/option/info.png", Texture.class);
+
+            start = manager.get("pack/" + Var.actpack + "/game/start.png", Texture.class);
+            startge = manager.get("pack/" + Var.actpack + "/game/startge.png", Texture.class);
+            Touch = manager.get("pack/" + Var.actpack + "/option/Touch.png", Texture.class);
+            Gyro = manager.get("pack/" + Var.actpack + "/option/Gyro.png", Texture.class);
+            neustart = manager.get("pack/" + Var.actpack + "/game/neustart.png", Texture.class);
+
+            gameover = manager.get("pack/" + Var.actpack + "/game/gameover.png", Texture.class);
+            Levelbutton = manager.get("pack/" + Var.actpack + "/game/Levelauswahlbutton.png", Texture.class);
+            Levelbuttonrot = manager.get("pack/" + Var.actpack + "/game/Levelauswahlbuttonrot.png", Texture.class);
+            click = manager.get("pack/" + Var.actpack + "/sound/click.mp3", Sound.class);
+
+
+            start_finish = manager.get("pack/" + Var.actpack + "/sound/start_last.mp3", Sound.class);
+            imgfeuerball = manager.get("pack/" + Var.actpack + "/game/ballfeueranimation.png", Texture.class);
+            move = manager.get("pack/" + Var.actpack + "/option/move.png", Texture.class);
 
 
         }catch(Exception e) {
@@ -264,52 +264,52 @@ public class AssetManageLoader {
 
 
 
-            manager.unload(Var.actpack + "/option/switchon.png");
-            manager.unload(Var.actpack + "/option/switchoff.png");
+            manager.unload("pack/" + Var.actpack + "/option/switchon.png");
+            manager.unload("pack/" + Var.actpack + "/option/switchoff.png");
 
-            manager.unload(Var.actpack + "/game/Button.png");
+            manager.unload("pack/" + Var.actpack + "/game/Button.png");
 
-            manager.unload(Var.actpack + "/blocks/block_l.png");
-            manager.unload(Var.actpack + "/blocks/block_rot.png");
-            manager.unload(Var.actpack + "/blocks/block_gruen.png");
-            manager.unload(Var.actpack + "/blocks/block_blau.png");
-            manager.unload(Var.actpack + "/game/paddel.png");
-            manager.unload(Var.actpack + "/blocks/block_k.png");
-            manager.unload(Var.actpack + "/blocks/block_kleber.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_l.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_rot.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_gruen.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_blau.png");
+            manager.unload("pack/" + Var.actpack + "/game/paddel.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_k.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_kleber.png");
 
-            manager.unload(Var.actpack + "/game/countdown1.png");
-            manager.unload(Var.actpack + "/game/countdown2.png");
-            manager.unload(Var.actpack + "/game/countdown3.png");
-            manager.unload(Var.actpack + "/game/los.png");
+            manager.unload("pack/" + Var.actpack + "/game/countdown1.png");
+            manager.unload("pack/" + Var.actpack + "/game/countdown2.png");
+            manager.unload("pack/" + Var.actpack + "/game/countdown3.png");
+            manager.unload("pack/" + Var.actpack + "/game/los.png");
 
-            manager.unload(Var.actpack + "/blocks/block_feuer.png");
-            manager.unload(Var.actpack + "/game/paddelkleb.png");
-            manager.unload(Var.actpack + "/blocks/block_schneller.png");
-            manager.unload(Var.actpack + "/blocks/block_langsamer.png");
-            manager.unload(Var.actpack + "/blocks/block_2mal.png");
-            manager.unload(Var.actpack + "/blocks/block_unzerstoerbar.png");
-            manager.unload(Var.actpack + "/game/statusbar.png");
-            manager.unload(Var.actpack + "/option/Pause.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_feuer.png");
+            manager.unload("pack/" + Var.actpack + "/game/paddelkleb.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_schneller.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_langsamer.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_2mal.png");
+            manager.unload("pack/" + Var.actpack + "/blocks/block_unzerstoerbar.png");
+            manager.unload("pack/" + Var.actpack + "/game/statusbar.png");
+            manager.unload("pack/" + Var.actpack + "/option/Pause.png");
 
-            manager.unload(Var.actpack + "/option/einstellungen.png");
-            manager.unload(Var.actpack + "/option/bigpause.png");
+            manager.unload("pack/" + Var.actpack + "/option/einstellungen.png");
+            manager.unload("pack/" + Var.actpack + "/option/bigpause.png");
 
-            manager.unload(Var.actpack + "/option/info.png");
+            manager.unload("pack/" + Var.actpack + "/option/info.png");
 
-            manager.unload(Var.actpack + "/game/start.png");
-            manager.unload(Var.actpack + "/game/startge.png");
-            manager.unload(Var.actpack + "/option/Touch.png");
-            manager.unload(Var.actpack + "/option/Gyro.png");
+            manager.unload("pack/" + Var.actpack + "/game/start.png");
+            manager.unload("pack/" + Var.actpack + "/game/startge.png");
+            manager.unload("pack/" + Var.actpack + "/option/Touch.png");
+            manager.unload("pack/" + Var.actpack + "/option/Gyro.png");
 
-            manager.unload(Var.actpack + "/game/neustart.png");
+            manager.unload("pack/" + Var.actpack + "/game/neustart.png");
 
-            manager.unload(Var.actpack + "/game/gameover.png");
-            manager.unload(Var.actpack + "/game/Levelauswahlbutton.png");
-            manager.unload(Var.actpack + "/game/Levelauswahlbuttonrot.png");
-            manager.unload(Var.actpack + "/sound/start_last.mp3");
-            manager.unload(Var.actpack + "/sound/click.mp3");
-            manager.unload(Var.actpack + "/game/ballfeueranimation.png");
-            manager.unload(Var.actpack + "/option/move.png");
+            manager.unload("pack/" + Var.actpack + "/game/gameover.png");
+            manager.unload("pack/" + Var.actpack + "/game/Levelauswahlbutton.png");
+            manager.unload("pack/" + Var.actpack + "/game/Levelauswahlbuttonrot.png");
+            manager.unload("pack/" + Var.actpack + "/sound/start_last.mp3");
+            manager.unload("pack/" + Var.actpack + "/sound/click.mp3");
+            manager.unload("pack/" + Var.actpack + "/game/ballfeueranimation.png");
+            manager.unload("pack/" + Var.actpack + "/option/move.png");
         }catch(Exception e) {
             System.out.println("Die Assets wurden nie geladen");
         }
