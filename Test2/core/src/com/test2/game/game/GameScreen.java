@@ -274,12 +274,12 @@ public static double gamestcreendelta=0;
 
         if(GameOverScreen.restartgameaftergameover) {             //wird ausgeführt wenn er von einem anderem screen zurück kommt
             try {
-                Ablauf.ablauf.cancel();
+
 
             }catch(Exception e) {}
 
             try {
-                Ablauf.ablauf.schedule(Ablauf.test, 50);
+
 
             }catch(Exception e) {}
 
@@ -287,18 +287,17 @@ public static double gamestcreendelta=0;
 
 
             try {
-                Ablauf.ablauf2.cancel();
+
 
             }catch(Exception e) {}
 
             try {
-                Ablauf.ablauf2.schedule(Ablauf.test2, 5);
+
 
             }catch(Exception e) {}
 
 
-            Ablauf.feuerballablauf=1000;
-            Ablauf.feuerballablaufsoll=1000;
+
 
             Var.gamestatus = 1;
             Var.kleben = 0;
