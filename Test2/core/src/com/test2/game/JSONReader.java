@@ -32,7 +32,7 @@ public class JSONReader {
                   System.out.println("Fehler im JSON File");
                   System.out.println(Var.actpack);
                   System.out.println(obj.getJSONObject("pack").getString("pageName"));
-                  System.out.println(".............................");
+                  System.out.println("-----------------");
                   System.out.println(Var.jsonversion);
                   System.out.println(obj.getJSONObject("pack").getString("version"));
 
