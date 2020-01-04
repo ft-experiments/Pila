@@ -316,13 +316,13 @@ public static double gamestcreendelta=0;
             if(Var.ballstartmode==0) {
                  if (DoppelKlick.DoppelKlick() == 1 || Gdx.input.getAccelerometerY()>10) {
 
-                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
+                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), (Gdx.graphics.getWidth()* Gdx.graphics.getHeight())/138240, 0f, -15f, 0.0f, 1f);
                 Var.gamestatus = 1;
 
 
                  }
             }else if(Var.ballstartmode==1){
-                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), 15, 0f, -15f, 0.0f, 1f);
+                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), (Gdx.graphics.getWidth()* Gdx.graphics.getHeight())/138240, 0f, -15f, 0.0f, 1f);
                 Var.gamestatus = 1;
             }
 
