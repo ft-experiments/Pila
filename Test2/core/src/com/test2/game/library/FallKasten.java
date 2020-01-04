@@ -1,5 +1,6 @@
 package com.test2.game.library;
 
+import com.badlogic.gdx.Gdx;
 import com.test2.game.Var;
 
 import java.util.ArrayList;
@@ -66,7 +67,7 @@ public class FallKasten {
     }
 
     public static void zuruecksetzen() {
-        Var.r_l = 200;
+        Var.r_l = Gdx.graphics.getWidth()/3.5f;
         Var.ballmode = 0;
         Var.kleben = 0;
     }
