@@ -10,7 +10,7 @@ public class Var {
    public static float r_x = 10;
    public static float r_y = 200;
    public static float r_speed = 500.0f;
-   public static float r_l = 200;
+   public static float r_l = Gdx.graphics.getWidth()/3.5f;
    public static float s=0.05f;
    public static int points = 0;
    public static int leben=0;
