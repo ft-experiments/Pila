@@ -915,9 +915,9 @@ public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<c
                 wo = wo + 1;
                 if (l[wo + 3] != 5) {
                     if (l[3] == 0){
-                        Level.kisten.add(new com.test2.game.library.Kaesten(x * Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight() - y * 50 - l[2], Gdx.graphics.getWidth() / l[0], 50, l[wo + 3]));
+                        Level.kisten.add(new Kaesten(x * Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight() - y * Gdx.graphics.getHeight()/29 - l[2], Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight()/29, l[wo + 3]));
                 } else {
-                    Level.kisten.add(new Kaesten(x * Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight() - y * 50 - l[2], l[wo+3+(l[0]*l[1])], 50, l[wo + 3]));
+                    Level.kisten.add(new Kaesten(x * Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight() - y * Gdx.graphics.getHeight()/29 - l[2], l[wo+3+(l[0]*l[1])], Gdx.graphics.getHeight()/29, l[wo + 3]));
                 }
             }
                 x = x + 1;

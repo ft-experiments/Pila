@@ -25,10 +25,6 @@ public class FallKasten {
 
     }
 
-    static void Create() {
-
-
-    }
 
     public void update() {
 
