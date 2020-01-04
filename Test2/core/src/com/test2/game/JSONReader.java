@@ -6,7 +6,6 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import org.json.JSONObject;
 
-import java.io.FileNotFoundException;
 
 
 public class JSONReader {
