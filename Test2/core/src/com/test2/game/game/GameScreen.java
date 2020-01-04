@@ -89,7 +89,7 @@ public class GameScreen extends ScreenAdapter {
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
         Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.732f),400,(int)(Gdx.graphics.getHeight()/14.8f));
         neustartbutton = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.089f),400,(int)(Gdx.graphics.getHeight()/14.8));
-        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-(int)(Gdx.graphics.getHeight()/5.92),200,200);
+        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-(int)(Gdx.graphics.getHeight()/5.92),Gdx.graphics.getWidth()/3,Gdx.graphics.getHeight()/3);
 
 
 
@@ -620,7 +620,7 @@ public static double gamestcreendelta=0;
 
             shapeRenderer.begin(ShapeRenderer.ShapeType.Filled);
             shapeRenderer.setColor(0.4f, 0.2f, 0.8f, 0.6f);
-            shapeRenderer.rect(Gdx.graphics.getWidth()/2-250,Gdx.graphics.getHeight()/2-350,500,Gdx.graphics.getHeight()/1.828f);//Der Popup Hintergrund wied lila gedrawd
+            shapeRenderer.rect(Gdx.graphics.getWidth()/6.5f,Gdx.graphics.getHeight()/4.4230f,Gdx.graphics.getWidth()/1.44444444f,Gdx.graphics.getHeight()/1.828f);//Der Popup Hintergrund wied lila gedrawd
             shapeRenderer.end();
             batch.begin();
             batch.setColor(0.4f, 0.2f, 0.8f, 0.6f);
