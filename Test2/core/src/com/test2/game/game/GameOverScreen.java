@@ -73,7 +73,7 @@ public class GameOverScreen extends ScreenAdapter {
         if(Gdx.input.getX() < Var.Button_start_Width+Var.Button_start_x && Gdx.input.getX() > Var.Button_start_x && Gdx.input.getY() < Gdx.graphics.getHeight()-Var.Button_start_y && Gdx.input.getY() > Gdx.graphics.getHeight()-Var.Button_start_y-Var.Button_start_Height)
         {
 
-            batch.draw(AssetManageLoader.neustart, Var.Button_start_x, Var.Button_start_y,Var.Button_start_Width,Var.Button_start_Height);
+            batch.draw(AssetManageLoader.neustart,Gdx.graphics.getWidth()/3.25f,Gdx.graphics.getHeight()/6.7647f,Gdx.graphics.getWidth()/2.826f,Gdx.graphics.getHeight()/7.66666f);
         /*    if(Gdx.input.isButtonJustPressed(0)) {
                 Var.gamestatus=0;
                 Level.kisten.clear();
