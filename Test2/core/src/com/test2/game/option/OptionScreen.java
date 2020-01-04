@@ -5,6 +5,7 @@ import com.badlogic.gdx.*;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.test2.game.JSONReader;
 import com.test2.game.start.AssetManageLoader;
 import com.test2.game.start.SplashScreen;
 import com.test2.game.Test2;
@@ -89,6 +90,8 @@ int tempold;
 int v=0;
 
     public OptionScreen(Test2 gg) {
+
+       
 
 
         if(Var.actbackground==Var.background1) {
