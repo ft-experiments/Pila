@@ -453,24 +453,24 @@ public static double gamestcreendelta=0;
 
 
                     case 1://läner mach Block
-                         batch.draw(block_l, FK.x, FK.y, Gdx.graphics.getWidth()/7.22222f, Gdx.graphics.getHeight()/28.75f);
+                         batch.draw(block_l, FK.x, FK.y, Level.kastenw, Level.kastenh);
                     break;
 
                     case 2://kürzer mach Block
-                        batch.draw(block_k, FK.x, FK.y, Gdx.graphics.getWidth()/7.22222f, Gdx.graphics.getHeight()/28.75f);
+                        batch.draw(block_k, FK.x, FK.y, Level.kastenw, Level.kastenh);
                         break;
 
                     case 3://feuerball Block
-                        batch.draw(block_feuer, FK.x, FK.y, Gdx.graphics.getWidth()/7.22222f, Gdx.graphics.getHeight()/28.75f);
+                        batch.draw(block_feuer, FK.x, FK.y, Level.kastenw, Level.kastenh);
                         break;
                     case 4://Klebepaddel Block
-                        batch.draw(block_kleber, FK.x, FK.y, Gdx.graphics.getWidth()/7.22222f, Gdx.graphics.getHeight()/28.75f);
+                        batch.draw(block_kleber, FK.x, FK.y, Level.kastenw, Level.kastenh);
                         break;
                     case 5://Ball schneller mach Block
-                        batch.draw(block_schneller, FK.x, FK.y, Gdx.graphics.getWidth()/7.22222f, Gdx.graphics.getHeight()/28.75f);
+                        batch.draw(block_schneller, FK.x, FK.y, Level.kastenw, Level.kastenh);
                         break;
                     case 6://Ball langsamer mach Block
-                        batch.draw(block_langsamer, FK.x, FK.y, Gdx.graphics.getWidth()/7.22222f, Gdx.graphics.getHeight()/28.75f);
+                        batch.draw(block_langsamer, FK.x, FK.y, Level.kastenw, Level.kastenh);
                         break;
 
 

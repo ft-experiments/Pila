@@ -10,6 +10,8 @@ import java.util.ArrayList;
 public class Level {
 int L;
    public static int Le=0;
+   public static int kastenw;
+   public static int kastenh;
 public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<com.test2.game.library.Kaesten>();
 
     static int[] Leveldebug = {
@@ -907,8 +909,7 @@ public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<c
     static int x=0;
     static int y=0;
     static int wo=0;
-    int kastenx;
-    int kasteny;
+
     static void levelcreater(int[] l) {
         y = 0;
         while (y < l[1]) {
@@ -918,9 +919,14 @@ public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<c
                 if (l[wo + 3] != 5) {
                     if (l[3] == 0){
                         Level.kisten.add(new Kaesten(x * Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight() - y * Gdx.graphics.getHeight()/29 - l[2], Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight()/29, l[wo + 3]));
-                } else {
+                        kastenw=Gdx.graphics.getWidth() / l[0];
+                        kastenh=Gdx.graphics.getHeight()/29;
+
+                    } else {
                     Level.kisten.add(new Kaesten(x * Gdx.graphics.getWidth() / l[0], Gdx.graphics.getHeight() - y * Gdx.graphics.getHeight()/29 - l[2], l[wo+3+(l[0]*l[1])], Gdx.graphics.getHeight()/29, l[wo + 3]));
-                }
+                        //kastenw=l[wo+3+(l[0]*l[1])];
+                        kastenh=Gdx.graphics.getHeight()/29;
+                    }
             }
                 x = x + 1;
             }
