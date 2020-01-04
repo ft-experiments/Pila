@@ -28,14 +28,23 @@ public class JSONReader {
 
         try {
 
-             if (!obj.getJSONObject("pack").getString("pageName").contains(Var.actpack)&&!!obj.getJSONObject("pack").getString("pageName").contains(Var.jsonversion)) {
-                  System.out.println("Fehler im JSON File");
-                  System.out.println(Var.actpack);
-                  System.out.println(obj.getJSONObject("pack").getString("pageName"));
-                  System.out.println("-----------------");
-                  System.out.println(Var.jsonversion);
-                  System.out.println(obj.getJSONObject("pack").getString("version"));
+             if (!obj.getJSONObject("pack").getString("pageName").contains(Var.actpack)&&!obj.getJSONObject("pack").getString("pageName").contains(Var.jsonversion)) {
 
+
+
+                  System.out.println("Fehler im JSON File");
+
+                 System.out.println(Var.actpack);
+                 System.out.println(obj.getJSONObject("pack").getString("pageName"));
+
+
+                  if(obj.getJSONObject("pack").getString("pageName").contains(Var.jsonversion)) {
+
+                      System.out.println("-----------------");
+                      System.out.println(Var.jsonversion);
+                      System.out.println(obj.getJSONObject("pack").getString("version"));
+                      System.out.println("Bitte erneuer deine Grafig Pack!");
+                  }
 
 
              } else {
