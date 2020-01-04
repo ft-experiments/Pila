@@ -87,9 +87,9 @@ public class GameScreen extends ScreenAdapter {
 
 
         Buttonstart = new touchinput.Button(Gdx.graphics.getWidth()/2-300,Gdx.graphics.getHeight()-500,600,300);
-        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.732f),400,(int)(Gdx.graphics.getHeight()/14.8f));
-        neustartbutton = new touchinput.Button(Gdx.graphics.getWidth()/2-200,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.089f),400,(int)(Gdx.graphics.getHeight()/14.8));
-        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-100,Gdx.graphics.getHeight()/2-(int)(Gdx.graphics.getHeight()/5.92),Gdx.graphics.getWidth()/3,Gdx.graphics.getHeight()/3);
+        Levelauswahl = new touchinput.Button(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/3.7142f,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.732f),Gdx.graphics.getWidth()/1.857f,(int)(Gdx.graphics.getHeight()/14.8f));
+        neustartbutton = new touchinput.Button(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/3.7142f,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.089f),Gdx.graphics.getWidth()/1.857f,(int)(Gdx.graphics.getHeight()/14.8));
+        Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7.2222222f,Gdx.graphics.getHeight()/2-(int)(Gdx.graphics.getHeight()/5.92),Gdx.graphics.getWidth()/3.6111f,Gdx.graphics.getHeight()/6.3888f);
 
 
 

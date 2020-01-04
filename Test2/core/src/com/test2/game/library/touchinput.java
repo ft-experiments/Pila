@@ -7,10 +7,10 @@ import java.util.ArrayList;
 
 public class touchinput {
     public static class Switch {
-       public int y;
-       public int x;
-       public int w;
-       public int h;
+       public float y;
+       public float x;
+       public float w;
+       public float h;
        public int status=0;
        public int u;
 
@@ -20,7 +20,7 @@ public class touchinput {
 
 
 
-        public Switch(int _x, int _y, int _w, int _h, int _status) {
+        public Switch(float _x, float _y, float _w, float _h, int _status) {
             x=_x;
             y=_y;
             w=_w;
@@ -66,13 +66,13 @@ public class touchinput {
 
 
     public static class Button {
-       public int x;
-       public int y;
-       public int w;
-       public int h;
+       public float x;
+       public float y;
+       public float w;
+       public float h;
        public int u;
        public int a;
-       public Button(int _x,int _y, int _w, int _h){
+       public Button(float _x,float _y, float _w, float _h){
             x=_x;
             y=_y;
             w=_w;

@@ -71,12 +71,12 @@ public class OptionScreen extends ScreenAdapter implements Screen {
 int tempold;
     int c=0;
 
-    int xsave;
+    float xsave;
     int a;
-    int[] b = new int[20];
-    int[] d=new int[20];
+    float[] b = new float[20];
+    float[] d=new float[20];
 
-    int gemeinsamverschieben;
+    float gemeinsamverschieben;
     int federung=4;
 
     int effectstärkex=5;
