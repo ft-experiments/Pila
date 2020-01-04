@@ -28,7 +28,7 @@ public class FallKasten {
 
     public void update() {
 
-        y -= 200 * de;
+        y -= (Gdx.graphics.getWidth()/7) * de;
 
 
 
