@@ -89,16 +89,16 @@ public class Var {
    public static boolean sound_music = true;  //Zum deaktivieren der Musik
 
 
-   public static  String background1 = "";
-   public static  String background2 = "";
-   public static  String background3 = "";
-   public static  String background4 = "";
-   public static  String background5 = "";
-   public static  String background6 = "";
-   public static  String background7 = "";
-   public static  String background8 = "";
-   public static  String background9 = "";
-   public static  String background10 = "";
+   public static  String background1 = "hintergrund/hintergrund1.jpg";
+   public static  String background2 = "hintergrund/hintergrund2.jpg";
+   public static  String background3 = "hintergrund/hintergrund3.jpg";
+   public static  String background4 = "hintergrund/hintergrund4.jpg";
+   public static  String background5 = "hintergrund/hintergrund5.jpg";
+   public static  String background6 = "hintergrund/hintergrund6.jpg";
+   public static  String background7 = "hintergrund/hintergrund7.jpg";
+   public static  String background8 = "hintergrund/hintergrund8.jpg";
+   public static  String background9 = "hintergrund/hintergrund9.jpg";
+   public static  String background10 = "hintergrund/hintergrund10.jpg";
 
    public static String actbackground = background1;
 
@@ -106,11 +106,6 @@ public class Var {
    public static String gotopack = "";
 
    public static boolean newpack = false;
-
-
-
-
-
 
 
 
