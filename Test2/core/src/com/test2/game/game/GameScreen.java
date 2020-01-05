@@ -33,6 +33,9 @@ public class GameScreen extends ScreenAdapter {
 
     Sprite feuerball;
     Smooth ka;
+
+    long millissave=currentTimeMillis();
+
     long c= currentTimeMillis();
     int u=0;
     int countdown=0;
@@ -219,7 +222,7 @@ getdata = new Timer();
                     Ball.bx = 0.5f;
                 } else {
                     //Ball.bx = -0.5f;
-                    System.out.println("y triggered 2");
+
                 }
 
             }
@@ -331,7 +334,6 @@ public static double gamestcreendelta=0;
         }
 
 
- System.out.println(Gdx.graphics.getHeight());
 
 
         if (Var.gamestatus != 3){                  //nur steuerbar wenn keine pause
@@ -491,6 +493,24 @@ public static double gamestcreendelta=0;
 
                 }
             }
+
+
+
+
+                if(currentTimeMillis()>millissave+200){
+
+                    System.out.println("9999999999999999999999999");
+                    if(FK.fragezeichen && FK.art!=0){
+                        millissave=currentTimeMillis();
+                        FK.art=FK.art+1;
+                        if(FK.art>8){
+                             FK.art=1;
+                         }
+                }
+
+            }
+
+
 
         }
         Var.existfallbox=zaeler;
