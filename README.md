@@ -1,11 +1,11 @@
 
 
-<h1 align="center">Akanoid</h1>
+<h1 align="center">Pila</h1>
 
 
   
 
-> Akanoid ist ein Spiel besierend auf dem `Libgdx` Framework
+> Pila ist ein Spiel besierend auf dem `Libgdx` Framework
 
 ## Demo
 
