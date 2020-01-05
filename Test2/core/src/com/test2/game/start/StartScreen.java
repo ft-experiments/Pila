@@ -117,7 +117,7 @@ public class StartScreen extends ScreenAdapter {
 
 
         AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth()/900f,Gdx.graphics.getHeight()/1480f);
-        AssetManageLoader.font.draw(batch, "Levelauswahl", Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25));
+        AssetManageLoader.font.draw(batch, "Levelauswahl", Gdx.graphics.getWidth()/2.92f, Levelauswahl.y+(Levelauswahl.h/2+25));
 
 
             AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth() / 900f, Gdx.graphics.getHeight() / 1480f);
