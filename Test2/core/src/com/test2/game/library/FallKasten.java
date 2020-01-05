@@ -76,7 +76,7 @@ public class FallKasten {
         if(Var.existfallbox <= 3) {
             if (Math.floor(Math.random() * Math.floor(3)) == 1) {
                 //System.out.println("placed");
-                int zblock = (int) Math.floor((Math.random() * 8));
+                int zblock = (int) Math.floor((Math.random() * 10));
                 FK = new FallKasten(Kastenx, Kasteny, zblock);
                 Fallkasten.add(FK);
 

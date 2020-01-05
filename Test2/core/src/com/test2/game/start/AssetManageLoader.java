@@ -41,6 +41,8 @@ public class AssetManageLoader {
     public static Texture paddelimg;
     public static Texture block_k;
     public static Texture block_kleber;
+    public static Texture block_minus;
+    public static Texture block_plus;
 
 
    public static Texture block_feuer;
@@ -123,6 +125,8 @@ public class AssetManageLoader {
             manager.load("pack/" + Var.actpack + "/game/paddel.png", Texture.class);
             manager.load("pack/" + Var.actpack + "/blocks/block_k.png", Texture.class);
             manager.load("pack/" + Var.actpack + "/blocks/block_kleber.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_minus.png", Texture.class);
+            manager.load("pack/" + Var.actpack + "/blocks/block_plus.png", Texture.class);
 
             manager.load("pack/" + Var.actpack + "/game/countdown1.png", Texture.class);
             manager.load("pack/" + Var.actpack + "/game/countdown2.png", Texture.class);
@@ -196,6 +200,8 @@ public class AssetManageLoader {
             paddelimg = manager.get("pack/" + Var.actpack + "/game/paddel.png", Texture.class);
             block_k = manager.get("pack/" + Var.actpack + "/blocks/block_k.png", Texture.class);
             block_kleber = manager.get("pack/" + Var.actpack + "/blocks/block_kleber.png", Texture.class);
+            block_minus = manager.get("pack/" + Var.actpack + "/blocks/block_minus.png", Texture.class);
+            block_plus = manager.get("pack/" + Var.actpack + "/blocks/block_plus.png", Texture.class);
 
             countdown1 = manager.get("pack/" + Var.actpack + "/game/countdown1.png", Texture.class);
             countdown2 = manager.get("pack/" + Var.actpack + "/game/countdown2.png", Texture.class);

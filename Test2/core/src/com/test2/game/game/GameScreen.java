@@ -446,6 +446,12 @@ public static double gamestcreendelta=0;
                     case 6:         //Der Ball wird langsamer
                         Ball.by -= Ball.by/8;
                         break;
+                    case 7:         //Der Ball wird langsamer
+                        Var.leben-=1;
+                        break;
+                    case 8:         //Der Ball wird langsamer
+                        Var.leben+=1;
+                        break;
                 }
                 FK.art=0;
             }
@@ -473,6 +479,12 @@ public static double gamestcreendelta=0;
                         break;
                     case 6://Ball langsamer mach Block
                         batch.draw(block_langsamer, FK.x, FK.y, Level.kastenw, Level.kastenh);
+                        break;
+                    case 7://Ball langsamer mach Block
+                        batch.draw(block_minus, FK.x, FK.y, Level.kastenw, Level.kastenh);
+                        break;
+                    case 8://Ball langsamer mach Block
+                        batch.draw(block_plus, FK.x, FK.y, Level.kastenw, Level.kastenh);
                         break;
 
 
