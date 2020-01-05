@@ -90,7 +90,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
             batch.draw(com.test2.game.start.AssetManageLoader.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
 
-        com.test2.game.start.AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth()/1080,Gdx.graphics.getHeight()/1776);
+        com.test2.game.start.AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth()/1080f,Gdx.graphics.getHeight()/1776f);
         com.test2.game.start.AssetManageLoader.font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
         batch.draw(com.test2.game.start.AssetManageLoader.buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
         if(zurueck.isPressed() == 1){
@@ -118,8 +118,8 @@ public class LevelAuswahlScreen extends ScreenAdapter {
                 batch.draw(com.test2.game.start.AssetManageLoader.Levelbutton, LAB.x+5, LAB.y+5, LAB.w-5, LAB.h-5);
             }
 
-            com.test2.game.start.AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth()/450, Gdx.graphics.getHeight()/888);
-            com.test2.game.start.AssetManageLoader.font.draw(batch, ""+(LAB.Level) , LAB.x+Gdx.graphics.getWidth()/48,LAB.y+LAB.h/2+ Gdx.graphics.getHeight()/44.4f);
+            com.test2.game.start.AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth()/600f, Gdx.graphics.getHeight()/908f);
+            com.test2.game.start.AssetManageLoader.font.draw(batch, ""+(LAB.Level) , LAB.x+Gdx.graphics.getWidth()/48f,LAB.y+LAB.h/2f+ Gdx.graphics.getHeight()/44.4f);
             //System.out.println(b);
             if(LAB.Level<=Var.levelbesitz) {
                 LAB.check();
