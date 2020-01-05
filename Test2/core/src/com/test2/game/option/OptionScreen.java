@@ -286,6 +286,10 @@ tempold=temp;
         // if(i==0) {
         // System.out.println(SW.status);
 
+
+        font.getData().setScale(Gdx.graphics.getWidth()/1080f);
+
+
         if(Var.EnableAlpha) {
             //font.getData().setScale(Gdx.graphics.getWidth() / 270);
             font.draw(batch, "LevelBau", Baukasten.x + 30, Baukasten.y + (Baukasten.h / 2 + 25));
@@ -367,7 +371,7 @@ tempold=temp;
 
 
 
-        //font.getData().setScale(5);
+
 
         font.draw(batch, "Optionen" , Gdx.graphics.getWidth()/2-150, Gdx.graphics.getHeight()-30);
 
@@ -522,7 +526,7 @@ if(Gdx.input.isTouched() || c==0){
     }
 
 
-
+/*
     SW.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[1]);
     fpsshow.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[2]);
     toggelcontrol.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[3]);
@@ -540,7 +544,7 @@ if(Gdx.input.isTouched() || c==0){
     Background_10.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[15]);
     pack1.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[16]);
     pack2.y = ((Gdx.graphics.getHeight()-Gdx.input.getY() - ysave) + d[17]);
-
+*/
 
     if(((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2))-Background_1.x)/effectstärkex<0) {
         Background_1.w = Gdx.graphics.getWidth()/7 + ((Gdx.graphics.getWidth() / 2-(Gdx.graphics.getWidth()/7/2)) - Background_1.x)/effectstärkex;
