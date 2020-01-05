@@ -495,8 +495,8 @@ public static double gamestcreendelta=0;
         batch.setColor(1,1,1,0.5f);
         batch.draw(status_bar,0,Gdx.graphics.getHeight()-Gdx.graphics.getHeight()/25,Gdx.graphics.getWidth(),Gdx.graphics.getHeight()/25);
         batch.setColor(1,1,1,1f);
-        //font.getData().setScale(Gdx.graphics.getHeight()/426,Gdx.graphics.getHeight()/426);
-        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-(Gdx.graphics.getHeight()/426)*62, Gdx.graphics.getHeight()-5);
+        font.getData().setScale(Gdx.graphics.getWidth()/720f,Gdx.graphics.getHeight()/1184f);
+        font.draw(batch, "Leben:" + Var.leben, Gdx.graphics.getWidth()-Gdx.graphics.getWidth()/3.85714f, Gdx.graphics.getHeight()-5);
         font.draw(batch, "Level:" + Level.Le + " ", Gdx.graphics.getWidth()/24*7, Gdx.graphics.getHeight()-5);
         //font.getData().setScale(3);
 
