@@ -92,7 +92,7 @@ public class touchinput {
                 }
             }else {
                 if(u==1 && !Gdx.input.isTouched()) {
-                    if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h     &&     Gdx.input.getY()==a) {
+                    if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h     &&     Gdx.input.getY()-10<a && Gdx.input.getY()+10>a) {
 
                         ip = 1;
                         u = 0;
