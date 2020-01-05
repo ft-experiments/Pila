@@ -627,8 +627,9 @@ public static double gamestcreendelta=0;
             batch.draw(bigpause, Weiter.x, Weiter.y, Weiter.w, Weiter.h );  //Der BigPause Button wird gedrawd
             batch.setColor(1f,1f,1f,1f);
 
-            //font.getData().setScale(4);
+
 ///////LevelAuswhlButtonwird gedrawd
+            font.getData().setScale(Gdx.graphics.getWidth()/720f,Gdx.graphics.getHeight()/1184f);
             font.draw(batch, "Levelauswahl" , Levelauswahl.x+30, Levelauswahl.y+Levelauswahl.h/2+25);
             batch.draw(buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
             if(Levelauswahl.isPressed()==1){       //Wenn der Levelauswahl button gedrückt ist
