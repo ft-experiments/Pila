@@ -121,13 +121,14 @@ public class GameScreen extends ScreenAdapter {
                 feuerball.setRegion(regions[0][frame]);
             }
         },0, 100);
-
+/*
 
 getdata = new Timer();
 
         getdata.scheduleAtFixedRate(temp =  new TimerTask() {
     @Override
     public void run() {
+        System.out.println("das sollte eigentlich nich taufgeführt werden");
         if(datacounter<40) {
 
             Random_x[datacounter] = Ball.x;
@@ -185,6 +186,7 @@ getdata = new Timer();
 
                 Ball_bring_out(enddiff_x, enddiff_y);
 
+
                 savediffx1 = 0;
                 savediffy1 = 0;
                 savediffx2 = 0;
@@ -198,7 +200,7 @@ getdata = new Timer();
         }
     }
     },0,70);
-
+*/
     }
 
     private void Ball_bring_out(float x, float y) {
@@ -216,8 +218,8 @@ getdata = new Timer();
                     //System.out.println("y triggered 1");
                     Ball.bx = 0.5f;
                 } else {
-                    Ball.bx = -0.5f;
-                    //System.out.println("y triggered 2");
+                    //Ball.bx = -0.5f;
+                    System.out.println("y triggered 2");
                 }
 
             }
