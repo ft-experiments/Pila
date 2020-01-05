@@ -118,7 +118,10 @@ public class StartScreen extends ScreenAdapter {
 
         AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth()/900f,Gdx.graphics.getHeight()/1480f);
         AssetManageLoader.font.draw(batch, "Levelauswahl", Levelauswahl.x+30, Levelauswahl.y+(Levelauswahl.h/2+25));
-        AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth()/900,Gdx.graphics.getHeight()/1480);
+
+
+            AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth() / 900f, Gdx.graphics.getHeight() / 1480f);
+
         batch.draw(AssetManageLoader.buttonimage, Levelauswahl.x,Levelauswahl.y,Levelauswahl.w,Levelauswahl.h);
         if(Levelauswahl.isPressed() == 1){
             Test2.INSTANCE.setScreen(new LevelAuswahlScreen("start"));
