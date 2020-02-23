@@ -765,6 +765,24 @@ public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<c
 
 
             5,5,5,5,5,5,5,5,5,5,5,
+            1,1,1,1,1,1,1,1,1,1,1,
+            1,5,2,5,5,2,5,2,5,5,1,
+            1,5,2,5,5,2,5,2,5,5,1,
+            1,5,5,2,5,5,2,5,2,5,3,
+            1,5,5,2,5,5,2,5,2,5,3,
+            1,5,5,2,5,2,5,5,2,3,3,
+            1,5,5,2,5,5,2,5,5,2,1,
+            1,5,5,2,5,5,2,5,5,5,1,
+            1,1,1,1,1,1,1,1,1,1,1,
+            5,5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,5
+    };
+
+    static int[] Level41 = {
+            11,12,Gdx.graphics.getHeight()/6,0,
+
+
+            5,5,5,5,5,5,5,5,5,5,5,
             5,5,5,5,5,5,5,5,5,5,5,
             5,5,5,5,5,5,5,5,5,5,5,
             5,5,5,5,5,5,5,5,5,5,5,
@@ -800,6 +818,27 @@ public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<c
 
     };
 
+
+    static int[] Level56 = {
+            10,12,Gdx.graphics.getHeight()/5,0,
+
+
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,5,5,5,5,5,5,5,5,
+            5,5,4,1,3,3,1,4,5,5,
+            5,5,1,5,5,5,5,1,5,5,
+            5,0,0,4,4,4,4,0,0,5,
+            5,5,5,0,3,3,0,5,5,5,
+            5,5,5,4,0,0,4,5,5,5,
+            5,5,5,0,2,2,0,5,5,5,
+            5,5,5,0,5,5,0,5,5,5,
+            5,5,5,0,5,5,0,5,5,5,
+            5,5,0,5,5,5,5,0,5,5
+
+
+
+    };
     static int[] Level60 = {
             10,12,Gdx.graphics.getHeight()/5,0,
 
@@ -1185,7 +1224,7 @@ public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<c
                 Le=l;
                 Var.leben=3;
                 Level.wo=0;
-                levelcreater(Leveldebug);
+                levelcreater(Level40);
                 break;
             case 41:
                 Le=l;

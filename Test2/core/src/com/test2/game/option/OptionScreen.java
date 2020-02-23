@@ -398,6 +398,9 @@ tempold=temp;
 
         batch.begin();
 
+
+
+
         if(Background_1.h>Background_2.h){
             Var.actbackground = Var.background1;
             temp = 1;
@@ -860,6 +863,19 @@ if(pack1.y>Buttonstart.h) {
 
         shapeRenderer.end();
 
+    }
+
+
+    @Override
+    public void resize(int width, int height) {
+        manager.update();
+        super.resize(width, height);
+    }
+
+    @Override
+    public void resume() {
+        manager.update();
+        super.resume();
     }
 
     @Override

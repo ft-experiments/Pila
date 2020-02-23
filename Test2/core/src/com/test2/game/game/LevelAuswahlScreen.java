@@ -10,7 +10,11 @@ import com.test2.game.*;
 import com.test2.game.library.Level;
 import com.test2.game.library.LevelAuswahlButtons;
 import com.test2.game.library.touchinput;
+import com.test2.game.start.AssetManageLoader;
 import com.test2.game.start.StartScreen;
+
+import static com.test2.game.start.AssetManageLoader.font;
+import static com.test2.game.start.AssetManageLoader.manager;
 
 public class LevelAuswahlScreen extends ScreenAdapter {
     SpriteBatch batch;
@@ -89,9 +93,8 @@ public class LevelAuswahlScreen extends ScreenAdapter {
         if(Var.actbackground==Var.background10) {
             batch.draw(com.test2.game.start.AssetManageLoader.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
-
-        com.test2.game.start.AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth()/1080f,Gdx.graphics.getHeight()/1776f);
-        com.test2.game.start.AssetManageLoader.font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
+        AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth()/720f,Gdx.graphics.getHeight()/1184f);
+        AssetManageLoader.font.draw(batch, "zurück" , zurueck.x+30, zurueck.y+zurueck.h/2+25);
         batch.draw(com.test2.game.start.AssetManageLoader.buttonimage, zurueck.x,zurueck.y,zurueck.w,zurueck.h);
         if(zurueck.isPressed() == 1){
             Var.geheinpause = 1;
@@ -139,6 +142,19 @@ public class LevelAuswahlScreen extends ScreenAdapter {
     public void dispose() {
         batch.dispose();
 
+    }
+
+
+    @Override
+    public void resize(int width, int height) {
+        manager.update();
+        super.resize(width, height);
+    }
+
+    @Override
+    public void resume() {
+        manager.update();
+        super.resume();
     }
 
     @Override

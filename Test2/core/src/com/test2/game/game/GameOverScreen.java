@@ -65,7 +65,7 @@ public class GameOverScreen extends ScreenAdapter {
         if(Var.actbackground==Var.background10) {
             batch.draw(AssetManageLoader.b10,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         }
-        batch.draw(AssetManageLoader.gameover,Gdx.graphics.getWidth()/2-500,Gdx.graphics.getHeight()/2+200,1000,300);
+        batch.draw(AssetManageLoader.gameover,0,(Gdx.graphics.getHeight()/13)*10,Gdx.graphics.getWidth(),Gdx.graphics.getHeight()/6);
 
         //font.draw(batch, "Game Over" , Gdx.graphics.getWidth()/2-300, Gdx.graphics.getHeight()/2+200);
 
@@ -108,6 +108,18 @@ public class GameOverScreen extends ScreenAdapter {
     public void dispose() {
         batch.dispose();
 
+    }
+
+    @Override
+    public void resize(int width, int height) {
+        manager.update();
+        super.resize(width, height);
+    }
+
+    @Override
+    public void resume() {
+        manager.update();
+        super.resume();
     }
 
     @Override

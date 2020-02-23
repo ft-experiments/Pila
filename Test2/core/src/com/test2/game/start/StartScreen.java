@@ -12,6 +12,9 @@ import com.test2.game.game.LevelAuswahlScreen;
 import com.test2.game.library.LoadSave;
 import com.test2.game.library.touchinput;
 import com.test2.game.option.EigeneLevelManageScreen;
+import org.graalvm.compiler.asm.amd64.AMD64Assembler;
+
+import static com.test2.game.start.AssetManageLoader.manager;
 
 public class StartScreen extends ScreenAdapter {
 
@@ -147,6 +150,19 @@ public class StartScreen extends ScreenAdapter {
         shapeRenderer.end();
 
 
+    }
+
+
+    @Override
+    public void resize(int width, int height) {
+        manager.update();
+        super.resize(width, height);
+    }
+
+    @Override
+    public void resume() {
+        manager.update();
+        super.resume();
     }
 
     @Override

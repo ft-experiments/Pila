@@ -13,6 +13,7 @@ import com.test2.game.library.*;
 import java.util.ArrayList;
 
 import static com.test2.game.start.AssetManageLoader.Levelbutton;
+import static com.test2.game.start.AssetManageLoader.manager;
 
 public class EigeneLevelManageScreen extends ScreenAdapter {
 
@@ -142,6 +143,19 @@ public class EigeneLevelManageScreen extends ScreenAdapter {
         //shapeRenderer.rect(0,0,100,100);
 
         shapeRenderer.end();
+    }
+
+
+    @Override
+    public void resize(int width, int height) {
+        manager.update();
+        super.resize(width, height);
+    }
+
+    @Override
+    public void resume() {
+        manager.update();
+        super.resume();
     }
 
     @Override

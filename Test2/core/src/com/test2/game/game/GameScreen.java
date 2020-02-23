@@ -1,5 +1,6 @@
 package com.test2.game.game;
 import com.badlogic.gdx.*;
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.*;
@@ -30,6 +31,10 @@ public class GameScreen extends ScreenAdapter {
     touchinput.Button Buttonstart;
     touchinput.Button Weiter;
     touchinput.Button neustartbutton;
+
+    touchinput.Button pause_status;
+    touchinput.Button settings_status;
+
 
     Sprite feuerball;
     Smooth ka;
@@ -94,7 +99,8 @@ public class GameScreen extends ScreenAdapter {
         neustartbutton = new touchinput.Button(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/3.7142f,Gdx.graphics.getHeight()-(int)(Gdx.graphics.getHeight()/2.089f),Gdx.graphics.getWidth()/1.857f,(int)(Gdx.graphics.getHeight()/14.8));
         Weiter = new touchinput.Button(Gdx.graphics.getWidth()/2-Gdx.graphics.getWidth()/7.2222222f,Gdx.graphics.getHeight()/2-(int)(Gdx.graphics.getHeight()/5.92),Gdx.graphics.getWidth()/3.6111f,Gdx.graphics.getHeight()/6.3888f);
 
-
+        pause_status = new touchinput.Button(Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
+        settings_status = new touchinput.Button(Var.Button_einstellungen_x, Var.Button_einstellungen_y, Var.Button_einstellungen_Width, Var.Button_einstellungen_Height);
 
 
         shapeRenderer = new ShapeRenderer();
@@ -321,13 +327,13 @@ public static double gamestcreendelta=0;
             if(Var.ballstartmode==0) {
                  if (DoppelKlick.DoppelKlick() == 1 || Gdx.input.getAccelerometerY()>10) {
 
-                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), (Gdx.graphics.getWidth()* Gdx.graphics.getHeight())/103680, 0f, -(Gdx.graphics.getHeight()* Gdx.graphics.getWidth()/127872), 0.0f, 1f);
+                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), Gdx.graphics.getWidth()/75, 0f, -(Gdx.graphics.getHeight()* Gdx.graphics.getWidth()/127872), 0.0f, 1f);
                 Var.gamestatus = 1;
 
 
                  }
             }else if(Var.ballstartmode==1){
-                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), (Gdx.graphics.getWidth()* Gdx.graphics.getHeight())/103680, 0f, -(Gdx.graphics.getHeight()* Gdx.graphics.getWidth()/127872), 0.0f, 1f);
+                new Ball((int) (Var.r_x + Var.r_l / 2) - Ball.r, (int) (Var.r_y + 100), Gdx.graphics.getWidth()/75, 0f, -(Gdx.graphics.getHeight()* Gdx.graphics.getWidth()/127872), 0.0f, 1f);
                 Var.gamestatus = 1;
             }
 
@@ -448,10 +454,14 @@ public static double gamestcreendelta=0;
                     case 6:         //Der Ball wird langsamer
                         Ball.by -= Ball.by/8;
                         break;
-                    case 7:         //Der Ball wird langsamer
-                        Var.leben-=1;
+                    case 7:         //Minus
+
+                        if(!(Var.leben==1)) {
+                            Var.leben-=1;
+                        }
+
                         break;
-                    case 8:         //Der Ball wird langsamer
+                    case 8:         //Plus
                         Var.leben+=1;
                         break;
                 }
@@ -499,7 +509,7 @@ public static double gamestcreendelta=0;
 
                 if(currentTimeMillis()>millissave+200){
 
-                    System.out.println("9999999999999999999999999");
+                   // System.out.println("9999999999999999999999999");
                     if(FK.fragezeichen && FK.art!=0){
                         millissave=currentTimeMillis();
                         FK.art=FK.art+1;
@@ -535,12 +545,9 @@ public static double gamestcreendelta=0;
         //font.getData().setScale(3);
 
         /////Pause//Button///////////
-        if(Gdx.input.getX() < Var.Button_Pause_Width + Var.Button_Pause_x && Gdx.input.getX() > Var.Button_Pause_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_Pause_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_Pause_y - Var.Button_Pause_Height)
+        if(pause_status.isPressed()==1&&Var.gamestatus!=3)
         {
-            if(Gdx.input.isTouched()){
-                u=1;
-            }else{
-                if(u==1 && !Gdx.input.isTouched()) {
+
 
                     if(Var.gamestatus==1){
                         Var.gamestatus=3;
@@ -557,22 +564,19 @@ public static double gamestcreendelta=0;
                     }
 
 
-
-                    u=0;
-                }
-
-            }
         }
+
+
         if(Var.gamestatus != 3) {
             batch.draw(pause, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
-        if(Var.gamestatus == 3 ){
+        if(Var.gamestatus == 3 ){ //Replaced with the pause overlay
            // batch.draw(weiter, Var.Button_Pause_x, Var.Button_Pause_y, Var.Button_Pause_Width, Var.Button_Pause_Height);
         }
 
         //////////////einstellungs//Button////////////
-        if(Gdx.input.isTouched()) {
-            if (Gdx.input.getX() < Var.Button_einstellungen_Width + Var.Button_einstellungen_x && Gdx.input.getX() > Var.Button_einstellungen_x && Gdx.input.getY() < Gdx.graphics.getHeight() - Var.Button_einstellungen_y && Gdx.input.getY() > Gdx.graphics.getHeight() - Var.Button_einstellungen_y - Var.Button_einstellungen_Height) {
+
+            if (settings_status.isPressed()==1) {
                 if(Var.gamestatus==0){
                     gamestatuspausesave=0;
                 }
@@ -580,7 +584,7 @@ public static double gamestcreendelta=0;
 
                 Test2.INSTANCE.setScreen(new OptionScreen(Test2.INSTANCE));
             }
-        }
+
         batch.draw(einstellungen, Var.Button_einstellungen_x, Var.Button_einstellungen_y, Var.Button_einstellungen_Width, Var.Button_einstellungen_Height);
 
 
@@ -898,6 +902,22 @@ if(Var.geheinpause==1) {
         shapeRenderer.dispose();
 
 
+    }
+
+
+    @Override
+    public void resume() {
+        manager.update();
+
+        super.resume();
+    }
+
+
+    @Override
+    public void resize(int width, int height) {
+        manager.update();
+
+        super.resize(width, height);
     }
 
     @Override

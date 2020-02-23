@@ -82,6 +82,11 @@ public class FallKasten {
                 if(Math.floor(Math.random() * Math.floor(3)) == 1){
                     FK = new FallKasten(Kastenx, Kasteny, zblock, true);
                 }else {
+
+                    if(zblock==7&&Var.leben==1) {
+                    zblock = 8;
+                    }
+
                     FK = new FallKasten(Kastenx, Kasteny, zblock, false);
                 }
                 if(zblock==0){
