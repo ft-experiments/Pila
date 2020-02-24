@@ -1,9 +1,9 @@
 package com.test2.game.library;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Rectangle;
 import com.test2.game.Var;
 
-import java.awt.*;
 
 public class Kaesten {
 
@@ -141,11 +141,11 @@ public class Kaesten {
 
                         Rectangle rect1 = new Rectangle((int)Ball.x, (int)Ball.y, Ball.r*2, Ball.r*2);
                         Rectangle rect2 = new Rectangle(K_x, K_y, K_w, K_h);
-                        if(rect1.intersects(rect2)) {
+                        if(rect1.overlaps(rect2)) {
 
 
 
-                            Ball.y -= Level.kastenh;
+                            Ball.y -=Gdx.graphics.getHeight()/200;
 
                         }
 
