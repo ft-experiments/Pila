@@ -13,7 +13,7 @@ public class touchinput {
         public float h;
         public int status = 0;
         public int u;
-
+        public int a;
 
         public Switch(float _x, float _y, float _w, float _h, int _status) {
             x = _x;
@@ -32,17 +32,20 @@ public class touchinput {
 
 
                     u = 1;
-
+                    a = Gdx.input.getY();
                 }
 
             } else {
                 if (u == 1 && !Gdx.input.isTouched()) {
-                    if (status == 0) {
-                        status = 1;
-                    } else if (status == 1) {
-                        status = 0;
+
+                    if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h && Gdx.input.getY() - 10 < a && Gdx.input.getY() + 10 > a) {
+                        if (status == 0) {
+                            status = 1;
+                        } else if (status == 1) {
+                            status = 0;
+                        }
+                        u = 0;
                     }
-                    u = 0;
                 }
             }
 
@@ -71,15 +74,15 @@ public class touchinput {
 
         public int isPressed() {
             int ip = 0;
-            if (Gdx.input.isTouched()) {
+            if (Gdx.input.isTouched() && Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {
                 if (u == 0) {
-                    if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h) {
-                        u = 1;
 
-                        a = Gdx.input.getY();
+                    u = 1;
 
-                    }
+                    a = Gdx.input.getY();
+
                 }
+
             } else {
                 if (u == 1 && !Gdx.input.isTouched()) {
                     if (Gdx.input.getX() < w + x && Gdx.input.getX() > x && Gdx.input.getY() < Gdx.graphics.getHeight() - y && Gdx.input.getY() > Gdx.graphics.getHeight() - y - h && Gdx.input.getY() - 10 < a && Gdx.input.getY() + 10 > a) {
