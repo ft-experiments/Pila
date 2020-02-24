@@ -1,6 +1,3 @@
-//Hier wird alles auf gschrieben was noch zu machen ist
-//Einfach //TODO
-//benutzen und IntelliJ erkennt das und macht das gelb
 
 
 //TODO Wichtig Wenn eine neue Version: Änderung IMMER im Modul Android in build.gradle und in res/value/version
