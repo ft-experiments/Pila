@@ -6,23 +6,24 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.test2.game.Test2;
 import com.test2.game.Var;
+import com.test2.game.library.LoadSave;
 import com.test2.game.library.touchinput;
 import com.test2.game.start.AssetManageLoader;
 import com.test2.game.start.StartScreen;
 
 import static com.test2.game.start.AssetManageLoader.*;
-import static com.test2.game.start.AssetManageLoader.font;
 
 public class GameEndScreen extends ScreenAdapter {
 
 touchinput.Button Weiter;
 
-
+    touchinput.Button playstore;
     SpriteBatch batch;
     ShapeRenderer render;
 
     public GameEndScreen() {
-        Weiter = new touchinput.Button(Gdx.graphics.getWidth() / 2 - Gdx.graphics.getWidth() / 7.2222222f, Gdx.graphics.getHeight() / 2 - (int) (Gdx.graphics.getHeight() / 5.92), Gdx.graphics.getWidth() / 3.6111f, Gdx.graphics.getHeight() / 6.3888f);
+        playstore = new touchinput.Button(Gdx.graphics.getWidth() / 2 - info.getWidth() / 2, Gdx.graphics.getHeight() / 28.75f * 13.39f, info.getWidth(), info.getHeight());
+        Weiter = new touchinput.Button(Gdx.graphics.getWidth() / 2 - Gdx.graphics.getWidth() / 7.2222222f, Gdx.graphics.getHeight() / 2 - (int) (Gdx.graphics.getHeight() / 5), Gdx.graphics.getWidth() / 3.6111f, Gdx.graphics.getHeight() / 6.3888f);
         render = new ShapeRenderer();
         batch = new SpriteBatch();
     }
@@ -74,25 +75,33 @@ touchinput.Button Weiter;
         render.rect(Gdx.graphics.getWidth() / 6.5f, Gdx.graphics.getHeight() / 4.4230f, Gdx.graphics.getWidth() / 1.44444444f, Gdx.graphics.getHeight() / 1.828f);//Der Popup Hintergrund wied lila gedrawd
         render.end();
 
-            batch.begin();
+        batch.begin();
 
         batch.setColor(0.4f, 0.2f, 0.8f, 0.6f);
         batch.draw(bigpause, Weiter.x, Weiter.y, Weiter.w, Weiter.h);  //Der BigPause Button wird gedrawd
 
         batch.setColor(1f, 1f, 1f, 1f);
-        font.getData().setScale(Gdx.graphics.getWidth() / 750f, Gdx.graphics.getHeight() / 1184f);
-        font.draw(batch, "Du hast es geschafft! ", Gdx.graphics.getWidth() / 6.2f, Gdx.graphics.getHeight() / 4.2f*3);
-
-
-        //Alle Level beendet und bis hier hin gekommen. Vielen Dank fürs Spielen. Wenn dir es gefallen hat, lass doch gerne eine Bewertung im Playstore da und probiere andere Spiele von uns aus.
+        font.getData().setScale(Gdx.graphics.getWidth() / 1450f, Gdx.graphics.getHeight() / 2284f);
+        font.draw(batch, "Du hast es geschafft: Alle Level beendet", Gdx.graphics.getWidth() / 6.2f, Gdx.graphics.getHeight() / 28.75f * 21.29f);
+        font.draw(batch, "und bis hier hin gekommen.", Gdx.graphics.getWidth() / 6.2f, Gdx.graphics.getHeight() / 28.75f * 20.5f);
+        font.draw(batch, "Vielen Dank fürs Spielen!", Gdx.graphics.getWidth() / 6.2f, Gdx.graphics.getHeight() / 28.75f * 19.71f);
+        font.draw(batch, "Wenn dir es gefallen hat, lass doch gerne", Gdx.graphics.getWidth() / 6.2f, Gdx.graphics.getHeight() / 28.75f * 18.92f);
+        font.draw(batch, "eine Bewertung im Playstore da und", Gdx.graphics.getWidth() / 6.2f, Gdx.graphics.getHeight() / 28.75f * 18.13f);
+        font.draw(batch, "probiere andere Spiele von uns aus.", Gdx.graphics.getWidth() / 6.2f, Gdx.graphics.getHeight() / 28.75f * 17.34f);
+        batch.draw(info, Gdx.graphics.getWidth() / 2 - info.getWidth() / 2, Gdx.graphics.getHeight() / 28.75f * 13.39f);
         batch.end();
+//0.79   3,95
 
 
+        if (playstore.isPressed() == 1) {
+            Gdx.net.openURI("http://google.de/"); //TODO LINK
+        }
 
         super.render(delta);
 
-        if(Weiter.isPressed()==1) {
+        if (Weiter.isPressed() == 1) {
             Var.finish = true;
+            LoadSave.saveall();
             Test2.INSTANCE.setScreen(new StartScreen());
         }
     }
