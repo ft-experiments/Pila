@@ -1,19 +1,16 @@
 package com.test2.game.start;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
-
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.test2.game.Var;
 
 
 public class AssetManageLoader {
     public static BitmapFont font;
-
-
 
 
     public static Texture b1;
@@ -45,27 +42,27 @@ public class AssetManageLoader {
     public static Texture block_plus;
 
 
-   public static Texture block_feuer;
-   public static Texture paddelklebimg;
-   public static Texture block_schneller;
-   public static Texture block_langsamer;
-   public static Texture block_2mal;
-   public static Texture block_unzerstoerbar;
-   public static Texture status_bar;
+    public static Texture block_feuer;
+    public static Texture paddelklebimg;
+    public static Texture block_schneller;
+    public static Texture block_langsamer;
+    public static Texture block_2mal;
+    public static Texture block_unzerstoerbar;
+    public static Texture status_bar;
 
-   public static Texture pause;
-   public static Texture einstellungen;
-   public static Texture bigpause;
+    public static Texture pause;
+    public static Texture einstellungen;
+    public static Texture bigpause;
 
 
-   public static Texture info;
+    public static Texture info;
     public static Texture info1;
     public static Texture info2;
     public static Texture info3;
 
-   public static Texture start;
+    public static Texture start;
 
-   public static Texture startge;
+    public static Texture startge;
     public static Texture Touch;
     public static Texture Gyro;
 
@@ -81,9 +78,10 @@ public class AssetManageLoader {
 
     public static Texture imgfeuerball;
     public static Texture move;
-    
+
 
     public static AssetManager manager = new AssetManager();
+
     public static void loader() {
 
 
@@ -110,7 +108,6 @@ public class AssetManageLoader {
             manager.load(Var.background8, Texture.class);
             manager.load(Var.background9, Texture.class);
             manager.load(Var.background10, Texture.class);
-
 
 
             manager.load("pack/" + Var.actpack + "/option/switchon.png", Texture.class);
@@ -163,7 +160,7 @@ public class AssetManageLoader {
             manager.load("pack/" + Var.actpack + "/game/ballfeueranimation.png", Texture.class);
             manager.load("pack/" + Var.actpack + "/option/move.png", Texture.class);
 
-        }catch (Exception e) {
+        } catch (Exception e) {
             System.out.println("Datein konnten nicht gefunden werden");
         }
     }
@@ -182,9 +179,6 @@ public class AssetManageLoader {
             b8 = manager.get(Var.background8, Texture.class);
             b9 = manager.get(Var.background9, Texture.class);
             b10 = manager.get(Var.background10, Texture.class);
-
-
-
 
 
             switchon = manager.get("pack/" + Var.actpack + "/option/switchon.png", Texture.class);
@@ -239,14 +233,9 @@ public class AssetManageLoader {
             move = manager.get("pack/" + Var.actpack + "/option/move.png", Texture.class);
 
 
-        }catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Auf die geladenen Dateien konnte nicht zugegriffen werden");
         }
-
-
-
-
-
 
 
     }
@@ -267,7 +256,6 @@ public class AssetManageLoader {
             manager.unload(Var.background8);
             manager.unload(Var.background9);
             manager.unload(Var.background10);
-
 
 
             manager.unload("pack/" + Var.actpack + "/option/switchon.png");
@@ -316,7 +304,7 @@ public class AssetManageLoader {
             manager.unload("pack/" + Var.actpack + "/sound/click.mp3");
             manager.unload("pack/" + Var.actpack + "/game/ballfeueranimation.png");
             manager.unload("pack/" + Var.actpack + "/option/move.png");
-        }catch(Exception e) {
+        } catch (Exception e) {
             System.out.println("Die Assets wurden nie geladen");
         }
 

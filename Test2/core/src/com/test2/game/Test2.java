@@ -10,36 +10,35 @@ import com.test2.game.start.SplashScreen;
 
 public class Test2 extends Game {
 
-	public static Test2 INSTANCE;
-public AndroidInterfaces aoi;
-	public Test2(AndroidInterfaces maoi){
-		aoi=maoi;
-		INSTANCE = this;
-	}
+    public static Test2 INSTANCE;
+    public AndroidInterfaces aoi;
+    public boolean backpressed = false;
 
-	public Test2() {
-		INSTANCE = this;
-	}
-	public boolean backpressed=false;
-	@Override
-	public void create () {
+    public Test2(AndroidInterfaces maoi) {
+        aoi = maoi;
+        INSTANCE = this;
+    }
 
+    public Test2() {
+        INSTANCE = this;
+    }
 
-
-
-		LoadSave.loadall();
+    @Override
+    public void create() {
 
 
-		new Ablauf();
+        LoadSave.loadall();
 
 
-		setScreen(new SplashScreen());
+        new Ablauf();
 
 
+        setScreen(new SplashScreen());
 
-		//setScreen(new GameScreen());
-		new DoppelKlick();
-	}
+
+        //setScreen(new GameScreen());
+        new DoppelKlick();
+    }
 
 
 }

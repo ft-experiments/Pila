@@ -5,60 +5,56 @@ import com.test2.game.Var;
 
 public class Kaesten {
 
-public int K_x;
-public int K_y;
-public int K_w;
-public int K_h;
-public int v=1;
-public int K_art;
-public int o=0;
-public int mx=0;
-public int my=0;
-public int mx2=0;
-public int my2=0;
+    public int K_x;
+    public int K_y;
+    public int K_w;
+    public int K_h;
+    public int v = 1;
+    public int K_art;
+    public int o = 0;
+    public int mx = 0;
+    public int my = 0;
+    public int mx2 = 0;
+    public int my2 = 0;
 
-public float rechts;
-public float links;
-public float oben;
-public float unten;
+    public float rechts;
+    public float links;
+    public float oben;
+    public float unten;
 
-public float min;
+    public float min;
 
 
-
-    Kaesten(int _kx, int _ky, int _kw, int _kh,int _art) {
+    Kaesten(int _kx, int _ky, int _kw, int _kh, int _art) {
         K_x = _kx;
         K_y = _ky;
         K_w = _kw;
         K_h = _kh;
-        K_art=_art;
-
-
-
+        K_art = _art;
 
 
     }
 
 
-     public void checkKolission() {
-        if(v==1) {
-           // System.out.println(Gdx.graphics.getHeight() - Var.KY);           Ball.y > Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4  && Ball.x > K_x && Ball.x < K_x+100 && Ball.y < Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4+50
-            if (Ball.y+ Ball.r>K_y && Ball.y<K_y+K_h && Ball.x<K_x+K_w && Ball.x+ Ball.r > K_x) {                           //Ball.y > K_y-Ball.r*2 && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h
+    public void checkKolission() {
+        if (v == 1) {
+            // System.out.println(Gdx.graphics.getHeight() - Var.KY);           Ball.y > Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4  && Ball.x > K_x && Ball.x < K_x+100 && Ball.y < Gdx.graphics.getHeight() - (Gdx.graphics.getHeight() - K_y) - Ball.r/4+50
+            if (Ball.y + Ball.r > K_y && Ball.y < K_y + K_h && Ball.x < K_x + K_w && Ball.x + Ball.r > K_x) {                           //Ball.y > K_y-Ball.r*2 && Ball.x >  K_x-Ball.r*2 && Ball.x < K_x+K_w && Ball.y < K_y+K_h
 
-                mx=K_x;
-                my=K_y+2;
-                mx2=K_x+K_w-3;
-                my2=K_y+K_h-2;
+                mx = K_x;
+                my = K_y + 2;
+                mx2 = K_x + K_w - 3;
+                my2 = K_y + K_h - 2;
 
 
-                if(Var.ballmode==0) {
+                if (Var.ballmode == 0) {
 
-                    rechts=K_x+K_w-Ball.x;
-                    links=(Ball.x+Ball.r  - K_x);
-                    oben=K_y+K_h-Ball.y;
-                    unten=(Ball.y+Ball.r)-K_y;
+                    rechts = K_x + K_w - Ball.x;
+                    links = (Ball.x + Ball.r - K_x);
+                    oben = K_y + K_h - Ball.y;
+                    unten = (Ball.y + Ball.r) - K_y;
 
-                    min = Math.min(Math.min(rechts,links),Math.min(oben,unten));
+                    min = Math.min(Math.min(rechts, links), Math.min(oben, unten));
 
                     System.out.println();
                     System.out.print("         rechts: ");
@@ -90,13 +86,13 @@ public float min;
                     }
                     */
 
-                    if(min==rechts || min==links){
-                            Ball.richtungsumkehr_x();
-                         Ball.x-= Ball.bx;
-                        }
-                    if(min==unten  || min==oben){
+                    if (min == rechts || min == links) {
+                        Ball.richtungsumkehr_x();
+                        Ball.x -= Ball.bx;
+                    }
+                    if (min == unten || min == oben) {
                         Ball.richtungsumkehr_y();
-                        Ball.y-=Ball.by;
+                        Ball.y -= Ball.by;
                     }
 
 
@@ -116,13 +112,11 @@ public float min;
                     }*/
 
 
-
-
-                   // Ball.bx = Ball.bx * -1;
+                    // Ball.bx = Ball.bx * -1;
                 }
-               // Ball.y -=2;
+                // Ball.y -=2;
 
-                switch(K_art){
+                switch (K_art) {
                     case 0:
                     case 1:
                     case 2:
@@ -131,14 +125,14 @@ public float min;
                         break;
 
                     case 3:
-                        o=o+1;
-                        if(o>=2){
+                        o = o + 1;
+                        if (o >= 2) {
                             v = 0;
                             FallKasten.trigger(K_x, K_y);
                         }
                         break;
                     case 4:
-                        if(Var.ballmode==1){
+                        if (Var.ballmode == 1) {
                             v = 0;
                             FallKasten.trigger(K_x, K_y);
                         }
@@ -148,7 +142,7 @@ public float min;
 
                 }
 
-                if(K_art!=5) {
+                if (K_art != 5) {
                     if (Var.beiballberurungvibrieren == 1) {
                         Gdx.input.vibrate(50);
                     }
@@ -156,9 +150,6 @@ public float min;
 
 
             }
-
-
-
 
 
         }
