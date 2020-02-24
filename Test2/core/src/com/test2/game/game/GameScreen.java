@@ -8,12 +8,14 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
+import com.sun.jndi.toolkit.url.Uri;
 import com.test2.game.Test2;
 import com.test2.game.Var;
 import com.test2.game.library.*;
 import com.test2.game.option.OptionScreen;
 import com.test2.game.start.AssetManageLoader;
 
+import java.net.URL;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -843,12 +845,21 @@ getdata = new Timer();
             batch.setColor(1, 1, 1, 1);
             font.setColor(Color.WHITE);
         }
-
+//////////////////////////////////////////////////////7
 
         if (Var.geheinpause == 1) {
             Var.gamestatus = 3;
             Var.geheinpause = 0;
         }
+
+
+        if(Var.levelbesitz>=80&&!Var.finish) {
+            System.out.println("Game end thanks for playing");
+            Test2.INSTANCE.setScreen(new GameEndScreen());
+
+        }
+
+
     }
 
     @Override

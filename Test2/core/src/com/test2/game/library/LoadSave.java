@@ -18,6 +18,8 @@ public class LoadSave {
 
     public static void loadall() {
 
+        Var.finish = prefs.getBoolean("gameend");
+
         Var.beiballberurungvibrieren = prefs.getInteger("vibrieren");
         // Var.showfps= prefs.getInteger("showfps");
         if (prefs.getInteger("showfps") == 0) {
@@ -114,6 +116,7 @@ public class LoadSave {
 
         prefs.putInteger("levelbesitz", Var.levelbesitz);
 
+        prefs.putBoolean("gameend", Var.finish);
 
 /*
         if(Var.sound_effects) {

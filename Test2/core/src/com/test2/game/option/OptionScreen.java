@@ -125,6 +125,8 @@ public class OptionScreen extends ScreenAdapter implements Screen {
             temp = 10;
         }
 
+
+
         batch = new SpriteBatch();
 
         game = gg;
@@ -148,6 +150,8 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         Background_8 = new touchinput.Button(Gdx.graphics.getWidth() / 7 * 7, (int) (Gdx.graphics.getHeight() / 5.753f), Gdx.graphics.getWidth() / 7, Gdx.graphics.getHeight() / 7);
         Background_9 = new touchinput.Button(Gdx.graphics.getWidth() / 7 * 8, (int) (Gdx.graphics.getHeight() / 5.753f), Gdx.graphics.getWidth() / 7, Gdx.graphics.getHeight() / 7);
         Background_10 = new touchinput.Button(Gdx.graphics.getWidth() / 7 * 9, (int) (Gdx.graphics.getHeight() / 5.753f), Gdx.graphics.getWidth() / 7, Gdx.graphics.getHeight() / 7);
+
+
 
 
         SW = new touchinput.Switch(switchsx, switchy * 3, switchw, switchh, Var.beiballberurungvibrieren);
@@ -374,6 +378,11 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         shapeRenderer.end();
 
         batch.begin();
+
+
+
+
+
 
 
         if (Background_1.h > Background_2.h) {
