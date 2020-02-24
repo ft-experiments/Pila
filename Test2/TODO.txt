@@ -3,7 +3,7 @@
 //benutzen und IntelliJ erkennt das und macht das gelb
 
 
-//TODO Wichtig Wenn eine neue Version: Änderung IMMER im Modul Android in build.gradle
+//TODO Wichtig Wenn eine neue Version: Änderung IMMER im Modul Android in build.gradle und in res/value/version
 
 
 
@@ -12,7 +12,6 @@
 /////////////////////////////////////////////////
 
 
-//TODO Seitliche Kollision
 //TODO Richtige Auswahl der Hintergründe (ohne springen)
 
 

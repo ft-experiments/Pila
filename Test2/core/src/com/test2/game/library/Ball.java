@@ -67,15 +67,25 @@ public class Ball {
     }
 
 
-    static void richtungsumkehr_y() {
+    static void richtungsumkehr_y_kasten() {
+        Ball.bx += (float)Math.random()*5-2.5f;
+        Ball.by = (Ball.by * -1);
+    }
 
-        Ball.by = Ball.by * -1;
+    static void richtungsumkehr_x_kasten() {
+        Ball.bx += (float)Math.random()*5-2.5f;
+        Ball.bx = (Ball.bx * -1);
+    }
+
+    static void richtungsumkehr_y() {
+        //Ball.by += (float)Math.random()*7-3.5f;
+        Ball.by = (Ball.by * -1);
 
     }
 
     static void richtungsumkehr_x() {
-
-        Ball.bx = Ball.bx * -1;
+        //Ball.by += (float)Math.random()*7-3.5f;
+        Ball.bx = (Ball.bx * -1);
 
     }
 

@@ -12,6 +12,7 @@ int L;
    public static int Le=0;
    public static int kastenw;
    public static int kastenh;
+   public static int[] actlevel;
 public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<com.test2.game.library.Kaesten>();
 
     static int[] Leveldebug = {
@@ -950,6 +951,7 @@ public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<c
     static int wo=0;
 
     static void levelcreater(int[] l) {
+        actlevel = l;
         y = 0;
         while (y < l[1]) {
             x = 0;
@@ -1511,6 +1513,9 @@ public static ArrayList<com.test2.game.library.Kaesten> kisten = new ArrayList<c
         Level.dispose();
         Level.LevelCreate(Level.Le);
     }
+
+
+
 
 
 }

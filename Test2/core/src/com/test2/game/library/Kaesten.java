@@ -3,6 +3,8 @@ package com.test2.game.library;
 import com.badlogic.gdx.Gdx;
 import com.test2.game.Var;
 
+import java.awt.*;
+
 public class Kaesten {
 
     public int K_x;
@@ -87,11 +89,11 @@ public class Kaesten {
                     */
 
                     if (min == rechts || min == links) {
-                        Ball.richtungsumkehr_x();
+                        Ball.richtungsumkehr_x_kasten();
                         Ball.x -= Ball.bx;
                     }
                     if (min == unten || min == oben) {
-                        Ball.richtungsumkehr_y();
+                        Ball.richtungsumkehr_y_kasten();
                         Ball.y -= Ball.by;
                     }
 
@@ -136,6 +138,17 @@ public class Kaesten {
                             v = 0;
                             FallKasten.trigger(K_x, K_y);
                         }
+
+                        Rectangle rect1 = new Rectangle((int)Ball.x, (int)Ball.y, Ball.r*2, Ball.r*2);
+                        Rectangle rect2 = new Rectangle(K_x, K_y, K_w, K_h);
+                        if(rect1.intersects(rect2)) {
+
+
+
+                            Ball.y -= Level.kastenh;
+
+                        }
+
                         break;
                     case 5:
                         break;

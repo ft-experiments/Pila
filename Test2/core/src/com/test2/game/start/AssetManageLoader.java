@@ -62,7 +62,6 @@ public class AssetManageLoader {
 
     public static Texture start;
 
-    public static Texture startge;
     public static Texture Touch;
     public static Texture Gyro;
 
@@ -77,7 +76,6 @@ public class AssetManageLoader {
     public static Sound start_finish;
 
     public static Texture imgfeuerball;
-    public static Texture move;
 
 
     public static AssetManager manager = new AssetManager();
@@ -145,7 +143,6 @@ public class AssetManageLoader {
             manager.load("pack/" + Var.actpack + "/option/info.png", Texture.class);
 
             manager.load("pack/" + Var.actpack + "/game/start.png", Texture.class);
-            manager.load("pack/" + Var.actpack + "/game/startge.png", Texture.class);
             manager.load("pack/" + Var.actpack + "/option/Touch.png", Texture.class);
             manager.load("pack/" + Var.actpack + "/option/Gyro.png", Texture.class);
 
@@ -158,7 +155,7 @@ public class AssetManageLoader {
             manager.load("pack/" + Var.actpack + "/sound/click.mp3", Sound.class);
 
             manager.load("pack/" + Var.actpack + "/game/ballfeueranimation.png", Texture.class);
-            manager.load("pack/" + Var.actpack + "/option/move.png", Texture.class);
+
 
         } catch (Exception e) {
             System.out.println("Datein konnten nicht gefunden werden");
@@ -217,7 +214,6 @@ public class AssetManageLoader {
             info = info1 = info2 = info3 = manager.get("pack/" + Var.actpack + "/option/info.png", Texture.class);
 
             start = manager.get("pack/" + Var.actpack + "/game/start.png", Texture.class);
-            startge = manager.get("pack/" + Var.actpack + "/game/startge.png", Texture.class);
             Touch = manager.get("pack/" + Var.actpack + "/option/Touch.png", Texture.class);
             Gyro = manager.get("pack/" + Var.actpack + "/option/Gyro.png", Texture.class);
             neustart = manager.get("pack/" + Var.actpack + "/game/neustart.png", Texture.class);
@@ -230,7 +226,7 @@ public class AssetManageLoader {
 
             start_finish = manager.get("pack/" + Var.actpack + "/sound/start_last.mp3", Sound.class);
             imgfeuerball = manager.get("pack/" + Var.actpack + "/game/ballfeueranimation.png", Texture.class);
-            move = manager.get("pack/" + Var.actpack + "/option/move.png", Texture.class);
+
 
 
         } catch (Exception e) {
@@ -291,7 +287,6 @@ public class AssetManageLoader {
             manager.unload("pack/" + Var.actpack + "/option/info.png");
 
             manager.unload("pack/" + Var.actpack + "/game/start.png");
-            manager.unload("pack/" + Var.actpack + "/game/startge.png");
             manager.unload("pack/" + Var.actpack + "/option/Touch.png");
             manager.unload("pack/" + Var.actpack + "/option/Gyro.png");
 
@@ -303,7 +298,7 @@ public class AssetManageLoader {
             manager.unload("pack/" + Var.actpack + "/sound/start_last.mp3");
             manager.unload("pack/" + Var.actpack + "/sound/click.mp3");
             manager.unload("pack/" + Var.actpack + "/game/ballfeueranimation.png");
-            manager.unload("pack/" + Var.actpack + "/option/move.png");
+
         } catch (Exception e) {
             System.out.println("Die Assets wurden nie geladen");
         }
