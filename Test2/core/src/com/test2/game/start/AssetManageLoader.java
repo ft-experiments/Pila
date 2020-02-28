@@ -106,8 +106,6 @@ public class AssetManageLoader {
             manager.load(Var.background8, Texture.class);
             manager.load(Var.background9, Texture.class);
             manager.load(Var.background10, Texture.class);
-
-
             manager.load("pack/" + Var.actpack + "/option/switchon.png", Texture.class);
             manager.load("pack/" + Var.actpack + "/option/switchoff.png", Texture.class);
 

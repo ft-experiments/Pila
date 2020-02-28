@@ -206,6 +206,11 @@ getdata = new Timer();
 */
     }
 
+
+
+
+
+
     public static float findmin(float[] array) {
         min = 999999999;
         for (int i = 0; i < array.length; i++) {
