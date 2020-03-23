@@ -64,7 +64,7 @@ public class SplashScreen extends ScreenAdapter implements Screen {
                 font.draw(batch, "Der Ladebalken wird geladen", 25, 100);
             }
             if (AssetManageLoader.manager.getProgress() * 100 > 50) {
-                font.draw(batch, "Wlan-Kabel-Überprüfung..", 25, 100);
+                font.draw(batch, "Wlan-Kabel überprüfen..", 25, 100);
             }
             batch.end();
 

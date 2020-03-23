@@ -201,7 +201,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
 
 
         if (vibrate.isPressed() == 1) {
-            game.aoi.toast("Wenn du das ausschaltest, deaktivierst du das Vibrieren, wenn der Ball an die Wände anstößst.");
+            game.aoi.toast("Wenn du das ausschaltest, deaktivierst du das Vibrieren.");
 
         }
 
@@ -215,12 +215,12 @@ public class OptionScreen extends ScreenAdapter implements Screen {
         }
 
         if (instant.isPressed() == 1) {
-            game.aoi.toast("Wenn du das ausschaltest dann musst du immer wenn du ein Leben verloren hast das Weitermachen mit einem Doppelklick bestätigen.");
+            game.aoi.toast("Wenn du das ausschaltest, musst du immer wenn du ein Leben verloren hast das Weitermachen mit einem Doppelklick bestätigen.");
 
         }
 
         if (sefecte.isPressed() == 1) {
-            game.aoi.toast("Hiermit kannst du die soundeffekte aktivieren und deaktivieren.");
+            game.aoi.toast("Hiermit kannst du die Soundeffekte aktivieren und deaktivieren.");
 
         }
 
@@ -345,7 +345,7 @@ public class OptionScreen extends ScreenAdapter implements Screen {
             Var.ballstartmode = 1;
         }
         batch.draw(info, soundeffecte.x - 535, soundeffecte.y + soundeffecte.h / 2 - 50, 70, 70);
-        font.draw(batch, "soundeffekte", soundeffecte.x - 400, soundeffecte.y + soundeffecte.h / 2);
+        font.draw(batch, "Soundeffekte", soundeffecte.x - 400, soundeffecte.y + soundeffecte.h / 2);
         if (soundeffecte.isswitched() == 0) {
 
             batch.draw(switchoff, soundeffecte.x, soundeffecte.y, soundeffecte.w, soundeffecte.h);

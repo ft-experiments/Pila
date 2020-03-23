@@ -98,7 +98,7 @@ public class StartScreen extends ScreenAdapter {
 
 
         AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth() / 900f, Gdx.graphics.getHeight() / 1480f);
-        AssetManageLoader.font.draw(batch, "weiter spielen", Start.x + 30, Start.y + (Start.h / 2 + 25));
+        AssetManageLoader.font.draw(batch, "Weiter spielen", Start.x + 30, Start.y + (Start.h / 2 + 25));
         AssetManageLoader.font.getData().setScale(1f);
         batch.draw(AssetManageLoader.buttonimage, Start.x, Start.y, Start.w, Start.h);
         if (Start.isPressed() == 1) {

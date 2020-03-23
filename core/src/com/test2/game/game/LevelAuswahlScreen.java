@@ -91,7 +91,7 @@ public class LevelAuswahlScreen extends ScreenAdapter {
             batch.draw(com.test2.game.start.AssetManageLoader.b10, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         }
         AssetManageLoader.font.getData().setScale(Gdx.graphics.getWidth() / 720f, Gdx.graphics.getHeight() / 1184f);
-        AssetManageLoader.font.draw(batch, "zurück", zurueck.x + 30, zurueck.y + zurueck.h / 2 + 25);
+        AssetManageLoader.font.draw(batch, "Zurück", zurueck.x + 30, zurueck.y + zurueck.h / 2 + 25);
         batch.draw(com.test2.game.start.AssetManageLoader.buttonimage, zurueck.x, zurueck.y, zurueck.w, zurueck.h);
         if (zurueck.isPressed() == 1) {
             Var.geheinpause = 1;

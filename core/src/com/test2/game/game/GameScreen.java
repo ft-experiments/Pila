@@ -613,7 +613,14 @@ getdata = new Timer();
         }
 
         if (b_zahl == 0) {        //////Wenn Keine SpielBlöcke mehr da sind gehts ein Level hoch///////////////////////
-            Level.Levelup();
+
+            if(Level.Le==80) {
+                Test2.INSTANCE.setScreen(new GameEndScreen());
+            }else{
+                Var.levelbesitz++;
+                Level.Levelup();
+            }
+
 
         }
 
