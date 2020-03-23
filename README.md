@@ -21,10 +21,9 @@ Das Spiel läuft auf allen Android Handys ab einer Android Version von 4.1
 Aktuell befinden wir uns in der `unveröffentlichen Alpha V0.1`:
 
 ```
-10 Funktionierende Level
+60 Funktionierende Level
 Power-Ups
 Verschiedene Blockeigenschaften
-Verbuggter Level-Baukasten
 ```
 
 ## 🚀 Benutzung
@@ -35,27 +34,5 @@ Dann kannst du die `.apk` einfach auf das Handy übertragen und installieren.
 
 Danach kannst du auch schon loslegen.
 
-## TODO:
-
-/////////////////////Bugs/////////////////////////
-
-
-//TODO gameover Start aktivity Menü Ball ist weg
-//TODO Kollision seitlich erkennen
-//TODO Kollision Paddel
-
-//TODO Zurücktaste Fehler beheben
-
-
-///////////////////Änderungen//////////////////
-
-//TODO Hauptmenü besser
-
-
-//////////////////Featurs///////////////////////
-
-
-//TODO countdown nach beenden der Pause
-//TODO sound effekts
 
 `VIEL SPAß`
